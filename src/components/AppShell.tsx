@@ -72,14 +72,24 @@ export function AppShell({ children }: { children: ReactNode }) {
   const { role, setRole, currentTcmId, setCurrentTcmId, tcms, leads, tours, followUps, handoffs, bookings } = useApp();
   const authUser = useAuthUser((s) => s.user);
   const hydrateAuth = useAuthUser((s) => s.hydrate);
-  // On mount, hydrate the real user, and if they are super_admin, switch the
-  // sidebar persona to "super-admin" so Settings + admin nav appear.
+  // Map real DB role → personas the user is allowed to "view as".
+  // Single-option roles see a static label instead of a dropdown.
+  const allowedPersonas: Record<string, Array<typeof role>> = {
+    super_admin: ["super-admin"],
+    manager:     ["hr"],
+    admin:       ["hr"],
+    member:      ["flow-ops", "tcm"],
+    owner:       ["owner"],
+  };
+  const dbRole = authUser?.role;
+  const allowed = (dbRole && allowedPersonas[dbRole]) || ["super-admin"];
+
+  // On mount / role change, force the sidebar persona into the allowed set.
   useEffect(() => { if (!authUser) hydrateAuth(); }, [authUser, hydrateAuth]);
   useEffect(() => {
-    if (authUser?.role === "super_admin" && role !== "super-admin") {
-      setRole("super-admin");
-    }
-  }, [authUser, role, setRole]);
+    if (!dbRole) return;
+    if (!allowed.includes(role)) setRole(allowed[0]);
+  }, [dbRole, role, setRole]); // eslint-disable-line react-hooks/exhaustive-deps
   const router = useRouterState();
   const path = router.location.pathname;
   const [now, mounted] = useMountedNow();
