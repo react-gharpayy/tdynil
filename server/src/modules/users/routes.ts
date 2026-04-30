@@ -11,7 +11,7 @@ const CreateBody = z.object({
   email: z.string().email(),
   phone: z.string().min(0).max(40).optional(),
   password: z.string().min(8).max(72),
-  role: z.enum(["manager", "admin", "member"]),
+  role: z.enum(["manager", "admin", "member", "owner"]),
   zones: z.array(z.string()).optional(),
 });
 
@@ -99,6 +99,11 @@ export function registerUserRoutes(app: FastifyInstance) {
 
   app.get("/api/members", { preHandler: [requireAuth, requireScope("user.read")] }, async (req, reply) => {
     const list = await roleList(req, "member");
+    return reply.send(list.map(userOut));
+  });
+
+  app.get("/api/owners", { preHandler: [requireAuth, requireScope("user.read")] }, async (req, reply) => {
+    const list = await roleList(req, "owner");
     return reply.send(list.map(userOut));
   });
 
