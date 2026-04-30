@@ -24,6 +24,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useApp } from "@/lib/store";
+import { useAuthUser } from "@/lib/auth-store";
 import { cn } from "@/lib/utils";
 import {
   UserRound,
@@ -52,8 +53,16 @@ export function ProfileMenu() {
   const navigate = useNavigate();
   const meta = ROLE_META[role];
   const tcm = role === "tcm" ? tcms.find((t) => t.id === currentTcmId) : null;
-  const initials = tcm?.initials ?? meta.initials;
-  const displayName = tcm?.name ?? meta.label;
+  const authUser = useAuthUser((s) => s.user);
+  const personName = tcm?.name ?? authUser?.fullName ?? authUser?.username ?? authUser?.email ?? "Account";
+  const computeInitials = (n: string) =>
+    n
+      .split(/[\s@._-]+/)
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((p) => p[0]?.toUpperCase() ?? "")
+      .join("") || "U";
+  const initials = tcm?.initials ?? computeInitials(personName);
 
   return (
     <DropdownMenu>
@@ -72,8 +81,8 @@ export function ProfileMenu() {
             {initials}
           </div>
           <div className="min-w-0">
-            <div className="truncate text-sm font-medium">{displayName}</div>
             <div className="text-[11px] text-muted-foreground">{meta.label}</div>
+            <div className="truncate text-sm font-medium">{personName}</div>
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
