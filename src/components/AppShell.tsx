@@ -283,7 +283,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               return (
                 <div className="bg-sidebar-accent border border-sidebar-border text-sidebar-accent-foreground rounded-md px-3 py-1.5 flex flex-col leading-tight">
                   <span className="text-xs">{labels[role] ?? role}</span>
-                  {userName && <span className="text-[10px] text-sidebar-foreground/70 truncate">{userName}</span>}
+                  {userName && <span className="text-[10px] text-sidebar-accent-foreground truncate">{userName}</span>}
                 </div>
               );
             }
