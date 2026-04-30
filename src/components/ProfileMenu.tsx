@@ -54,7 +54,7 @@ export function ProfileMenu() {
   const meta = ROLE_META[role];
   const tcm = role === "tcm" ? tcms.find((t) => t.id === currentTcmId) : null;
   const authUser = useAuthUser((s) => s.user);
-  const personName = tcm?.name ?? authUser?.name ?? authUser?.email ?? "Account";
+  const personName = tcm?.name ?? authUser?.fullName ?? authUser?.username ?? authUser?.email ?? "Account";
   const computeInitials = (n: string) =>
     n
       .split(/[\s@._-]+/)
