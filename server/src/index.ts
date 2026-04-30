@@ -31,7 +31,12 @@ async function main() {
     requestIdHeader: "x-request-id",
   });
 
-  await app.register(cors, { origin: corsOrigins, credentials: true });
+  await app.register(cors, {
+    origin: corsOrigins,
+    credentials: true,
+    methods: ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "Idempotency-Key", "X-Requested-With", "Accept", "Origin"],
+  });
   await app.register(cookie);
   await app.register(rateLimit, {
     max: 300,
