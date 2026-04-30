@@ -116,12 +116,11 @@ export default function MYTLeadTracker() {
       </div>
 
       {mode === 'quick' && (
-        <div className="glass-card p-4 space-y-3">
-          <div>
-            <h3 className="font-heading font-semibold text-sm text-foreground">Unified Quick Add</h3>
-            <p className="text-xs text-muted-foreground">All pasted leads now go through Quick Add questions only, so paste/manual/dedup data stays one object.</p>
-          </div>
-          <Button onClick={() => setShowQuickAdd(true)} className="w-full gap-1.5">
+        <div className="rounded-lg border border-border bg-surface-2/40 p-3 flex items-center justify-between gap-3">
+          <p className="text-xs text-muted-foreground">
+            Unified Quick Add — paste, manual, and dedup all flow through the same questions.
+          </p>
+          <Button size="sm" onClick={() => setShowQuickAdd(true)} className="h-8 text-xs gap-1.5 shrink-0">
             <Zap className="h-3.5 w-3.5" /> Open Quick Add
           </Button>
         </div>
