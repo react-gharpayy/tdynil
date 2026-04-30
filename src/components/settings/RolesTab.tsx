@@ -5,6 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
+} from "@/components/ui/select";
 import { api, type ManagedUser, type Zone } from "@/lib/api/client";
 
 type RoleTab = "managers" | "admins" | "members";
@@ -55,14 +58,14 @@ export function RolesTab() {
       email: u.email || "",
       phone: u.phone || "",
       role: u.role || fallbackRole,
-      zones: Array.isArray(u.zones) ? u.zones : [],
+      zones: Array.isArray(u.zones) && u.zones.length > 0 ? [u.zones[0]] : [],
     });
   };
 
   const saveEdit = async () => {
     if (!editingId) return;
-    if ((editForm.role === "admin" || editForm.role === "member") && editForm.zones.length === 0) {
-      toast.error("Please assign at least one zone");
+    if ((editForm.role === "admin" || editForm.role === "member") && editForm.zones.length !== 1) {
+      toast.error("Please select one zone");
       return;
     }
     try {
@@ -336,23 +339,18 @@ function EditForm({
 
       {(form.role === "admin" || form.role === "member") && zones.length > 0 && (
         <div className="space-y-2">
-          <Label className="text-xs flex items-center gap-1.5"><MapPin size={12} /> Zones</Label>
-          <div className="grid grid-cols-2 gap-2">
-            {zones.map((z) => (
-              <label key={z.id} className="flex items-center gap-2 text-xs cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={form.zones.includes(z.name)}
-                  onChange={(e) => {
-                    if (e.target.checked) setForm({ ...form, zones: [...form.zones, z.name] });
-                    else setForm({ ...form, zones: form.zones.filter((x) => x !== z.name) });
-                  }}
-                  className="rounded"
-                />
-                {z.name}
-              </label>
-            ))}
-          </div>
+          <Label className="text-xs flex items-center gap-1.5"><MapPin size={12} /> Zone</Label>
+          <Select
+            value={form.zones[0] ?? ""}
+            onValueChange={(v) => setForm({ ...form, zones: v ? [v] : [] })}
+          >
+            <SelectTrigger className="text-xs"><SelectValue placeholder="Select zone…" /></SelectTrigger>
+            <SelectContent>
+              {zones.map((z) => (
+                <SelectItem key={z.id} value={z.name}>{z.name}</SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
       )}
 
