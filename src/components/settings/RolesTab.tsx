@@ -64,8 +64,8 @@ export function RolesTab() {
 
   const saveEdit = async () => {
     if (!editingId) return;
-    if ((editForm.role === "admin" || editForm.role === "member") && editForm.zones.length === 0) {
-      toast.error("Please assign at least one zone");
+    if ((editForm.role === "admin" || editForm.role === "member") && editForm.zones.length !== 1) {
+      toast.error("Please select one zone");
       return;
     }
     try {
