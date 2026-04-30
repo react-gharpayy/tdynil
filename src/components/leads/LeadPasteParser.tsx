@@ -1,219 +1,410 @@
-// Live parser UI — paste anything, see fields extracted into the cmd.lead.create payload,
-// fix any inline validation errors, then submit. No "intermediate random data".
-import { useMemo, useState } from "react";
+// Paste a WhatsApp / portal message → auto-extract every field → review the FULL Quick Add field
+// set (Name, Phone, Email, Areas, Full Address, Budget, Move-in, Type, Room, Need, Special Reqs,
+// In-BLR, Quality, Zone, Assignee, Stage, Notes) → save through the unified Identity store.
+//
+// Same UX as before (paste box first, then fields appear), but with ALL fields, matching the
+// Quick Add panel 1:1 so nothing is missed before saving.
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
-import { AlertCircle, CheckCircle2, Sparkles, Wand2 } from "lucide-react";
-import { parseLeadText, type ParseIssue, type ExtractedLead, exampleCount } from "@/lib/lead-parser";
-import { CreateLeadCmd } from "@/contracts";
-
-type Field = keyof ExtractedLead;
+import { AlertCircle, CheckCircle2, MapPin, Sparkles, Wand2 } from "lucide-react";
+import { parseLead, detectZone } from "@/lib/lead-identity/parser";
+import { useIdentityStore } from "@/lib/lead-identity/store";
+import { teamMembers } from "@/myt/lib/mock-data";
+import { QUICKAD_NEED_OPTIONS, QUICKAD_ROOM_OPTIONS, QUICKAD_TYPE_OPTIONS } from "@/lib/quickad-shared";
+import type { ParsedLeadDraft } from "@/lib/lead-identity/types";
+import { toast } from "sonner";
+import { cn } from "@/lib/utils";
 
 const SAMPLE = `Hi team, new lead 👇
 Rahul Sharma 9876543210
-Looking for 2BHK in Koramangala
-Budget: 25k
-Move in: next week
-Source: WhatsApp`;
+Email: rahul@example.com
+Looking in HSR Layout, BTM, Koramangala
+Budget: 8-12k
+Move in: 30/04/2026
+Working professional, private room, boys
+Currently in Bangalore`;
+
+const ZONE_BUCKETS = [
+  "CENTRAL STUDENTS", "CU YPR / STUDENTS / WORKING", "HOMES KORA", "HOMES MWB",
+  "KORA CORE", "MTECH HUB", "MWB MORE", "OTHERS COLLEGE STUDENTS",
+  "YPR MAJOR MAIN", "OTHERS",
+] as const;
+
+const STAGES = [
+  "MYT [TENANT]",
+  "2A. Options Shared – BLR",
+  "2B. Options Shared – Non-BLR",
+  "3A. Visit Intent Confirmed",
+  "3B. try.prebook / virtual tour Intent",
+  "4A. Visit Scheduled in BLR",
+  "5A. Visit Done",
+  "Finalizing",
+  "WON 🏆",
+  "LOST 😭",
+] as const;
+
+const QUALITY_OPTS = [
+  { v: "hot" as const, label: "🔥 Hot" },
+  { v: "good" as const, label: "✅ Good" },
+  { v: "bad" as const, label: "❌ Bad" },
+];
+const BLR_OPTS = [
+  { v: true as const, label: "🏙 In" },
+  { v: false as const, label: "✈️ Out" },
+  { v: null, label: "❓ Unknown" },
+];
+
+const todayIso = () => new Date().toISOString().slice(0, 10);
 
 interface Props {
-  onSubmit: (payload: {
-    name: string; phone: string; budget: number; preferredArea: string; moveInDate: string;
-    source?: string; intent?: "hot" | "warm" | "cold"; tags?: string[];
-  }) => Promise<{ ok: true; eventIds: string[] } | { ok: false; error: string }>;
+  onDone?: () => void;
 }
 
-export function LeadPasteParser({ onSubmit }: Props) {
+export function LeadPasteParser({ onDone }: Props) {
+  const checkDup = useIdentityStore((s) => s.checkDuplicates);
+  const create = useIdentityStore((s) => s.createLead);
+
   const [raw, setRaw] = useState("");
-  const [submitting, setSubmitting] = useState(false);
-  const [result, setResult] = useState<string | null>(null);
-  // edited overrides — empty string means "use parsed", anything else is user override
-  const [overrides, setOverrides] = useState<Partial<Record<Field, string>>>({});
+  const [parsedOnce, setParsedOnce] = useState(false);
 
-  const parsed = useMemo(() => parseLeadText(raw), [raw]);
+  // Quick-Add field state (same as QuickAddLeadPanel)
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [areasText, setAreasText] = useState("");
+  const [fullAddress, setFullAddress] = useState("");
+  const [budget, setBudget] = useState("");
+  const [moveIn, setMoveIn] = useState(todayIso());
+  const [type, setType] = useState("");
+  const [room, setRoom] = useState("");
+  const [need, setNeed] = useState("");
+  const [specialReqs, setSpecialReqs] = useState("");
+  const [inBLR, setInBLR] = useState<boolean | null>(null);
+  const [quality, setQuality] = useState<"hot" | "good" | "bad" | null>(null);
+  const [zoneBucket, setZoneBucket] = useState<string>("");
+  const [assigneeId, setAssigneeId] = useState<string>("");
+  const [stage, setStage] = useState<string>(STAGES[0]);
+  const [notes, setNotes] = useState("");
 
-  const merged: ExtractedLead = useMemo(() => {
-    const out: ExtractedLead = { ...parsed.extracted };
-    for (const [k, v] of Object.entries(overrides) as [Field, string][]) {
-      if (v === "" || v == null) continue;
-      if (k === "budget") out.budget = Number(v);
-      else (out as Record<string, unknown>)[k] = v;
+  const textRef = useRef<HTMLTextAreaElement>(null);
+
+  const detectedZone = useMemo(
+    () => detectZone(`${areasText} ${fullAddress}`),
+    [areasText, fullAddress],
+  );
+
+  // Auto-parse whenever the paste text changes
+  useEffect(() => {
+    if (!raw || raw.length < 10) { setParsedOnce(false); return; }
+    const parsed = parseLead(raw);
+    if (!parsed) return;
+    applyParsed(parsed);
+    setParsedOnce(true);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [raw]);
+
+  const applyParsed = (p: ParsedLeadDraft) => {
+    if (p.name) setName(p.name);
+    if (p.phone) setPhone(p.phone);
+    if (p.email) setEmail(p.email);
+    if (p.areas?.length) setAreasText(p.areas.join(", "));
+    else if (p.location) setAreasText(p.location);
+    if (p.fullAddress) setFullAddress(p.fullAddress);
+    if (p.budget) setBudget(p.budget);
+    if (p.moveIn && /^\d{4}-\d{2}-\d{2}$/.test(p.moveIn)) setMoveIn(p.moveIn);
+    if (p.type) setType(p.type);
+    if (p.room) setRoom(p.room);
+    if (p.need) setNeed(p.need.split(" / ")[0] ?? p.need);
+    if (p.specialReqs) setSpecialReqs(p.specialReqs);
+    if (p.inBLR !== null && p.inBLR !== undefined) setInBLR(p.inBLR);
+  };
+
+  const reset = () => {
+    setRaw(""); setParsedOnce(false);
+    setName(""); setPhone(""); setEmail("");
+    setAreasText(""); setFullAddress("");
+    setBudget(""); setMoveIn(todayIso());
+    setType(""); setRoom(""); setNeed(""); setSpecialReqs("");
+    setInBLR(null); setQuality(null); setZoneBucket("");
+    setAssigneeId(""); setStage(STAGES[0]); setNotes("");
+  };
+
+  // Validation matching Quick Add
+  const phoneValid = /^[6-9]\d{9}$/.test(phone.replace(/\D/g, ""));
+  const errors: string[] = [];
+  if (!name.trim()) errors.push("Name is required");
+  if (!phoneValid) errors.push("Valid 10-digit phone is required");
+  if (!zoneBucket) errors.push("Zone is required");
+  const blocking = errors.length > 0;
+
+  const save = () => {
+    if (blocking) { toast.error(errors[0]); return; }
+    const dup = checkDup({ name, phone, email, location: areasText });
+    if (dup.type === "exact" || dup.type === "strong") {
+      const existing = dup.candidates[0]?.lead;
+      toast.warning(`Duplicate detected: ${existing?.name ?? "existing lead"}`);
+      return;
     }
-    return out;
-  }, [parsed.extracted, overrides]);
-
-  // Build the proposed cmd.lead.create payload and validate it with Zod
-  const candidatePayload = useMemo(() => ({
-    name: merged.name ?? "",
-    phone: merged.phone ?? "",
-    source: merged.source ?? "paste",
-    budget: merged.budget ?? 0,
-    moveInDate: merged.moveInDate ?? "",
-    preferredArea: merged.preferredArea ?? "",
-    zoneId: null,
-    intent: merged.intent,
-    tags: merged.bhk ? [merged.bhk] : undefined,
-  }), [merged]);
-
-  const zodCheck = useMemo(() => CreateLeadCmd.shape.payload.safeParse(candidatePayload), [candidatePayload]);
-
-  const allIssues: ParseIssue[] = useMemo(() => {
-    const issues: ParseIssue[] = [...parsed.issues.filter((i) => {
-      // Suppress an issue if the user has manually filled that field
-      const map: Record<string, Field> = { phone: "phone", name: "name", budget: "budget", preferredArea: "preferredArea", moveInDate: "moveInDate" };
-      const f = map[i.field];
-      return !(f && overrides[f]);
-    })];
-    if (!zodCheck.success && raw) {
-      for (const e of zodCheck.error.errors) {
-        const path = e.path.join(".");
-        issues.push({
-          field: (path as ParseIssue["field"]) || "general",
-          severity: "error",
-          message: e.message,
-        });
-      }
-    }
-    return dedupeIssues(issues);
-  }, [parsed.issues, zodCheck, overrides, raw]);
-
-  const blocking = allIssues.some((i) => i.severity === "error");
+    const areasArr = areasText.split(",").map((a) => a.trim()).filter(Boolean);
+    const assignee = teamMembers.find((m) => m.id === assigneeId);
+    const lead = create(
+      {
+        name: name.trim(),
+        phone: phone.trim(),
+        email: email.trim(),
+        location: areasText.trim(),
+        areas: areasArr,
+        fullAddress: fullAddress.trim(),
+        budget: budget.trim(),
+        moveIn,
+        type, room, need,
+        specialReqs: [specialReqs, notes].filter(Boolean).join(" · "),
+        extraContent: notes.trim(),
+        budgets: budget.split(/\s*(?:,|\/|\bor\b)\s*/i).filter(Boolean),
+        links: fullAddress.match(/https?:\/\/\S+/g) ?? [],
+        inBLR,
+        zone: detectedZone,
+        rawSource: raw || `[Paste] ${name} ${phone}`,
+      },
+      {
+        quality,
+        stage,
+        zoneCategory: zoneBucket,
+        assigneeId: assignee?.id ?? null,
+        assigneeName: assignee?.name ?? null,
+      },
+    );
+    toast.success(`Lead saved · ${lead.name}`);
+    reset();
+    onDone?.();
+  };
 
   return (
     <div className="space-y-4">
+      {/* Paste box */}
       <Card className="p-4 space-y-3">
         <div className="flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-center gap-2">
             <Wand2 className="h-4 w-4 text-primary" />
             <h3 className="font-semibold">Paste the lead</h3>
-            <Badge variant="secondary">{exampleCount().toLocaleString()} patterns</Badge>
+            <Badge variant="secondary">auto-fills every field</Badge>
           </div>
           <Button variant="outline" size="sm" onClick={() => setRaw(SAMPLE)}>
             <Sparkles className="h-3 w-3 mr-1" /> Try sample
           </Button>
         </div>
         <Textarea
+          ref={textRef}
           value={raw}
-          onChange={(e) => { setRaw(e.target.value); setOverrides({}); setResult(null); }}
+          onChange={(e) => setRaw(e.target.value)}
           placeholder="Paste WhatsApp message, portal lead, email signature, anything…"
-          rows={8}
+          rows={6}
           className="font-mono text-xs"
         />
-        <div className="flex items-center justify-between text-xs text-muted-foreground">
-          <span>Confidence: <strong className={parsed.confidence >= 80 ? "text-green-600" : parsed.confidence >= 50 ? "text-amber-600" : "text-destructive"}>{parsed.confidence}%</strong></span>
-          <span>{Object.values(parsed.extracted).filter(Boolean).length} fields extracted</span>
-        </div>
+        {parsedOnce && (
+          <p className="flex items-center gap-1 text-[11px] text-green-600">
+            <CheckCircle2 className="h-3 w-3" /> Parsed — review fields below before saving
+          </p>
+        )}
       </Card>
 
-      {raw && (
-        <Card className="p-4 space-y-3">
-          <div className="flex items-center justify-between">
-            <h3 className="font-semibold">Review & fix</h3>
-            {!blocking ? (
-              <span className="flex items-center gap-1 text-xs text-green-600">
-                <CheckCircle2 className="h-3 w-3" /> Ready to create
-              </span>
-            ) : (
-              <span className="flex items-center gap-1 text-xs text-destructive">
-                <AlertCircle className="h-3 w-3" /> {allIssues.filter(i => i.severity === "error").length} issue(s)
-              </span>
+      {/* Full Quick-Add field set (always visible so the person fills missing pieces) */}
+      <Card className="p-4 space-y-3">
+        <div className="flex items-center justify-between">
+          <h3 className="font-semibold text-sm">Review & complete</h3>
+          {blocking ? (
+            <span className="flex items-center gap-1 text-xs text-destructive">
+              <AlertCircle className="h-3 w-3" /> {errors.length} required
+            </span>
+          ) : (
+            <span className="flex items-center gap-1 text-xs text-green-600">
+              <CheckCircle2 className="h-3 w-3" /> Ready to save
+            </span>
+          )}
+        </div>
+
+        <div className="grid grid-cols-2 gap-2">
+          <Field label="👤 Name *">
+            <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Rahul Sharma" />
+          </Field>
+          <Field label="📱 Phone *">
+            <Input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="98xxxxxxxx" inputMode="tel"
+              className={cn(!phoneValid && phone ? "border-destructive" : "")} />
+          </Field>
+        </div>
+
+        <Field label="✉️ Email">
+          <Input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="name@example.com" inputMode="email" />
+        </Field>
+
+        <Field label="📍 Areas (comma-separated)">
+          <div className="relative">
+            <Input
+              value={areasText}
+              onChange={(e) => setAreasText(e.target.value)}
+              placeholder="HSR Layout, BTM, Koramangala"
+            />
+            {detectedZone && (
+              <Badge variant="secondary" className="absolute right-1.5 top-1/2 -translate-y-1/2 text-[10px]">
+                {detectedZone}
+              </Badge>
             )}
           </div>
+          {areasText.includes(",") && (
+            <p className="text-[10px] text-primary mt-1 flex items-center gap-1">
+              <MapPin className="h-2.5 w-2.5" /> Multiple Areas Detected
+            </p>
+          )}
+        </Field>
 
-          <FieldRow label="Name" field="name" value={overrides.name ?? merged.name ?? ""} parsed={parsed.extracted.name} onChange={(v) => setOverrides({ ...overrides, name: v })} issues={allIssues} />
-          <FieldRow label="Phone" field="phone" value={overrides.phone ?? merged.phone ?? ""} parsed={parsed.extracted.phone} onChange={(v) => setOverrides({ ...overrides, phone: v })} issues={allIssues} />
-          <FieldRow label="Email (optional)" field="email" value={overrides.email ?? merged.email ?? ""} parsed={parsed.extracted.email} onChange={(v) => setOverrides({ ...overrides, email: v })} issues={allIssues} />
-          <FieldRow label="Budget (₹/mo)" field="budget" type="number" value={String(overrides.budget ?? merged.budget ?? "")} parsed={merged.budget ? `₹${merged.budget.toLocaleString()}` : undefined} onChange={(v) => setOverrides({ ...overrides, budget: v })} issues={allIssues} />
-          <FieldRow label="Preferred area" field="preferredArea" value={overrides.preferredArea ?? merged.preferredArea ?? ""} parsed={parsed.extracted.preferredArea} onChange={(v) => setOverrides({ ...overrides, preferredArea: v })} issues={allIssues} />
-          <FieldRow label="Move-in date" field="moveInDate" type="date" value={overrides.moveInDate ?? merged.moveInDate ?? ""} parsed={parsed.extracted.moveInDate} onChange={(v) => setOverrides({ ...overrides, moveInDate: v })} issues={allIssues} />
+        <Field label="🏠 Full Address / Map link">
+          <Textarea
+            value={fullAddress}
+            onChange={(e) => setFullAddress(e.target.value)}
+            rows={2}
+            placeholder="Door no, street, landmark or Google Maps URL"
+            className="resize-none"
+          />
+        </Field>
 
-          <div className="flex flex-wrap items-center gap-2 text-xs">
-            {merged.intent && <Badge variant={merged.intent === "hot" ? "destructive" : "secondary"}>{merged.intent} intent</Badge>}
-            {merged.source && <Badge variant="outline">source: {merged.source}</Badge>}
-            {merged.bhk && <Badge variant="outline">{merged.bhk}</Badge>}
-          </div>
+        <div className="grid grid-cols-2 gap-2">
+          <Field label="💰 Budget">
+            <Input value={budget} onChange={(e) => setBudget(e.target.value)} placeholder="8-12k" />
+          </Field>
+          <Field label="📅 Move-in">
+            <Input type="date" value={moveIn} onChange={(e) => setMoveIn(e.target.value)} />
+          </Field>
+        </div>
 
-          {allIssues.filter((i) => i.field === "general").map((i, k) => (
-            <div key={k} className="text-xs text-destructive">{i.message}</div>
-          ))}
+        <Field label="💼 Type">
+          <ChipGroup options={QUICKAD_TYPE_OPTIONS} value={type} onChange={setType} />
+        </Field>
+        <Field label="🛏 Room">
+          <ChipGroup options={QUICKAD_ROOM_OPTIONS} value={room} onChange={setRoom} />
+        </Field>
+        <Field label="👥 Need">
+          <ChipGroup options={QUICKAD_NEED_OPTIONS} value={need} onChange={setNeed} />
+        </Field>
 
-          <div className="flex justify-end gap-2 pt-2 border-t">
-            <Button variant="ghost" onClick={() => { setRaw(""); setOverrides({}); setResult(null); }}>Clear</Button>
-            <Button
-              disabled={blocking || submitting}
-              onClick={async () => {
-                if (!zodCheck.success) return;
-                setSubmitting(true);
-                setResult(null);
-                const r = await onSubmit(zodCheck.data);
-                setSubmitting(false);
-                setResult(r.ok ? `✓ Lead created (${r.eventIds.length} event)` : `✗ ${r.error}`);
-                if (r.ok) { setRaw(""); setOverrides({}); }
-              }}
-            >
-              {submitting ? "Creating…" : "Create lead from parsed data"}
-            </Button>
-          </div>
-          {result && <p className="text-xs">{result}</p>}
-        </Card>
-      )}
+        <Field label="⭐ Special Requests">
+          <Textarea
+            value={specialReqs}
+            onChange={(e) => setSpecialReqs(e.target.value)}
+            rows={2}
+            placeholder="Veg only · attached washroom · top floor…"
+            className="resize-none"
+          />
+        </Field>
+
+        <Field label="Currently in Bangalore?">
+          <ChipGroup
+            options={BLR_OPTS.map((o) => o.label)}
+            value={BLR_OPTS.find((o) => o.v === inBLR)?.label ?? ""}
+            onChange={(label) => setInBLR(BLR_OPTS.find((o) => o.label === label)?.v ?? null)}
+          />
+        </Field>
+
+        <Field label="Lead Quality">
+          <ChipGroup
+            options={QUALITY_OPTS.map((o) => o.label)}
+            value={QUALITY_OPTS.find((o) => o.v === quality)?.label ?? ""}
+            onChange={(label) => setQuality(QUALITY_OPTS.find((o) => o.label === label)?.v ?? null)}
+          />
+        </Field>
+
+        <Field label="Zone *">
+          <select
+            value={zoneBucket}
+            onChange={(e) => setZoneBucket(e.target.value)}
+            className="w-full h-9 bg-background border border-border rounded-md px-2 text-xs"
+          >
+            <option value="">Select zone bucket…</option>
+            {ZONE_BUCKETS.map((z) => <option key={z} value={z}>{z}</option>)}
+          </select>
+        </Field>
+
+        <Field label="Assign Member">
+          <select
+            value={assigneeId}
+            onChange={(e) => setAssigneeId(e.target.value)}
+            className="w-full h-9 bg-background border border-border rounded-md px-2 text-xs"
+          >
+            <option value="">Unassigned</option>
+            {teamMembers.map((m) => <option key={m.id} value={m.id}>{m.name}</option>)}
+          </select>
+        </Field>
+
+        <Field label="Lead Stage">
+          <select
+            value={stage}
+            onChange={(e) => setStage(e.target.value)}
+            className="w-full h-9 bg-background border border-border rounded-md px-2 text-xs"
+          >
+            {STAGES.map((s) => <option key={s} value={s}>{s}</option>)}
+          </select>
+        </Field>
+
+        <Field label="📝 Notes">
+          <Textarea
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
+            rows={2}
+            placeholder="Internal notes…"
+            className="resize-none"
+          />
+        </Field>
+
+        {blocking && (
+          <ul className="text-[11px] text-destructive list-disc list-inside">
+            {errors.map((e) => <li key={e}>{e}</li>)}
+          </ul>
+        )}
+
+        <div className="flex justify-end gap-2 pt-2 border-t">
+          <Button variant="ghost" onClick={reset}>Clear</Button>
+          <Button disabled={blocking} onClick={save}>Save lead</Button>
+        </div>
+      </Card>
     </div>
   );
 }
 
-function FieldRow({
-  label, field, value, parsed, onChange, issues, type = "text",
-}: {
-  label: string;
-  field: ParseIssue["field"];
-  value: string;
-  parsed?: string | undefined;
-  onChange: (v: string) => void;
-  issues: ParseIssue[];
-  type?: string;
-}) {
-  const fieldIssues = issues.filter((i) => i.field === field);
-  const error = fieldIssues.find((i) => i.severity === "error");
-  const warn = fieldIssues.find((i) => i.severity === "warning");
-  const conf: "high" | "med" | "low" | "missing" =
-    error ? "missing" : warn ? "low" : parsed ? "high" : value ? "med" : "missing";
-  const confColor = {
-    high: "bg-green-500/15 text-green-700 border-green-500/30",
-    med: "bg-amber-500/15 text-amber-700 border-amber-500/30",
-    low: "bg-amber-500/15 text-amber-700 border-amber-500/30",
-    missing: "bg-destructive/15 text-destructive border-destructive/30",
-  }[conf];
+function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="space-y-1">
-      <div className="flex items-center justify-between gap-2">
-        <Label className="text-xs">{label}</Label>
-        <div className="flex items-center gap-1.5">
-          {parsed && <span className="text-[10px] text-muted-foreground truncate max-w-[160px]" title={parsed}>parsed: {parsed}</span>}
-          <span className={`inline-flex items-center rounded border px-1.5 py-0 text-[9px] font-medium ${confColor}`}>
-            {conf === "high" ? "HIGH" : conf === "med" ? "EDITED" : conf === "low" ? "LOW" : "MISSING"}
-          </span>
-        </div>
-      </div>
-      <Input value={value} type={type} onChange={(e) => onChange(e.target.value)} className={error ? "border-destructive" : warn ? "border-amber-500/50" : ""} />
-      {fieldIssues.map((i, k) => (
-        <p key={k} className={`text-[11px] ${i.severity === "error" ? "text-destructive" : "text-muted-foreground"}`}>
-          {i.message}{i.suggestion ? ` — ${i.suggestion}` : ""}
-        </p>
+      <Label className="text-[11px] uppercase tracking-wide text-muted-foreground">{label}</Label>
+      {children}
+    </div>
+  );
+}
+
+function ChipGroup<T extends string>({ options, value, onChange }: {
+  options: readonly T[];
+  value: string;
+  onChange: (v: string) => void;
+}) {
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {options.map((o) => (
+        <button
+          type="button"
+          key={o}
+          onClick={() => onChange(value === o ? "" : o)}
+          className={cn(
+            "px-2 py-1 rounded-md border text-[11px] transition-colors",
+            value === o
+              ? "bg-primary text-primary-foreground border-primary"
+              : "bg-background border-border hover:bg-muted",
+          )}
+        >
+          {o}
+        </button>
       ))}
     </div>
   );
-}
-
-function dedupeIssues(issues: ParseIssue[]): ParseIssue[] {
-  const seen = new Set<string>();
-  return issues.filter((i) => {
-    const k = `${i.field}|${i.severity}|${i.message}`;
-    if (seen.has(k)) return false;
-    seen.add(k);
-    return true;
-  });
 }
