@@ -174,7 +174,7 @@ export default function MYTLeadTracker() {
 
       {/* Qualified Leads */}
       <div className="glass-card p-3 md:p-5">
-        <h3 className="font-heading font-semibold text-xs md:text-sm mb-3 text-role-tcm">✅ MYT Qualified — Push to Tour</h3>
+        <h3 className="flex items-center gap-1.5 text-[11px] uppercase tracking-wider font-semibold mb-3 text-role-tcm"><CheckCircle className="h-3.5 w-3.5" /> MYT Qualified — Push to Tour</h3>
         <div className="space-y-2">
           {qualified.length === 0 && <p className="text-xs text-muted-foreground text-center py-4">No qualified leads yet</p>}
           {qualified.map(l => (
