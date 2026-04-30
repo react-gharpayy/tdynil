@@ -204,7 +204,7 @@ export default function MYTLeadTracker() {
 
       {/* Unqualified */}
       <div className="glass-card p-3 md:p-5">
-        <h3 className="font-heading font-semibold text-xs md:text-sm mb-3 text-danger">❌ Not Qualified</h3>
+        <h3 className="flex items-center gap-1.5 text-[11px] uppercase tracking-wider font-semibold mb-3 text-danger"><XCircle className="h-3.5 w-3.5" /> Not Qualified</h3>
         <div className="space-y-2">
           {unqualified.length === 0 && <p className="text-xs text-muted-foreground text-center py-4">All leads are qualified!</p>}
           {unqualified.map(l => (
