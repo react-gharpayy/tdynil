@@ -18,7 +18,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { useIdentityStore } from "@/lib/lead-identity/store";
 import { detectZone, parseLead } from "@/lib/lead-identity/parser";
-import { teamMembers } from "@/myt/lib/mock-data";
+import { useOrgMembers, useOrgZones } from "@/hooks/useOrgDirectory";
 import { toast } from "sonner";
 import { Save, Repeat2, Phone, MapPin, Sparkles, X, CalendarPlus } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -32,11 +32,6 @@ interface Props { open: boolean; onClose: () => void; }
 
 const todayIso = () => new Date().toISOString().slice(0, 10);
 
-const ZONE_BUCKETS = [
-  "CENTRAL STUDENTS", "CU YPR / STUDENTS / WORKING", "HOMES KORA", "HOMES MWB",
-  "KORA CORE", "MTECH HUB", "MWB MORE", "OTHERS COLLEGE STUDENTS",
-  "YPR MAJOR MAIN", "OTHERS",
-] as const;
 
 const STAGES = [
   "MYT [TENANT]",
@@ -70,6 +65,8 @@ export function QuickAddLeadPanel({ open, onClose }: Props) {
   const create = useIdentityStore((s) => s.createLead);
   const { rooms, blocks, tours } = useAppState();
   const navigate = useNavigate();
+  const { members: orgMembers } = useOrgMembers();
+  const { zones: orgZones } = useOrgZones();
 
   // Core
   const [name, setName] = useState("");
