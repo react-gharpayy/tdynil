@@ -33,38 +33,11 @@ export default function MYTLeadTracker() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const budget = parseInt(form.budget);
-    const moveIn = new Date(form.moveInDate);
-    const areaCovered = zones.some(z => z.area.toLowerCase() === form.area.toLowerCase());
-    const daysToMoveIn = (moveIn.getTime() - Date.now()) / (1000 * 60 * 60 * 24);
-    const mytQualified = areaCovered && budget >= 7000 && daysToMoveIn <= 15 && form.dateConfirmed;
-
-    const agent = currentMemberId
-      ? teamMembers.find(m => m.id === currentMemberId)
-      : teamMembers.find(m => m.role === 'flow-ops');
-
-    const newLead: Lead = {
-      id: `l${Date.now()}`,
-      name: form.name,
-      phone: form.phone,
-      area: form.area,
-      budget,
-      moveInDate: form.moveInDate,
-      dateConfirmed: form.dateConfirmed,
-      status: mytQualified ? 'qualified' : 'contacted',
-      mytQualified,
-      addedBy: agent?.id || 'm1',
-      addedByName: agent?.name || 'Rahul Sharma',
-      createdAt: new Date().toISOString(),
-      notes: '',
-    };
-    setLeads(prev => [newLead, ...prev]);
-    toast.success(mytQualified ? 'MYT Qualified! Ready for tour' : 'Lead added — not MYT qualified');
-    setForm({ name: '', phone: '', area: '', budget: '10000', moveInDate: '', dateConfirmed: false });
+    toast.info('The legacy manual MYT form is disabled — please use Quick Add (saves to backend).');
     setShowForm(false);
   };
 
-  const pushToTour = (lead: Lead) => {
+  const pushToTour = (lead: typeof liveLeads[number]) => {
     navigate('/myt/schedule', { state: { lead } });
   };
 
