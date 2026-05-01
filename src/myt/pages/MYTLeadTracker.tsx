@@ -141,24 +141,25 @@ export default function MYTLeadTracker() {
       <div className="glass-card p-3 md:p-5">
         <h3 className="flex items-center gap-1.5 text-[11px] uppercase tracking-wider font-semibold mb-3 text-role-tcm"><CheckCircle className="h-3.5 w-3.5" /> MYT Qualified — Push to Tour</h3>
         <div className="space-y-2">
-          {qualified.length === 0 && <p className="text-xs text-muted-foreground text-center py-4">No qualified leads yet</p>}
+          {liveLoading && <p className="text-xs text-muted-foreground text-center py-4">Loading…</p>}
+          {!liveLoading && qualified.length === 0 && <p className="text-xs text-muted-foreground text-center py-4">No qualified leads yet</p>}
           {qualified.map(l => (
-            <div key={l.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-3 py-2.5 rounded-lg bg-surface-2/50">
+            <div key={l._id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-3 py-2.5 rounded-lg bg-surface-2/50">
               <div className="min-w-0">
                 <span className="font-medium text-foreground text-sm">{l.name}</span>
-                <span className="text-muted-foreground text-xs ml-2">{l.area} · ₹{l.budget.toLocaleString()}</span>
+                <span className="text-muted-foreground text-xs ml-2">{l.preferredArea} · ₹{l.budget.toLocaleString()}</span>
                 <span className="text-muted-foreground text-xs ml-2">Move-in: {l.moveInDate}</span>
               </div>
               <div className="flex gap-2 shrink-0">
                 <a href={`tel:${l.phone}`} className="p-2 rounded-md bg-primary/10 text-primary">
                   <Phone className="h-3.5 w-3.5" />
                 </a>
-                {l.status !== 'tour-scheduled' && (
+                {l.stage !== 'tour-scheduled' && (
                   <Button size="sm" onClick={() => pushToTour(l)} className="h-8 text-xs gap-1">
                     <ArrowRight className="h-3.5 w-3.5" /> Schedule Tour
                   </Button>
                 )}
-                {l.status === 'tour-scheduled' && (
+                {l.stage === 'tour-scheduled' && (
                   <span className="text-[10px] px-2 py-1 rounded-full bg-role-tcm/15 text-role-tcm">Tour Set</span>
                 )}
               </div>
@@ -171,17 +172,17 @@ export default function MYTLeadTracker() {
       <div className="glass-card p-3 md:p-5">
         <h3 className="flex items-center gap-1.5 text-[11px] uppercase tracking-wider font-semibold mb-3 text-danger"><XCircle className="h-3.5 w-3.5" /> Not Qualified</h3>
         <div className="space-y-2">
-          {unqualified.length === 0 && <p className="text-xs text-muted-foreground text-center py-4">All leads are qualified!</p>}
+          {!liveLoading && unqualified.length === 0 && <p className="text-xs text-muted-foreground text-center py-4">All leads are qualified!</p>}
           {unqualified.map(l => (
-            <div key={l.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-3 py-2.5 rounded-lg bg-surface-2/30">
+            <div key={l._id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-3 py-2.5 rounded-lg bg-surface-2/30">
               <div className="min-w-0">
                 <span className="font-medium text-foreground text-sm">{l.name}</span>
-                <span className="text-muted-foreground text-xs ml-2">{l.area} · ₹{l.budget.toLocaleString()}</span>
+                <span className="text-muted-foreground text-xs ml-2">{l.preferredArea} · ₹{l.budget.toLocaleString()}</span>
               </div>
               <div className="flex gap-1 flex-wrap">
                 {l.budget < 7000 && <span className="text-[10px] px-1.5 py-0.5 rounded bg-danger/10 text-danger">Low budget</span>}
-                {!l.dateConfirmed && <span className="text-[10px] px-1.5 py-0.5 rounded bg-warning/10 text-warning">No date</span>}
-                {!zones.some(z => z.area === l.area) && <span className="text-[10px] px-1.5 py-0.5 rounded bg-danger/10 text-danger">Area N/A</span>}
+                {!l.moveInDate && <span className="text-[10px] px-1.5 py-0.5 rounded bg-warning/10 text-warning">No move-in date</span>}
+                {!zones.some(z => z.area.toLowerCase() === (l.preferredArea ?? '').toLowerCase()) && <span className="text-[10px] px-1.5 py-0.5 rounded bg-danger/10 text-danger">Area N/A</span>}
               </div>
             </div>
           ))}
