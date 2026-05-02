@@ -1,16 +1,15 @@
 import { useAppState } from '@/myt/lib/app-context';
-import { zones, teamMembers } from '@/myt/lib/mock-data';
+import { zones } from '@/myt/lib/mock-data';
+import { useOrgMembers } from '@/hooks/useOrgDirectory';
 import { CalendarCheck, MapPin, User } from 'lucide-react';
 
 export function TopHeader() {
   const { tours, currentRole, currentMemberId, setCurrentMemberId, globalZoneFilter, setGlobalZoneFilter } = useAppState();
+  const { members } = useOrgMembers();
 
   const today = new Date().toISOString().split('T')[0];
   const todayTours = tours.filter(t => t.tourDate === today);
-  const relevantMembers = teamMembers.filter(m => {
-    if (currentRole === 'hr') return false;
-    return currentRole === 'flow-ops' ? m.role === 'flow-ops' : m.role === 'tcm';
-  });
+  const relevantMembers = currentRole === 'hr' ? [] : members;
 
   const selectClass = "h-8 bg-surface-2 border border-border rounded-md px-2 text-xs text-foreground";
 

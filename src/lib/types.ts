@@ -79,7 +79,7 @@ export interface PostTourUpdate {
 export interface Tour {
   id: string;
   leadId: string;
-  propertyId: string;
+  propertyId?: string;
   tcmId: string;
   scheduledAt: string;
   status: TourStatus;

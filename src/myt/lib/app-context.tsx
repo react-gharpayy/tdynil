@@ -1,7 +1,8 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Tour, Role, Lead, Booking, Room, RoomBlock, Property } from './types';
-import { tours as initialTours, initialLeads, initialBookings } from './mock-data';
-import { rooms as initialRooms, initialBlocks } from './properties-seed';
+import { tours as initialTours, initialLeads, initialBookings, setZones } from './mock-data';
+import { generateRooms, generateInitialBlocks } from './properties-seed';
+import { api } from '@/lib/api/client';
 
 interface AppState {
   tours: Tour[];
@@ -33,13 +34,31 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [tours, setTours] = useState<Tour[]>(initialTours);
   const [leads, setLeads] = useState<Lead[]>(initialLeads);
   const [bookings, setBookings] = useState<Booking[]>(initialBookings);
-  const [rooms, setRooms] = useState<Room[]>(initialRooms);
-  const [blocks, setBlocks] = useState<RoomBlock[]>(initialBlocks);
+  const [rooms, setRooms] = useState<Room[]>([]);
+  const [blocks, setBlocks] = useState<RoomBlock[]>([]);
   const [managedProperties, setManagedProperties] = useState<Property[]>([]);
   const [managedRooms, setManagedRooms] = useState<Room[]>([]);
   const [currentRole, setCurrentRole] = useState<Role>('hr');
   const [currentMemberId, setCurrentMemberId] = useState<string | null>(null);
   const [globalZoneFilter, setGlobalZoneFilter] = useState<string | null>(null);
+
+  // Fetch real zones from the API on mount and generate rooms/blocks
+  useEffect(() => {
+    void (async () => {
+      try {
+        const realZones = await api.zones.list();
+        setZones(realZones as any[]);
+        // Now regenerate rooms and blocks with the real zones
+        setRooms(generateRooms());
+        setBlocks(generateInitialBlocks());
+      } catch (e) {
+        console.warn('[AppProvider] Failed to fetch zones from API:', (e as Error).message);
+        // Set empty rooms/blocks if zones couldn't be fetched
+        setRooms([]);
+        setBlocks([]);
+      }
+    })();
+  }, []);
 
   return (
     <AppContext.Provider value={{

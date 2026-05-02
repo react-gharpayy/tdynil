@@ -11,6 +11,7 @@ import {
 } from "@/lib/notifications";
 import type { Role } from "@/lib/types";
 import { useApp } from "@/lib/store";
+import { useAppState } from "@/myt/lib/app-context";
 
 const sevDot: Record<NotifSeverity, string> = {
   info: "bg-info",
@@ -58,12 +59,14 @@ export function NotificationCenter({ role }: { role: Role }) {
   }, [open]);
 
   const currentTcmId = useApp((s) => s.currentTcmId);
-  const unread = useUnreadCount(role, role === "tcm" ? currentTcmId : undefined);
+  const { currentMemberId } = useAppState();
+  const recipientId = currentMemberId ?? (role === "tcm" ? currentTcmId : undefined);
+  const unread = useUnreadCount(role, recipientId);
   const items = useNotifications((s) => s.items);
   const markAllRead = useNotifications((s) => s.markAllRead);
   const markRead = useNotifications((s) => s.markRead);
 
-  const myId = role === "tcm" ? currentTcmId : undefined;
+  const myId = recipientId;
   const visible: AppNotification[] = items.filter(
     (n) =>
       (n.audience.length === 0 || n.audience.includes(role)) &&
@@ -81,7 +84,7 @@ export function NotificationCenter({ role }: { role: Role }) {
       >
         <Bell className="h-4 w-4 text-muted-foreground" />
         {unread > 0 && (
-          <span className="absolute -top-0.5 -right-0.5 min-w-[16px] h-[16px] px-1 rounded-full bg-destructive text-destructive-foreground text-[9px] font-mono font-semibold flex items-center justify-center ring-2 ring-background">
+          <span className="absolute -top-0.5 -right-0.5 min-w-4 h-4 px-1 rounded-full bg-destructive text-destructive-foreground text-[9px] font-mono font-semibold flex items-center justify-center ring-2 ring-background">
             {unread > 9 ? "9+" : unread}
           </span>
         )}
@@ -89,7 +92,7 @@ export function NotificationCenter({ role }: { role: Role }) {
 
       {open && (
         <div
-          className="absolute right-0 mt-2 w-[360px] max-w-[92vw] rounded-lg border border-border bg-popover text-popover-foreground shadow-2xl z-50"
+          className="absolute right-0 mt-2 w-90 max-w-[92vw] rounded-lg border border-border bg-popover text-popover-foreground shadow-2xl z-50"
           role="dialog"
           aria-label="Notifications"
         >
@@ -105,7 +108,7 @@ export function NotificationCenter({ role }: { role: Role }) {
             </div>
             <button
               type="button"
-              onClick={() => markAllRead(role, role === "tcm" ? currentTcmId : undefined)}
+              onClick={() => markAllRead(role, recipientId)}
               disabled={unread === 0}
               className="text-[11px] text-muted-foreground hover:text-foreground disabled:opacity-40 inline-flex items-center gap-1"
             >
@@ -113,7 +116,7 @@ export function NotificationCenter({ role }: { role: Role }) {
             </button>
           </div>
 
-          <div className="max-h-[420px] overflow-y-auto scrollbar-thin">
+          <div className="max-h-105 overflow-y-auto scrollbar-thin">
             {visible.length === 0 ? (
               <div className="px-4 py-10 text-center text-xs text-muted-foreground">
                 <Inbox className="h-6 w-6 mx-auto mb-2 opacity-50" />

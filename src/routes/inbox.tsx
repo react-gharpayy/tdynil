@@ -11,16 +11,19 @@ import { activePersona, PERSONA_BY_ID } from "@/lib/personas";
 import { cn } from "@/lib/utils";
 import { formatDistanceToNow } from "date-fns";
 import { HRBroadcastComposer } from "@/components/HRBroadcastComposer";
+import { useAppState } from "@/myt/lib/app-context";
 
 export const Route = createFileRoute("/inbox")({
   component: InboxPage,
 });
 
-type Tab = "all" | "todo" | "calendar" | "email" | "broadcasts";
+type Tab = "all" | "todo" | "calendar" | "email" | "broadcasts" | "tours";
 
 function InboxPage() {
   const role = useApp((s) => s.role);
   const currentTcmId = useApp((s) => s.currentTcmId);
+  const { currentMemberId } = useAppState();
+  const recipientId = currentMemberId ?? (role === "tcm" ? currentTcmId : undefined);
   const me = activePersona(role, role === "tcm" ? currentTcmId : undefined);
 
   const items = useNotifications((s) => s.items);
@@ -28,12 +31,13 @@ function InboxPage() {
   const markAllRead = useNotifications((s) => s.markAllRead);
   const toggleTodoDone = useNotifications((s) => s.toggleTodoDone);
 
-  const inbox = useMemo(() => selectInboxFor(items, role, me.id), [items, role, me.id]);
+  const inbox = useMemo(() => selectInboxFor(items, role, recipientId), [items, role, recipientId]);
   const [tab, setTab] = useState<Tab>("all");
 
   const filtered = useMemo(() => {
     if (tab === "all") return inbox;
     if (tab === "broadcasts") return inbox.filter((n) => n.kind === "broadcast");
+    if (tab === "tours") return inbox.filter((n) => n.kind === "tour.scheduled");
     if (tab === "todo") return inbox.filter((n) => n.channels?.includes("todo"));
     if (tab === "calendar") return inbox.filter((n) => n.channels?.includes("calendar"));
     if (tab === "email") return inbox.filter((n) => n.emailQueued);
@@ -43,6 +47,7 @@ function InboxPage() {
   const counts = {
     all: inbox.length,
     broadcasts: inbox.filter((n) => n.kind === "broadcast").length,
+    tours: inbox.filter((n) => n.kind === "tour.scheduled").length,
     todo: inbox.filter((n) => n.channels?.includes("todo") && !n.todoDone).length,
     calendar: inbox.filter((n) => n.channels?.includes("calendar")).length,
     email: inbox.filter((n) => n.emailQueued).length,
@@ -70,7 +75,7 @@ function InboxPage() {
           </div>
           <Button
             size="sm" variant="outline"
-            onClick={() => markAllRead(role, me.id)}
+            onClick={() => markAllRead(role, recipientId)}
             disabled={unread === 0}
           >
             <CheckCircle2 className="h-3.5 w-3.5 mr-1.5" />
@@ -86,6 +91,7 @@ function InboxPage() {
           {([
             ["all", "All", InboxIcon, counts.all],
             ["broadcasts", "From HR", Send, counts.broadcasts],
+            ["tours", "Tours", Bell, counts.tours],
             ["todo", "Todo", ListTodo, counts.todo],
             ["calendar", "Calendar", CalendarDays, counts.calendar],
             ["email", "Email", Mail, counts.email],

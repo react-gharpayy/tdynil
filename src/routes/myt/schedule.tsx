@@ -3,6 +3,6 @@ import { AppShell } from "@/components/AppShell";
 import ScheduleTour from "@/myt/pages/ScheduleTour";
 
 export const Route = createFileRoute("/myt/schedule")({
-  head: () => ({ meta: [{ title: "Schedule Tour — MYT" }] }),
+  head: () => ({ meta: [{ title: "Scheduled Tours — MYT" }] }),
   component: () => <AppShell><ScheduleTour /></AppShell>,
 });

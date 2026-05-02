@@ -1,5 +1,5 @@
 import type { OwnerProfile, OwnerRoomStatus, OwnerRoomMedia, OwnerBlockRequest, OwnerInsightDaily, OwnerObjection } from './types';
-import { rooms as mytRooms } from '@/myt/lib/properties-seed';
+import { generateRooms } from '@/myt/lib/properties-seed';
 import { todayKey } from './compliance';
 
 const now = new Date();
@@ -31,7 +31,9 @@ function ownerForProperty(propertyId: string, fallbackIndex: number): string {
   return ownerIdsRR[n % ownerIdsRR.length];
 }
 
-export const seedRoomStatuses: OwnerRoomStatus[] = (mytRooms || []).map((r, idx) => {
+function generateSeedRoomStatuses(): OwnerRoomStatus[] {
+  const mytRooms = generateRooms();
+  return (mytRooms || []).map((r, idx) => {
   const ownerId = ownerForProperty(r.propertyId, idx);
   const free = r.bedsTotal - r.bedsOccupied;
   const kind: OwnerRoomStatus['kind'] = free === 0 ? 'occupied' : free === r.bedsTotal ? 'vacant' : 'occupied';
@@ -49,10 +51,14 @@ export const seedRoomStatuses: OwnerRoomStatus[] = (mytRooms || []).map((r, idx)
     isDedicated: idx % 4 === 0,
     views: ((idx * 13) % 60) + 2,
   };
-});
+  });
+}
 
-// Demand objections — what the market is saying about your supply
-export const seedObjections: OwnerObjection[] = seedRoomStatuses.slice(0, 8).map((r, i) => ({
+export const seedRoomStatuses: OwnerRoomStatus[] = generateSeedRoomStatuses();
+
+// Lazy-generate seed data after rooms are available
+export function generateSeedObjections(roomStatuses: OwnerRoomStatus[]): OwnerObjection[] {
+  return roomStatuses.slice(0, 8).map((r, i) => ({
   id: `obj-${i + 1}`,
   roomId: r.roomId,
   ownerId: r.ownerId,
@@ -60,9 +66,11 @@ export const seedObjections: OwnerObjection[] = seedRoomStatuses.slice(0, 8).map
   notes: i % 2 === 0 ? 'Asked for ₹1k less' : undefined,
   loggedAt: iso(-60 * (i + 1)),
   loggedBy: 'Anil (Sales)',
-}));
+  }));
+}
 
-export const seedMedia: OwnerRoomMedia[] = seedRoomStatuses
+export function generateSeedMedia(roomStatuses: OwnerRoomStatus[]): OwnerRoomMedia[] {
+  return roomStatuses
   .filter((r) => r.kind === 'vacant')
   .slice(0, 6)
   .map((r) => ({
@@ -72,13 +80,15 @@ export const seedMedia: OwnerRoomMedia[] = seedRoomStatuses
     videoUrl: 'https://example.com/room-video.mp4',
     uploadedAt: iso(-60 * 24 * 2),
     expiresAt: iso(60 * 24 * 5), // 5 days left
-  }));
+    }));
+}
 
-export const seedBlocks: OwnerBlockRequest[] = [
+export function generateSeedBlocks(roomStatuses: OwnerRoomStatus[]): OwnerBlockRequest[] {
+  return [
   {
     id: 'blk-1',
-    roomId: seedRoomStatuses[0]?.roomId ?? 'r-1',
-    propertyId: seedRoomStatuses[0]?.propertyId ?? 'p-koramangala-1',
+      roomId: roomStatuses[0]?.roomId ?? 'r-1',
+      propertyId: roomStatuses[0]?.propertyId ?? 'p-koramangala-1',
     ownerId: 'own-1',
     leadId: 'l-101',
     leadName: 'Priya Reddy',
@@ -87,8 +97,13 @@ export const seedBlocks: OwnerBlockRequest[] = [
     expiresAt: iso(7),
     state: 'pending',
   },
-];
+  ];
+}
 
+// Exported constants for compatibility (will be generated on first access)
+export const seedObjections: OwnerObjection[] = [];
+export const seedMedia: OwnerRoomMedia[] = [];
+export const seedBlocks: OwnerBlockRequest[] = [];
 export const seedInsights: OwnerInsightDaily[] = seedOwners.map((o) => ({
   ownerId: o.id,
   date: todayKey(now),

@@ -1,6 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useApp, getProperty, getTcm } from "@/lib/store";
+import { useAppState } from "@/myt/lib/app-context";
+import { Tour } from "@/myt/lib/types";
+import { useOrgMembers } from "@/hooks/useOrgDirectory";
+import { notifyTourScheduled } from "@/lib/notifications";
 import {
   Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription,
 } from "@/components/ui/sheet";
@@ -80,6 +84,8 @@ export function LeadControlPanel() {
     addNote, logCall, sendMessage, autoAssignLead, startSequence, closeDeal,
     markHandoffsRead,
   } = useApp();
+  const { currentMemberId, setTours } = useAppState();
+  const { members: orgMembers } = useOrgMembers();
   const { settings } = useSettings();
 
   const lead = useMemo(() => leads.find((l) => l.id === selectedLeadId) ?? null, [leads, selectedLeadId]);
@@ -98,9 +104,11 @@ export function LeadControlPanel() {
     [activities, lead],
   );
 
+  const memberUsers = useMemo(() => orgMembers.filter(m => m.role === 'member' || m.role === 'tcm').sort((a, b) => a.name.localeCompare(b.name)), [orgMembers]);
+
   // Tour scheduling form state
-  const [propertyId, setPropertyId] = useState("");
   const [tcmId, setTcmId] = useState("");
+  const [propertyId, setPropertyId] = useState("");
   const [scheduledAt, setScheduledAt] = useState("");
   const [isSchedulingAnother, setIsSchedulingAnother] = useState(false);
   const [scheduleAnswers, setScheduleAnswers] = useState({
@@ -133,8 +141,8 @@ export function LeadControlPanel() {
 
   useEffect(() => {
     if (!lead) return;
+    setTcmId(upcomingTour?.tcmId ?? lead.assignedTcmId ?? currentMemberId ?? "");
     setPropertyId(upcomingTour?.propertyId ?? "");
-    setTcmId(upcomingTour?.tcmId ?? lead.assignedTcmId ?? "");
     setScheduledAt(upcomingTour ? toLocal(upcomingTour.scheduledAt) : "");
     setScheduleAnswers((answers) => ({
       ...answers,
@@ -149,22 +157,86 @@ export function LeadControlPanel() {
 
   if (!lead) return null;
 
-  const tcm = getTcm(lead.assignedTcmId);
+  const selectedMember = orgMembers.find((m) => m.id === lead.assignedTcmId) ?? null;
 
   const handleSchedule = () => {
-    if (!propertyId || !tcmId || !scheduledAt) {
-      toast.error("Property, TCM and time are required");
+    if (!tcmId || !scheduledAt) {
+      toast.error("Member and time are required");
       return;
     }
-    scheduleTour({ leadId: lead.id, propertyId, tcmId, scheduledAt: new Date(scheduledAt).toISOString() });
-    setPropertyId(""); setTcmId(""); setScheduledAt("");
+    const assignee = memberUsers.find((m) => m.id === tcmId) ?? null;
+    const scheduler = currentMemberId ? (orgMembers.find((m) => m.id === currentMemberId) ?? null) : null;
+    const tour = scheduleTour({ leadId: lead.id, propertyId: propertyId || undefined, tcmId, scheduledAt: new Date(scheduledAt).toISOString() });
+
+    // Also create MYT tour for the schedule page
+    const scheduledDateTime = new Date(scheduledAt);
+    const mytTour = {
+      id: tour.id,
+      leadName: lead.name,
+      phone: lead.phone || "",
+      assignedTo: tcmId,
+      assignedToName: assignee?.name ?? "Member",
+      propertyName: propertyId ? properties.find(p => p.id === propertyId)?.name ?? "Property Tour" : "Property Tour",
+      propertyId: propertyId || undefined,
+      area: lead.preferredArea || "",
+      zoneId: "", // Will be determined by area
+      tourDate: scheduledDateTime.toISOString().split('T')[0],
+      tourTime: scheduledDateTime.toTimeString().split(' ')[0].substring(0, 5),
+      bookingSource: "whatsapp" as const,
+      scheduledBy: scheduler?.id ?? currentMemberId ?? tcmId,
+      scheduledByName: scheduler?.name ?? "You",
+      leadType: "future" as const,
+      status: "scheduled" as const,
+      showUp: null,
+      outcome: null,
+      remarks: "",
+      budget: lead.budget || 0,
+      createdAt: new Date().toISOString(),
+      tourType: "physical" as const,
+      intent: "medium" as const,
+      confidenceScore: 50,
+      confidenceReason: [],
+      confirmationStrength: "tentative" as const,
+      qualification: {
+        moveInDate: lead.moveInDate || "",
+        decisionMaker: "self" as const,
+        roomType: "Single",
+        budget: String(lead.budget || ""),
+        occupation: "",
+        workLocation: lead.preferredArea || "",
+        readyIn48h: false,
+        exploring: false,
+        comparing: false,
+        needsFamily: false,
+        willBookToday: "maybe" as const,
+        keyConcern: "",
+        tourType: "physical" as const,
+      },
+      tokenPaid: false,
+      whyLost: null,
+    };
+    setTours(prev => [mytTour, ...prev]);
+
+    notifyTourScheduled({
+      tourId: tour.id,
+      leadName: lead.name,
+      senderId: scheduler?.id ?? tcmId,
+      senderName: scheduler?.name ?? selectedMember?.name ?? "You",
+      recipientIds: [
+        { id: tcmId, name: assignee?.name ?? selectedMember?.name ?? "Member" },
+        ...(scheduler?.id && scheduler.id !== tcmId ? [{ id: scheduler.id, name: scheduler.name }] : []),
+      ],
+    });
+    setTcmId("");
+    setPropertyId("");
+    setScheduledAt("");
     setIsSchedulingAnother(false);
     toast.success("Tour scheduled");
   };
 
   const startAnotherTour = () => {
+    setTcmId(lead.assignedTcmId ?? currentMemberId ?? "");
     setPropertyId("");
-    setTcmId(lead.assignedTcmId ?? "");
     setScheduledAt("");
     setIsSchedulingAnother(true);
     setTab("tour");
@@ -172,7 +244,7 @@ export function LeadControlPanel() {
 
   return (
     <Sheet open={!!selectedLeadId} onOpenChange={(o) => !o && selectLead(null)}>
-      <SheetContent side="right" className="w-full sm:max-w-[560px] p-0 flex flex-col">
+      <SheetContent side="right" className="w-full p-0 flex flex-col" style={{ maxWidth: 560 }}>
         {/* Header block */}
         <SheetHeader className="px-5 py-4 border-b border-border space-y-2">
           <div className="flex items-start justify-between gap-3">
@@ -307,7 +379,7 @@ export function LeadControlPanel() {
                   </Button>
                 </div>
                 <div className="text-[11px] text-muted-foreground">
-                  Currently with <span className="text-foreground font-medium">{tcm?.name ?? "—"}</span> · {tcm?.zone ?? "—"} · {Math.round((tcm?.conversionRate ?? 0) * 100)}% conv
+                  Currently with <span className="text-foreground font-medium">{selectedMember?.name ?? "—"}</span>
                 </div>
               </Section>
 
@@ -510,7 +582,7 @@ export function LeadControlPanel() {
                 <InlineScheduleTour
                   lead={lead}
                   properties={properties}
-                  tcms={tcms}
+                  tcms={memberUsers}
                   propertyId={propertyId}
                   tcmId={tcmId}
                   scheduledAt={scheduledAt}
@@ -792,7 +864,12 @@ function Meta({ icon: Icon, label, value }: { icon: typeof CalendarIcon; label: 
 }
 
 function UpcomingTourCard({
-  tour, scheduledAt, onScheduledAtChange, onReschedule, onCancel, onComplete,
+  tour,
+  scheduledAt,
+  onScheduledAtChange,
+  onReschedule,
+  onCancel,
+  onComplete,
 }: {
   tour: import("@/lib/types").Tour;
   scheduledAt: string;
@@ -807,36 +884,52 @@ function UpcomingTourCard({
   return (
     <div className="rounded-lg border border-accent/30 bg-accent/5 p-3 space-y-2">
       <div className="flex items-center justify-between">
-        <div className="font-display font-semibold text-sm">{prop?.name}</div>
+        <div className="font-display font-semibold text-sm">{prop?.name ?? "Property TBD"}</div>
         <Badge className="bg-accent text-accent-foreground capitalize">{tour.status}</Badge>
       </div>
       <div className="text-xs text-muted-foreground">
-        {format(new Date(tour.scheduledAt), "EEE, MMM d · p")} · {tcm?.name}
+        {format(new Date(tour.scheduledAt), "EEE, MMM d · p")}{tcm?.name ? ` · ${tcm.name}` : ""}
       </div>
       <div className="grid gap-2 sm:grid-cols-[1fr_auto]">
         <Input
           type="datetime-local"
           value={scheduledAt}
           onChange={(e) => onScheduledAtChange(e.target.value)}
-          className="h-8 text-xs"
+          className="h-9 text-sm"
         />
-        <Button size="sm" variant="outline" onClick={onReschedule}>Reschedule</Button>
+        <Button size="sm" onClick={onReschedule} className="gap-1.5">
+          <CalendarIcon className="h-3.5 w-3.5" /> Reschedule
+        </Button>
       </div>
-      <div className="flex gap-2 pt-1">
-        <Button size="sm" variant="outline" className="flex-1" onClick={onCancel}>Cancel</Button>
-        <Button size="sm" className="flex-1" onClick={onComplete}>Mark complete</Button>
+      <div className="flex gap-2">
+        <Button variant="outline" size="sm" className="flex-1" onClick={onCancel}>
+          Cancel
+        </Button>
+        <Button variant="default" size="sm" className="flex-1" onClick={onComplete}>
+          <CheckCircle2 className="h-3.5 w-3.5 mr-1.5" /> Complete
+        </Button>
       </div>
     </div>
   );
 }
 
 function InlineScheduleTour({
-  lead, properties, tcms, propertyId, tcmId, scheduledAt, answers, onAnswersChange,
-  onPropertyChange, onTcmChange, onScheduledAtChange, onSchedule,
+  lead,
+  properties,
+  tcms,
+  propertyId,
+  tcmId,
+  scheduledAt,
+  answers,
+  onAnswersChange,
+  onPropertyChange,
+  onTcmChange,
+  onScheduledAtChange,
+  onSchedule,
 }: {
   lead: Lead;
-  properties: import("@/lib/types").Property[];
-  tcms: import("@/lib/types").TCM[];
+  properties: any[];
+  tcms: any[];
   propertyId: string;
   tcmId: string;
   scheduledAt: string;
@@ -850,45 +943,160 @@ function InlineScheduleTour({
   return (
     <Section title="Schedule Tour in drawer">
       <div className="rounded-lg border border-border bg-card p-3 space-y-3">
-        <div className="text-xs text-muted-foreground">Lead is already known: <span className="font-medium text-foreground">{lead.name}</span>. Add any property Tour without re-entering phone or QuickAD answers.</div>
+        <div className="text-xs text-muted-foreground">
+          Lead is already known: <span className="font-medium text-foreground">{lead.name}</span>. Fill the tour details below and assign it to any CRM member.
+        </div>
         <div className="grid grid-cols-3 gap-2 text-[11px]">
-          <div className="rounded-md bg-muted/60 px-2 py-1.5"><span className="block text-muted-foreground">Phone</span><span className="font-medium text-foreground">{lead.phone}</span></div>
-          <div className="rounded-md bg-muted/60 px-2 py-1.5"><span className="block text-muted-foreground">Budget</span><span className="font-medium text-foreground">₹{(lead.budget / 1000).toFixed(0)}k</span></div>
-          <div className="rounded-md bg-muted/60 px-2 py-1.5"><span className="block text-muted-foreground">Area</span><span className="font-medium text-foreground">{lead.preferredArea}</span></div>
+          <div className="rounded-md bg-muted/60 px-2 py-1.5">
+            <span className="block text-muted-foreground">Phone</span>
+            <span className="font-medium text-foreground">{lead.phone}</span>
+          </div>
+          <div className="rounded-md bg-muted/60 px-2 py-1.5">
+            <span className="block text-muted-foreground">Budget</span>
+            <span className="font-medium text-foreground">₹{(lead.budget / 1000).toFixed(0)}k</span>
+          </div>
+          <div className="rounded-md bg-muted/60 px-2 py-1.5">
+            <span className="block text-muted-foreground">Area</span>
+            <span className="font-medium text-foreground">{lead.preferredArea}</span>
+          </div>
         </div>
         <div className="rounded-md border border-border bg-background/60 p-2 space-y-2">
-          <div className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">MYT Schedule questions</div>
-          <div className="grid gap-2 sm:grid-cols-2">
-            <Field label="Source"><Select value={answers.bookingSource} onValueChange={(v) => onAnswersChange({ bookingSource: v })}><SelectTrigger className="h-8 text-xs"><SelectValue /></SelectTrigger><SelectContent>{BOOKING_SOURCES.map((s) => <SelectItem key={s} value={s} className="capitalize">{s}</SelectItem>)}</SelectContent></Select></Field>
-            <Field label="Decision maker"><Select value={answers.decisionMaker} onValueChange={(v) => onAnswersChange({ decisionMaker: v })}><SelectTrigger className="h-8 text-xs"><SelectValue /></SelectTrigger><SelectContent>{DECISION_MAKERS.map((s) => <SelectItem key={s} value={s} className="capitalize">{s}</SelectItem>)}</SelectContent></Select></Field>
-            <Field label="Move-in"><Input type="date" value={answers.moveInDate} onChange={(e) => onAnswersChange({ moveInDate: e.target.value })} className="h-8 text-xs" /></Field>
-            <Field label="Budget"><Input type="number" value={answers.budget} onChange={(e) => onAnswersChange({ budget: e.target.value })} className="h-8 text-xs" /></Field>
-            <Field label="Work / College"><Input value={answers.occupation} onChange={(e) => onAnswersChange({ occupation: e.target.value })} className="h-8 text-xs" /></Field>
-            <Field label="Work location"><Input value={answers.workLocation} onChange={(e) => onAnswersChange({ workLocation: e.target.value })} className="h-8 text-xs" /></Field>
+          <div className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+            MYT Schedule questions
           </div>
-          <Field label="Room type"><Select value={answers.roomType} onValueChange={(v) => onAnswersChange({ roomType: v })}><SelectTrigger className="h-8 text-xs"><SelectValue /></SelectTrigger><SelectContent>{ROOM_TYPES.map((r) => <SelectItem key={r} value={r}>{r}</SelectItem>)}</SelectContent></Select></Field>
+          <div className="grid gap-2 sm:grid-cols-2">
+            <Field label="Source">
+              <Select value={answers.bookingSource} onValueChange={(v) => onAnswersChange({ bookingSource: v })}>
+                <SelectTrigger className="h-8 text-xs">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {BOOKING_SOURCES.map((s) => (
+                    <SelectItem key={s} value={s} className="capitalize">
+                      {s}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </Field>
+            <Field label="Decision maker">
+              <Select value={answers.decisionMaker} onValueChange={(v) => onAnswersChange({ decisionMaker: v })}>
+                <SelectTrigger className="h-8 text-xs">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {DECISION_MAKERS.map((s) => (
+                    <SelectItem key={s} value={s} className="capitalize">
+                      {s}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </Field>
+            <Field label="Move-in">
+              <Input
+                type="date"
+                value={answers.moveInDate}
+                onChange={(e) => onAnswersChange({ moveInDate: e.target.value })}
+                className="h-8 text-xs"
+              />
+            </Field>
+            <Field label="Budget">
+              <Input
+                type="number"
+                value={answers.budget}
+                onChange={(e) => onAnswersChange({ budget: e.target.value })}
+                className="h-8 text-xs"
+              />
+            </Field>
+            <Field label="Work / College">
+              <Input
+                value={answers.occupation}
+                onChange={(e) => onAnswersChange({ occupation: e.target.value })}
+                className="h-8 text-xs"
+              />
+            </Field>
+            <Field label="Work location">
+              <Input
+                value={answers.workLocation}
+                onChange={(e) => onAnswersChange({ workLocation: e.target.value })}
+                className="h-8 text-xs"
+              />
+            </Field>
+          </div>
+          <Field label="Room type">
+            <Select value={answers.roomType} onValueChange={(v) => onAnswersChange({ roomType: v })}>
+              <SelectTrigger className="h-8 text-xs">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {ROOM_TYPES.map((r) => (
+                  <SelectItem key={r} value={r}>
+                    {r}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </Field>
           <div className="grid gap-1.5">
-            {([
-              ["readyIn48h", "Ready to finalize within 48 hours"],
-              ["exploring", "Only exploring"],
-              ["comparing", "Comparing options"],
-              ["needsFamily", "Needs family approval"],
-            ] as const).map(([key, label]) => (
-              <label key={key} className="flex items-center gap-2 rounded-md border border-border bg-surface-2/40 px-2 py-1.5 text-xs">
-                <Checkbox checked={answers[key]} onCheckedChange={(v) => onAnswersChange({ [key]: v === true })} />
+            {(
+              [
+                ["readyIn48h", "Ready to finalize within 48 hours"],
+                ["exploring", "Only exploring"],
+                ["comparing", "Comparing options"],
+                ["needsFamily", "Needs family approval"],
+              ] as const
+            ).map(([key, label]) => (
+              <label
+                key={key}
+                className="flex items-center gap-2 rounded-md border border-border bg-surface-2/40 px-2 py-1.5 text-xs"
+              >
+                <Checkbox
+                  checked={answers[key]}
+                  onCheckedChange={(v) => onAnswersChange({ [key]: v === true })}
+                />
                 <span>{label}</span>
               </label>
             ))}
           </div>
-          <Field label="Will book today"><Select value={answers.willBookToday} onValueChange={(v) => onAnswersChange({ willBookToday: v })}><SelectTrigger className="h-8 text-xs"><SelectValue /></SelectTrigger><SelectContent>{["yes", "maybe", "no"].map((s) => <SelectItem key={s} value={s} className="capitalize">{s}</SelectItem>)}</SelectContent></Select></Field>
-          <Field label="Key concern"><Input value={answers.keyConcern} onChange={(e) => onAnswersChange({ keyConcern: e.target.value })} className="h-8 text-xs" /></Field>
+          <Field label="Will book today">
+            <Select value={answers.willBookToday} onValueChange={(v) => onAnswersChange({ willBookToday: v })}>
+              <SelectTrigger className="h-8 text-xs">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {["yes", "maybe", "no"].map((s) => (
+                  <SelectItem key={s} value={s} className="capitalize">
+                    {s}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </Field>
+          <Field label="Key concern">
+            <Input
+              value={answers.keyConcern}
+              onChange={(e) => onAnswersChange({ keyConcern: e.target.value })}
+              className="h-8 text-xs"
+            />
+          </Field>
         </div>
         <div>
           <Label className="text-[11px] uppercase tracking-wider text-muted-foreground">Tour Type</Label>
           <div className="mt-1 grid grid-cols-3 gap-2">
             {TOUR_TYPES.map(({ value, label, icon: Icon }) => (
-              <button key={value} type="button" onClick={() => onAnswersChange({ tourType: value })} className={`h-12 rounded-md border text-xs flex flex-col items-center justify-center gap-1 ${answers.tourType === value ? "border-primary bg-primary/10 text-primary" : "border-border bg-surface-2 text-muted-foreground"}`}>
-                <Icon className="h-3.5 w-3.5" />{label}
+              <button
+                key={value}
+                type="button"
+                onClick={() => onAnswersChange({ tourType: value })}
+                className={`h-12 rounded-md border text-xs flex flex-col items-center justify-center gap-1 ${
+                  answers.tourType === value
+                    ? "border-primary bg-primary/10 text-primary"
+                    : "border-border bg-surface-2 text-muted-foreground"
+                }`}
+              >
+                <Icon className="h-3.5 w-3.5" />
+                {label}
               </button>
             ))}
           </div>
@@ -897,21 +1105,44 @@ function InlineScheduleTour({
           <div>
             <Label className="text-[11px] uppercase tracking-wider text-muted-foreground">Property</Label>
             <Select value={propertyId} onValueChange={onPropertyChange}>
-              <SelectTrigger className="h-9 text-sm"><SelectValue placeholder="Select property" /></SelectTrigger>
-              <SelectContent>{properties.map((p) => <SelectItem key={p.id} value={p.id}>{p.name} · {p.area}</SelectItem>)}</SelectContent>
+              <SelectTrigger className="h-9 text-sm">
+                <SelectValue placeholder="Select Property" />
+              </SelectTrigger>
+              <SelectContent>
+                {properties.map((p) => (
+                  <SelectItem key={p.id} value={p.id}>
+                    {p.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
             </Select>
           </div>
           <div>
             <Label className="text-[11px] uppercase tracking-wider text-muted-foreground">TCM</Label>
             <Select value={tcmId} onValueChange={onTcmChange}>
-              <SelectTrigger className="h-9 text-sm"><SelectValue placeholder="Select TCM" /></SelectTrigger>
-              <SelectContent>{tcms.map((t) => <SelectItem key={t.id} value={t.id}>{t.name} · {t.zone}</SelectItem>)}</SelectContent>
+              <SelectTrigger className="h-9 text-sm">
+                <SelectValue placeholder="Select TCM" />
+              </SelectTrigger>
+              <SelectContent>
+                {tcms.map((t) => (
+                  <SelectItem key={t.id} value={t.id}>
+                    {t.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
             </Select>
           </div>
         </div>
         <div className="grid gap-2 sm:grid-cols-[1fr_auto]">
-          <Input type="datetime-local" value={scheduledAt} onChange={(e) => onScheduledAtChange(e.target.value)} className="h-9 text-sm" />
-          <Button size="sm" onClick={onSchedule} className="gap-1.5"><CalendarIcon className="h-3.5 w-3.5" /> Schedule Tour</Button>
+          <Input
+            type="datetime-local"
+            value={scheduledAt}
+            onChange={(e) => onScheduledAtChange(e.target.value)}
+            className="h-9 text-sm"
+          />
+          <Button size="sm" onClick={onSchedule} className="gap-1.5">
+            <CalendarIcon className="h-3.5 w-3.5" /> Schedule Tour
+          </Button>
         </div>
       </div>
     </Section>

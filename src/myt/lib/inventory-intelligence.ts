@@ -3,6 +3,7 @@ import { PGS } from '@/supply-hub/data/pgs';
 import { DISTANCE } from '@/supply-hub/data/areas';
 import { matchLead, type Lead as SupplyLead } from '@/supply-hub/lib/matcher';
 import type { Booking, Lead, Room, RoomBlock, Tour } from './types';
+import type { Zone } from './types';
 import type { PG } from '@/supply-hub/data/types';
 import { normalizeRoomForSupply } from '@/lib/quickad-shared';
 
@@ -42,10 +43,20 @@ export interface AreaOperatingRow {
 
 export function detectAreaZone(areaText: string) {
   const text = norm(areaText);
-  const exact = zones.find((z) => z.areas.some(a => text.includes(norm(a)) || norm(a).includes(text)));
+  const safeZones = zones.filter((z): z is Zone => !!z && typeof z.id === 'string');
+  const fallbackZone: Zone = {
+    id: 'unassigned',
+    name: areaText || 'Unassigned',
+    city: '',
+    areas: areaText ? [areaText] : [],
+    color: '',
+  };
+  if (safeZones.length === 0) return fallbackZone;
+
+  const exact = safeZones.find((z) => z.areas.some((a) => text.includes(norm(a)) || norm(a).includes(text)));
   if (exact) return exact;
   const pg = PGS.find((p) => text.includes(norm(p.area)) || norm(p.area).includes(text) || norm(p.locality).includes(text));
-  return zones.find((z) => z.areas.some(a => norm(a) === norm(pg?.area ?? ''))) ?? zones[0];
+  return safeZones.find((z) => z.areas.some((a) => norm(a) === norm(pg?.area ?? ''))) ?? safeZones[0] ?? fallbackZone;
 }
 
 export const supplyHubProperties = PGS.map((pg) => ({

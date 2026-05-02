@@ -1,6 +1,12 @@
 import { Zone, TeamMember, Tour, HeatmapData, Lead, Booking, DateRange } from './types';
 
-export const zones: Zone[] = [];
+// Real zones will be fetched from the API by the app context
+export let zones: Zone[] = [];
+
+export function setZones(newZones: Zone[]) {
+  zones = newZones;
+}
+
 export const teamMembers: TeamMember[] = [];
 export const tours: Tour[] = [];
 export const initialLeads: Lead[] = [];

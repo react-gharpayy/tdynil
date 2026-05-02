@@ -1,569 +1,401 @@
-import { useEffect, useMemo, useState } from 'react';
-import { useAppState } from '@/myt/lib/app-context';
-import { useApp } from '@/lib/store';
-import { useOrgZones, useOrgMembers, useOrgProperties } from '@/hooks/useOrgDirectory';
-import { Tour, BookingSource, TourType, WillBookToday, DecisionMaker, TourQualification } from '@/myt/lib/types';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Badge } from '@/components/ui/badge';
-import { Checkbox } from '@/components/ui/checkbox';
-import { toast } from 'sonner';
-import { scoreTour, inferConfirmationStrength, intentBg } from '@/myt/lib/confidence';
-import { autoAssignTcm } from '@/myt/lib/auto-assign';
-import { createBlockForTour } from '@/myt/lib/blocks';
-import { ConfidenceBar } from '@/myt/components/ConfidenceBar';
-import { SlotPicker, getTakenSlotsForDate } from '@/myt/components/SlotPicker';
-import { Building2, Video, Briefcase, Sparkles, Bug, MapPin, CheckCircle2, AlertTriangle } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { sendTourMessage, logTourEvent } from '@/myt/lib/tour-messages';
-import { useLocation } from '@/shims/react-router-dom';
-import { useIdentityStore } from '@/lib/lead-identity/store';
-import { availableBedsForProperty, bestInventoryFits, detectAreaZone } from '@/myt/lib/inventory-intelligence';
-import type { InventoryFit } from '@/myt/lib/inventory-intelligence';
-import { QUICKAD_QUESTIONS, normalizeRoomForTour, parseBudgetAmount } from '@/lib/quickad-shared';
+import { type ReactNode, useMemo, useState } from "react";
+import { CalendarDays, CheckCircle2, Clock3, Eye, FileText, MapPin, MessageSquare, PencilLine, UserRound } from "lucide-react";
+import { useApp } from "@/lib/store";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { cn } from "@/lib/utils";
+import { useAppState } from "@/myt/lib/app-context";
+import type { Tour, TourOutcome, TourStatus } from "@/myt/lib/types";
 
-const todayStr = () => new Date().toISOString().split('T')[0];
-const in7days = () => { const d = new Date(); d.setDate(d.getDate() + 7); return d.toISOString().split('T')[0]; };
-const roomTypes = ['Single', 'Double Sharing', 'Triple Sharing', 'Studio'];
+type FilterTab = "all" | "assigned" | "scheduled";
 
-interface ScheduleTourProps {
-  onScheduled?: () => void;
-}
+const STATUS_OPTIONS: TourStatus[] = ["scheduled", "confirmed", "completed", "no-show", "cancelled"];
+const OUTCOME_OPTIONS: Array<{ value: TourOutcome; label: string }> = [
+  { value: null, label: "No outcome yet" },
+  { value: "booked", label: "Booked" },
+  { value: "token-paid", label: "Token paid" },
+  { value: "draft", label: "Draft" },
+  { value: "follow-up", label: "Follow-up" },
+  { value: "rejected", label: "Rejected" },
+  { value: "not-interested", label: "Not interested" },
+];
 
-export default function ScheduleTour({ onScheduled }: ScheduleTourProps = {}) {
-  const { tours, setTours, rooms, blocks, setBlocks, leads, setLeads } = useAppState();
-  const { role, currentTcmId, tcms: storeTcms } = useApp();
-  const location = useLocation();
-  const setLifecycleState = useIdentityStore((s) => s.setLifecycleState);
-  const currentTcmName = storeTcms.find((t) => t.id === currentTcmId)?.name;
-  const routeState = useMemo(() => location.state as { lead?: Record<string, unknown>; pastedLead?: Record<string, unknown>; inventoryFit?: InventoryFit } | null, [location.state]);
-  const incomingLead = routeState?.lead;
-  const pastedLead = routeState?.pastedLead;
-  const incomingFit = routeState?.inventoryFit;
+export default function ScheduleTour() {
+  const { tours, setTours, currentMemberId } = useAppState();
+  const { role, currentTcmId } = useApp();
+  const [tab, setTab] = useState<FilterTab>("all");
 
-  const { zones } = useOrgZones();
-  const { members: teamMembers } = useOrgMembers();
-  const { properties } = useOrgProperties();
+  const actorId = currentMemberId ?? (role === "tcm" ? currentTcmId : null);
 
-  const [step, setStep] = useState<1 | 2 | 3>(1);
-  const [form, setForm] = useState({
-    // customer
-    leadName: '', phone: '', bookingSource: 'whatsapp' as BookingSource,
-    // qualification
-    moveInDate: todayStr(),
-    budget: '12000',
-    workLocation: '',
-    occupation: '',
-    roomType: 'Single',
-    decisionMaker: 'self' as DecisionMaker,
-    // intent
-    readyIn48h: false,
-    exploring: false,
-    comparing: false,
-    needsFamily: false,
-    willBookToday: 'maybe' as WillBookToday,
-    keyConcern: '',
-    // tour
-    tourType: 'physical' as TourType,
-    zoneId: '',
-    propertyName: '',
-    tourDate: todayStr(),
-    tourTime: '',
-    assignedTo: '', // empty = auto
-  });
+  const visibleTours = useMemo(() => {
+    if (!actorId) return [];
+    const mine = tours.filter((tour) => tour.scheduledBy === actorId || tour.assignedTo === actorId);
+    const scoped = mine.filter((tour) => {
+      if (tab === "assigned") return tour.assignedTo === actorId;
+      if (tab === "scheduled") return tour.scheduledBy === actorId;
+      return true;
+    });
+    return [...scoped].sort((a, b) => {
+      const aTs = new Date(`${a.tourDate}T${a.tourTime || "00:00"}`).getTime();
+      const bTs = new Date(`${b.tourDate}T${b.tourTime || "00:00"}`).getTime();
+      return bTs - aTs;
+    });
+  }, [actorId, tab, tours]);
 
-  useEffect(() => {
-    if (zones.length > 0 && !form.zoneId) {
-      setForm(f => ({ ...f, zoneId: zones[0].id }));
-    }
-  }, [zones]);
+  const counts = useMemo(() => ({
+    all: actorId ? tours.filter((tour) => tour.scheduledBy === actorId || tour.assignedTo === actorId).length : 0,
+    assigned: actorId ? tours.filter((tour) => tour.assignedTo === actorId).length : 0,
+    scheduled: actorId ? tours.filter((tour) => tour.scheduledBy === actorId).length : 0,
+  }), [actorId, tours]);
 
-  // When the current user is a TCM, default-assign them as the host.
-  useEffect(() => {
-    if (role === 'tcm' && currentTcmName && !form.assignedTo) {
-      const match = teamMembers.find((m) => m.role === 'tcm' && m.name === currentTcmName);
-      if (match) setForm((f) => ({ ...f, assignedTo: match.id }));
-    }
-  }, [role, currentTcmName, form.assignedTo]);
-
-  useEffect(() => {
-    const stateLead = incomingLead;
-    if (!stateLead) return;
-    const leadName = String(stateLead.name ?? pastedLead?.name ?? '');
-    const phone = String(stateLead.phone ?? stateLead.phoneRaw ?? stateLead.phoneE164 ?? pastedLead?.phone ?? '');
-    const moveIn = String(pastedLead?.moveInDate ?? stateLead.moveInDate ?? '');
-    const budget = String(parseBudgetAmount(pastedLead?.budget ?? stateLead.budget) || 12000);
-    const area = String(pastedLead?.area ?? pastedLead?.location ?? pastedLead?.fullAddress ?? stateLead.area ?? stateLead.location ?? stateLead.fullAddress ?? '');
-    const room = String(pastedLead?.room ?? stateLead.room ?? stateLead.roomType ?? 'Single').toLowerCase();
-    const type = String(pastedLead?.type ?? stateLead.type ?? '');
-    const notes = String(pastedLead?.specialReqs ?? pastedLead?.extraContent ?? stateLead.notes ?? stateLead.extraContent ?? '');
-    setForm((f) => ({
-      ...f,
-      leadName: leadName || f.leadName,
-      phone: phone || f.phone,
-      moveInDate: /^\d{4}-\d{2}-\d{2}$/.test(moveIn) ? moveIn : f.moveInDate,
-      budget,
-      workLocation: area || f.workLocation,
-      occupation: type || f.occupation,
-      roomType: normalizeRoomForTour(room || f.roomType),
-      keyConcern: notes || f.keyConcern,
-      zoneId: incomingFit?.zoneId || f.zoneId,
-      propertyName: incomingFit?.propertyName || f.propertyName,
-      assignedTo: incomingFit ? '' : f.assignedTo,
-    }));
-  }, [incomingLead, pastedLead, incomingFit]);
-
-  const qualification: TourQualification = useMemo(() => ({
-    moveInDate: form.moveInDate,
-    decisionMaker: form.decisionMaker,
-    roomType: form.roomType,
-    occupation: form.occupation,
-    workLocation: form.workLocation,
-    willBookToday: form.willBookToday,
-    readyIn48h: form.readyIn48h,
-    exploring: form.exploring,
-    comparing: form.comparing,
-    needsFamily: form.needsFamily,
-    keyConcern: form.keyConcern,
-  }), [form]);
-
-  const { score, intent, reason } = useMemo(
-    () => scoreTour(qualification, parseInt(form.budget) || 0),
-    [qualification, form.budget]
-  );
-  const confirmationStrength = useMemo(() => inferConfirmationStrength(qualification), [qualification]);
-
-  const tcmsInZone = teamMembers.filter(m => m.role === 'tcm' && m.zones.includes(form.zoneId));
-  const effectiveTcm = form.assignedTo
-    ? teamMembers.find(m => m.id === form.assignedTo)
-    : autoAssignTcm(tours, form.zoneId, intent);
-
-  const takenSlots = useMemo(
-    () => effectiveTcm ? getTakenSlotsForDate(tours, effectiveTcm.id, form.tourDate) : new Set<string>(),
-    [tours, effectiveTcm, form.tourDate]
-  );
-
-  const canSubmit = form.leadName && form.phone && form.propertyName && form.tourTime && effectiveTcm;
-
-  const handleSubmit = () => {
-    if (!effectiveTcm) { toast.error('No TCM available'); return; }
-    if (!form.tourTime) { toast.error('Pick a slot'); return; }
-
-    const zone = zones.find(z => z.id === form.zoneId)!;
-    const newTour: Tour = {
-      id: `t${Date.now()}`,
-      leadName: form.leadName,
-      phone: form.phone,
-      assignedTo: effectiveTcm.id,
-      assignedToName: effectiveTcm.name,
-      propertyName: form.propertyName,
-      area: zone.areas[0] || '',
-      zoneId: form.zoneId,
-      tourDate: form.tourDate,
-      tourTime: form.tourTime,
-      bookingSource: form.bookingSource,
-      scheduledBy: 'm1',
-      scheduledByName: 'You',
-      leadType: intent === 'hard' ? 'urgent' : 'future',
-      status: 'scheduled',
-      showUp: null,
-      outcome: null,
-      remarks: '',
-      budget: parseInt(form.budget) || 0,
-      createdAt: new Date().toISOString(),
-      tourType: form.tourType,
-      intent,
-      confidenceScore: score,
-      confidenceReason: reason,
-      confirmationStrength,
-      qualification,
-      tokenPaid: false,
-      whyLost: null,
-    };
-    setTours(prev => [newTour, ...prev]);
-    const normalizedPhone = form.phone.replace(/\D/g, '').slice(-10);
-    setLeads(prev => prev.map((lead) => (
-      lead.phone.replace(/\D/g, '').slice(-10) === normalizedPhone
-        ? { ...lead, status: 'tour-scheduled' }
-        : lead
-    )));
-    const stateLead = (location.state as { lead?: Record<string, unknown> } | null)?.lead;
-    const ulid = typeof stateLead?.ulid === 'string' ? stateLead.ulid : null;
-    if (ulid) setLifecycleState(ulid, 'visit-scheduled');
-
-    // Auto room block based on intent
-    const matchingProp = properties.find(p => p.name === form.propertyName && p.zoneId === form.zoneId);
-    if (matchingProp) {
-      const tourWithProp = { ...newTour, propertyId: matchingProp.id };
-      const block = createBlockForTour(tourWithProp, rooms, blocks);
-      if (block) {
-        setBlocks(prev => [block, ...prev]);
-        toast.success(`${intent.toUpperCase()} tour → ${effectiveTcm.name} · Room held ${intent === 'hard' ? '4h' : '1h'}`);
-      } else {
-        toast.success(`${intent.toUpperCase()} tour assigned to ${effectiveTcm.name}`);
-      }
-    } else {
-      toast.success(`${intent.toUpperCase()} tour assigned to ${effectiveTcm.name}`);
-    }
-
-    // Log booking event + auto-send WhatsApp/in-app confirmation
-    logTourEvent(newTour.id, 'booked', `Booked by ${newTour.scheduledByName}`).catch(console.error);
-    sendTourMessage({
-      tour: newTour,
-      kind: 'confirmation',
-      channels: ['in_app', 'whatsapp'],
-    }).catch((e) => console.error('confirmation send failed', e));
-
-    setForm(f => ({ ...f, leadName: '', phone: '', propertyName: '', tourTime: '', keyConcern: '' }));
-    setStep(1);
-    onScheduled?.();
+  const updateTour = (tourId: string, updates: Partial<Tour>) => {
+    setTours((prev) => prev.map((tour) => (tour.id === tourId ? { ...tour, ...updates } : tour)));
   };
-
-  const select = "w-full h-10 bg-surface-2 border border-border rounded-md px-3 text-sm text-foreground";
-  const labelCls = "text-muted-foreground text-[11px] uppercase tracking-wide";
-  const debugAreaText = String(pastedLead?.area ?? pastedLead?.location ?? pastedLead?.fullAddress ?? incomingLead?.area ?? incomingLead?.location ?? form.workLocation ?? '');
-  const detectedArea = debugAreaText ? detectAreaZone(debugAreaText) : zones.find((z) => z.id === form.zoneId);
-  const debugBudget = parseBudgetAmount(pastedLead?.budget ?? incomingLead?.budget ?? form.budget);
-  const selectedProperty = properties.find((p) => p.name === form.propertyName || p.id === incomingFit?.propertyId);
-  const selectedInventory = selectedProperty ? availableBedsForProperty(selectedProperty.id, rooms, blocks) : null;
-  const calculatedFits = useMemo(() => (
-    debugAreaText ? bestInventoryFits({ areaText: debugAreaText, budget: debugBudget, room: String(pastedLead?.room ?? incomingLead?.room ?? form.roomType), rooms, blocks, limit: 3 }) : []
-  ), [debugAreaText, debugBudget, pastedLead, incomingLead, form.roomType, rooms, blocks]);
-  const debugLinks = [
-    ...((pastedLead?.links as string[] | undefined) ?? []),
-    ...String(pastedLead?.fullAddress ?? incomingLead?.fullAddress ?? '').match(/https?:\/\/\S+/g) ?? [],
-  ];
-  const unifiedFieldValues: Record<string, string> = {
-    name: form.leadName,
-    phone: form.phone,
-    email: String(pastedLead?.email ?? incomingLead?.email ?? ''),
-    areas: String(pastedLead?.area ?? pastedLead?.areas ?? incomingLead?.area ?? form.workLocation ?? ''),
-    fullAddress: String(pastedLead?.fullAddress ?? incomingLead?.fullAddress ?? ''),
-    budget: form.budget,
-    moveIn: form.moveInDate,
-    type: form.occupation,
-    room: form.roomType,
-    need: String(pastedLead?.need ?? incomingLead?.need ?? ''),
-    specialReqs: form.keyConcern,
-    inBLR: String(pastedLead?.inBLR ?? incomingLead?.inBLR ?? ''),
-  };
-  const missingUnifiedFields = QUICKAD_QUESTIONS.filter((q) => !String(unifiedFieldValues[q.key] ?? '').trim());
 
   return (
-    <div className="space-y-4 animate-slide-up max-w-3xl">
-      <div className="flex items-start justify-between flex-wrap gap-3">
+    <div className="space-y-5 animate-slide-up">
+      <header className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h1 className="text-xl md:text-2xl font-heading font-bold text-foreground">Schedule Tour</h1>
-          <p className="text-xs text-muted-foreground">Smart form — every tour scored before send</p>
-        </div>
-        {/* Live confidence preview */}
-        <div className={cn('rounded-xl border p-3 min-w-[200px]', intentBg[intent])}>
-          <div className="flex items-center gap-1.5 mb-1.5">
-            <Sparkles className="h-3 w-3" />
-            <span className="text-[10px] uppercase tracking-wide font-semibold">Live Score</span>
+          <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
+            <CalendarDays className="h-3.5 w-3.5" />
+            <span>Schedule workspace</span>
           </div>
-          <div className="text-2xl font-bold tabular-nums">{score}<span className="text-xs text-muted-foreground">/100</span></div>
-          <ConfidenceBar score={score} intent={intent} showLabel={false} className="mt-1.5" />
-          {reason.length > 0 && <p className="text-[10px] mt-1.5 leading-snug opacity-80">{reason.join(' · ')}</p>}
+          <h1 className="text-xl md:text-2xl font-heading font-bold text-foreground">Scheduled Tours</h1>
+          <p className="text-sm text-muted-foreground">
+            Track tours you scheduled and tours assigned to you. Assigned members can update progress here.
+          </p>
         </div>
-      </div>
+        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+          <Badge variant="outline">{counts.all} tours</Badge>
+          <Badge variant="outline">{counts.assigned} assigned to you</Badge>
+        </div>
+      </header>
 
-      {(location.state as { inventoryFit?: InventoryFit } | null)?.inventoryFit && (
-        <div className="rounded-lg border border-primary/30 bg-primary/5 p-3 flex flex-wrap items-center justify-between gap-3">
-          <div>
-            <div className="text-[10px] uppercase tracking-wide text-muted-foreground">Inventory pre-match</div>
-            <div className="text-sm font-semibold text-foreground">
-              {(location.state as { inventoryFit?: InventoryFit }).inventoryFit?.propertyName} · {(location.state as { inventoryFit?: InventoryFit }).inventoryFit?.availableBeds} beds live
-            </div>
-          </div>
-          <div className="text-[11px] text-muted-foreground">{(location.state as { inventoryFit?: InventoryFit }).inventoryFit?.reason}</div>
-        </div>
-      )}
-
-      <div className="rounded-lg border border-border bg-surface-2/60 p-3 space-y-3">
-        <div className="flex items-center justify-between gap-2">
-          <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
-            <Bug className="h-4 w-4 text-primary" /> Inventory-fit debug
-          </div>
-          <Badge variant="secondary" className="text-[10px]">{incomingFit ? 'Quick Add match' : 'Live match'}</Badge>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-[11px]">
-          <DebugMetric label="Area input" value={debugAreaText || '—'} />
-          <DebugMetric label="Detected area" value={detectedArea?.areas[0] ?? '—'} />
-          <DebugMetric label="Budget" value={debugBudget ? `₹${debugBudget.toLocaleString('en-IN')}` : '—'} />
-          <DebugMetric label="Available beds" value={String(incomingFit?.availableBeds ?? selectedInventory?.beds ?? calculatedFits[0]?.availableBeds ?? 0)} />
-        </div>
-        <div className="grid gap-1.5">
-          {(calculatedFits.length ? calculatedFits : incomingFit ? [incomingFit] : []).slice(0, 3).map((fit) => (
-            <div key={fit.propertyId} className="flex items-center justify-between gap-2 rounded-md border border-border bg-background/70 px-2 py-1.5 text-[11px]">
-              <span className="truncate font-medium text-foreground">{fit.propertyName}</span>
-              <span className="shrink-0 text-muted-foreground">{fit.availableBeds} beds · {fit.priceFit} · score {fit.score}</span>
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-muted-foreground">
-          <div className="flex items-start gap-1.5"><MapPin className="h-3 w-3 mt-0.5 text-primary" /> From here: {selectedProperty ? `${selectedProperty.address} → ${debugAreaText || 'lead location'}` : 'select property to compare'}</div>
-          <div className="flex items-start gap-1.5"><MapPin className="h-3 w-3 mt-0.5 text-primary" /> From there: {debugLinks[0] ? `map link captured (${debugLinks.length})` : 'no map link captured yet'}</div>
-        </div>
-      </div>
-
-      <div className={cn('rounded-lg border p-3 space-y-2', missingUnifiedFields.length ? 'border-warning/40 bg-warning/10' : 'border-success/30 bg-success/5')}>
-        <div className="flex items-center justify-between gap-2">
-          <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
-            {missingUnifiedFields.length ? <AlertTriangle className="h-4 w-4 text-warning" /> : <CheckCircle2 className="h-4 w-4 text-success" />}
-            QuickAD sync check
-          </div>
-          <Badge variant="secondary" className="text-[10px]">{QUICKAD_QUESTIONS.length - missingUnifiedFields.length}/{QUICKAD_QUESTIONS.length} synced</Badge>
-        </div>
-        <div className="flex flex-wrap gap-1.5">
-          {QUICKAD_QUESTIONS.map((q) => {
-            const ok = String(unifiedFieldValues[q.key] ?? '').trim().length > 0;
-            return (
-              <span key={q.key} className={cn('rounded-md border px-2 py-1 text-[10px]', ok ? 'border-success/30 bg-success/10 text-success' : 'border-warning/40 bg-warning/10 text-warning')}>
-                {ok ? '✓' : '!'} {q.label}
-              </span>
-            );
-          })}
-        </div>
-        {missingUnifiedFields.length > 0 && <p className="text-[11px] text-muted-foreground">Missing: {missingUnifiedFields.map((q) => q.label).join(', ')}. Existing duplicate fields stay prefilled; only these gaps need attention.</p>}
-      </div>
-
-      {/* Stepper */}
-      <div className="flex gap-1.5">
-        {[1, 2, 3].map(n => (
-          <button key={n} onClick={() => setStep(n as 1|2|3)} className={cn(
-            'flex-1 h-1.5 rounded-full transition-colors',
-            step >= n ? 'bg-primary' : 'bg-surface-2'
-          )} />
+      <div className="flex flex-wrap items-center gap-2">
+        {([
+          ["all", "All tours", counts.all],
+          ["assigned", "Assigned to me", counts.assigned],
+          ["scheduled", "Scheduled by me", counts.scheduled],
+        ] as const).map(([value, label, count]) => (
+          <button
+            key={value}
+            type="button"
+            onClick={() => setTab(value)}
+            className={cn(
+              "inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-sm transition-colors",
+              tab === value
+                ? "border-accent/40 bg-accent/10 text-accent"
+                : "border-border text-muted-foreground hover:bg-muted hover:text-foreground",
+            )}
+          >
+            <span>{label}</span>
+            <span className="text-[10px] font-mono">({count})</span>
+          </button>
         ))}
       </div>
 
-      {/* STEP 1 — Customer + qualification */}
-      {step === 1 && (
-        <div className="glass-card p-4 md:p-5 space-y-4">
-          <h3 className="font-heading font-semibold text-sm text-foreground">1. Customer & Qualification</h3>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <Label className={labelCls}>Lead Name</Label>
-              <Input value={form.leadName} onChange={e => setForm(f => ({ ...f, leadName: e.target.value }))} className="bg-surface-2 border-border" />
-            </div>
-            <div>
-              <Label className={labelCls}>Phone</Label>
-              <Input value={form.phone} onChange={e => setForm(f => ({ ...f, phone: e.target.value }))} className="bg-surface-2 border-border" />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <Label className={labelCls}>Source</Label>
-              <select value={form.bookingSource} onChange={e => setForm(f => ({ ...f, bookingSource: e.target.value as BookingSource }))} className={select}>
-                <option value="ad">Ad</option>
-                <option value="referral">Referral</option>
-                <option value="organic">Organic</option>
-                <option value="whatsapp">WhatsApp</option>
-                <option value="call">Call</option>
-                <option value="walk-in">Walk-in</option>
-              </select>
-            </div>
-            <div>
-              <Label className={labelCls}>Decision Maker</Label>
-              <select value={form.decisionMaker} onChange={e => setForm(f => ({ ...f, decisionMaker: e.target.value as DecisionMaker }))} className={select}>
-                <option value="self">Self</option>
-                <option value="parent">Parent</option>
-                <option value="group">Group</option>
-              </select>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <Label className={labelCls}>Move-in Date</Label>
-              <Input type="date" min={todayStr()} value={form.moveInDate} onChange={e => setForm(f => ({ ...f, moveInDate: e.target.value }))} className="bg-surface-2 border-border" />
-            </div>
-            <div>
-              <Label className={labelCls}>Budget (₹/mo)</Label>
-              <Input type="number" value={form.budget} onChange={e => setForm(f => ({ ...f, budget: e.target.value }))} className="bg-surface-2 border-border" />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <Label className={labelCls}>Work / College</Label>
-              <Input value={form.occupation} onChange={e => setForm(f => ({ ...f, occupation: e.target.value }))} placeholder="e.g. Infosys" className="bg-surface-2 border-border" />
-            </div>
-            <div>
-              <Label className={labelCls}>Work Location</Label>
-              <Input value={form.workLocation} onChange={e => setForm(f => ({ ...f, workLocation: e.target.value }))} placeholder="e.g. Bellandur" className="bg-surface-2 border-border" />
-            </div>
-          </div>
-
-          <div>
-            <Label className={labelCls}>Room Type</Label>
-            <select value={form.roomType} onChange={e => setForm(f => ({ ...f, roomType: e.target.value }))} className={select}>
-              {roomTypes.map(r => <option key={r} value={r}>{r}</option>)}
-            </select>
-          </div>
-
-          <Button onClick={() => setStep(2)} disabled={!form.leadName || !form.phone} className="w-full">Next: Intent →</Button>
+      {!actorId ? (
+        <div className="rounded-xl border border-dashed border-border p-8 text-sm text-muted-foreground">
+          We could not detect the active member for this page.
         </div>
-      )}
-
-      {/* STEP 2 — Intent signals */}
-      {step === 2 && (
-        <div className="glass-card p-4 md:p-5 space-y-4">
-          <h3 className="font-heading font-semibold text-sm text-foreground">2. Intent Signals</h3>
-
-          <div className="space-y-2">
-            {[
-              ['readyIn48h', 'Ready to finalize within 48 hours', 'positive'],
-              ['exploring', 'Only exploring', 'negative'],
-              ['comparing', 'Comparing options', 'negative'],
-              ['needsFamily', 'Needs family approval', 'negative'],
-            ].map(([key, label, kind]) => (
-              <label key={key} className={cn(
-                'flex items-center gap-3 p-3 rounded-lg border bg-surface-2/40 cursor-pointer hover:bg-surface-2 transition-colors',
-                form[key as keyof typeof form] && (kind === 'positive' ? 'border-role-tcm/40 bg-role-tcm/5' : 'border-amber/40 bg-amber/5')
-              )}>
-                <Checkbox
-                  checked={form[key as keyof typeof form] as boolean}
-                  onCheckedChange={v => setForm(f => ({ ...f, [key]: v === true }))}
-                />
-                <span className="text-sm text-foreground flex-1">{label as string}</span>
-                <span className={cn('text-[10px] font-medium', kind === 'positive' ? 'text-role-tcm' : 'text-amber-foreground')}>
-                  {kind === 'positive' ? '+' : '−'}
-                </span>
-              </label>
-            ))}
-          </div>
-
-          <div className="pt-2 border-t border-border">
-            <Label className="text-foreground text-sm font-semibold">If everything matches, will you book today?</Label>
-            <div className="grid grid-cols-3 gap-2 mt-2">
-              {(['yes','maybe','no'] as WillBookToday[]).map(opt => (
-                <button
-                  key={opt}
-                  type="button"
-                  onClick={() => setForm(f => ({ ...f, willBookToday: opt }))}
-                  className={cn(
-                    'h-11 rounded-lg border-2 text-sm font-medium uppercase tracking-wide transition-all',
-                    form.willBookToday === opt
-                      ? opt === 'yes' ? 'border-role-tcm bg-role-tcm/15 text-role-tcm'
-                        : opt === 'no' ? 'border-danger bg-danger/15 text-danger'
-                        : 'border-role-hr bg-role-hr/15 text-role-hr'
-                      : 'border-border bg-surface-2 text-muted-foreground hover:bg-surface-3'
-                  )}
-                >
-                  {opt}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <Label className={labelCls}>Key Concern (optional)</Label>
-            <Input value={form.keyConcern} onChange={e => setForm(f => ({ ...f, keyConcern: e.target.value }))} placeholder="e.g. food quality, distance" className="bg-surface-2 border-border" />
-          </div>
-
-          <div className="flex gap-2">
-            <Button variant="outline" onClick={() => setStep(1)} className="flex-1">← Back</Button>
-            <Button onClick={() => setStep(3)} className="flex-1">Next: Slot →</Button>
-          </div>
+      ) : visibleTours.length === 0 ? (
+        <div className="rounded-xl border border-dashed border-border p-10 text-center text-sm text-muted-foreground">
+          No tours match this view yet.
         </div>
-      )}
-
-      {/* STEP 3 — Tour type, slot, assign */}
-      {step === 3 && (
-        <div className="glass-card p-4 md:p-5 space-y-4">
-          <h3 className="font-heading font-semibold text-sm text-foreground">3. Tour Type & Slot</h3>
-
-          {/* Tour type */}
-          <div>
-            <Label className={labelCls}>Tour Type</Label>
-            <div className="grid grid-cols-3 gap-2 mt-1.5">
-              {([
-                ['physical', <Building2 key="p" className="h-4 w-4" />, 'Physical'],
-                ['virtual', <Video key="v" className="h-4 w-4" />, 'Virtual'],
-                ['pre-book-pitch', <Briefcase key="b" className="h-4 w-4" />, 'Pre-book'],
-              ] as const).map(([val, icon, label]) => (
-                <button
-                  key={val}
-                  type="button"
-                  onClick={() => setForm(f => ({ ...f, tourType: val as TourType }))}
-                  className={cn(
-                    'h-14 rounded-lg border-2 text-xs font-medium flex flex-col items-center justify-center gap-1 transition-all',
-                    form.tourType === val ? 'border-primary bg-primary/10 text-primary' : 'border-border bg-surface-2 text-muted-foreground'
-                  )}
-                >
-                  {icon}{label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <Label className={labelCls}>Zone</Label>
-              <select value={form.zoneId} onChange={e => setForm(f => ({ ...f, zoneId: e.target.value, assignedTo: '' }))} className={select}>
-                {zones.map(z => <option key={z.id} value={z.id}>{z.name}</option>)}
-              </select>
-            </div>
-            <div>
-              <Label className={labelCls}>Property</Label>
-              <select value={form.propertyName} onChange={e => setForm(f => ({ ...f, propertyName: e.target.value }))} className={select}>
-                <option value="">Select property…</option>
-                {properties.filter(p => p.zoneId === form.zoneId).map(p => (
-                  <option key={p.id} value={p.name}>{p.name} · ₹{((p.pricePerBed||0)/1000).toFixed(0)}k</option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <Label className={labelCls}>Date</Label>
-              <Input type="date" min={todayStr()} max={in7days()} value={form.tourDate} onChange={e => setForm(f => ({ ...f, tourDate: e.target.value, tourTime: '' }))} className="bg-surface-2 border-border" />
-            </div>
-            <div>
-              <Label className={labelCls}>Assign TCM</Label>
-              <select value={form.assignedTo} onChange={e => setForm(f => ({ ...f, assignedTo: e.target.value, tourTime: '' }))} className={select}>
-                <option value="">⚡ Auto-assign ({effectiveTcm?.name ?? '—'})</option>
-                {tcmsInZone.map(m => <option key={m.id} value={m.id}>{m.name}</option>)}
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <Label className={labelCls}>Pick Slot {effectiveTcm && <span className="ml-2 normal-case text-foreground/60">({effectiveTcm.name})</span>}</Label>
-            <div className="mt-1.5">
-              <SlotPicker
-                date={form.tourDate}
-                selected={form.tourTime}
-                onSelect={t => setForm(f => ({ ...f, tourTime: t }))}
-                takenSlots={takenSlots}
-                recommendEarly={intent === 'hard'}
-              />
-            </div>
-          </div>
-
-          <div className="flex gap-2 pt-2">
-            <Button variant="outline" onClick={() => setStep(2)} className="flex-1">← Back</Button>
-            <Button onClick={handleSubmit} disabled={!canSubmit} className="flex-2">
-              Schedule {intent.toUpperCase()} Tour
-            </Button>
-          </div>
+      ) : (
+        <div className="space-y-4">
+          {visibleTours.map((tour) => (
+            <TourScheduleCard
+              key={tour.id}
+              actorId={actorId}
+              tour={tour}
+              onUpdate={updateTour}
+            />
+          ))}
         </div>
       )}
     </div>
   );
 }
 
-function DebugMetric({ label, value }: { label: string; value: string }) {
+function TourScheduleCard({
+  actorId,
+  tour,
+  onUpdate,
+}: {
+  actorId: string;
+  tour: Tour;
+  onUpdate: (tourId: string, updates: Partial<Tour>) => void;
+}) {
+  const canEdit = tour.assignedTo === actorId;
+  const isSchedulerOnly = tour.scheduledBy === actorId && !canEdit;
+
   return (
-    <div className="rounded-md border border-border bg-background/70 px-2 py-1.5">
-      <div className="text-[10px] uppercase tracking-wide text-muted-foreground">{label}</div>
-      <div className="mt-0.5 truncate font-medium text-foreground">{value}</div>
+    <section className="rounded-2xl border border-border bg-card p-4 md:p-5 space-y-4">
+      <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+        <div className="space-y-2 min-w-0">
+          <div className="flex items-center gap-2 flex-wrap">
+            <h2 className="text-lg font-semibold text-foreground">{tour.leadName}</h2>
+            <StatusPill status={tour.status} />
+            <OutcomePill outcome={tour.outcome} />
+          </div>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
+            <span className="inline-flex items-center gap-1"><MapPin className="h-3.5 w-3.5" /> {tour.propertyName}</span>
+            <span>{tour.area}</span>
+            <span className="inline-flex items-center gap-1"><Clock3 className="h-3.5 w-3.5" /> {tour.tourDate} · {tour.tourTime}</span>
+          </div>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
+            <span className="inline-flex items-center gap-1"><UserRound className="h-3.5 w-3.5" /> Assigned to {tour.assignedToName}</span>
+            <span>Scheduled by {tour.scheduledByName}</span>
+            <span>Lead source: {tour.bookingSource}</span>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2">
+          {canEdit ? (
+            <Badge className="bg-success/10 text-success hover:bg-success/10">
+              <PencilLine className="h-3 w-3 mr-1" /> You can edit this tour
+            </Badge>
+          ) : (
+            <Badge variant="outline">
+              <Eye className="h-3 w-3 mr-1" /> Read-only tracker
+            </Badge>
+          )}
+        </div>
+      </div>
+
+      <div className="grid gap-3 md:grid-cols-3">
+        <InfoTile
+          icon={<CheckCircle2 className="h-4 w-4" />}
+          label="Progress"
+          value={progressLabel(tour)}
+          hint={canEdit ? "Update this as the tour moves forward." : "Follow the assignee's updates here."}
+        />
+        <InfoTile
+          icon={<CalendarDays className="h-4 w-4" />}
+          label="Tour Mode"
+          value={capitalizeWords(tour.tourType.replace("-", " "))}
+          hint={`Confirmation: ${capitalizeWords(tour.confirmationStrength)}`}
+        />
+        <InfoTile
+          icon={<FileText className="h-4 w-4" />}
+          label="Latest Notes"
+          value={tour.remarks?.trim() ? tour.remarks : "No remarks added yet"}
+          hint={tour.showUp === null ? "Show-up not marked yet." : tour.showUp ? "Lead marked as showed up." : "Lead marked as no-show."}
+        />
+      </div>
+
+      {tour.qualification.keyConcern ? (
+        <div className="rounded-lg border border-warning/30 bg-warning/5 px-3 py-2 text-sm text-warning">
+          Key concern: {tour.qualification.keyConcern}
+        </div>
+      ) : null}
+
+      {isSchedulerOnly ? (
+        <div className="rounded-lg border border-border bg-muted/30 px-3 py-3 text-sm text-muted-foreground">
+          You scheduled this tour for {tour.assignedToName}. This page is read-only for you, but you can monitor the status, notes, and outcome here as the assignee updates it.
+        </div>
+      ) : null}
+
+      {canEdit ? (
+        <EditableTourPanel tour={tour} onUpdate={onUpdate} />
+      ) : null}
+    </section>
+  );
+}
+
+function EditableTourPanel({
+  tour,
+  onUpdate,
+}: {
+  tour: Tour;
+  onUpdate: (tourId: string, updates: Partial<Tour>) => void;
+}) {
+  return (
+    <div className="rounded-xl border border-accent/20 bg-accent/5 p-4 space-y-4">
+      <div className="flex items-center gap-2 text-sm font-medium text-foreground">
+        <MessageSquare className="h-4 w-4 text-accent" />
+        Tour controls
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2">
+        <div className="space-y-2">
+          <Label htmlFor={`tour-date-${tour.id}`}>Tour date</Label>
+          <Input
+            id={`tour-date-${tour.id}`}
+            type="date"
+            value={tour.tourDate}
+            onChange={(e) => onUpdate(tour.id, { tourDate: e.target.value })}
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor={`tour-time-${tour.id}`}>Tour time</Label>
+          <Input
+            id={`tour-time-${tour.id}`}
+            type="time"
+            value={tour.tourTime}
+            onChange={(e) => onUpdate(tour.id, { tourTime: e.target.value })}
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor={`tour-status-${tour.id}`}>Status</Label>
+          <select
+            id={`tour-status-${tour.id}`}
+            value={tour.status}
+            onChange={(e) => onUpdate(tour.id, normalizeStatusUpdate(e.target.value as TourStatus, tour))}
+            className="w-full h-10 rounded-md border border-input bg-background px-3 text-sm"
+          >
+            {STATUS_OPTIONS.map((status) => (
+              <option key={status} value={status}>
+                {capitalizeWords(status.replace("-", " "))}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor={`tour-showup-${tour.id}`}>Show-up</Label>
+          <select
+            id={`tour-showup-${tour.id}`}
+            value={showUpValue(tour.showUp)}
+            onChange={(e) => onUpdate(tour.id, { showUp: parseShowUpValue(e.target.value) })}
+            className="w-full h-10 rounded-md border border-input bg-background px-3 text-sm"
+          >
+            <option value="pending">Pending</option>
+            <option value="yes">Showed up</option>
+            <option value="no">No-show</option>
+          </select>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor={`tour-outcome-${tour.id}`}>Outcome</Label>
+          <select
+            id={`tour-outcome-${tour.id}`}
+            value={tour.outcome ?? "none"}
+            onChange={(e) => onUpdate(tour.id, normalizeOutcomeUpdate(e.target.value, tour))}
+            className="w-full h-10 rounded-md border border-input bg-background px-3 text-sm"
+          >
+            {OUTCOME_OPTIONS.map((option) => (
+              <option key={option.label} value={option.value ?? "none"}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor={`tour-property-${tour.id}`}>Property</Label>
+          <Input
+            id={`tour-property-${tour.id}`}
+            value={tour.propertyName}
+            onChange={(e) => onUpdate(tour.id, { propertyName: e.target.value })}
+          />
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor={`tour-remarks-${tour.id}`}>Progress notes</Label>
+        <Textarea
+          id={`tour-remarks-${tour.id}`}
+          value={tour.remarks}
+          onChange={(e) => onUpdate(tour.id, { remarks: e.target.value })}
+          placeholder="Add tour progress, lead feedback, delays, follow-up notes..."
+          className="min-h-[110px]"
+        />
+      </div>
     </div>
   );
+}
+
+function InfoTile({
+  icon,
+  label,
+  value,
+  hint,
+}: {
+  icon: ReactNode;
+  label: string;
+  value: string;
+  hint: string;
+}) {
+  return (
+    <div className="rounded-xl border border-border bg-background/70 p-3 space-y-1.5">
+      <div className="flex items-center gap-2 text-xs uppercase tracking-wide text-muted-foreground">
+        {icon}
+        <span>{label}</span>
+      </div>
+      <div className="text-sm font-medium text-foreground">{value}</div>
+      <div className="text-xs text-muted-foreground">{hint}</div>
+    </div>
+  );
+}
+
+function StatusPill({ status }: { status: TourStatus }) {
+  const tone =
+    status === "completed" ? "bg-success/10 text-success" :
+    status === "confirmed" ? "bg-info/10 text-info" :
+    status === "no-show" ? "bg-destructive/10 text-destructive" :
+    status === "cancelled" ? "bg-muted text-muted-foreground" :
+    "bg-warning/10 text-warning";
+  return (
+    <span className={cn("rounded-full px-2 py-0.5 text-xs font-medium", tone)}>
+      {capitalizeWords(status.replace("-", " "))}
+    </span>
+  );
+}
+
+function OutcomePill({ outcome }: { outcome: TourOutcome }) {
+  if (!outcome) {
+    return <span className="text-xs text-muted-foreground">No outcome yet</span>;
+  }
+  const tone =
+    outcome === "booked" || outcome === "token-paid" ? "bg-success/10 text-success" :
+    outcome === "follow-up" || outcome === "draft" ? "bg-info/10 text-info" :
+    "bg-destructive/10 text-destructive";
+  return (
+    <span className={cn("rounded-full px-2 py-0.5 text-xs font-medium", tone)}>
+      {capitalizeWords(outcome.replace("-", " "))}
+    </span>
+  );
+}
+
+function progressLabel(tour: Tour): string {
+  if (tour.status === "completed" && tour.outcome) return `Completed · ${capitalizeWords(tour.outcome.replace("-", " "))}`;
+  if (tour.status === "completed") return "Completed · awaiting outcome";
+  if (tour.status === "confirmed") return "Confirmed with lead";
+  if (tour.status === "no-show") return "Lead marked as no-show";
+  if (tour.status === "cancelled") return "Tour cancelled";
+  return "Scheduled and pending confirmation";
+}
+
+function normalizeStatusUpdate(status: TourStatus, tour: Tour): Partial<Tour> {
+  if (status === "confirmed") return { status, showUp: null };
+  if (status === "completed") return { status, showUp: true };
+  if (status === "no-show") return { status, showUp: false, outcome: tour.outcome === "booked" ? null : tour.outcome };
+  if (status === "cancelled") return { status, showUp: null };
+  return { status };
+}
+
+function normalizeOutcomeUpdate(value: string, tour: Tour): Partial<Tour> {
+  const outcome = (value === "none" ? null : value) as TourOutcome;
+  if (!outcome) return { outcome: null, tokenPaid: false };
+  if (outcome === "booked" || outcome === "token-paid") {
+    return { outcome, tokenPaid: true, status: tour.status === "scheduled" ? "completed" : tour.status, showUp: tour.showUp ?? true };
+  }
+  return { outcome, tokenPaid: false };
+}
+
+function showUpValue(showUp: boolean | null): "pending" | "yes" | "no" {
+  if (showUp === true) return "yes";
+  if (showUp === false) return "no";
+  return "pending";
+}
+
+function parseShowUpValue(value: string): boolean | null {
+  if (value === "yes") return true;
+  if (value === "no") return false;
+  return null;
+}
+
+function capitalizeWords(value: string): string {
+  return value.replace(/\b\w/g, (match) => match.toUpperCase());
 }

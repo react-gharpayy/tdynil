@@ -5,9 +5,10 @@ import type {
   OwnerObjection, ObjectionReason,
 } from './types';
 import { seedOwners, seedRoomStatuses, seedMedia, seedBlocks, seedInsights, seedObjections } from './seed';
+import { generateSeedObjections, generateSeedMedia, generateSeedBlocks } from './seed';
 import { dailyTruthPhase, msUntilNextPhase, scoreOwnerCompliance, todayKey } from './compliance';
 import { glueBus } from './event-bus';
-import { properties as mytProperties, rooms as mytRooms } from '@/myt/lib/properties-seed';
+import { generateProperties, generateRooms } from '@/myt/lib/properties-seed';
 import type { Property as MytProperty, Room as MytRoom } from '@/myt/lib/types';
 import { registerOwnerBridge } from './team-bridge';
 
@@ -81,13 +82,49 @@ export function OwnerProvider({ children }: { children: React.ReactNode }) {
   const [currentOwnerId, setCurrentOwnerId] = useState<string | null>(persisted.currentOwnerId ?? 'own-1');
   const [ownerRole, setOwnerRole] = useState<OwnerRole>(persisted.ownerRole ?? null);
   const [owners] = useState<OwnerProfile[]>(seedOwners);
-  const [properties, setProperties] = useState<MytProperty[]>(mytProperties);
-  const [rooms, setRooms] = useState<MytRoom[]>(mytRooms);
-  const [roomStatuses, setRoomStatuses] = useState<OwnerRoomStatus[]>(persisted.roomStatuses ?? seedRoomStatuses);
-  const [media, setMedia] = useState<OwnerRoomMedia[]>(persisted.media ?? seedMedia);
-  const [blocks, setBlocks] = useState<OwnerBlockRequest[]>(persisted.blocks ?? seedBlocks);
+  const [properties, setProperties] = useState<MytProperty[]>([]);
+  const [rooms, setRooms] = useState<MytRoom[]>([]);
+
+  // Generate properties and rooms from zones on mount
+  useEffect(() => {
+    const generatedProps = generateProperties();
+    const generatedRooms = generateRooms();
+    if (generatedProps.length > 0) setProperties(generatedProps);
+    if (generatedRooms.length > 0) setRooms(generatedRooms);
+    // Generate room statuses from rooms if not persisted
+    if (generatedRooms.length > 0 && !persisted.roomStatuses) {
+      const ownerByProperty: Record<string, string> = {
+        'p-koramangala-1': 'own-1', 'p-indiranagar-1': 'own-2', 'p-hsr-1': 'own-3', 'p-whitefield-1': 'own-4',
+      };
+      const ownerIdsRR = ['own-1', 'own-2', 'own-3', 'own-4'];
+      const ownerForProperty = (propertyId: string, idx: number) => {
+        if (ownerByProperty[propertyId]) return ownerByProperty[propertyId];
+        const m = propertyId.match(/(\d+)/);
+        const n = m ? parseInt(m[1], 10) : idx;
+        return ownerIdsRR[n % ownerIdsRR.length];
+      };
+      const generatedStatuses = generatedRooms.map((r: any, idx: number) => {
+        const free = r.bedsTotal - r.bedsOccupied;
+        const kind: OwnerRoomStatus['kind'] = free === 0 ? 'occupied' : free === r.bedsTotal ? 'vacant' : 'occupied';
+        const verifiedToday = (r.id.charCodeAt(r.id.length - 1) % 3) !== 0;
+        return {
+          roomId: r.id, propertyId: r.propertyId, ownerId: ownerForProperty(r.propertyId, idx),
+          kind, rentConfirmed: r.currentPrice, floorPrice: Math.round(r.currentPrice * 0.9),
+          updatedAt: new Date(Date.now() - 30 * 60_000).toISOString(),
+          verifiedToday, lockedUnsellable: false, isDedicated: idx % 4 === 0, views: ((idx * 13) % 60) + 2,
+        };
+      });
+      setRoomStatuses(generatedStatuses);
+      setMedia(generateSeedMedia(generatedStatuses));
+      setBlocks(generateSeedBlocks(generatedStatuses));
+      setObjections(generateSeedObjections(generatedStatuses));
+    }
+  }, []);
+  const [roomStatuses, setRoomStatuses] = useState<OwnerRoomStatus[]>(persisted.roomStatuses ?? []);
+  const [media, setMedia] = useState<OwnerRoomMedia[]>(persisted.media ?? []);
+  const [blocks, setBlocks] = useState<OwnerBlockRequest[]>(persisted.blocks ?? []);
   const [insights] = useState<OwnerInsightDaily[]>(seedInsights);
-  const [objections, setObjections] = useState<OwnerObjection[]>(persisted.objections ?? seedObjections);
+  const [objections, setObjections] = useState<OwnerObjection[]>(persisted.objections ?? []);
   const [violations, setViolations] = useState<number>(persisted.violations ?? 0);
 
   // Truth phase ticker — client only

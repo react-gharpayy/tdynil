@@ -41,7 +41,7 @@ interface AppState {
   reassignLead: (leadId: string, tcmId: string, reason: string) => void;
   autoAssignLead: (leadId: string) => { tcmId: string; reasons: string[] };
 
-  scheduleTour: (input: { leadId: string; propertyId: string; tcmId: string; scheduledAt: string }) => Tour;
+  scheduleTour: (input: { leadId: string; propertyId?: string; tcmId: string; scheduledAt: string }) => Tour;
   cancelTour: (tourId: string) => void;
   rescheduleTour: (tourId: string, scheduledAt: string) => void;
   completeTour: (tourId: string) => void;
@@ -480,8 +480,8 @@ export function getTcm(id: string) {
   return TCMS.find((t) => t.id === id);
 }
 
-export function getProperty(id: string, properties: Property[]) {
-  return properties.find((p) => p.id === id);
+export function getProperty(id?: string, properties: Property[]) {
+  return id ? properties.find((p) => p.id === id) : undefined;
 }
 
 export function getLead(id: string, leads: Lead[]) {

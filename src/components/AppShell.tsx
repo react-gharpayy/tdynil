@@ -28,6 +28,7 @@ import { ClientOnly } from "./ClientOnly";
 import { QuickCreateMenu } from "./QuickCreateMenu";
 import { LiveLeadsBridge } from "./LiveLeadsBridge";
 import { useAuthUser } from "@/lib/auth-store";
+import { useAppState } from "@/myt/lib/app-context";
 
 function PipRouteSyncBridge() {
   const { active } = usePip();
@@ -40,6 +41,7 @@ type NavItem = { to: string; label: string; icon: typeof Target; badge?: number;
 
 export function AppShell({ children }: { children: ReactNode }) {
   const { role, setRole, currentTcmId, setCurrentTcmId, tcms, leads, tours, followUps, handoffs, bookings } = useApp();
+  const { setCurrentMemberId } = useAppState();
   const authUser = useAuthUser((s) => s.user);
   const hydrateAuth = useAuthUser((s) => s.hydrate);
   // Map real DB role → personas the user is allowed to "view as".
@@ -60,6 +62,15 @@ export function AppShell({ children }: { children: ReactNode }) {
     if (!dbRole) return;
     if (!allowed.includes(role)) setRole(allowed[0]);
   }, [dbRole, role, setRole]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Set currentMemberId for members so notifications work correctly
+  useEffect(() => {
+    if (authUser && dbRole === "member") {
+      setCurrentMemberId(authUser.id);
+    } else if (!authUser) {
+      setCurrentMemberId(null);
+    }
+  }, [authUser, dbRole, setCurrentMemberId]);
   const router = useRouterState();
   const path = router.location.pathname;
   const [now, mounted] = useMountedNow();
@@ -129,6 +140,7 @@ export function AppShell({ children }: { children: ReactNode }) {
     ],
     tcm: [
       { to: "/today", label: "Today", icon: Sun, badge: queue.length },
+      { to: "/inbox", label: "Inbox", icon: Inbox },
       { to: "/myt/tcm", label: "TCM Desk", icon: Target, accent: true },
       { to: "/tours", label: "My Tours", icon: CalendarPlus, badge: incompletePostTour },
       { to: "/follow-ups", label: "Follow-ups", icon: ClipboardList, badge: overdueCount },
