@@ -776,7 +776,7 @@ export function LeadControlPanel() {
                           closeDeal({
                             leadId: lead.id,
                             tourId: target.id,
-                            propertyId: target.propertyId,
+                            propertyId: target.propertyId ?? "",
                             tcmId: target.tcmId,
                             amount: prop?.pricePerBed ?? 12000,
                           });
