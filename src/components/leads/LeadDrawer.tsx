@@ -180,6 +180,10 @@ function DrawerInner({ lead, currentUserId, assignees }: { lead: Lead; currentUs
             <ActivityTimeline activities={activities} loading={loading} onDelete={remove} />
           </TabsContent>
 
+          <TabsContent value="diagnosis" className="m-0">
+            <OnePointDiagnosis lead={lead} />
+          </TabsContent>
+
           <TabsContent value="details" className="m-0">
             <DetailsGrid lead={lead} />
           </TabsContent>
