@@ -12,7 +12,9 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Phone, Mail, MessageCircle, Calendar, ListTodo, ExternalLink, FileText, Activity as ActivityIcon, Info, Link2, Sparkles, Keyboard } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Phone, Mail, MessageCircle, Calendar, ListTodo, ExternalLink, FileText, Activity as ActivityIcon, Info, Link2, Sparkles, Keyboard, Target, AlertTriangle } from "lucide-react";
 import { useActivities } from "@/hooks/useActivities";
 import { ActivityTimeline } from "@/components/activities/ActivityTimeline";
 import { ActivityComposer } from "@/components/activities/ActivityComposer";
@@ -21,6 +23,7 @@ import { TodoPanel } from "@/components/todos/TodoPanel";
 import { StageChip, IntentChip, SourceChip, AssigneeChip } from "@/components/leads/HoverChips";
 import { formatDistanceToNow } from "date-fns";
 import { toast } from "sonner";
+import { dispatch } from "@/lib/api/command-bus";
 import type { Lead, Activity } from "@/contracts";
 
 interface Props {
