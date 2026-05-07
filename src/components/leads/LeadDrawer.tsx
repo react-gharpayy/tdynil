@@ -12,7 +12,9 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Phone, Mail, MessageCircle, Calendar, ListTodo, ExternalLink, FileText, Activity as ActivityIcon, Info, Link2, Sparkles, Keyboard } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Phone, Mail, MessageCircle, Calendar, ListTodo, ExternalLink, FileText, Activity as ActivityIcon, Info, Link2, Sparkles, Keyboard, Target, AlertTriangle } from "lucide-react";
 import { useActivities } from "@/hooks/useActivities";
 import { ActivityTimeline } from "@/components/activities/ActivityTimeline";
 import { ActivityComposer } from "@/components/activities/ActivityComposer";
@@ -21,6 +23,7 @@ import { TodoPanel } from "@/components/todos/TodoPanel";
 import { StageChip, IntentChip, SourceChip, AssigneeChip } from "@/components/leads/HoverChips";
 import { formatDistanceToNow } from "date-fns";
 import { toast } from "sonner";
+import { dispatch } from "@/lib/api/command-bus";
 import type { Lead, Activity } from "@/contracts";
 
 interface Props {
@@ -156,6 +159,7 @@ function DrawerInner({ lead, currentUserId, assignees }: { lead: Lead; currentUs
       <Tabs value={tab} onValueChange={setTab} className="flex-1 flex flex-col min-h-0">
         <TabsList className="rounded-none border-b w-full justify-start overflow-x-auto h-auto px-3">
           <TabsTrigger value="activity" className="gap-1.5"><ActivityIcon className="h-3.5 w-3.5" />Activity <Badge variant="secondary" className="ml-1 text-[10px]">{activities.length}</Badge></TabsTrigger>
+          <TabsTrigger value="diagnosis" className="gap-1.5"><Target className="h-3.5 w-3.5" />Diagnosis {(!lead.onePointDiscovered || (lead.onePointConfidence ?? 0) < 3) && <AlertTriangle className="h-3 w-3 text-amber-500" />}</TabsTrigger>
           <TabsTrigger value="details" className="gap-1.5"><Info className="h-3.5 w-3.5" />Details</TabsTrigger>
           <TabsTrigger value="tasks" className="gap-1.5"><ListTodo className="h-3.5 w-3.5" />Tasks</TabsTrigger>
           <TabsTrigger value="notes" className="gap-1.5">Notes {counts.notes > 0 && <Badge variant="secondary" className="ml-1 text-[10px]">{counts.notes}</Badge>}</TabsTrigger>
@@ -174,6 +178,10 @@ function DrawerInner({ lead, currentUserId, assignees }: { lead: Lead; currentUs
             </div>
             <Separator />
             <ActivityTimeline activities={activities} loading={loading} onDelete={remove} />
+          </TabsContent>
+
+          <TabsContent value="diagnosis" className="m-0">
+            <OnePointDiagnosis lead={lead} />
           </TabsContent>
 
           <TabsContent value="details" className="m-0">
@@ -296,6 +304,143 @@ function RelatedPanel({ lead }: { lead: Lead }) {
       </div>
       <div className="rounded-md border p-3 text-xs text-muted-foreground">
         Lead ID: <code>{lead._id}</code>
+      </div>
+    </div>
+  );
+}
+
+// ---- One-Point Diagnosis panel ----
+// Forces the Gharpayy Expert to articulate the single biggest blocker for this lead,
+// rate their own confidence (1–5), and mark whether it has been resolved.
+function OnePointDiagnosis({ lead }: { lead: Lead }) {
+  const [discovered, setDiscovered] = useState(lead.onePointDiscovered ?? "");
+  const [confidence, setConfidence] = useState<number>(lead.onePointConfidence ?? 0);
+  const [resolved, setResolved] = useState<Lead["onePointResolved"]>(lead.onePointResolved ?? null);
+  const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    setDiscovered(lead.onePointDiscovered ?? "");
+    setConfidence(lead.onePointConfidence ?? 0);
+    setResolved(lead.onePointResolved ?? null);
+  }, [lead._id, lead.onePointDiscovered, lead.onePointConfidence, lead.onePointResolved]);
+
+  const lowConfidence = confidence > 0 && confidence < 3;
+  const dirty =
+    discovered !== (lead.onePointDiscovered ?? "") ||
+    confidence !== (lead.onePointConfidence ?? 0) ||
+    resolved !== (lead.onePointResolved ?? null);
+
+  async function save() {
+    if (!discovered.trim()) {
+      toast.error("Articulate the one-point blocker in a single sentence first.");
+      return;
+    }
+    setSaving(true);
+    const res = await dispatch({
+      type: "cmd.lead.update",
+      payload: {
+        leadId: lead._id,
+        patch: {
+          onePointDiscovered: discovered.trim().slice(0, 500),
+          onePointConfidence: confidence,
+          onePointResolved: resolved,
+        },
+      },
+    });
+    setSaving(false);
+    if (res.ok) toast.success("Diagnosis saved");
+    else toast.error(res.error || "Failed to save");
+  }
+
+  return (
+    <div className="space-y-5 max-w-2xl">
+      <div className="rounded-md border bg-accent/5 p-3 text-xs text-muted-foreground flex items-start gap-2">
+        <Target className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+        <div>
+          <div className="font-medium text-foreground">One-Point Diagnosis</div>
+          If you can't articulate the lead's single biggest blocker in one sentence, you haven't done the diagnosis. No lead moves to <strong>booked</strong> until this is resolved.
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="op-discovered">One-point discovered</Label>
+        <Textarea
+          id="op-discovered"
+          value={discovered}
+          onChange={(e) => setDiscovered(e.target.value)}
+          placeholder="e.g. Parents won't approve until they visit on Saturday."
+          maxLength={500}
+          rows={3}
+          className="resize-none"
+        />
+        <div className="text-[10px] text-muted-foreground text-right">{discovered.length}/500</div>
+      </div>
+
+      <div className="space-y-2">
+        <Label>Confidence in diagnosis</Label>
+        <div className="flex items-center gap-1.5">
+          {[1, 2, 3, 4, 5].map((n) => (
+            <button
+              key={n}
+              type="button"
+              onClick={() => setConfidence(n === confidence ? 0 : n)}
+              className={`h-9 w-9 rounded-md border text-sm font-medium transition ${
+                n <= confidence
+                  ? n < 3
+                    ? "bg-amber-500/20 border-amber-500 text-amber-700 dark:text-amber-400"
+                    : "bg-primary/15 border-primary text-primary"
+                  : "bg-background hover:bg-muted"
+              }`}
+              aria-label={`Confidence ${n}`}
+            >
+              {n}
+            </button>
+          ))}
+          {confidence > 0 && (
+            <span className="ml-2 text-xs text-muted-foreground">
+              {confidence}/5{lowConfidence && " · flagged for re-diagnosis"}
+            </span>
+          )}
+        </div>
+        {lowConfidence && (
+          <div className="flex items-start gap-2 rounded-md border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-[11px] text-amber-700 dark:text-amber-400">
+            <AlertTriangle className="h-3.5 w-3.5 mt-0.5 shrink-0" />
+            Confidence below 3 — manager dashboard will surface this lead for re-diagnosis.
+          </div>
+        )}
+      </div>
+
+      <div className="space-y-2">
+        <Label>Resolved?</Label>
+        <div className="flex gap-2">
+          {(["yes", "partial", "no"] as const).map((opt) => (
+            <button
+              key={opt}
+              type="button"
+              onClick={() => setResolved(resolved === opt ? null : opt)}
+              className={`px-3 py-1.5 rounded-md border text-xs font-medium capitalize transition ${
+                resolved === opt
+                  ? opt === "yes"
+                    ? "bg-emerald-500/15 border-emerald-500 text-emerald-700 dark:text-emerald-400"
+                    : opt === "partial"
+                    ? "bg-amber-500/15 border-amber-500 text-amber-700 dark:text-amber-400"
+                    : "bg-destructive/15 border-destructive text-destructive"
+                  : "bg-background hover:bg-muted"
+              }`}
+            >
+              {opt}
+            </button>
+          ))}
+        </div>
+        {resolved === null && (
+          <p className="text-[11px] text-muted-foreground">Required before this lead can be moved to <strong>booked</strong>.</p>
+        )}
+      </div>
+
+      <div className="flex justify-end gap-2 pt-2">
+        <Button onClick={save} disabled={!dirty || saving} size="sm">
+          {saving ? "Saving…" : "Save diagnosis"}
+        </Button>
       </div>
     </div>
   );

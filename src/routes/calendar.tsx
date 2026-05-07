@@ -40,7 +40,7 @@ export const Route = createFileRoute("/calendar")({
 });
 
 function CalendarPage() {
-  const { tours, followUps, leads } = useApp();
+  const { tours, followUps, leads, selectLead } = useApp();
   const { events, addEvent } = useCalendar();
   const [view, setView] = useState<CalendarView>("week");
   const [focus, setFocus] = useState<Date>(new Date());
@@ -137,7 +137,10 @@ function CalendarPage() {
   }, [events]);
 
   const openEvent = (e: CalEvent) => {
-    if (e.id.startsWith("crm-")) return;
+    if (e.id.startsWith("crm-")) {
+      if (e.leadId) selectLead(e.leadId);
+      return;
+    }
     setEditing({ open: true, eventId: e.id });
   };
 
@@ -166,6 +169,9 @@ function CalendarPage() {
             <CalendarDays className="h-5 w-5 text-primary" />
             <h1 className="text-lg font-semibold">Calendar</h1>
             <Badge variant="secondary" className="ml-1">{allEvents.length} events</Badge>
+            <Badge variant="outline" className="ml-1 text-primary border-primary/20 bg-primary/5">
+              {crmEvents.filter((e) => e.kind === "tour").length} tours
+            </Badge>
           </div>
 
           <div className="flex items-center gap-2">
