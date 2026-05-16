@@ -269,6 +269,28 @@ export const api = {
       request<{ ok: true }>(`/api/properties/${id}`, { method: "DELETE" }),
   },
 
+  stats: {
+    dailyProgress: (date?: string) => {
+      const qs = date ? `?date=${encodeURIComponent(date)}` : "";
+      return request<import("@/lib/stats-types").LeadsDailyProgressResponse>(`/api/stats/daily-progress${qs}`);
+    },
+    leaderboard: (
+      period: import("@/lib/stats-types").LeaderboardPeriod = "this_month",
+      zone?: string,
+      customRange?: { from: string; to: string },
+    ) => {
+      const params = new URLSearchParams({ period });
+      if (zone && zone !== "all") params.set("zone", zone);
+      if (period === "custom" && customRange?.from && customRange?.to) {
+        params.set("from", customRange.from);
+        params.set("to", customRange.to);
+      }
+      return request<import("@/lib/stats-types").CreatorLeaderboardResponse>(
+        `/api/stats/leaderboard?${params.toString()}`,
+      );
+    },
+  },
+
   activity: {
     login: (limit = 100) =>
       request<{ items: { _id: string; type: string; occurredAt: string; payload: Record<string, unknown> }[] }>(

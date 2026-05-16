@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { Loader2, KeyRound, MapPin, Pencil, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -30,6 +30,23 @@ export function RolesTab() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editForm, setEditForm] = useState<EditForm>({ fullName: "", email: "", phone: "", role: "", zones: [] });
   const [updating, setUpdating] = useState(false);
+
+  const sortedManagers = useMemo(
+    () => [...managers].sort((a, b) => (a.fullName || "").localeCompare(b.fullName || "", undefined, { sensitivity: "base" })),
+    [managers],
+  );
+  const sortedAdmins = useMemo(
+    () => [...admins].sort((a, b) => (a.fullName || "").localeCompare(b.fullName || "", undefined, { sensitivity: "base" })),
+    [admins],
+  );
+  const sortedMembers = useMemo(
+    () => [...members].sort((a, b) => (a.fullName || "").localeCompare(b.fullName || "", undefined, { sensitivity: "base" })),
+    [members],
+  );
+  const sortedOwners = useMemo(
+    () => [...owners].sort((a, b) => (a.fullName || "").localeCompare(b.fullName || "", undefined, { sensitivity: "base" })),
+    [owners],
+  );
 
   const loadData = async () => {
     setLoading(true);
@@ -125,7 +142,7 @@ export function RolesTab() {
       ) : (
         <div className="space-y-2">
           {/* Managers */}
-          {roleTab === "managers" && managers.map((m) => (
+          {roleTab === "managers" && sortedManagers.map((m) => (
             <div key={m.id} className="border rounded-xl bg-card overflow-hidden">
               <button
                 onClick={() => setExpandedId(expandedId === m.id ? null : m.id)}
@@ -187,8 +204,8 @@ export function RolesTab() {
           ))}
 
           {/* Admins */}
-          {roleTab === "admins" && admins.map((a) => {
-            const matchingMembers = members.filter((mem) =>
+          {roleTab === "admins" && sortedAdmins.map((a) => {
+            const matchingMembers = sortedMembers.filter((mem) =>
               mem.zones && a.zones && mem.zones.some((mz) => a.zones.includes(mz)),
             );
             return (
@@ -259,7 +276,7 @@ export function RolesTab() {
           })}
 
           {/* Members */}
-          {roleTab === "members" && members.map((mem) => (
+          {roleTab === "members" && sortedMembers.map((mem) => (
             <div key={mem.id} className="border rounded-xl bg-card overflow-hidden">
               <button
                 onClick={() => setExpandedId(expandedId === mem.id ? null : mem.id)}
@@ -303,7 +320,7 @@ export function RolesTab() {
           ))}
 
           {/* Owners */}
-          {roleTab === "owners" && owners.map((own) => (
+          {roleTab === "owners" && sortedOwners.map((own) => (
             <div key={own.id} className="border rounded-xl bg-card overflow-hidden">
               <button
                 onClick={() => setExpandedId(expandedId === own.id ? null : own.id)}

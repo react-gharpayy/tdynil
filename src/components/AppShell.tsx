@@ -3,8 +3,9 @@ import {
   LayoutDashboard, Target, CalendarPlus, ClipboardList, Boxes, Activity,
   Building2, Search, Sun, Command, Trophy, Sparkles, MessageSquare,
   IndianRupee, MapPin, Zap, Users, Home, Calendar, Store, Swords, Settings, AlertTriangle,
-  ShieldCheck, Inbox, Camera, HelpCircle, Layers, HeartPulse, ListTodo,
+  ShieldCheck, Inbox, Camera, HelpCircle, Layers, HeartPulse, ListTodo, Gauge,
 } from "lucide-react";
+import { MemberDailyReminderPopup } from "@/components/stats/MemberDailyReminderPopup";
 import { NotificationCenter } from "./NotificationCenter";
 import { ProfileMenu } from "./ProfileMenu";
 import { useApp } from "@/lib/store";
@@ -39,6 +40,19 @@ function PipRouteSyncBridge() {
 
 type NavItem = { to: string; label: string; icon: typeof Target; badge?: number; accent?: boolean };
 
+const TAIL_NAV: NavItem[] = [
+  { to: "/daily-progress", label: "Daily Progress", icon: Gauge },
+  { to: "/leaderboard", label: "Leaderboard", icon: Trophy },
+  { to: "/settings", label: "Settings", icon: Settings },
+];
+
+function withTailNav(items: NavItem[]) {
+  const out = [...items];
+  for (const item of TAIL_NAV) {
+    if (!out.some((n) => n.to === item.to)) out.push(item);
+  }
+  return out;
+}
 
 export function AppShell({ children }: { children: ReactNode }) {
   const { role, setRole, currentTcmId, setCurrentTcmId, tcms, leads, tours, followUps, handoffs, bookings } = useApp();
@@ -117,9 +131,9 @@ export function AppShell({ children }: { children: ReactNode }) {
   }, [bookings, mounted, markMessageBookedAfter]);
 
   const navByRole: Record<typeof role, NavItem[]> = {
-    hr: [
+    hr: withTailNav([
       { to: "/today", label: "Today", icon: Sun, badge: queue.length },
-      { to: "/leads", label: "Leads", icon: Target, accent: true },
+      { to: "/leads", label: "Leads", icon: Target },
       { to: "/myt/tours", label: "Tours", icon: CalendarPlus },
       { to: "/myt/war-room", label: "War Room", icon: Swords },
       { to: "/myt/team", label: "Team", icon: Users },
@@ -129,22 +143,22 @@ export function AppShell({ children }: { children: ReactNode }) {
       { to: "/myt/owners-compare", label: "Owners", icon: ShieldCheck },
       { to: "/supply-hub", label: "Supply Hub", icon: Layers },
       { to: "/my-tasks", label: "My Tasks", icon: ListTodo },
-    ],
-    "flow-ops": [
+    ]),
+    "flow-ops": withTailNav([
       { to: "/today", label: "Today", icon: Sun, badge: queue.length },
       { to: "/inbox", label: "Inbox", icon: Inbox },
-      { to: "/leads", label: "Leads", icon: Target, accent: true },
+      { to: "/leads", label: "Leads", icon: Target },
       { to: "/myt/schedule", label: "Schedule", icon: CalendarPlus },
       { to: "/calendar", label: "Calendar", icon: Calendar },
       { to: "/myt/marketplace", label: "Marketplace", icon: Store },
       { to: "/supply-hub", label: "Supply Hub", icon: Layers },
       { to: "/sequences", label: "Outreach", icon: Zap },
       { to: "/my-tasks", label: "My Tasks", icon: ListTodo },
-    ],
-    tcm: [
+    ]),
+    tcm: withTailNav([
       { to: "/today", label: "Today", icon: Sun, badge: queue.length },
       { to: "/inbox", label: "Inbox", icon: Inbox },
-      { to: "/myt/tcm", label: "TCM Desk", icon: Target, accent: true },
+      { to: "/myt/tcm", label: "TCM Desk", icon: Target },
       { to: "/tours", label: "My Tours", icon: CalendarPlus, badge: incompletePostTour },
       { to: "/follow-ups", label: "Follow-ups", icon: ClipboardList, badge: overdueCount },
       { to: "/calendar", label: "Calendar", icon: Calendar },
@@ -152,9 +166,9 @@ export function AppShell({ children }: { children: ReactNode }) {
       { to: "/myt/marketplace", label: "Marketplace", icon: Store },
       { to: "/myt/tcm/performance", label: "My Stats", icon: Activity },
       { to: "/my-tasks", label: "My Tasks", icon: ListTodo },
-    ],
+    ]),
     owner: [
-      { to: "/owner", label: "Owner Home", icon: ShieldCheck, accent: true },
+      { to: "/owner", label: "Owner Home", icon: ShieldCheck },
       { to: "/owner/blocks", label: "Approvals", icon: Inbox },
       { to: "/owner/rooms", label: "Rooms", icon: Building2 },
       { to: "/owner/inventory", label: "Inventory", icon: Layers },
@@ -162,23 +176,17 @@ export function AppShell({ children }: { children: ReactNode }) {
       { to: "/owner/insights", label: "Insights", icon: IndianRupee },
       { to: "/my-tasks", label: "My Tasks", icon: ListTodo },
     ],
-    "super-admin": [
+    "super-admin": withTailNav([
       { to: "/today", label: "Today", icon: Sun, badge: queue.length },
-      { to: "/leads", label: "Leads", icon: Target, accent: true },
+      { to: "/leads", label: "Leads", icon: Target },
       { to: "/myt/tours", label: "Tours", icon: CalendarPlus },
       { to: "/myt/war-room", label: "War Room", icon: Swords },
       { to: "/myt/team", label: "Team", icon: Users },
       { to: "/revenue", label: "Revenue", icon: IndianRupee },
       { to: "/zones", label: "Zones", icon: MapPin },
-      { to: "/settings", label: "Settings", icon: Settings, accent: true },
-    ],
+    ]),
   };
 
-  // Append Settings to every persona's nav (after primary items).
-  Object.keys(navByRole).forEach((k) => {
-    const arr = navByRole[k as typeof role];
-    if (!arr.some((n) => n.to === "/settings")) arr.push({ to: "/settings", label: "Settings", icon: Settings });
-  });
   const items = navByRole[role];
   
 
@@ -235,7 +243,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                 className={cn(
                   "flex items-center gap-2.5 px-3 py-2 rounded-md text-[13px] transition-colors",
                   active
-                    ? "bg-sidebar-accent text-sidebar-accent-foreground"
+                    ? "bg-accent/15 text-accent border border-accent/20"
                     : "hover:bg-sidebar-accent/60 hover:text-sidebar-accent-foreground",
                   it.accent && !active && "text-accent",
                 )}
@@ -379,6 +387,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       {selectedLeadId ? <LeadControlPanel /> : null}
       <CommandPalette />
       <CoachWidget />
+      {authUser ? <MemberDailyReminderPopup /> : null}
       </div>
     </PictureInPictureProvider>
   );

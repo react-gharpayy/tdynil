@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { Loader2, MoreVertical, UserPlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -32,7 +32,12 @@ export function UsersTab() {
 
   useEffect(() => { load(); }, []);
 
-  const filtered = users.filter((u) => (u.status || "active") === tab);
+  const filtered = useMemo(
+    () => users
+      .filter((u) => (u.status || "active") === tab)
+      .sort((a, b) => (a.fullName || "").localeCompare(b.fullName || "", undefined, { sensitivity: "base" })),
+    [users, tab],
+  );
   const counts = {
     active: users.filter((u) => (u.status || "active") === "active").length,
     inactive: users.filter((u) => u.status === "inactive").length,
