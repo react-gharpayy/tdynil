@@ -21,6 +21,7 @@ import { QUICKAD_NEED_OPTIONS, QUICKAD_ROOM_OPTIONS, QUICKAD_TYPE_OPTIONS, parse
 import type { ParsedLeadDraft } from "@/lib/lead-identity/types";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 import { useApp } from "@/lib/store";
 import type { LeadStage, Intent } from "@/lib/types";
@@ -70,6 +71,13 @@ export function LeadPasteParser({ onDone }: Props) {
   const create = useIdentityStore((s) => s.createLead);
   const { members: orgMembers } = useOrgMembers();
   const { zones: orgZones } = useOrgZones();
+
+  const sortedZones = useMemo(() => orgZones.slice().sort((a, b) => a.name.localeCompare(b.name)), [orgZones]);
+  const sortedMembers = useMemo(() => orgMembers
+    .filter(m => m.role === 'member' || m.role === 'tcm')
+    .slice()
+    .sort((a, b) => a.name.localeCompare(b.name)), [orgMembers]);
+  const sortedStages = useMemo(() => Array.from(STAGES).slice().sort((a, b) => a.localeCompare(b)), []);
   const addLead = useApp((s) => s.addLead);
 
   const [raw, setRaw] = useState("");
@@ -431,35 +439,38 @@ export function LeadPasteParser({ onDone }: Props) {
         </Field>
 
         <Field label="Zone *">
-          <select
-            value={zoneBucket}
-            onChange={(e) => setZoneBucket(e.target.value)}
-            className="w-full h-9 bg-background border border-border rounded-md px-2 text-xs"
-          >
-            <option value="">{orgZones.length ? "Select zone…" : "No zones configured"}</option>
-            {orgZones.map((z) => <option key={z.id} value={z.name}>{z.name}</option>)}
-          </select>
+          <Select value={zoneBucket} onValueChange={(v) => setZoneBucket(v)}>
+            <SelectTrigger className="w-full h-9 text-xs">
+              <SelectValue placeholder={orgZones.length ? "Select zone…" : "No zones configured"} />
+            </SelectTrigger>
+            <SelectContent>
+              {sortedZones.map((z) => <SelectItem key={z.id} value={z.name}>{z.name}</SelectItem>)}
+            </SelectContent>
+          </Select>
         </Field>
 
         <Field label="Assign Member *">
-          <select
-            value={assigneeId}
-            onChange={(e) => setAssigneeId(e.target.value)}
-            className="w-full h-9 bg-background border border-border rounded-md px-2 text-xs"
-          >
-            <option value="">{orgMembers.length ? "Select member…" : "No members yet"}</option>
-            {orgMembers.filter(m => m.role === 'member' || m.role === 'tcm').map((m) => <option key={m.id} value={m.id}>{m.name}</option>)}
-          </select>
+          <Select value={assigneeId} onValueChange={(v) => setAssigneeId(v)}>
+            <SelectTrigger className="w-full h-9 text-xs">
+              <SelectValue placeholder={orgMembers.length ? "Select member…" : "No members yet"} />
+            </SelectTrigger>
+            <SelectContent>
+              {sortedMembers.map((m) => (
+                <SelectItem key={m.id} value={m.id}>{m.name}</SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </Field>
 
         <Field label="Lead Stage">
-          <select
-            value={stage}
-            onChange={(e) => setStage(e.target.value)}
-            className="w-full h-9 bg-background border border-border rounded-md px-2 text-xs"
-          >
-            {STAGES.map((s) => <option key={s} value={s}>{s}</option>)}
-          </select>
+          <Select value={stage} onValueChange={(v) => setStage(v)}>
+            <SelectTrigger className="w-full h-9 text-xs">
+              <SelectValue placeholder="Select stage…" />
+            </SelectTrigger>
+            <SelectContent>
+              {sortedStages.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}
+            </SelectContent>
+          </Select>
         </Field>
 
         <Field label="📝 Notes">

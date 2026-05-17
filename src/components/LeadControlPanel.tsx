@@ -427,19 +427,24 @@ export function LeadControlPanel() {
         <div className="flex-1 overflow-y-auto scrollbar-thin">
           <Tabs value={tab} onValueChange={setTab} className="px-5 py-4">
             <TabsList className="flex h-auto w-full overflow-x-auto gap-1 scrollbar-micro justify-start">
-              <TabsTrigger value="activity" className="text-xs shrink-0 whitespace-nowrap">Activity</TabsTrigger>
-              <TabsTrigger value="best-fit" className="text-xs shrink-0 whitespace-nowrap">Best Fit</TabsTrigger>
-              <TabsTrigger value="control" className="text-xs shrink-0 whitespace-nowrap">Control</TabsTrigger>
-              <TabsTrigger value="details" className="text-xs shrink-0 whitespace-nowrap">Details</TabsTrigger>
-              <TabsTrigger value="dossier" className="text-xs shrink-0 whitespace-nowrap">Dossier</TabsTrigger>
-              <TabsTrigger value="handoff" className="text-xs shrink-0 whitespace-nowrap">Handoff</TabsTrigger>
-              <TabsTrigger value="log" className="text-xs shrink-0 whitespace-nowrap">Log</TabsTrigger>
-              <TabsTrigger value="post" className="text-xs shrink-0 whitespace-nowrap">
-                Post {pendingPostTour && <span className="ml-1 h-1.5 w-1.5 rounded-full bg-destructive" />}
-              </TabsTrigger>
-              <TabsTrigger value="tasks" className="text-xs shrink-0 whitespace-nowrap">Tasks</TabsTrigger>
-              <TabsTrigger value="tour" className="text-xs shrink-0 whitespace-nowrap">Tour</TabsTrigger>
-            </TabsList>
+                <TabsTrigger
+                  value="tour"
+                  className={`text-xs shrink-0 whitespace-nowrap ${tab === "tour" ? "rounded-md px-2 py-1 bg-accent/10 text-accent ring-1 ring-accent/20" : ""}`}
+                >
+                  Tour
+                </TabsTrigger>
+                <TabsTrigger value="activity" className="text-xs shrink-0 whitespace-nowrap">Activity</TabsTrigger>
+                <TabsTrigger value="best-fit" className="text-xs shrink-0 whitespace-nowrap">Best Fit</TabsTrigger>
+                <TabsTrigger value="control" className="text-xs shrink-0 whitespace-nowrap">Control</TabsTrigger>
+                <TabsTrigger value="details" className="text-xs shrink-0 whitespace-nowrap">Details</TabsTrigger>
+                <TabsTrigger value="dossier" className="text-xs shrink-0 whitespace-nowrap">Dossier</TabsTrigger>
+                <TabsTrigger value="handoff" className="text-xs shrink-0 whitespace-nowrap">Handoff</TabsTrigger>
+                <TabsTrigger value="log" className="text-xs shrink-0 whitespace-nowrap">Log</TabsTrigger>
+                <TabsTrigger value="post" className="text-xs shrink-0 whitespace-nowrap">
+                  Post {pendingPostTour && <span className="ml-1 h-1.5 w-1.5 rounded-full bg-destructive" />}
+                </TabsTrigger>
+                <TabsTrigger value="tasks" className="text-xs shrink-0 whitespace-nowrap">Tasks</TabsTrigger>
+              </TabsList>
 
             <TabsContent value="activity" className="space-y-3 pt-4">
               <LeadActivityTab leadId={lead.id} />
