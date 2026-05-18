@@ -34,7 +34,7 @@ interface AppState {
 
   addLead: (lead: Lead) => void;
   setLeads: (leads: Lead[]) => void;
-  setLeadStage: (leadId: string, stage: LeadStage) => void;
+  setLeadStage: (leadId: string, stage: LeadStage) => Promise<void>;
   setLeadIntent: (leadId: string, intent: Intent) => void;
   setLeadFollowUp: (leadId: string, dueAt: string, priority: FollowUp["priority"], reason?: string) => void;
   addLeadTag: (leadId: string, tag: string) => void;
@@ -94,16 +94,38 @@ export const useApp = create<AppState>((set, get) => ({
   addLead: (lead) => set((s) => ({ leads: [lead, ...s.leads] })),
   setLeads: (leads: Lead[]) => set({ leads }),
 
-  setLeadStage: (leadId, stage) => {
+  setLeadStage: async (leadId, stage) => {
+    const prevLead = get().leads.find((l) => l.id === leadId);
+    if (!prevLead) return;
+
+    // Optimistic UI so status changes feel instant.
     set((s) => ({
       leads: s.leads.map((l) =>
         l.id === leadId ? { ...l, stage, updatedAt: new Date().toISOString() } : l,
       ),
     }));
-    pushActivity(set, get, {
-      kind: "status_changed", actor: get().role, leadId,
-      text: `Status changed to ${stage}`,
-    });
+
+    try {
+      await api.command({
+        _id: uid("c"),
+        type: "cmd.lead.change_stage",
+        issuedAt: new Date().toISOString(),
+        payload: { leadId, to: stage },
+      });
+
+      pushActivity(set, get, {
+        kind: "status_changed", actor: get().role, leadId,
+        text: `Status changed to ${stage}`,
+      });
+    } catch (err) {
+      // Roll back optimistic state if server persistence fails.
+      set((s) => ({
+        leads: s.leads.map((l) =>
+          l.id === leadId ? { ...l, stage: prevLead.stage, updatedAt: prevLead.updatedAt } : l,
+        ),
+      }));
+      throw err;
+    }
   },
 
   setLeadIntent: (leadId, intent) => {

@@ -218,7 +218,9 @@ export function LeadControlPanel() {
       workLocation: lead.preferredArea || "",
       keyConcern: lead.tags.join(", "),
     }));
-    setTab(pendingPostTour ? "post" : hasScheduledTour ? "tour" : settings.matching.drawerDefaultTab);
+    // Default to the Tour tab when opening a lead. If there's a pending post-tour,
+    // prefer the post form; otherwise always show the tour view by default.
+    setTab(pendingPostTour ? "post" : "tour");
   }, [
     authUser?.role,
     currentMemberId,
@@ -227,7 +229,7 @@ export function LeadControlPanel() {
     lead,
     pendingPostTour,
     scheduleAssignees,
-    settings.matching.drawerDefaultTab,
+    // settings.matching.drawerDefaultTab intentionally removed — default is now 'tour'
     tourToShow,
   ]);
 
@@ -574,17 +576,28 @@ export function LeadControlPanel() {
               <Section title="Status engine">
                 <Select value={lead.stage} onValueChange={(v) => {
                   const prev = lead.stage;
-                  setLeadStage(lead.id, v as LeadStage);
-                  if (v === "dropped") {
-                    toast("Marked dropped", {
-                      description: `${lead.name} → dropped`,
-                      action: {
-                        label: "Undo",
-                        onClick: () => { setLeadStage(lead.id, prev); toast.success("Restored"); },
-                      },
-                      duration: 5000,
-                    });
-                  }
+                  const next = v as LeadStage;
+                  void (async () => {
+                    try {
+                      await setLeadStage(lead.id, next);
+                      if (v === "dropped") {
+                        toast("Marked dropped", {
+                          description: `${lead.name} → dropped`,
+                          action: {
+                            label: "Undo",
+                            onClick: () => {
+                              void setLeadStage(lead.id, prev)
+                                .then(() => toast.success("Restored"))
+                                .catch((err) => toast.error((err as Error).message || "Failed to restore stage"));
+                            },
+                          },
+                          duration: 5000,
+                        });
+                      }
+                    } catch (err) {
+                      toast.error((err as Error).message || "Failed to update status");
+                    }
+                  })();
                 }}>
                   <SelectTrigger className="h-9 text-sm">
                     <SelectValue />
