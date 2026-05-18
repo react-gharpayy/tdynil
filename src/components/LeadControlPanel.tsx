@@ -1418,13 +1418,13 @@ function InlineScheduleTour({
           </div>
         </div>
         <div className="grid gap-2 sm:grid-cols-[1fr_auto]">
-          {/* Separate date and time selectors. Time options: 09:00–21:00 every 10 minutes */}
+          {/* Separate date and time selectors. Time options: 09:00–21:00 every 30 minutes */}
           {(() => {
             const datePart = scheduledAt ? scheduledAt.split("T")[0] : "";
             const timePartRaw = scheduledAt && scheduledAt.includes("T") ? (scheduledAt.split("T")[1] || "").slice(0, 5) : "";
             const times: string[] = [];
             const pad = (n: number) => String(n).padStart(2, "0");
-            for (let mins = 9 * 60; mins <= 21 * 60; mins += 10) {
+            for (let mins = 9 * 60; mins <= 21 * 60; mins += 30) {
               const h = Math.floor(mins / 60);
               const m = mins % 60;
               times.push(`${pad(h)}:${pad(m)}`);
