@@ -143,11 +143,6 @@ export async function applyTourCommand(cmd: Command, user: JwtClaims) {
       );
       if (!tour) return { ok: false, error: "NOT_FOUND: Tour not found" };
 
-      await col<Lead>("leads").updateOne(
-        { _id: tour.leadId, tenantId: user.tenantId },
-        { $set: { stage: "tour-done", updatedAt: now } },
-      );
-
       const evtId = newEventId();
       await emit({
         _id: evtId,
