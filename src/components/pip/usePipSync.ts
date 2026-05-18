@@ -1,5 +1,5 @@
 // Cross-window sync between the main tab and the PiP window.
-// Uses BroadcastChannel — works inside a documentPictureInPicture child window
+// Uses BroadcastChannel - works inside a documentPictureInPicture child window
 // because the channel is a window-agnostic global (each window opens its own
 // channel of the same name and they receive each other's messages).
 //

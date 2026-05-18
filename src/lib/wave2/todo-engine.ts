@@ -1,5 +1,5 @@
 /**
- * Todo Engine — overdue/today/upcoming buckets, smart sort, focus mode,
+ * Todo Engine - overdue/today/upcoming buckets, smart sort, focus mode,
  * checklist/sub-task synthesis, and effort estimates. Pure utility layer
  * that consumes the existing Todo contract.
  */
@@ -64,7 +64,7 @@ export function focusQueue(todos: Todo[], n = 5, now: Date = new Date()): Todo[]
   ), now).slice(0, n);
 }
 
-/** Heuristic effort estimate (mins) from title/notes — for sequencing the day. */
+/** Heuristic effort estimate (mins) from title/notes - for sequencing the day. */
 export function estimateMins(t: Todo): number {
   const text = `${t.title} ${t.notes ?? ""}`.toLowerCase();
   if (/call|dial|ring/.test(text))         return 8;
@@ -80,7 +80,7 @@ export interface DayPlan {
   totalMins: number;
   blocks: { todo: Todo; mins: number; cumulative: number }[];
 }
-/** Greedy day planner — packs focus queue into a budget (default 4h). */
+/** Greedy day planner - packs focus queue into a budget (default 4h). */
 export function planDay(todos: Todo[], budgetMins = 240): DayPlan {
   const queue = smartSort(todos.filter((t) => t.status !== "done" && t.status !== "cancelled"));
   let total = 0;

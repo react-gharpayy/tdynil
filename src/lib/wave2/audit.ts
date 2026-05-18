@@ -1,5 +1,5 @@
 /**
- * Local audit trail — every command dispatched from this browser is mirrored
+ * Local audit trail - every command dispatched from this browser is mirrored
  * into a circular ring buffer for debug, "undo last", and showing the user
  * what just happened. Persisted to localStorage. 500-event cap.
  */

@@ -1,13 +1,13 @@
 // WhatsApp helpers: build a personalized card and a wa.me deep link.
-// This is the conversion engine — manager sees a clean message with name, price, location, USP.
+// This is the conversion engine - manager sees a clean message with name, price, location, USP.
 
 import type { PG } from "../data/types";
 
 export function buildWaCard(pg: PG, opts?: { leadName?: string; bedLabel?: string; commuteKm?: number | null; landmarkName?: string }): string {
   const greet = opts?.leadName ? `Hi ${opts.leadName},` : "Hi,";
-  const lines: string[] = [greet, "", `Sharing *${pg.name}* — ${pg.area}.`];
+  const lines: string[] = [greet, "", `Sharing *${pg.name}* - ${pg.area}.`];
 
-  // Pricing — only what's actually offered
+  // Pricing - only what's actually offered
   const priced: string[] = [];
   if (pg.prices.triple) priced.push(`Triple: ₹${pg.prices.triple.toLocaleString("en-IN")}/mo`);
   if (pg.prices.double) priced.push(`Double: ₹${pg.prices.double.toLocaleString("en-IN")}/mo`);
@@ -30,7 +30,7 @@ export function buildWaCard(pg: PG, opts?: { leadName?: string; bedLabel?: strin
 
   if (pg.mapsLink) lines.push("", `🗺 ${pg.mapsLink}`);
 
-  lines.push("", "Want me to lock a visit slot?", "— Gharpayy");
+  lines.push("", "Want me to lock a visit slot?", "- Gharpayy");
   return lines.join("\n");
 }
 

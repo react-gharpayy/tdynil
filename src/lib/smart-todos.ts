@@ -1,5 +1,5 @@
 /**
- * Smart Todo extensions — snooze, recurring, bulk ops. Persisted as
+ * Smart Todo extensions - snooze, recurring, bulk ops. Persisted as
  * meta on top of the existing Todo contract so we don't need a server
  * migration. Delegates to the command bus where possible; uses a thin
  * localStorage layer for snooze/recurrence rules so it works in both
@@ -113,7 +113,7 @@ export async function bulkSetPriority(todoIds: string[], priority: Priority): Pr
 // ─────────────── Auto-priority (SLA-aware) ───────────────
 /**
  * Suggest a priority based on due date proximity.
- * Pure — caller decides whether to apply via cmd.todo.update.
+ * Pure - caller decides whether to apply via cmd.todo.update.
  */
 export function suggestPriority(dueAt: string | null): Priority {
   if (!dueAt) return "med";

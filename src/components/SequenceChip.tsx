@@ -55,7 +55,7 @@ export function SequenceChip({ leadId, compact = false }: { leadId: string; comp
       <div className="text-[11px] text-muted-foreground">
         {state?.nextStep
           ? `Next: "${state.nextStep.label}" ${state.nextAtMs && mounted ? formatDistanceToNow(new Date(state.nextAtMs), { addSuffix: true }) : "soon"}`
-          : "All steps sent — awaiting reply."}
+          : "All steps sent - awaiting reply."}
       </div>
       <div className="flex gap-1">
         {def.steps.map((s: SequenceStep, i: number) => (

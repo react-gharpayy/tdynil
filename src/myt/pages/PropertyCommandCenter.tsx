@@ -80,7 +80,7 @@ export default function PropertyCommandCenter() {
             Property Command Center
           </h1>
           <p className="text-xs text-muted-foreground">
-            Live demand, conversion & velocity — populated from your real properties.
+            Live demand, conversion & velocity - populated from your real properties.
           </p>
         </div>
         <Dialog open={addOpen} onOpenChange={setAddOpen}>

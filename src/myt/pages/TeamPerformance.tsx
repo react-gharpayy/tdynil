@@ -67,7 +67,7 @@ export default function TeamPerformance() {
                   {m.role === 'flow-ops' ? 'FO' : 'TCM'}
                 </span>
               </div>
-              <span className="text-[10px] text-muted-foreground">{m.zoneName.split(' — ')[1]}</span>
+              <span className="text-[10px] text-muted-foreground">{m.zoneName.split(' - ')[1]}</span>
             </div>
             <div className="grid grid-cols-4 gap-2 text-center">
               <div>
@@ -121,7 +121,7 @@ export default function TeamPerformance() {
                       {m.role === 'flow-ops' ? 'Flow Ops' : 'TCM'}
                     </span>
                   </td>
-                  <td className="py-2.5 px-2 text-muted-foreground text-xs">{m.zoneName.split(' — ')[1]}</td>
+                  <td className="py-2.5 px-2 text-muted-foreground text-xs">{m.zoneName.split(' - ')[1]}</td>
                   <td className="py-2.5 px-2 text-center text-muted-foreground">{m.leadsAdded}</td>
                   <td className="py-2.5 px-2 text-center text-muted-foreground">{m.toursScheduled}</td>
                   <td className="py-2.5 px-2 text-center text-muted-foreground">{m.toursCompleted}</td>
@@ -140,7 +140,7 @@ export default function TeamPerformance() {
         <div className="glass-card p-3 md:p-5 animate-slide-up">
           <div className="flex items-center justify-between mb-3">
             <h3 className="font-heading font-semibold text-sm text-foreground">
-              {sorted.find(m => m.memberId === selectedMember)?.name} — History
+              {sorted.find(m => m.memberId === selectedMember)?.name} - History
             </h3>
             <button onClick={() => setSelectedMember(null)} className="text-muted-foreground hover:text-foreground">
               <X className="h-4 w-4" />
@@ -184,7 +184,7 @@ export default function TeamPerformance() {
                     <td className="py-2 text-muted-foreground">{t.propertyName}</td>
                     <td className="py-2"><StatusBadge status={t.status} /></td>
                     <td className="py-2"><OutcomeBadge outcome={t.outcome} /></td>
-                    <td className="py-2 text-muted-foreground text-xs">{t.remarks || '—'}</td>
+                    <td className="py-2 text-muted-foreground text-xs">{t.remarks || '-'}</td>
                   </tr>
                 ))}
               </tbody>

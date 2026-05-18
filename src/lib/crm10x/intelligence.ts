@@ -73,10 +73,10 @@ export function computeBookingProbability(input: ProbabilityInput): ProbabilityB
   score = Math.max(0, Math.min(100, Math.round(score)));
 
   const recommendation =
-    score >= 75 ? "Push for token now — call within 2h."
+    score >= 75 ? "Push for token now - call within 2h."
     : score >= 50 ? "Send fresh property options + price reassurance."
     : score >= 30 ? "Re-qualify on call: budget, move-in, decision-maker."
-    : "Cold — drop into 30/60/90d revival sequence.";
+    : "Cold - drop into 30/60/90d revival sequence.";
 
   return { score, signals, recommendation };
 }

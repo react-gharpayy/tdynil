@@ -1,5 +1,5 @@
 /**
- * Notifications store — bridges the cross-role connector bus into
+ * Notifications store - bridges the cross-role connector bus into
  * an inbox with read/unread state, role-aware filtering and toast hints.
  *
  * Pure browser-side (Zustand + localStorage). Notifications are produced
@@ -18,9 +18,9 @@ export interface AppNotification {
   id: string;
   ts: number;
   read: boolean;
-  /** which roles should see this — empty = everyone */
+  /** which roles should see this - empty = everyone */
   audience: Role[];
-  /** target user id within that audience — when set, only that user sees it */
+  /** target user id within that audience - when set, only that user sees it */
   recipientId?: string;
   severity: NotifSeverity;
   title: string;
@@ -37,7 +37,7 @@ export interface AppNotification {
   senderName?: string;
   /** marker so /inbox can show "would-email" badge */
   emailQueued?: boolean;
-  /** todo state — set when channels include "todo" */
+  /** todo state - set when channels include "todo" */
   todoDone?: boolean;
 }
 
@@ -176,7 +176,7 @@ function toNotification(e: ConnectorEvent): Omit<AppNotification, "id" | "ts" | 
       return {
         audience: ["tcm", "hr"],
         severity: "warn",
-        title: "Tour finished — fill post-tour",
+        title: "Tour finished - fill post-tour",
         body: e.text,
         href: "/tours",
         kind: e.kind,
@@ -284,7 +284,7 @@ export function notifyTourScheduled(input: {
   });
 }
 
-/** Convenience hook for the bell — returns count for the active (role, userId). */
+/** Convenience hook for the bell - returns count for the active (role, userId). */
 export function useUnreadCount(role: Role, userId?: string): number {
   return useNotifications((s) =>
     s.items.filter(
@@ -305,14 +305,14 @@ export function selectInboxFor(items: AppNotification[], role: Role, userId?: st
   );
 }
 
-/** Broadcast todos for the current user — surfaced on Today + Inbox. */
+/** Broadcast todos for the current user - surfaced on Today + Inbox. */
 export function selectBroadcastTodos(items: AppNotification[], role: Role, userId?: string) {
   return selectInboxFor(items, role, userId).filter(
     (n) => n.kind === "broadcast" && n.channels?.includes("todo") && !n.todoDone,
   );
 }
 
-/** Broadcast calendar entries for the current user — surfaced on /calendar. */
+/** Broadcast calendar entries for the current user - surfaced on /calendar. */
 export function selectBroadcastCalendar(items: AppNotification[], role: Role, userId?: string) {
   return selectInboxFor(items, role, userId).filter(
     (n) => n.kind === "broadcast" && n.channels?.includes("calendar") && n.dueAt,

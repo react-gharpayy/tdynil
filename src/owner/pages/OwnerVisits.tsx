@@ -49,7 +49,7 @@ export function OwnerVisits() {
     <div className="space-y-5 pb-12">
       <header>
         <h1 className="font-display text-xl md:text-2xl font-semibold tracking-tight">Tours at your property</h1>
-        <p className="text-sm text-muted-foreground">Live feed from Flow Ops + TCM team — no separate app needed.</p>
+        <p className="text-sm text-muted-foreground">Live feed from Flow Ops + TCM team - no separate app needed.</p>
       </header>
 
       {/* Effort tally */}
@@ -79,8 +79,8 @@ export function OwnerVisits() {
                     {(prop?.name ?? 'R').slice(0, 2).toUpperCase()}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-sm font-medium truncate">{lead?.name ?? '—'}</div>
-                    <div className="text-[10px] text-muted-foreground font-mono truncate">{prop?.name ?? '—'}</div>
+                    <div className="text-sm font-medium truncate">{lead?.name ?? '-'}</div>
+                    <div className="text-[10px] text-muted-foreground font-mono truncate">{prop?.name ?? '-'}</div>
                   </div>
                   <div className="text-[11px] font-mono text-muted-foreground">{format(new Date(t.scheduledAt), 'p')} · {t.status}</div>
                 </div>

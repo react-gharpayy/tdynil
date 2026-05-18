@@ -1,5 +1,5 @@
 /**
- * Matching Engine v2 — BRD R26-aligned.
+ * Matching Engine v2 - BRD R26-aligned.
  *
  * Produces:
  *   - Top-6 ranked supply matches per lead (filters disqualified)
@@ -41,7 +41,7 @@ export interface MatchV2 {
   disqualified?: string;
   /** Set on the picked Primary B; explains why it was paired with A. */
   diversityReason?: string;
-  /** Visual ranking band — drives the colour ramp in the UI. */
+  /** Visual ranking band - drives the colour ramp in the UI. */
   band: "primary" | "strong" | "secondary";
 }
 
@@ -55,7 +55,7 @@ export interface MatchPair {
 }
 
 export const DEFAULT_MATCHING: MatchingV2Settings = {
-  // Weights — total ~100, sliders in Settings adjust
+  // Weights - total ~100, sliders in Settings adjust
   wDistance: 35,
   wBudget: 25,
   wAvailability: 12,
@@ -108,7 +108,7 @@ function radiusForLead(lead: AppLead, m: MatchingV2Settings): number {
 }
 
 function complianceScore(pg: PG): number {
-  // Local proxy for "owner compliance" — combines IQ + safety + meals/cleaning disclosure.
+  // Local proxy for "owner compliance" - combines IQ + safety + meals/cleaning disclosure.
   const iq = pg.iq;
   const safety = Math.min(20, pg.safety.length * 4);
   const disclosure = (pg.foodType ? 5 : 0) + (pg.mealsIncluded ? 5 : 0) + (pg.cleaning ? 5 : 0);
@@ -116,7 +116,7 @@ function complianceScore(pg: PG): number {
 }
 
 function conversionProxy(pg: PG): number {
-  // Local proxy for "past conversion rate" — value score + scarcity hot.
+  // Local proxy for "past conversion rate" - value score + scarcity hot.
   const v = valueScore(pg);
   const sc = scarcity(pg);
   return Math.min(100, Math.round(v * 0.4 + (sc.hot ? 30 : 10)));
@@ -149,7 +149,7 @@ export function runMatcherV2(lead: AppLead, settings?: MatchingV2Settings): Matc
 
     // Hard gates
     if (supplyLead.gender !== "Any" && pg.gender !== supplyLead.gender && pg.gender !== "Co-live") {
-      dq = `Gender mismatch — lead ${supplyLead.gender}, PG ${pg.gender}`;
+      dq = `Gender mismatch - lead ${supplyLead.gender}, PG ${pg.gender}`;
     }
     if (!dq && bedPrice !== null && bedPrice > supplyLead.budgetMax * 1.15) {
       dq = `Over budget by >15%`;
@@ -160,14 +160,14 @@ export function runMatcherV2(lead: AppLead, settings?: MatchingV2Settings): Matc
 
     const parts: MatchPart[] = [];
 
-    // 1) Distance — uses radius cap
+    // 1) Distance - uses radius cap
     let dPts = 0;
     let dReason = "Distance unknown";
     if (dist.km != null) {
-      if (dist.km <= radiusKm * 0.4) { dPts = m.wDistance; dReason = `${dist.km} km — within ideal radius`; }
-      else if (dist.km <= radiusKm) { dPts = Math.round(m.wDistance * 0.75); dReason = `${dist.km} km — within ${radiusKm} km cap`; }
-      else if (dist.km <= radiusKm * 1.6) { dPts = Math.round(m.wDistance * 0.4); dReason = `${dist.km} km — slightly outside radius`; }
-      else { dPts = Math.round(m.wDistance * 0.1); dReason = `${dist.km} km — far`; }
+      if (dist.km <= radiusKm * 0.4) { dPts = m.wDistance; dReason = `${dist.km} km - within ideal radius`; }
+      else if (dist.km <= radiusKm) { dPts = Math.round(m.wDistance * 0.75); dReason = `${dist.km} km - within ${radiusKm} km cap`; }
+      else if (dist.km <= radiusKm * 1.6) { dPts = Math.round(m.wDistance * 0.4); dReason = `${dist.km} km - slightly outside radius`; }
+      else { dPts = Math.round(m.wDistance * 0.1); dReason = `${dist.km} km - far`; }
     }
     parts.push({ label: "commute", pts: dPts, max: m.wDistance, reason: dReason });
 
@@ -176,15 +176,15 @@ export function runMatcherV2(lead: AppLead, settings?: MatchingV2Settings): Matc
     let bReason = bedLabel;
     if (bedPrice != null) {
       if (bedPrice >= supplyLead.budgetMin && bedPrice <= supplyLead.budgetMax) { bPts = m.wBudget; bReason = `${bedLabel} fits budget`; }
-      else if (bedPrice < supplyLead.budgetMin) { bPts = Math.round(m.wBudget * 0.7); bReason = `${bedLabel} below budget — under-served`; }
+      else if (bedPrice < supplyLead.budgetMin) { bPts = Math.round(m.wBudget * 0.7); bReason = `${bedLabel} below budget - under-served`; }
       else if (bedPrice <= supplyLead.budgetMax * 1.1) { bPts = Math.round(m.wBudget * 0.5); bReason = `${bedLabel} ~10% over`; }
     }
     parts.push({ label: "budget", pts: bPts, max: m.wBudget, reason: bReason });
 
-    // 3) Availability (scarcity inverted — fewer beds → higher urgency, but full = 0)
+    // 3) Availability (scarcity inverted - fewer beds → higher urgency, but full = 0)
     let aPts = 0;
     let aReason = sc.reason;
-    if (sc.level === "FULL") { aPts = 0; aReason = "Full — waitlist only"; }
+    if (sc.level === "FULL") { aPts = 0; aReason = "Full - waitlist only"; }
     else if (sc.level === "1 LEFT" || sc.level === "2 LEFT") { aPts = m.wAvailability; aReason = sc.reason; }
     else if (sc.level === "FEW LEFT") { aPts = Math.round(m.wAvailability * 0.7); }
     else { aPts = Math.round(m.wAvailability * 0.5); }
@@ -218,7 +218,7 @@ export function runMatcherV2(lead: AppLead, settings?: MatchingV2Settings): Matc
       .sort((a, b) => b.pts / b.max - a.pts / a.max)[0]?.label ?? "commute") as Driver;
 
     const reasoning = dq
-      ? `DISQUALIFIED — ${dq}`
+      ? `DISQUALIFIED - ${dq}`
       : parts
           .filter((p) => p.pts >= p.max * 0.7)
           .map((p) => p.reason)
@@ -246,10 +246,10 @@ export function runMatcherV2(lead: AppLead, settings?: MatchingV2Settings): Matc
   all.sort((a, b) => b.score - a.score || b.pg.iq - a.pg.iq);
   all.forEach((x, i) => (x.rank = i + 1));
 
-  // PRIMARY A — top score
+  // PRIMARY A - top score
   const primaryA = all[0] ?? null;
 
-  // PRIMARY B — best score whose dominant driver differs from A,
+  // PRIMARY B - best score whose dominant driver differs from A,
   // also requires score within `diversityWeight` % of A.
   let primaryB: MatchV2 | null = null;
   if (primaryA) {
@@ -263,7 +263,7 @@ export function runMatcherV2(lead: AppLead, settings?: MatchingV2Settings): Matc
     if (primaryA) primaryA.band = "primary";
     if (primaryB) {
       primaryB.band = "primary";
-      primaryB.diversityReason = `Different decision driver — leads on ${primaryB.dominantDriver}, A leads on ${primaryA.dominantDriver}.`;
+      primaryB.diversityReason = `Different decision driver - leads on ${primaryB.dominantDriver}, A leads on ${primaryA.dominantDriver}.`;
     }
   }
 

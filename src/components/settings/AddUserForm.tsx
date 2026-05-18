@@ -23,7 +23,7 @@ export function AddUserForm({ onSuccess }: { onSuccess: () => void }) {
     api.zones.list().then(setZones).catch(() => undefined);
   }, []);
 
-  const needsZone = form.role === "admin" || form.role === "member";
+  const needsZone = form.role === "admin" || form.role === "member" || form.role === "tcm";
 
   const submit = async () => {
     if (!form.fullName || !form.email || !form.password || !form.role) {
@@ -98,6 +98,7 @@ export function AddUserForm({ onSuccess }: { onSuccess: () => void }) {
             <SelectItem value="manager">Manager</SelectItem>
             <SelectItem value="admin">Admin</SelectItem>
             <SelectItem value="member">Member</SelectItem>
+            <SelectItem value="tcm">TCM</SelectItem>
             <SelectItem value="owner">Property Owner</SelectItem>
           </SelectContent>
         </Select>
@@ -114,7 +115,7 @@ export function AddUserForm({ onSuccess }: { onSuccess: () => void }) {
               ))}
               {zones.length === 0 && (
                 <div className="px-3 py-2 text-xs text-muted-foreground">
-                  No zones yet — add zones in Settings → Zones
+                  No zones yet - add zones in Settings → Zones
                 </div>
               )}
             </SelectContent>

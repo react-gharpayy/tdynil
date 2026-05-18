@@ -1,5 +1,5 @@
 /**
- * Best-Fit drawer panel — Matching Engine v2 with COMPACT cards.
+ * Best-Fit drawer panel - Matching Engine v2 with COMPACT cards.
  *
  * Design intent:
  *  - Default view is small: badge, name, area, score, 3 stat chips, primary
@@ -89,16 +89,16 @@ export function SupplyMatchPanel({ lead, limit, onNavigateAway }: Props) {
     const lines: string[] = [
       `Hi ${lead.name},`,
       "",
-      "I've shortlisted *2 strong options* for you — please tell me which fits better:",
+      "I've shortlisted *2 strong options* for you - please tell me which fits better:",
       "",
-      `*Option 1 — ${a.pg.name}* (${a.pg.area})`,
+      `*Option 1 - ${a.pg.name}* (${a.pg.area})`,
       `${a.bedLabel} · ${a.distance.km != null ? `${a.distance.km} km` : "distance TBC"} · ${a.reasoning}`,
     ];
     if (b) {
-      lines.push("", `*Option 2 — ${b.pg.name}* (${b.pg.area})`);
+      lines.push("", `*Option 2 - ${b.pg.name}* (${b.pg.area})`);
       lines.push(`${b.bedLabel} · ${b.distance.km != null ? `${b.distance.km} km` : "distance TBC"} · ${b.reasoning}`);
     }
-    lines.push("", "Want me to lock visit slots for both?", `— Team ${settings.siteName}`);
+    lines.push("", "Want me to lock visit slots for both?", `- Team ${settings.siteName}`);
     window.open(waLink(lead.phone, lines.join("\n")), "_blank", "noopener");
     toast.success("Dual-pitch opened in WhatsApp");
   };
@@ -118,7 +118,7 @@ export function SupplyMatchPanel({ lead, limit, onNavigateAway }: Props) {
         <div className="flex items-center gap-1.5">
           <Sparkles className="h-3.5 w-3.5 text-accent" />
           <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-            Best fit · Normal fit · Alternatives — top {visiblePrimary.length + visibleSecondary.length}
+            Best fit · Normal fit · Alternatives - top {visiblePrimary.length + visibleSecondary.length}
           </span>
         </div>
         <div className="flex items-center gap-1.5">
@@ -139,7 +139,7 @@ export function SupplyMatchPanel({ lead, limit, onNavigateAway }: Props) {
 
       {result.singleton && (
         <div className="rounded-md border border-warning/40 bg-warning/5 p-2 text-[11px] text-foreground/80">
-          Only one strong option — widen radius or budget in Settings to surface a Normal fit.
+          Only one strong option - widen radius or budget in Settings to surface a Normal fit.
         </div>
       )}
 
@@ -290,7 +290,7 @@ function MatchCard({
         )}
       </div>
 
-      {/* Compact action row — the only buttons in default state */}
+      {/* Compact action row - the only buttons in default state */}
       <div className="mt-1.5 flex flex-wrap items-center gap-1">
         <a
           href={leadPitchLink}
@@ -304,7 +304,7 @@ function MatchCard({
           href={pdfWaLink}
           target="_blank"
           rel="noreferrer"
-          title={assets.pdfIsDirect ? "Sends the curated brochure" : "Opens Drive folder filtered to this property — copy direct link, then send"}
+          title={assets.pdfIsDirect ? "Sends the curated brochure" : "Opens Drive folder filtered to this property - copy direct link, then send"}
           className="inline-flex items-center gap-1 rounded-md border border-border bg-background px-2 py-1 text-[11px] hover:bg-muted"
         >
           <FileText className="h-3 w-3" /> Send PDF
@@ -327,12 +327,12 @@ function MatchCard({
         <div className="mt-2 space-y-2.5 rounded-md border border-border bg-background/60 p-2.5">
           {/* Rents */}
           <div className="grid grid-cols-3 gap-1.5 text-[11px]">
-            <Stat label="Single" value={match.pg.prices.single ? `₹${(match.pg.prices.single / 1000).toFixed(0)}k` : "—"} />
-            <Stat label="Double" value={match.pg.prices.double ? `₹${(match.pg.prices.double / 1000).toFixed(0)}k` : "—"} />
-            <Stat label="Triple" value={match.pg.prices.triple ? `₹${(match.pg.prices.triple / 1000).toFixed(0)}k` : "—"} />
-            <Stat label="Deposit" value={match.pg.deposit || "—"} />
-            <Stat label="Min stay" value={match.pg.minStay || "—"} />
-            <Stat label="Per day" value={match.bedPrice ? perDayLabel(match.bedPrice) : "—"} />
+            <Stat label="Single" value={match.pg.prices.single ? `₹${(match.pg.prices.single / 1000).toFixed(0)}k` : "-"} />
+            <Stat label="Double" value={match.pg.prices.double ? `₹${(match.pg.prices.double / 1000).toFixed(0)}k` : "-"} />
+            <Stat label="Triple" value={match.pg.prices.triple ? `₹${(match.pg.prices.triple / 1000).toFixed(0)}k` : "-"} />
+            <Stat label="Deposit" value={match.pg.deposit || "-"} />
+            <Stat label="Min stay" value={match.pg.minStay || "-"} />
+            <Stat label="Per day" value={match.bedPrice ? perDayLabel(match.bedPrice) : "-"} />
           </div>
 
           {settings.matching.showScoreBreakdown && (

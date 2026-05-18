@@ -12,7 +12,7 @@ import { IntentChip, ConfidenceBar } from "@/components/atoms";
 export const Route = createFileRoute("/revival")({
   head: () => ({
     meta: [
-      { title: "Revival queue — Gharpayy" },
+      { title: "Revival queue - Gharpayy" },
       { name: "description", content: "Hidden revenue: cold leads matching new inventory, silent hot leads, resolvable objections." },
     ],
   }),
@@ -35,7 +35,7 @@ function RevivalPage() {
             <Sparkles className="h-6 w-6 text-info" /> Revival queue
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
-            {candidates.length} hidden opportunit{candidates.length === 1 ? "y" : "ies"} — silent leads, cold matches, and now-resolvable objections.
+            {candidates.length} hidden opportunit{candidates.length === 1 ? "y" : "ies"} - silent leads, cold matches, and now-resolvable objections.
           </p>
         </header>
 

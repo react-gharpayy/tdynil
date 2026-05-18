@@ -37,7 +37,7 @@ export function AuthGate({ children }: { children: ReactNode }) {
   // Not signed in → force the login screen, no matter what route was requested
   if (!user && !isLoginRoute) {
     // Push the URL to /login so the address bar reflects state and a refresh works.
-    // (Safe to call from effect-less render — navigate is idempotent for same target.)
+    // (Safe to call from effect-less render - navigate is idempotent for same target.)
     if (typeof window !== "undefined" && pathname !== "/login") {
       const redirect = pathname + (search && Object.keys(search).length ? "" : "");
       queueMicrotask(() => {

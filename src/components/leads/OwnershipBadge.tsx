@@ -41,7 +41,7 @@ export function OwnershipBadge({ lead, ownerName, compact }: Props) {
       {!isPrimary && !isSecondary && (
         slotsFull ? (
           <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-[11px] bg-muted border border-border text-muted-foreground">
-            <Lock className="h-3 w-3" /> Both slots taken — view only
+            <Lock className="h-3 w-3" /> Both slots taken - view only
           </span>
         ) : (
           <Button size="sm" variant="outline" className="h-7 text-[11px] gap-1" onClick={onRequest}>

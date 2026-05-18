@@ -5,7 +5,7 @@ import { CalendarClock, CheckCircle2, X } from "lucide-react";
 import { format } from "date-fns";
 import { toast } from "sonner";
 
-/** Banner that surfaces the lead's own commitment date — separate from agent follow-ups. */
+/** Banner that surfaces the lead's own commitment date - separate from agent follow-ups. */
 export function CommitmentBanner({ lead }: { lead: Lead }) {
   const commitment = useCRM10x((s) =>
     s.commitments.filter((c) => c.leadId === lead.id && c.status === "pending")[0]);

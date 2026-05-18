@@ -1,4 +1,4 @@
-// Global "+ New" menu — accessible from the AppShell header on EVERY route.
+// Global "+ New" menu - accessible from the AppShell header on EVERY route.
 // Keyboard: ⌘N / Ctrl+N opens it; Enter on focused item triggers.
 // Opens contextual dialogs for: Lead (paste parser), Todo (quick-add), Activity (composer for last opened lead),
 // Tour (navigates to MYT schedule). Designed for one-handed productivity.
@@ -26,7 +26,7 @@ export function QuickCreateMenu() {
   const [quickAddOpen, setQuickAddOpen] = useState(false);
   const navigate = useNavigate();
 
-  // Global ⌘N / Ctrl+N — open menu (or skip if a Lovable input is focused with modifier)
+  // Global ⌘N / Ctrl+N - open menu (or skip if a Lovable input is focused with modifier)
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "n" && !e.shiftKey) {
@@ -80,11 +80,11 @@ export function QuickCreateMenu() {
         </DropdownMenuContent>
       </DropdownMenu>
 
-      {/* Lead from paste — paste box first, then full Quick Add field set for review */}
+      {/* Lead from paste - paste box first, then full Quick Add field set for review */}
       <Dialog open={dialog === "lead"} onOpenChange={(o) => !o && setDialog(null)}>
         <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle>Paste a lead — auto-extract every field</DialogTitle>
+            <DialogTitle>Paste a lead - auto-extract every field</DialogTitle>
             <DialogDescription>Paste lead details and review extracted fields before saving.</DialogDescription>
           </DialogHeader>
           {dialog === "lead" ? <LeadPasteParser onDone={() => setDialog(null)} /> : null}

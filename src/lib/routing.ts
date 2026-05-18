@@ -4,7 +4,7 @@
  * Pure scoring function: given a lead and the team, pick the TCM most likely
  * to close, factoring zone match, current load, conversion rate, and response speed.
  *
- * Reason chips are a first-class output — every routing decision is explainable.
+ * Reason chips are a first-class output - every routing decision is explainable.
  */
 import type { Lead, TCM, Tour } from "./types";
 
@@ -24,7 +24,7 @@ export function autoAssign(
     const reasons: string[] = [];
     let score = 0;
 
-    // Zone match — biggest signal
+    // Zone match - biggest signal
     if (t.zone.toLowerCase() === lead.preferredArea.toLowerCase()) {
       score += 40;
       reasons.push(`Zone match · ${t.zone}`);

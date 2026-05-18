@@ -8,7 +8,7 @@ export default function ZonePerformance() {
   const zonePerf = getZonePerformance(tours);
 
   const chartData = zonePerf.map(z => ({
-    name: z.zoneName.split(' — ')[1],
+    name: z.zoneName.split(' - ')[1],
     tours: z.toursScheduled,
     completed: z.toursCompleted,
     drafts: z.drafts,
@@ -42,7 +42,7 @@ export default function ZonePerformance() {
 
           return (
             <div key={z.zoneId} className="glass-card p-4">
-              <h3 className="font-heading font-semibold text-foreground text-sm mb-0.5">{z.zoneName.split(' — ')[1]}</h3>
+              <h3 className="font-heading font-semibold text-foreground text-sm mb-0.5">{z.zoneName.split(' - ')[1]}</h3>
               <p className="text-[10px] text-muted-foreground mb-3">{flowCount} Flow Ops · {tcmCount} TCM</p>
               <div className="space-y-1.5 text-xs">
                 <div className="flex justify-between"><span className="text-muted-foreground">Tours</span><span className="text-foreground font-medium">{z.toursScheduled}</span></div>

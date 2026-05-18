@@ -1,5 +1,5 @@
 // Rule-based lead matcher. Uses real GPS distance (haversine) when both PG + landmark have lat/lng.
-// IMPORTANT: never fabricates pricing — if requested occupancy not offered, lead is downgraded with reason.
+// IMPORTANT: never fabricates pricing - if requested occupancy not offered, lead is downgraded with reason.
 
 import { PGS } from "../data/pgs";
 import { DISTANCE, AREA_CENTROID } from "../data/areas";
@@ -19,7 +19,7 @@ function hav(lat1: number, lng1: number, lat2: number, lng2: number): number {
 function leadCoords(area: string): { lat: number; lng: number } | null {
   const n = area.toLowerCase().trim();
   if (!n) return null;
-  // Most specific first — landmarks
+  // Most specific first - landmarks
   const lm = LANDMARKS.find(
     (l) => l.lat && l.lng && (l.n.toLowerCase().includes(n) || n.includes(l.n.toLowerCase().split(" ")[0])),
   );
@@ -89,7 +89,7 @@ export function matchLead(lead: Lead): MatchResult[] {
     let total = 0;
     let dq: string | undefined;
 
-    // 1) Area — 35
+    // 1) Area - 35
     const pgArea = norm(pg.area);
     let areaPts = 0;
     let areaReason = "Far from requested area";
@@ -103,30 +103,30 @@ export function matchLead(lead: Lead): MatchResult[] {
       const d = leadToPGDistance(lead.area, pg);
       if (d !== null) {
         if (d <= 5) { areaPts = 24; areaReason = `${d} km away`; }
-        else if (d <= 10) { areaPts = 16; areaReason = `${d} km — nearby`; }
-        else if (d <= 15) { areaPts = 8; areaReason = `${d} km — commutable`; }
-        else { areaPts = 2; areaReason = `${d} km — far`; }
+        else if (d <= 10) { areaPts = 16; areaReason = `${d} km - nearby`; }
+        else if (d <= 15) { areaPts = 8; areaReason = `${d} km - commutable`; }
+        else { areaPts = 2; areaReason = `${d} km - far`; }
       }
     }
     parts.push({ label: "Area", pts: areaPts, max: 35, reason: areaReason });
     total += areaPts;
 
-    // 2) Gender — 20 (HARD)
+    // 2) Gender - 20 (HARD)
     let genderPts = 0;
     let genderReason = "";
     if (lead.gender === "Any") { genderPts = 12; genderReason = "Lead open to any gender PG"; }
     else if (pg.gender === lead.gender) { genderPts = 20; genderReason = `Exact: ${pg.gender}`; }
     else if (pg.gender === "Co-live") { genderPts = 14; genderReason = "Co-live accepts both"; }
-    else { dq = `Gender mismatch — lead ${lead.gender}, PG ${pg.gender}`; }
+    else { dq = `Gender mismatch - lead ${lead.gender}, PG ${pg.gender}`; }
     parts.push({ label: "Gender", pts: genderPts, max: 20, reason: genderReason || dq! });
     total += genderPts;
 
-    // 3) Budget — 25 (uses REAL bed price, never fabricated)
+    // 3) Budget - 25 (uses REAL bed price, never fabricated)
     const { price: bedPrice, label: bedLabel } = pickBedPrice(pg, lead.occupancy);
     let budgetPts = 0;
     let budgetReason = bedLabel;
     if (bedPrice === null) {
-      // Requested occupancy not offered — partial credit only if "Any", else hard disqualify
+      // Requested occupancy not offered - partial credit only if "Any", else hard disqualify
       if (lead.occupancy && lead.occupancy !== "Any") {
         dq = (dq ?? "") + (dq ? " | " : "") + `${lead.occupancy} sharing not offered`;
         budgetReason = `${lead.occupancy} sharing not offered`;
@@ -138,18 +138,18 @@ export function matchLead(lead: Lead): MatchResult[] {
       budgetReason = `${bedLabel} fits ₹${(lead.budgetMin / 1000).toFixed(0)}k–${(lead.budgetMax / 1000).toFixed(0)}k`;
     } else if (bedPrice <= lead.budgetMax * 1.15 && bedPrice >= lead.budgetMin * 0.85) {
       budgetPts = 12;
-      budgetReason = `${bedLabel} — slightly out of range`;
+      budgetReason = `${bedLabel} - slightly out of range`;
     } else if (bedPrice > lead.budgetMax * 1.15) {
       dq = (dq ?? "") + (dq ? " | " : "") + "Over budget by >15%";
-      budgetReason = `${bedLabel} — too expensive`;
+      budgetReason = `${bedLabel} - too expensive`;
     } else {
       budgetPts = 8;
-      budgetReason = `${bedLabel} — under budget`;
+      budgetReason = `${bedLabel} - under budget`;
     }
     parts.push({ label: "Budget", pts: budgetPts, max: 25, reason: budgetReason });
     total += budgetPts;
 
-    // 4) Audience — 10
+    // 4) Audience - 10
     const aud = norm(pg.audience);
     let audPts = 0;
     let audReason = "Audience open";
@@ -161,7 +161,7 @@ export function matchLead(lead: Lead): MatchResult[] {
     parts.push({ label: "Audience", pts: audPts, max: 10, reason: audReason });
     total += audPts;
 
-    // 5) IQ — 10
+    // 5) IQ - 10
     const iqPts = Math.round((pg.iq / 100) * 10);
     parts.push({ label: "Quality", pts: iqPts, max: 10, reason: `IQ ${pg.iq}/100` });
     total += iqPts;
@@ -169,7 +169,7 @@ export function matchLead(lead: Lead): MatchResult[] {
     const commuteKm = leadToPGDistance(lead.area, pg);
 
     const reasoning = dq
-      ? `DISQUALIFIED — ${dq}`
+      ? `DISQUALIFIED - ${dq}`
       : parts.filter((p) => p.pts >= p.max * 0.7).map((p) => p.reason).join(" · ");
 
     results.push({

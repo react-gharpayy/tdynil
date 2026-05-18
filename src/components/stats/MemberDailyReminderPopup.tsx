@@ -43,7 +43,7 @@ function ProgressStrip({
   );
 }
 
-/** Shown for every member login/refresh — today's goals popup. */
+/** Shown for every member login/refresh - today's goals popup. */
 export function MemberDailyReminderPopup() {
   const authUser = useAuthUser((s) => s.user);
   const [open, setOpen] = useState(false);

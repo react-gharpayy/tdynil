@@ -1,5 +1,5 @@
 /**
- * Coach engine — talks to every user.
+ * Coach engine - talks to every user.
  *
  * For the current role + user, computes:
  *   - done    : actions completed today (from activity log)
@@ -62,7 +62,7 @@ export interface CoachMission {
 export interface CoachReport {
   greeting: string;
   subline: string;
-  /** persona's signature opening line — shown as a quiet caption */
+  /** persona's signature opening line - shown as a quiet caption */
   signature: string;
   /** the storyline arc this user is in this week */
   arc: string;
@@ -86,16 +86,16 @@ export const HOW_TO: Record<CoachKind, { goal: string; steps: HowToStep[] }> = {
     goal: "Close the post-tour loop within 1 hour.",
     steps: [
       { step: "Open the lead and tap Post-tour update." },
-      { step: "Pick the outcome — booked / thinking / not-interested.", hint: "Be honest. The system scores you on truthfulness, not on optimism." },
+      { step: "Pick the outcome - booked / thinking / not-interested.", hint: "Be honest. The system scores you on truthfulness, not on optimism." },
       { step: "Log the real objection in the client's words." },
-      { step: "Set the next follow-up date — never leave it blank." },
+      { step: "Set the next follow-up date - never leave it blank." },
       { step: "Submit. Confidence and the owner's bars update automatically." },
     ],
   },
   "follow-up-overdue": {
     goal: "Recover an overdue follow-up before silence kills the deal.",
     steps: [
-      { step: "Tap Call. Don't WhatsApp first — voice wins back trust." },
+      { step: "Tap Call. Don't WhatsApp first - voice wins back trust." },
       { step: "If no answer in 2 rings, send the recovery WhatsApp template." },
       { step: "Log the call and set the next follow-up. Always set the next follow-up." },
       { step: "If the lead has been silent 48h+, also start the cold-revival sequence." },
@@ -111,10 +111,10 @@ export const HOW_TO: Record<CoachKind, { goal: string; steps: HowToStep[] }> = {
     ],
   },
   "no-follow-up": {
-    goal: "Every active lead must have a next follow-up — no exceptions.",
+    goal: "Every active lead must have a next follow-up - no exceptions.",
     steps: [
       { step: "Open the lead. Use Quick Schedule (1d / 3d / 7d)." },
-      { step: "Choose priority based on intent — Hot=High, Warm=Medium." },
+      { step: "Choose priority based on intent - Hot=High, Warm=Medium." },
       { step: "Add a one-line reason so future-you knows what to say." },
     ],
   },
@@ -133,7 +133,7 @@ export const HOW_TO: Record<CoachKind, { goal: string; steps: HowToStep[] }> = {
       { step: "Reconfirm with the client 2 hours before." },
       { step: "Verify the property has the room ready (check Owner status)." },
       { step: "Reach the location 5 minutes early. Send a 'I'm here' photo." },
-      { step: "After the tour — fill the post-tour form within 1 hour." },
+      { step: "After the tour - fill the post-tour form within 1 hour." },
     ],
   },
   "hot-untouched": {
@@ -141,7 +141,7 @@ export const HOW_TO: Record<CoachKind, { goal: string; steps: HowToStep[] }> = {
     steps: [
       { step: "Call within the next 15 minutes." },
       { step: "Offer two tour slots in the next 48 hours, not one." },
-      { step: "If the client objects on price, log the objection — don't argue." },
+      { step: "If the client objects on price, log the objection - don't argue." },
     ],
   },
   "owner-room-stale": {
@@ -149,7 +149,7 @@ export const HOW_TO: Record<CoachKind, { goal: string; steps: HowToStep[] }> = {
     steps: [
       { step: "Open Update Rooms." },
       { step: "Mark each room Vacant / Occupied / Blocked with today's date." },
-      { step: "Add photos if anything changed — even small repairs." },
+      { step: "Add photos if anything changed - even small repairs." },
     ],
   },
   "owner-block-pending": {
@@ -161,18 +161,18 @@ export const HOW_TO: Record<CoachKind, { goal: string; steps: HowToStep[] }> = {
     ],
   },
   "flowops-handoff-unread": {
-    goal: "Read TCM handoffs same-day — they're escalations, not FYIs.",
+    goal: "Read TCM handoffs same-day - they're escalations, not FYIs.",
     steps: [
       { step: "Open Handoffs." },
       { step: "For each unread item, read context and reply or reassign." },
-      { step: "Mark read once acted on — silence here breaks the team loop." },
+      { step: "Mark read once acted on - silence here breaks the team loop." },
     ],
   },
   "flowops-reassign-stuck": {
     goal: "Reassign leads that have been stuck >3 days with no action.",
     steps: [
       { step: "Open the lead." },
-      { step: "Use Auto-assign — the engine picks by zone + load + conversion." },
+      { step: "Use Auto-assign - the engine picks by zone + load + conversion." },
       { step: "Add a one-line reason. The new TCM gets an auto-handoff." },
     ],
   },
@@ -223,7 +223,7 @@ export function buildCoachReport(input: CoachInput): CoachReport {
 
   const filterTcm = role === "tcm" ? currentTcmId : undefined;
 
-  /* DONE today — from activity log, role-aware */
+  /* DONE today - from activity log, role-aware */
   const startOfDay = new Date(now);
   startOfDay.setHours(0, 0, 0, 0);
   const todaysActivities = activities.filter((a) => +new Date(a.ts) >= +startOfDay);
@@ -253,7 +253,7 @@ export function buildCoachReport(input: CoachInput): CoachReport {
     });
   });
 
-  /* TODO + MISSED — from engine queue */
+  /* TODO + MISSED - from engine queue */
   const queue = buildDoNextQueue(leads, tours, followUps, now, filterTcm);
   const queueItems: CoachItem[] = queue.map((q) => {
     const lead = leads.find((l) => l.id === q.leadId);
@@ -269,7 +269,7 @@ export function buildCoachReport(input: CoachInput): CoachReport {
     };
   });
 
-  // HOT untouched — leads w/ intent hot and silent >12h
+  // HOT untouched - leads w/ intent hot and silent >12h
   leads
     .filter((l) => (!filterTcm || l.assignedTcmId === filterTcm) && l.intent === "hot" && l.stage !== "booked" && l.stage !== "dropped")
     .forEach((l) => {
@@ -278,7 +278,7 @@ export function buildCoachReport(input: CoachInput): CoachReport {
         queueItems.push({
           id: `hot-untouched:${l.id}`,
           kind: "hot-untouched",
-          title: `${l.name} is HOT — ${Math.round(silentH)}h of silence`,
+          title: `${l.name} is HOT - ${Math.round(silentH)}h of silence`,
           why: `Live score ${liveConfidence(l, tours, now)} · last touch ${Math.round(silentH)}h ago`,
           leadId: l.id,
           score: 950,
@@ -308,7 +308,7 @@ export function buildCoachReport(input: CoachInput): CoachReport {
           queueItems.push({
             id: `reassign:${l.id}`,
             kind: "flowops-reassign-stuck",
-            title: `${l.name} stuck ${Math.round(ageD)}d — reassign`,
+            title: `${l.name} stuck ${Math.round(ageD)}d - reassign`,
             why: `Lead has not advanced past "${l.stage}" in ${Math.round(ageD)} days.`,
             leadId: l.id,
             score: 720,
@@ -373,7 +373,7 @@ export function buildCoachReport(input: CoachInput): CoachReport {
       missed.unshift({
         id: `post-tour-hard:${t.id}`,
         kind: "post-tour-overdue",
-        title: `${lead?.name ?? "Lead"} — post-tour 6h+ overdue`,
+        title: `${lead?.name ?? "Lead"} - post-tour 6h+ overdue`,
         why: "Hard SLA breach. Auto-escalation triggered.",
         leadId: t.leadId,
         tourId: t.id,
@@ -390,7 +390,7 @@ export function buildCoachReport(input: CoachInput): CoachReport {
   const xpToday = done.reduce((s, d) => s + d.xp, 0);
   const pct = Math.min(100, Math.round((doneCount / target) * 100));
 
-  /* GREETING — driven by persona voice, with situational override on misses */
+  /* GREETING - driven by persona voice, with situational override on misses */
   const voice = voiceFor(persona, doneCount, target);
   const greeting = voice.greeting;
   const subline =

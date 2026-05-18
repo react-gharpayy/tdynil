@@ -13,7 +13,7 @@ import { QuickActionRow } from "@/components/QuickActionRow";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dashboard — Gharpayy" },
+      { title: "Dashboard - Gharpayy" },
       { name: "description", content: "Live command center: leads, tours, follow-ups, deal probability and inventory pressure." },
     ],
   }),
@@ -56,7 +56,7 @@ function DashboardPage() {
           <div>
             <h1 className="font-display text-2xl font-semibold tracking-tight">Arena Infrastructure</h1>
             <p className="text-sm text-muted-foreground">
-              Every lead, every tour, every follow-up — one operating layer. <span className="text-accent font-mono">live</span>
+              Every lead, every tour, every follow-up - one operating layer. <span className="text-accent font-mono">live</span>
             </p>
           </div>
           <div className="text-xs text-muted-foreground font-mono min-h-[1em]">

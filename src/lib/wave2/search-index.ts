@@ -1,5 +1,5 @@
 /**
- * Lightweight in-memory search index — no deps. Tokenises into trigrams and
+ * Lightweight in-memory search index - no deps. Tokenises into trigrams and
  * scores by overlap + prefix bonus. Good enough for instant lead/PG/todo
  * search across thousands of records in the browser.
  */

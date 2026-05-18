@@ -1,5 +1,5 @@
 /**
- * Intel Core — single source of truth for live-lead intelligence.
+ * Intel Core - single source of truth for live-lead intelligence.
  *
  * Pure, deterministic, tree-shakeable. Everything that ranks, scores,
  * times or recommends action against a `contracts.Lead` should call into
@@ -63,7 +63,7 @@ export function scoreLead(lead: Lead, activities: Activity[] = [], todos: Todo[]
   if (inbound >= 3) { score += 8; signals.push({ label: `${inbound} inbound msgs/7d`, impact: 8 }); }
   if (calls >= 1)   { score += 5; signals.push({ label: "Connected on call", impact: 5 }); }
 
-  // Staleness penalty — last touch
+  // Staleness penalty - last touch
   const lastTouch = activities[0] ? new Date(activities[0].occurredAt).getTime() : new Date(lead.updatedAt).getTime();
   const stalenessDays = (now - lastTouch) / DAY;
   if (stalenessDays > 7)  { score -= 10; signals.push({ label: `${Math.round(stalenessDays)}d since touch`, impact: -10 }); }
@@ -90,12 +90,12 @@ export function scoreLead(lead: Lead, activities: Activity[] = [], todos: Todo[]
 }
 
 function recommendationFor(lead: Lead, score: number, stalenessDays: number): string {
-  if (lead.stage === "booked") return "🎉 Booked — schedule onboarding.";
-  if (lead.stage === "dropped") return "Cold list — drop into 14-day revival sequence.";
-  if (score >= 70 && lead.stage === "new") return "Hot lead, untouched — call within 5 min.";
-  if (score >= 70) return "Hot — push for tour confirmation today.";
-  if (stalenessDays > 5) return "Going cold — send WhatsApp re-engage template.";
-  if (lead.stage === "tour-done") return "Tour done — close decision in next 24h.";
+  if (lead.stage === "booked") return "🎉 Booked - schedule onboarding.";
+  if (lead.stage === "dropped") return "Cold list - drop into 14-day revival sequence.";
+  if (score >= 70 && lead.stage === "new") return "Hot lead, untouched - call within 5 min.";
+  if (score >= 70) return "Hot - push for tour confirmation today.";
+  if (stalenessDays > 5) return "Going cold - send WhatsApp re-engage template.";
+  if (lead.stage === "tour-done") return "Tour done - close decision in next 24h.";
   return "Maintain cadence: 1 message every 2 days.";
 }
 
@@ -153,7 +153,7 @@ const STAGE_SLA_MS: Partial<Record<Lead["stage"], number>> = {
 
 export function slaFor(lead: Lead, lastActivityAt?: string | null): SlaState {
   const sla = STAGE_SLA_MS[lead.stage];
-  if (!sla) return { status: "n/a", msToBreach: 0, message: "—" };
+  if (!sla) return { status: "n/a", msToBreach: 0, message: "-" };
   const anchor = lastActivityAt ? new Date(lastActivityAt).getTime() : new Date(lead.updatedAt).getTime();
   const elapsed = Date.now() - anchor;
   const msToBreach = sla - elapsed;
@@ -221,10 +221,10 @@ export function summariseLead(lead: Lead, activities: Activity[], todos: Todo[])
   const warnings: string[] = [];
   const sla = slaFor(lead, last?.occurredAt);
   if (sla.status === "breach") warnings.push(`SLA breached for stage "${lead.stage}"`);
-  if (score.band === "cold" && lead.stage !== "dropped") warnings.push("Lead going cold — consider revival");
+  if (score.band === "cold" && lead.stage !== "dropped") warnings.push("Lead going cold - consider revival");
 
   return {
-    headline: `${lead.name} — ${score.recommendation}`,
+    headline: `${lead.name} - ${score.recommendation}`,
     bullets, warnings,
   };
 }

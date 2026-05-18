@@ -36,7 +36,7 @@ export function OwnerBlocks() {
                   <div className="flex items-center gap-2">
                     <span className={`text-xs font-mono inline-flex items-center gap-1 ${urgent ? 'text-destructive' : 'text-muted-foreground'}`}>
                       <Clock className="h-3 w-3" />
-                      {mounted ? `${minsLeft}:${String(secsLeft).padStart(2, '0')}` : '—:—'}
+                      {mounted ? `${minsLeft}:${String(secsLeft).padStart(2, '0')}` : '-:-'}
                     </span>
                     <Button size="sm" variant="outline" onClick={() => { decideBlock(b.id, 'rejected'); toast('Block rejected'); }}>
                       <X className="h-3 w-3 mr-1" /> Reject
@@ -51,7 +51,7 @@ export function OwnerBlocks() {
           })}
           {pending.length === 0 && (
             <div className="rounded-xl border border-border bg-card p-6 text-center text-sm text-muted-foreground">
-              Inbox zero — no pending blocks.
+              Inbox zero - no pending blocks.
             </div>
           )}
         </div>

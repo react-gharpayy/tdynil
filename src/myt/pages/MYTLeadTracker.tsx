@@ -40,7 +40,7 @@ export default function MYTLeadTracker() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.info('The legacy manual MYT form is disabled — please use Quick Add (saves to backend).');
+    toast.info('The legacy manual MYT form is disabled - please use Quick Add (saves to backend).');
     setShowForm(false);
   };
 
@@ -50,7 +50,7 @@ export default function MYTLeadTracker() {
 
   const selectClass = "w-full h-10 bg-surface-2 border border-border rounded-md px-3 text-sm text-foreground";
 
-  // Shared lead card row — same layout as /leads
+  // Shared lead card row - same layout as /leads
   const LeadRow = ({ l }: { l: typeof liveLeads[number] }) => {
     const assignee = l.assignedTcmId ? userMap.get(l.assignedTcmId) : null;
     return (
@@ -69,11 +69,11 @@ export default function MYTLeadTracker() {
           <div className="text-muted-foreground">₹{((l.budget ?? 0) / 1000).toFixed(0)}k</div>
         </div>
         <div className="col-span-2 text-xs">
-          <div>{assignee?.name ?? '—'}</div>
-          <div className="text-muted-foreground capitalize">{assignee?.role ?? '—'}</div>
+          <div>{assignee?.name ?? '-'}</div>
+          <div className="text-muted-foreground capitalize">{assignee?.role ?? '-'}</div>
         </div>
         <div className="col-span-1 text-right text-[11px] text-muted-foreground">
-          {mounted ? formatDistanceToNow(new Date(l.updatedAt ?? l.createdAt), { addSuffix: true }) : '—'}
+          {mounted ? formatDistanceToNow(new Date(l.updatedAt ?? l.createdAt), { addSuffix: true }) : '-'}
         </div>
       </div>
     );
@@ -119,7 +119,7 @@ export default function MYTLeadTracker() {
       {mode === 'quick' && (
         <div className="rounded-lg border border-border bg-surface-2/40 p-3 flex items-center justify-between gap-3">
           <p className="text-xs text-muted-foreground">
-            Unified Quick Add — paste, manual, and dedup all flow through the same questions.
+            Unified Quick Add - paste, manual, and dedup all flow through the same questions.
           </p>
           <Button size="sm" onClick={() => setShowQuickAdd(true)} className="h-8 text-xs gap-1.5 shrink-0">
             <Zap className="h-3.5 w-3.5" /> Open Quick Add
@@ -177,7 +177,7 @@ export default function MYTLeadTracker() {
       <div className="rounded-xl border border-border bg-card overflow-hidden">
         <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-border bg-muted/40">
           <CheckCircle className="h-3.5 w-3.5 text-role-tcm" />
-          <h3 className="text-[11px] uppercase tracking-wider font-semibold text-role-tcm">MYT Qualified — Push to Tour</h3>
+          <h3 className="text-[11px] uppercase tracking-wider font-semibold text-role-tcm">MYT Qualified - Push to Tour</h3>
           <span className="ml-auto text-[10px] text-muted-foreground font-medium">{qualified.length} leads</span>
         </div>
         {/* Column headers */}

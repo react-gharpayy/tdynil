@@ -31,7 +31,7 @@ export function LeadDeepProfile({ lead }: { lead: Lead }) {
       reason: shiftReason || undefined,
       loggedBy: lead.assignedTcmId,
     });
-    toast.success("Shifting date updated — old entry kept in history");
+    toast.success("Shifting date updated - old entry kept in history");
     setNewShift(""); setShiftReason("");
   };
 
@@ -55,7 +55,7 @@ export function LeadDeepProfile({ lead }: { lead: Lead }) {
           <div className="grid grid-cols-2 gap-2">
             <Field label="PG type">
               <Select value={f.gender ?? ""} onValueChange={(v) => upsert({ leadId: lead.id, gender: v as Gender })}>
-                <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="—" /></SelectTrigger>
+                <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="-" /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="boys-pg">Boys PG</SelectItem>
                   <SelectItem value="girls-pg">Girls PG</SelectItem>
@@ -65,7 +65,7 @@ export function LeadDeepProfile({ lead }: { lead: Lead }) {
             </Field>
             <Field label="Room">
               <Select value={f.roomType ?? ""} onValueChange={(v) => upsert({ leadId: lead.id, roomType: v as RoomTypePref })}>
-                <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="—" /></SelectTrigger>
+                <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="-" /></SelectTrigger>
                 <SelectContent>
                   {(["single","double","triple","any"] as const).map((r) => <SelectItem key={r} value={r}>{r}</SelectItem>)}
                 </SelectContent>
@@ -73,7 +73,7 @@ export function LeadDeepProfile({ lead }: { lead: Lead }) {
             </Field>
             <Field label="Furnishing">
               <Select value={f.furnishing ?? ""} onValueChange={(v) => upsert({ leadId: lead.id, furnishing: v as FurnishingPref })}>
-                <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="—" /></SelectTrigger>
+                <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="-" /></SelectTrigger>
                 <SelectContent>
                   {(["ac","non-ac","semi","any"] as const).map((r) => <SelectItem key={r} value={r}>{r}</SelectItem>)}
                 </SelectContent>
@@ -81,7 +81,7 @@ export function LeadDeepProfile({ lead }: { lead: Lead }) {
             </Field>
             <Field label="Food">
               <Select value={f.food ?? ""} onValueChange={(v) => upsert({ leadId: lead.id, food: v as FoodPref })}>
-                <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="—" /></SelectTrigger>
+                <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="-" /></SelectTrigger>
                 <SelectContent>
                   {(["veg","non-veg","no-food","any"] as const).map((r) => <SelectItem key={r} value={r}>{r}</SelectItem>)}
                 </SelectContent>
@@ -89,7 +89,7 @@ export function LeadDeepProfile({ lead }: { lead: Lead }) {
             </Field>
             <Field label="Source">
               <Select value={f.source ?? ""} onValueChange={(v) => upsert({ leadId: lead.id, source: v as LeadSource })}>
-                <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="—" /></SelectTrigger>
+                <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="-" /></SelectTrigger>
                 <SelectContent>
                   {(["whatsapp","website","referral","indiamart","google","walk-in","other"] as const).map((r) => <SelectItem key={r} value={r}>{r}</SelectItem>)}
                 </SelectContent>
@@ -97,7 +97,7 @@ export function LeadDeepProfile({ lead }: { lead: Lead }) {
             </Field>
             <Field label="Decision-maker">
               <Select value={f.decisionMaker ?? ""} onValueChange={(v) => upsert({ leadId: lead.id, decisionMaker: v as DecisionAuthority })}>
-                <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="—" /></SelectTrigger>
+                <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="-" /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="self">Self</SelectItem>
                   <SelectItem value="parents">Parents</SelectItem>
@@ -107,7 +107,7 @@ export function LeadDeepProfile({ lead }: { lead: Lead }) {
             </Field>
             <Field label="Language">
               <Select value={f.language ?? ""} onValueChange={(v) => upsert({ leadId: lead.id, language: v as LangPref })}>
-                <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="—" /></SelectTrigger>
+                <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="-" /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="english">English</SelectItem>
                   <SelectItem value="hindi">Hindi</SelectItem>
@@ -121,13 +121,13 @@ export function LeadDeepProfile({ lead }: { lead: Lead }) {
                 value={f.flexibility ? String(f.flexibility) : ""}
                 onValueChange={(v) => upsert({ leadId: lead.id, flexibility: Number(v) as FlexibilityScore })}
               >
-                <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="—" /></SelectTrigger>
+                <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="-" /></SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="1">1 — Rigid</SelectItem>
+                  <SelectItem value="1">1 - Rigid</SelectItem>
                   <SelectItem value="2">2</SelectItem>
-                  <SelectItem value="3">3 — Mid</SelectItem>
+                  <SelectItem value="3">3 - Mid</SelectItem>
                   <SelectItem value="4">4</SelectItem>
-                  <SelectItem value="5">5 — Very flexible</SelectItem>
+                  <SelectItem value="5">5 - Very flexible</SelectItem>
                 </SelectContent>
               </Select>
             </Field>

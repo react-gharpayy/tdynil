@@ -19,7 +19,7 @@ const ownerByProperty: Record<string, string> = {
   'p-whitefield-1': 'own-4',
 };
 
-// MYT properties use ids like `p1`, `p2`, ... — distribute them across the
+// MYT properties use ids like `p1`, `p2`, ... - distribute them across the
 // 4 owners so we can switch between owners on the home page and see
 // genuinely different inventory.
 const ownerIdsRR = ['own-1', 'own-2', 'own-3', 'own-4'];

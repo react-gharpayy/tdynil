@@ -131,7 +131,7 @@ export function Navigate({ to, replace }: { to: string; replace?: boolean }) {
   return null;
 }
 
-// Stubs so files that import these don't break — they're never mounted.
+// Stubs so files that import these don't break - they're never mounted.
 export const Routes: React.FC<{ children?: React.ReactNode }> = ({ children }) => <>{children}</>;
 export const Route: React.FC<{ children?: React.ReactNode }> = () => null;
 export const BrowserRouter: React.FC<{ children?: React.ReactNode }> = ({ children }) => <>{children}</>;

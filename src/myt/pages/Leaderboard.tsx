@@ -43,7 +43,7 @@ export default function Leaderboard() {
           </select>
           <select value={zoneFilter} onChange={e => setZoneFilter(e.target.value)} className={selectClass}>
             <option value="">All Zones</option>
-            {zones.map(z => <option key={z.id} value={z.name.split(' — ')[1]}>{z.name.split(' — ')[1]}</option>)}
+            {zones.map(z => <option key={z.id} value={z.name.split(' - ')[1]}>{z.name.split(' - ')[1]}</option>)}
           </select>
         </div>
       </div>
@@ -84,7 +84,7 @@ export default function Leaderboard() {
               </span>
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium text-foreground truncate">{m.name}</p>
-                <p className="text-[10px] text-muted-foreground">{m.zoneName.split(' — ')[1]} · {m.role === 'tcm' ? 'TCM' : 'Flow Ops'}</p>
+                <p className="text-[10px] text-muted-foreground">{m.zoneName.split(' - ')[1]} · {m.role === 'tcm' ? 'TCM' : 'Flow Ops'}</p>
               </div>
               <div className="flex items-center gap-3 shrink-0 text-xs">
                 <div className="text-center hidden sm:block">

@@ -1,5 +1,5 @@
 /**
- * Arena Infrastructure — engine layer.
+ * Arena Infrastructure - engine layer.
  * Pure functions. No state. Compose on top of the store.
  *
  * Encodes the real-life rules of the system:
@@ -48,7 +48,7 @@ export function slaForFirstResponse(lead: Lead): SlaState {
 /* ============== CONFIDENCE DECAY ============== */
 
 /**
- * Live confidence — silence kills deals.
+ * Live confidence - silence kills deals.
  *  - -1 per hour of silence after 6h
  *  - -5 if no follow-up scheduled
  *  - -8 if move-in date passed
@@ -111,7 +111,7 @@ export function buildDoNextQueue(
   const actions: NextAction[] = [];
   const byLead = (l: Lead) => !filterTcmId || l.assignedTcmId === filterTcmId;
 
-  // 1. post-tour pending — highest priority
+  // 1. post-tour pending - highest priority
   tours
     .filter((t) => t.status === "completed" && !t.postTour.filledAt)
     .forEach((t) => {
@@ -153,7 +153,7 @@ export function buildDoNextQueue(
         leadId: lead.id,
         reason: minsToTour > 0
           ? `Tour today in ${formatRel(minsToTour)}`
-          : `Tour was ${formatRel(-minsToTour)} ago — confirm`,
+          : `Tour was ${formatRel(-minsToTour)} ago - confirm`,
         kind: "tour-today",
         score: 700 + intentBoost(lead.intent) - Math.abs(minsToTour) / 30,
         dueAt: t.scheduledAt,

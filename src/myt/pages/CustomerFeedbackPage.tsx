@@ -51,7 +51,7 @@ export default function CustomerFeedbackPage() {
         <CardHeader>
           <CardTitle>How was your tour at {tour.propertyName}?</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Hi {tour.leadName} — your feedback helps us refine your options.
+            Hi {tour.leadName} - your feedback helps us refine your options.
           </p>
         </CardHeader>
         <CardContent className="space-y-4">

@@ -1,4 +1,4 @@
-// Lead Identity, Dedup & Ownership — type definitions
+// Lead Identity, Dedup & Ownership - type definitions
 // Mock-store layer; will migrate to Lovable Cloud in next pass.
 
 export type LifecycleState =

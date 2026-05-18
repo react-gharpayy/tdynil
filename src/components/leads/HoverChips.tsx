@@ -1,4 +1,4 @@
-// Hover-card-enabled chips — when user hovers a stage / source / assignee / intent badge
+// Hover-card-enabled chips - when user hovers a stage / source / assignee / intent badge
 // they see a quick preview (last activity, who owns it, time-in-stage). Used in the
 // LeadDrawer and lead row tables for "more info, fewer clicks".
 import { Badge } from "@/components/ui/badge";
@@ -7,19 +7,19 @@ import { formatDistanceToNow } from "date-fns";
 import type { Lead } from "@/contracts";
 
 const STAGE_DESCRIPTIONS: Record<string, string> = {
-  "new": "Just landed — first contact required within SLA.",
+  "new": "Just landed - first contact required within SLA.",
   "contacted": "Connected at least once. Needs qualification.",
   "tour-scheduled": "Tour booked. Confirm 24h prior, reduce no-shows.",
   "tour-done": "Tour complete. Push to negotiation now.",
   "negotiation": "Closing window. Owner approval / draft prep.",
   "booked": "Won. Onboard tenant, register XP.",
-  "dropped": "Lost — log reason, schedule revival.",
+  "dropped": "Lost - log reason, schedule revival.",
 };
 
 const INTENT_DESCRIPTIONS: Record<string, string> = {
-  hot: "Highest priority — contact within 5 minutes for ~3x conversion.",
-  warm: "Active interest — keep cadence under 24h.",
-  cold: "Long-tail — drip nurture sequence recommended.",
+  hot: "Highest priority - contact within 5 minutes for ~3x conversion.",
+  warm: "Active interest - keep cadence under 24h.",
+  cold: "Long-tail - drip nurture sequence recommended.",
 };
 
 export function StageChip({ lead }: { lead: Lead }) {
@@ -30,7 +30,7 @@ export function StageChip({ lead }: { lead: Lead }) {
       </HoverCardTrigger>
       <HoverCardContent className="w-72 text-xs space-y-2">
         <div className="font-semibold text-sm capitalize">Stage · {lead.stage.replace("-", " ")}</div>
-        <p className="text-muted-foreground">{STAGE_DESCRIPTIONS[lead.stage] ?? "—"}</p>
+        <p className="text-muted-foreground">{STAGE_DESCRIPTIONS[lead.stage] ?? "-"}</p>
         <div className="border-t pt-2 grid grid-cols-2 gap-1">
           <span className="text-muted-foreground">Updated</span>
           <span>{formatDistanceToNow(new Date(lead.updatedAt), { addSuffix: true })}</span>
@@ -54,7 +54,7 @@ export function IntentChip({ lead }: { lead: Lead }) {
       </HoverCardTrigger>
       <HoverCardContent className="w-64 text-xs space-y-1">
         <div className="font-semibold text-sm">Intent · {label}</div>
-        <p className="text-muted-foreground">{INTENT_DESCRIPTIONS[lead.intent] ?? "—"}</p>
+        <p className="text-muted-foreground">{INTENT_DESCRIPTIONS[lead.intent] ?? "-"}</p>
       </HoverCardContent>
     </HoverCard>
   );

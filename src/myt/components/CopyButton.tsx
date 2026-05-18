@@ -26,7 +26,7 @@ export function CopyButton({ text, size = "sm", variant = "secondary", label = "
         const ok = await copyToClipboard(text);
         if (ok) {
           setCopied(true);
-          toast.success("Copied — paste into WhatsApp");
+          toast.success("Copied - paste into WhatsApp");
           onCopied?.();
           setTimeout(() => setCopied(false), 1800);
         } else {

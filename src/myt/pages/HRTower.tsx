@@ -107,7 +107,7 @@ export default function HRTower() {
               <tbody>
                 {zonePerf.map(z => (
                   <tr key={z.zoneId} className="border-b border-border/50">
-                    <td className="py-2 font-medium text-foreground">{z.zoneName.split(' — ')[1]}</td>
+                    <td className="py-2 font-medium text-foreground">{z.zoneName.split(' - ')[1]}</td>
                     <td className="text-center text-muted-foreground">{z.toursScheduled}</td>
                     <td className="text-center text-muted-foreground">{z.toursCompleted}</td>
                     <td className={cn('text-center font-medium', z.showUpRate >= 70 ? 'text-role-tcm' : z.showUpRate >= 50 ? 'text-role-hr' : 'text-danger')}>{z.showUpRate}%</td>

@@ -36,7 +36,7 @@ export function TopHeader() {
           className={selectClass}
         >
           <option value="">All Zones</option>
-          {zones.map(z => <option key={z.id} value={z.id}>{z.name.split(' — ')[1]}</option>)}
+          {zones.map(z => <option key={z.id} value={z.id}>{z.name.split(' - ')[1]}</option>)}
         </select>
       </div>
 

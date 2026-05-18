@@ -8,7 +8,7 @@ import {
   LayoutDashboard, Target, CalendarPlus, ClipboardList, Boxes, Activity, Sun, Phone, MessageSquare, Trophy, Sparkles, IndianRupee, MapPin, Zap, Plus, ListTodo,
 } from "lucide-react";
 
-/** ⌘K — instant jump to any lead, route, or quick action. */
+/** ⌘K - instant jump to any lead, route, or quick action. */
 export function CommandPalette() {
   const [open, setOpen] = useState(false);
   const { leads, selectLead, logCall, sendMessage } = useApp();

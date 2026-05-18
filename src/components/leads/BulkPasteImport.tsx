@@ -61,7 +61,7 @@ export function BulkPasteImport() {
         <Textarea
           value={raw}
           onChange={(e) => setRaw(e.target.value)}
-          placeholder="Paste an entire spreadsheet or WhatsApp dump — multiple leads at once."
+          placeholder="Paste an entire spreadsheet or WhatsApp dump - multiple leads at once."
           className="min-h-32 font-mono text-xs"
         />
         <div className="flex gap-2">
@@ -97,9 +97,9 @@ export function BulkPasteImport() {
                       onChange={() => toggle(i)}
                     />
                   </td>
-                  <td className="px-3 py-2">{r.draft.name || <span className="text-muted-foreground">—</span>}</td>
-                  <td className="px-3 py-2 font-mono text-xs">{r.draft.phone || "—"}</td>
-                  <td className="px-3 py-2 text-xs">{r.draft.location || "—"} {r.draft.zone && <span className="text-muted-foreground">· {r.draft.zone}</span>}</td>
+                  <td className="px-3 py-2">{r.draft.name || <span className="text-muted-foreground">-</span>}</td>
+                  <td className="px-3 py-2 font-mono text-xs">{r.draft.phone || "-"}</td>
+                  <td className="px-3 py-2 text-xs">{r.draft.location || "-"} {r.draft.zone && <span className="text-muted-foreground">· {r.draft.zone}</span>}</td>
                   <td className="px-3 py-2">
                     <Badge variant="outline" className={`text-[10px] capitalize ${matchColor(r.match.type)}`}>
                       {r.match.type} · {r.match.topScore}

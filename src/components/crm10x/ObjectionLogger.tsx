@@ -20,7 +20,7 @@ const OBJECTION_OPTIONS: { code: ObjectionCode; label: string }[] = [
   { code: "no-ac", label: "No AC" },
   { code: "safety-concern", label: "Safety concern" },
   { code: "no-response-to-offer", label: "No response to offer" },
-  { code: "none", label: "None — interested" },
+  { code: "none", label: "None - interested" },
 ];
 
 export function ObjectionLogger({
@@ -38,7 +38,7 @@ export function ObjectionLogger({
   const [resolution, setResolution] = useState<ObjectionResolution>("no");
 
   const submit = () => {
-    if (!code) { toast.error("Pick an objection (or 'None — interested')"); return; }
+    if (!code) { toast.error("Pick an objection (or 'None - interested')"); return; }
     if (code !== "none" && handling.trim().length < 5) {
       toast.error("Describe how you handled it");
       return;
@@ -88,9 +88,9 @@ export function ObjectionLogger({
             <Select value={resolution} onValueChange={(v) => setResolution(v as ObjectionResolution)}>
               <SelectTrigger className="h-8 text-xs"><SelectValue /></SelectTrigger>
               <SelectContent>
-                <SelectItem value="yes">Yes — fully</SelectItem>
+                <SelectItem value="yes">Yes - fully</SelectItem>
                 <SelectItem value="partially">Partially</SelectItem>
-                <SelectItem value="no">No — still blocking</SelectItem>
+                <SelectItem value="no">No - still blocking</SelectItem>
               </SelectContent>
             </Select>
           </div>

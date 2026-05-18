@@ -25,7 +25,7 @@ export function detectMismatches(
   if (feedback.sentiment === "loved" && report.interestLevel === "low") {
     out.push({ tourId: tour.id, severity: "med", reason: "Customer: loved · TCM: low interest" });
   }
-  // Price mismatch — comment mentions expensive but TCM says exact
+  // Price mismatch - comment mentions expensive but TCM says exact
   const priceWords = (feedback.comment ?? "").toLowerCase();
   if (
     (priceWords.includes("expensive") || priceWords.includes("costly") || priceWords.includes("too much")) &&

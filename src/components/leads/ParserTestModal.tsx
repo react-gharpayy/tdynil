@@ -147,9 +147,9 @@ export function ParserTestModal({ open, onClose }: Props) {
                         {r.status === "usable" && <AlertTriangle className="h-3.5 w-3.5 text-amber-500" />}
                         {r.status === "failed" && <XCircle className="h-3.5 w-3.5 text-destructive" />}
                       </td>
-                      <td className="px-2 py-1 truncate max-w-32">{r.parsed?.name || "—"}</td>
-                      <td className="px-2 py-1 tabular-nums">{r.parsed?.phone || "—"}</td>
-                      <td className="px-2 py-1">{r.parsed?.zone || "—"}</td>
+                      <td className="px-2 py-1 truncate max-w-32">{r.parsed?.name || "-"}</td>
+                      <td className="px-2 py-1 tabular-nums">{r.parsed?.phone || "-"}</td>
+                      <td className="px-2 py-1">{r.parsed?.zone || "-"}</td>
                       <td className="px-2 py-1 text-[10px] text-muted-foreground">{r.missing.join(", ") || "none"}</td>
                     </tr>
                   ))}

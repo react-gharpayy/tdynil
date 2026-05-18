@@ -1,4 +1,4 @@
-// Connection status pill — drop into the header. Shows API + WebSocket state.
+// Connection status pill - drop into the header. Shows API + WebSocket state.
 // In local mode (no VITE_API_URL), shows a "Local" badge instead.
 import { useEffect, useState } from "react";
 import { getSocket } from "@/lib/api/socket";

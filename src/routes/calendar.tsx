@@ -151,7 +151,7 @@ function CalendarPage() {
       // Open new event for that day at 9am
       const slot = new Date(d);
       slot.setHours(9, 0, 0, 0);
-      // Don't auto-open — just select. Double-click via button below opens.
+      // Don't auto-open - just select. Double-click via button below opens.
     }
   };
 

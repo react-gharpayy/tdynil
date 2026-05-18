@@ -1,5 +1,5 @@
 /**
- * LeadIntelPanel — drop-in card showing score / SLA / best-time / next-best-action
+ * LeadIntelPanel - drop-in card showing score / SLA / best-time / next-best-action
  * for a single live lead. Subscribes to realtime activity + todo events via
  * useLeadIntel. No props beyond the lead.
  */

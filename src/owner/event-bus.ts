@@ -1,4 +1,4 @@
-// Closed-Loop Event Bus — single source of truth for cross-module events.
+// Closed-Loop Event Bus - single source of truth for cross-module events.
 // Owner ↔ Team ↔ HR all subscribe here. No page mutates state in isolation.
 
 export type GlueEvent =

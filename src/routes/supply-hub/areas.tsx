@@ -9,7 +9,7 @@ import { ArrowLeft, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/supply-hub/areas")({
-  head: () => ({ meta: [{ title: "Area Mood Board — Supply Hub" }] }),
+  head: () => ({ meta: [{ title: "Area Mood Board - Supply Hub" }] }),
   component: AreasPage,
 });
 
@@ -35,7 +35,7 @@ function AreasPage() {
         <header>
           <div className="text-[10px] uppercase tracking-wider text-accent font-semibold mb-1">Area Mood Board</div>
           <h1 className="font-display text-2xl font-semibold tracking-tight">Where each Bangalore zone fits</h1>
-          <p className="text-sm text-muted-foreground mt-1">Crowd, age band, nightlife, weekend feel — instant context for any lead's location question.</p>
+          <p className="text-sm text-muted-foreground mt-1">Crowd, age band, nightlife, weekend feel - instant context for any lead's location question.</p>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">

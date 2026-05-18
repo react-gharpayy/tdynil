@@ -24,7 +24,7 @@ export function StatusBadge({ status }: { status: TourStatus }) {
 }
 
 export function OutcomeBadge({ outcome }: { outcome: TourOutcome }) {
-  if (!outcome) return <span className="text-xs text-muted-foreground">—</span>;
+  if (!outcome) return <span className="text-xs text-muted-foreground">-</span>;
   return (
     <span className={cn('px-2 py-0.5 rounded-full text-xs font-medium capitalize', outcomeStyles[outcome])}>
       {outcome.replace('-', ' ')}

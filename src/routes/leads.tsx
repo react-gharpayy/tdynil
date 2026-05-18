@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/leads")({
   head: () => ({
-    meta: [{ title: "Leads — Gharpayy" }, { name: "description", content: "Every lead, ranked by deal probability, one click into the control panel." }],
+    meta: [{ title: "Leads - Gharpayy" }, { name: "description", content: "Every lead, ranked by deal probability, one click into the control panel." }],
   }),
   component: LeadsPage,
 });
@@ -45,7 +45,7 @@ interface BandConfig {
 
 const BANDS: Record<BandKey, BandConfig> = {
   fire: {
-    label: "🔥 Urgent — Move-in ≤ 7 days",
+    label: "🔥 Urgent - Move-in ≤ 7 days",
     subtitle: "Close or lose this week.",
     icon: Flame,
     color: "text-destructive",
@@ -54,7 +54,7 @@ const BANDS: Record<BandKey, BandConfig> = {
     defaultOpen: true,
   },
   stuck: {
-    label: "🚨 Stuck — Stage Expired",
+    label: "🚨 Stuck - Stage Expired",
     subtitle: "Days exceeded. Unblock today.",
     icon: AlertTriangle,
     color: "text-warning",
@@ -72,7 +72,7 @@ const BANDS: Record<BandKey, BandConfig> = {
     defaultOpen: true,
   },
   future: {
-    label: "🔭 Future — Move-in 45+ Days",
+    label: "🔭 Future - Move-in 45+ Days",
     subtitle: "Qualified. Set a trigger.",
     icon: Telescope,
     color: "text-info",
@@ -81,7 +81,7 @@ const BANDS: Record<BandKey, BandConfig> = {
     defaultOpen: false,
   },
   dormant: {
-    label: "😴 Dormant — 30+ Days Silent",
+    label: "😴 Dormant - 30+ Days Silent",
     subtitle: "Final attempt then mark lost.",
     icon: Moon,
     color: "text-muted-foreground",
@@ -152,7 +152,7 @@ function getStuckReason(l: Lead): string {
 
 function getMoveInLabel(iso: string | null | undefined): string {
   const d = daysUntil(iso);
-  if (d === null) return "—";
+  if (d === null) return "-";
   if (d < 0) return `${Math.abs(d)}d overdue`;
   if (d === 0) return "TODAY";
   if (d === 1) return "Tomorrow";
@@ -305,7 +305,7 @@ function LeadsPage() {
 
                           {/* Area + budget */}
                           <div className="col-span-2 text-xs">
-                            <div className="truncate">{l.preferredArea || "—"}</div>
+                            <div className="truncate">{l.preferredArea || "-"}</div>
                             <div className="text-muted-foreground">₹{(l.budget / 1000).toFixed(0)}k</div>
                           </div>
 
@@ -318,12 +318,12 @@ function LeadsPage() {
                             )}>
                               {moveInLabel}
                             </div>
-                            <div className="text-muted-foreground truncate">{assignee?.name ?? "—"}</div>
+                            <div className="text-muted-foreground truncate">{assignee?.name ?? "-"}</div>
                           </div>
 
                           {/* Updated */}
                           <div className="col-span-1 text-right text-[11px] text-muted-foreground">
-                            {mounted ? formatDistanceToNow(new Date(l.updatedAt), { addSuffix: true }) : "—"}
+                            {mounted ? formatDistanceToNow(new Date(l.updatedAt), { addSuffix: true }) : "-"}
                           </div>
                         </button>
                       );

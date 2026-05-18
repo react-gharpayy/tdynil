@@ -123,7 +123,7 @@ export function ProfileMenu() {
               const { useAuthUser } = await import("@/lib/auth-store");
               await useAuthUser.getState().signOut();
             } catch {
-              // ignore — fall through to redirect
+              // ignore - fall through to redirect
             } finally {
               toast.success("Signed out");
               // Hard reload to clear all in-memory state (sockets, stores, caches)

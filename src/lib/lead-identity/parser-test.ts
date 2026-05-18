@@ -3,7 +3,7 @@
 // breaks down which fields were missed, and computes zone-detection accuracy.
 //
 // "Usable" = at least Phone OR Email captured (we can still take action).
-// "Parsed" = Name + Phone + (Location || Budget) — production-ready row.
+// "Parsed" = Name + Phone + (Location || Budget) - production-ready row.
 import { parseLead, detectZone } from "./parser";
 
 /** Minimal RFC-4180 CSV parser (handles quoted fields with embedded newlines and "" escapes). */

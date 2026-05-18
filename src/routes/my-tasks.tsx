@@ -12,7 +12,7 @@ import { tokenStore } from "@/lib/api/client";
 import type { Todo } from "@/contracts";
 
 export const Route = createFileRoute("/my-tasks")({
-  head: () => ({ meta: [{ title: "My Tasks — Gharpayy" }] }),
+  head: () => ({ meta: [{ title: "My Tasks - Gharpayy" }] }),
   component: () => <AppShell><MyTasksPage /></AppShell>,
 });
 

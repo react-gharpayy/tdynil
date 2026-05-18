@@ -32,14 +32,14 @@ export function buildThreeOptions(pgs: PG[], opts?: { leadName?: string; landmar
   const lines = [greet, "", `Here are 3 ${opts?.gender ?? ""} PG options${ctx} curated for you:`, ""];
   pgs.slice(0, 3).forEach((pg, i) => {
     const cheapest = Math.min(...[pg.prices.triple, pg.prices.double, pg.prices.single].filter((x) => x > 0).concat(99999));
-    lines.push(`*${i + 1}. ${pg.name}* — ${pg.area}`);
+    lines.push(`*${i + 1}. ${pg.name}* - ${pg.area}`);
     if (cheapest < 99999) lines.push(`   From ${inr(cheapest)} (₹${perDay(cheapest)}/day)`);
     if (pg.usp) lines.push(`   ✨ ${pg.usp.slice(0, 80)}`);
     const lm = pg.nearbyLandmarks?.[0];
     if (lm) lines.push(`   📍 ${lm.w <= 0 ? "<1m" : lm.w + "m"} walk to ${lm.n}`);
     lines.push("");
   });
-  lines.push("Reply with a number to lock a visit. — Gharpayy");
+  lines.push("Reply with a number to lock a visit. - Gharpayy");
   return lines.join("\n");
 }
 
@@ -61,7 +61,7 @@ export function buildComparison(pgs: PG[], opts?: { leadName?: string }): string
     if (pg.amenities.length) lines.push(`Top amenities: ${pg.amenities.slice(0, 4).join(", ")}`);
     lines.push("");
   });
-  lines.push("Forward to anyone — all prices verified today. — Gharpayy");
+  lines.push("Forward to anyone - all prices verified today. - Gharpayy");
   return lines.join("\n");
 }
 
@@ -73,7 +73,7 @@ export function buildBrochure(pg: PG, opts?: { leadName?: string }): string {
   const lines = [
     greet,
     "",
-    `*${pg.name}* — ${pg.area}`,
+    `*${pg.name}* - ${pg.area}`,
     pg.tier ? `${pg.tier} · ${pg.gender} · IQ ${pg.iq}/100` : "",
     "",
     "*PRICING*",
@@ -88,7 +88,7 @@ export function buildBrochure(pg: PG, opts?: { leadName?: string }): string {
     lines.push("*NEAREST LANDMARKS*");
     pg.nearbyLandmarks.slice(0, 3).forEach((lm) => {
       const dist = lm.d < 1 ? `${Math.round(lm.d * 1000)}m` : `${lm.d.toFixed(1)}km`;
-      lines.push(`• ${lm.n} — ${dist} (${lm.w <= 0 ? "<1" : lm.w} min walk)`);
+      lines.push(`• ${lm.n} - ${dist} (${lm.w <= 0 ? "<1" : lm.w} min walk)`);
     });
     lines.push("");
   }
@@ -99,7 +99,7 @@ export function buildBrochure(pg: PG, opts?: { leadName?: string }): string {
   if (pg.minStay) lines.push(`📅 *MIN STAY:* ${pg.minStay}`);
   if (pg.manager.phone) lines.push(`📞 Manager: ${pg.manager.phone}`);
   if (pg.mapsLink) lines.push(`🗺 ${pg.mapsLink}`);
-  lines.push("", "Want to lock a visit? Reply yes. — Gharpayy");
+  lines.push("", "Want to lock a visit? Reply yes. - Gharpayy");
   return lines.filter(Boolean).join("\n");
 }
 
@@ -110,7 +110,7 @@ export function buildParentPack(pg: PG, opts?: { parentName?: string; daughterNa
   const lines = [
     greet,
     "",
-    opts?.daughterName ? `Sharing the safety profile of *${pg.name}* for ${opts.daughterName}.` : `Safety profile — *${pg.name}*, ${pg.area}.`,
+    opts?.daughterName ? `Sharing the safety profile of *${pg.name}* for ${opts.daughterName}.` : `Safety profile - *${pg.name}*, ${pg.area}.`,
     "",
     "🛡 *SAFETY MEASURES*",
   ];
@@ -139,7 +139,7 @@ export function buildParentPack(pg: PG, opts?: { parentName?: string; daughterNa
     lines.push("• Available 24/7 for parents");
     lines.push("");
   }
-  lines.push("Visit anytime, unannounced. We encourage it.", "— Gharpayy Team");
+  lines.push("Visit anytime, unannounced. We encourage it.", "- Gharpayy Team");
   return lines.join("\n");
 }
 
@@ -149,7 +149,7 @@ export function buildFriendPack(pg: PG): string {
   const cheap = Math.min(...[pg.prices.triple, pg.prices.double, pg.prices.single].filter((x) => x > 0).concat(99999));
   const lm = pg.nearbyLandmarks?.[0];
   const lines = [
-    `Hey — checking out *${pg.name}* in ${pg.area}.`,
+    `Hey - checking out *${pg.name}* in ${pg.area}.`,
     "",
     `Quick scan:`,
     `• ${bedLine(pg)}${cheap < 99999 ? ` (~₹${perDay(cheap)}/day)` : ""}`,
@@ -160,7 +160,7 @@ export function buildFriendPack(pg: PG): string {
     "",
     pg.usp ? `Why I'm leaning in: ${pg.usp}` : "",
     "",
-    `What do you think — worth visiting?`,
+    `What do you think - worth visiting?`,
   ].filter(Boolean);
   return lines.join("\n");
 }
@@ -170,16 +170,16 @@ export function buildFriendPack(pg: PG): string {
 export function buildReengagement(pg: PG, stage: "visited" | "got_price" | "browsed"): string {
   const fresh = freshness(pg);
   const intro = fresh.isFresh && fresh.message
-    ? `Quick update — ${fresh.message.toLowerCase()}`
+    ? `Quick update - ${fresh.message.toLowerCase()}`
     : "Following up on the property you liked";
   switch (stage) {
     case "visited":
-      return `Hi! ${intro}\n\n*${pg.name}* — the room you saw is still available, but someone else is visiting tomorrow morning.\n\nWant me to hold it for you with a token today?\n— Gharpayy`;
+      return `Hi! ${intro}\n\n*${pg.name}* - the room you saw is still available, but someone else is visiting tomorrow morning.\n\nWant me to hold it for you with a token today?\n- Gharpayy`;
     case "got_price":
-      return `Hi! Quick update on *${pg.name}* — ${fresh.changeKind ?? "still available at the same price"}.\n\n${bedLine(pg)}\n${fresh.changeKind === "Price drop" ? "(That's the new lowered rate.)" : ""}\n\nShall I block a visit slot this week?\n— Gharpayy`;
+      return `Hi! Quick update on *${pg.name}* - ${fresh.changeKind ?? "still available at the same price"}.\n\n${bedLine(pg)}\n${fresh.changeKind === "Price drop" ? "(That's the new lowered rate.)" : ""}\n\nShall I block a visit slot this week?\n- Gharpayy`;
     case "browsed":
     default:
-      return `Hi! Saw you were exploring ${pg.area}.\n\n*${pg.name}* opened up a room this week — usually full. ${pg.usp ? "\n\n✨ " + pg.usp : ""}\n\nWorth a 10-min visit?\n— Gharpayy`;
+      return `Hi! Saw you were exploring ${pg.area}.\n\n*${pg.name}* opened up a room this week - usually full. ${pg.usp ? "\n\n✨ " + pg.usp : ""}\n\nWorth a 10-min visit?\n- Gharpayy`;
   }
 }
 
@@ -189,21 +189,21 @@ export function buildWalkthrough(pg: PG): string {
   const lm = pg.nearbyLandmarks?.[0];
   const cheap = Math.min(...[pg.prices.triple, pg.prices.double, pg.prices.single].filter((x) => x > 0).concat(99999));
   return [
-    `90-SECOND WALKTHROUGH SCRIPT — ${pg.name}`,
+    `90-SECOND WALKTHROUGH SCRIPT - ${pg.name}`,
     ``,
     `🎬 OPEN (10s)`,
-    `"Welcome — you're standing at ${pg.area}'s ${pg.tier.toLowerCase()} pick.${lm ? ` ${lm.w <= 0 ? "Less than a minute" : lm.w + " min"} walk to ${lm.n} — that alone saves you ₹${perDay(3000)}/day in commute."` : '"'}`,
+    `"Welcome - you're standing at ${pg.area}'s ${pg.tier.toLowerCase()} pick.${lm ? ` ${lm.w <= 0 ? "Less than a minute" : lm.w + " min"} walk to ${lm.n} - that alone saves you ₹${perDay(3000)}/day in commute."` : '"'}`,
     ``,
     `✨ WOW MOMENT 1 (15s)`,
     `Show: ${pg.amenities[0] || "The lobby/common area"}.`,
     `Say: "This is what ₹${cheap < 99999 ? perDay(cheap) : "X"}/day buys you here. Compare that to renting alone."`,
     ``,
     `✨ WOW MOMENT 2 (15s)`,
-    `Show: ${pg.foodType ? "Kitchen/dining — point at hygiene" : "A typical room — open the wardrobe"}.`,
-    `Say: "${pg.mealsIncluded ? pg.mealsIncluded + ' — never cook again.' : 'Furnished, ready, walk in with one suitcase.'}"`,
+    `Show: ${pg.foodType ? "Kitchen/dining - point at hygiene" : "A typical room - open the wardrobe"}.`,
+    `Say: "${pg.mealsIncluded ? pg.mealsIncluded + ' - never cook again.' : 'Furnished, ready, walk in with one suitcase.'}"`,
     ``,
     `✨ WOW MOMENT 3 (15s)`,
-    `Show: ${pg.safety[0] ? "Safety setup — " + pg.safety[0] : "View from the room"}.`,
+    `Show: ${pg.safety[0] ? "Safety setup - " + pg.safety[0] : "View from the room"}.`,
     `Say: "${pg.safety.length ? "This is what your parents will care about." : "This is the view you'll wake up to."}"`,
     ``,
     `💰 PRICE REVEAL (10s)`,
@@ -225,14 +225,14 @@ export function buildInstantMatch(pg: PG, opts: { leadName?: string; office: str
     "",
     `Best match for you: *${pg.name}*, ${pg.area}.`,
     "",
-    cheap < 99999 ? `💰 ${inr(cheap)} (₹${perDay(cheap)}/day) — fits your ${k(opts.budget)} budget.` : `Pricing: ${bedLine(pg)}`,
+    cheap < 99999 ? `💰 ${inr(cheap)} (₹${perDay(cheap)}/day) - fits your ${k(opts.budget)} budget.` : `Pricing: ${bedLine(pg)}`,
     opts.commute ? `📍 ${opts.commute.km}km from ${opts.office} (~${opts.commute.mins} min auto)` : `📍 Near ${opts.office}`,
     pg.usp ? `✨ ${pg.usp.slice(0, 100)}` : "",
     "",
     pg.mapsLink ? `🗺 ${pg.mapsLink}` : "",
     "",
     "Lock a visit? Reply yes.",
-    "— Gharpayy",
+    "- Gharpayy",
   ].filter(Boolean);
   return lines.join("\n");
 }

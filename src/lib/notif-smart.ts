@@ -3,7 +3,7 @@
  * connector-driven notifications store). Pure browser-side.
  */
 const SNOOZE_KEY = "gharpayy.notif.snooze.v1";   // { [key]: ISO until }
-const SEEN_KEY   = "gharpayy.notif.seen.v1";     // { [hash]: ts } — for dedup
+const SEEN_KEY   = "gharpayy.notif.seen.v1";     // { [hash]: ts } - for dedup
 
 const readMap = <V,>(k: string): Record<string, V> => {
   if (typeof window === "undefined") return {};

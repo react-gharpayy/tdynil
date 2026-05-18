@@ -9,7 +9,7 @@ import { useMountedNow } from "@/hooks/use-now";
 export const Route = createFileRoute("/revenue")({
   head: () => ({
     meta: [
-      { title: "Revenue — Gharpayy" },
+      { title: "Revenue - Gharpayy" },
       { name: "description", content: "MRR closed, broken down by TCM, property, and source. Live and trending." },
     ],
   }),
@@ -92,9 +92,9 @@ function RevenuePage() {
         {/* KPIs */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           <Tile label="MRR closed" value={`₹${(totalMRR / 1000).toFixed(0)}k`} sub={`${bookings.length} booking${bookings.length === 1 ? "" : "s"}`} accent="success" />
-          <Tile label="Last 7 days" value={`₹${(last7 / 1000).toFixed(0)}k`} sub={prev7 > 0 ? `${wow >= 0 ? "+" : ""}${wow}% WoW` : "—"} accent={wow >= 0 ? "success" : "destructive"} />
-          <Tile label="Top closer" value={byTcm[0] ? tcms.find((t) => t.id === byTcm[0].tcmId)?.name?.split(" ")[0] ?? "—" : "—"} sub={byTcm[0] ? `₹${(byTcm[0].revenue / 1000).toFixed(0)}k` : ""} accent="accent" />
-          <Tile label="Top property" value={byProperty[0] ? properties.find((p) => p.id === byProperty[0].propertyId)?.name ?? "—" : "—"} sub={byProperty[0] ? `${byProperty[0].bookings} booking${byProperty[0].bookings === 1 ? "" : "s"}` : ""} />
+          <Tile label="Last 7 days" value={`₹${(last7 / 1000).toFixed(0)}k`} sub={prev7 > 0 ? `${wow >= 0 ? "+" : ""}${wow}% WoW` : "-"} accent={wow >= 0 ? "success" : "destructive"} />
+          <Tile label="Top closer" value={byTcm[0] ? tcms.find((t) => t.id === byTcm[0].tcmId)?.name?.split(" ")[0] ?? "-" : "-"} sub={byTcm[0] ? `₹${(byTcm[0].revenue / 1000).toFixed(0)}k` : ""} accent="accent" />
+          <Tile label="Top property" value={byProperty[0] ? properties.find((p) => p.id === byProperty[0].propertyId)?.name ?? "-" : "-"} sub={byProperty[0] ? `${byProperty[0].bookings} booking${byProperty[0].bookings === 1 ? "" : "s"}` : ""} />
         </div>
 
         {/* 30-day trend */}

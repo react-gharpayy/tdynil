@@ -1,5 +1,5 @@
 /**
- * Insights — funnel, conversion, response-speed, and stage age analytics
+ * Insights - funnel, conversion, response-speed, and stage age analytics
  * computed in-browser from live leads + activities. Pure & memo-friendly.
  */
 import type { Lead, Activity } from "@/contracts";

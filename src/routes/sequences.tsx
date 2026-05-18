@@ -12,7 +12,7 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/sequences")({
   head: () => ({
     meta: [
-      { title: "Sequences — Gharpayy" },
+      { title: "Sequences - Gharpayy" },
       { name: "description", content: "Every WhatsApp sequence in flight. Pause, resume, stop. Auto-stops on reply or stage change." },
     ],
   }),

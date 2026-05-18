@@ -1,5 +1,5 @@
 /**
- * Property assets registry — connects each PG to its Drive PDF brochure.
+ * Property assets registry - connects each PG to its Drive PDF brochure.
  *
  * The shared Drive folder lives at:
  *   https://drive.google.com/drive/folders/18xJ5LrEiAL8b9BkXGQztKr-w2qdZey2Q
@@ -22,7 +22,7 @@ export const PROPERTY_DRIVE_FOLDER_URL = `https://drive.google.com/drive/folders
 
 /**
  * Hand-mapped direct Drive file URLs for properties whose brochures we've
- * grabbed individually. Keys are pgId. Add more entries over time — the rest
+ * grabbed individually. Keys are pgId. Add more entries over time - the rest
  * fall back to the search-in-folder helper.
  */
 export const PROPERTY_PDF_DIRECT: Record<string, string> = {
@@ -64,7 +64,7 @@ export function getPropertyAssets(pg: Pick<PG, "id" | "name" | "actualName">): P
 /**
  * Build a WhatsApp message that includes the brochure link so a customer can
  * preview the property before the tour. WhatsApp does not allow attaching a
- * PDF via a `wa.me` deep link — the official limitation — but a publicly
+ * PDF via a `wa.me` deep link - the official limitation - but a publicly
  * shared Drive link is rendered as a tappable preview card inside WhatsApp,
  * which is the standard workaround Flow Ops use today.
  */
@@ -82,7 +82,7 @@ export function buildPdfShareMessage(
     `📄 ${opts.pdfUrl}`,
     "",
     "Tell me which room type works and I'll lock a visit slot.",
-    `— Team ${opts.siteName ?? "Gharpayy"}`,
+    `- Team ${opts.siteName ?? "Gharpayy"}`,
   ];
   return lines.join("\n");
 }

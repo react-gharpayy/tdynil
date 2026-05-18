@@ -12,7 +12,7 @@ const norm = (s: string) =>
     .replace(/\s+/g, " ")
     .trim();
 
-// Common Bangalore aliases — people search by what they say, not what's written.
+// Common Bangalore aliases - people search by what they say, not what's written.
 const ALIASES: Record<string, string[]> = {
   kora: ["koramangala"],
   hsr: ["hsr layout", "hsr"],
@@ -52,7 +52,7 @@ function expandQuery(q: string): string[] {
   return Array.from(out);
 }
 
-// Levenshtein for typo tolerance — capped to short strings for speed
+// Levenshtein for typo tolerance - capped to short strings for speed
 function lev(a: string, b: string): number {
   if (Math.abs(a.length - b.length) > 3) return 99;
   const m = a.length;
@@ -181,7 +181,7 @@ export function searchPGs(query: string, limit = 30): PGHit[] {
   return hits.slice(0, limit);
 }
 
-// Find PGs near a landmark (by area name match — Bangalore people think in landmarks).
+// Find PGs near a landmark (by area name match - Bangalore people think in landmarks).
 export function pgsNearLandmark(landmark: Landmark): PG[] {
   const lmArea = norm(landmark.a);
   const lmName = norm(landmark.n);

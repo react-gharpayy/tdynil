@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/supply-hub/")({
   head: () => ({
     meta: [
-      { title: "Inventory Supply Hub — Gharpayy" },
+      { title: "Inventory Supply Hub - Gharpayy" },
       { name: "description", content: "200+ verified PGs with persona, scarcity, commute and value intelligence." },
     ],
   }),
@@ -62,7 +62,7 @@ function SupplyHubHome() {
           <div>
             <div className="text-[10px] uppercase tracking-wider text-accent font-semibold mb-1">Internal · HR / Flow Ops / TCM</div>
             <h1 className="font-display text-2xl font-semibold tracking-tight">Inventory Supply Hub</h1>
-            <p className="text-sm text-muted-foreground mt-1">Verified PG network — search by name, area, landmark, or company. Every tile is computed live: persona, scarcity, freshness, value.</p>
+            <p className="text-sm text-muted-foreground mt-1">Verified PG network - search by name, area, landmark, or company. Every tile is computed live: persona, scarcity, freshness, value.</p>
           </div>
           <div className="flex gap-2">
             <Link to="/supply-hub/match" className="inline-flex items-center gap-1.5 rounded-md bg-accent px-3 py-2 text-sm font-medium text-accent-foreground hover:opacity-90"><Sparkles className="h-4 w-4" /> Lead Matcher</Link>
@@ -124,7 +124,7 @@ function SupplyHubHome() {
                     <div className="text-xs text-muted-foreground truncate">{pg.locality}</div>
                   </div>
                   <div className="text-right">
-                    <div className="font-display text-lg font-semibold">{cheap < 99999 ? `₹${(cheap / 1000).toFixed(0)}k` : "—"}</div>
+                    <div className="font-display text-lg font-semibold">{cheap < 99999 ? `₹${(cheap / 1000).toFixed(0)}k` : "-"}</div>
                     <div className="text-[10px] text-muted-foreground">{cheap < 99999 ? perDayLabel(cheap) : ""}</div>
                   </div>
                 </div>

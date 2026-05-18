@@ -2,7 +2,7 @@
 // Used (a) at build/test time to QA coverage, (b) at runtime to expose
 // `searchAcrossExamples()` for the "show me an example like this" UX.
 //
-// At MATCH time the runtime parser uses the compact regex/lexicon directly —
+// At MATCH time the runtime parser uses the compact regex/lexicon directly -
 // it never iterates 30k strings.
 
 import {

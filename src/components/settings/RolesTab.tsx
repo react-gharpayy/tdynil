@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/select";
 import { api, type ManagedUser, type Zone } from "@/lib/api/client";
 
-type RoleTab = "managers" | "admins" | "members" | "owners";
+type RoleTab = "managers" | "admins" | "members" | "tcms" | "owners";
 type EditForm = { fullName: string; email: string; phone: string; role: string; zones: string[] };
 
 const isVisible = (u: ManagedUser) => {
@@ -23,6 +23,7 @@ export function RolesTab() {
   const [managers, setManagers] = useState<(ManagedUser & { admins?: ManagedUser[] })[]>([]);
   const [admins, setAdmins] = useState<ManagedUser[]>([]);
   const [members, setMembers] = useState<ManagedUser[]>([]);
+  const [tcms, setTcms] = useState<ManagedUser[]>([]);
   const [owners, setOwners] = useState<ManagedUser[]>([]);
   const [zones, setZones] = useState<Zone[]>([]);
   const [loading, setLoading] = useState(true);
@@ -47,20 +48,26 @@ export function RolesTab() {
     () => [...owners].sort((a, b) => (a.fullName || "").localeCompare(b.fullName || "", undefined, { sensitivity: "base" })),
     [owners],
   );
+  const sortedTcms = useMemo(
+    () => [...tcms].sort((a, b) => (a.fullName || "").localeCompare(b.fullName || "", undefined, { sensitivity: "base" })),
+    [tcms],
+  );
 
   const loadData = async () => {
     setLoading(true);
     try {
-      const [m, a, mem, own, z] = await Promise.all([
+      const [m, a, mem, t, own, z] = await Promise.all([
         api.managers.list(),
         api.admins.list(),
         api.members.list(),
+        api.tcms.list().catch(() => [] as ManagedUser[]),
         api.owners.list().catch(() => [] as ManagedUser[]),
         api.zones.list().catch(() => [] as Zone[]),
       ]);
       setManagers((m || []).filter(isVisible));
       setAdmins((a || []).filter(isVisible));
       setMembers((mem || []).filter(isVisible));
+      setTcms((t || []).filter(isVisible));
       setOwners((own || []).filter(isVisible));
       setZones(z || []);
     } catch (e) {
@@ -84,7 +91,7 @@ export function RolesTab() {
 
   const saveEdit = async () => {
     if (!editingId) return;
-    if ((editForm.role === "admin" || editForm.role === "member") && editForm.zones.length !== 1) {
+    if ((editForm.role === "admin" || editForm.role === "member" || editForm.role === "tcm") && editForm.zones.length !== 1) {
       toast.error("Please select one zone");
       return;
     }
@@ -95,7 +102,7 @@ export function RolesTab() {
         email: editForm.email,
         phone: editForm.phone,
       };
-      if (editForm.role === "admin" || editForm.role === "member") {
+      if (editForm.role === "admin" || editForm.role === "member" || editForm.role === "tcm") {
         payload.zones = editForm.zones;
       }
       await api.users.update(editingId, payload);
@@ -123,7 +130,7 @@ export function RolesTab() {
     <div className="space-y-4">
       {/* Role sub-tabs */}
       <div className="flex gap-1 bg-secondary/50 rounded-lg p-1 w-fit">
-        {(["managers", "admins", "members", "owners"] as const).map((t) => (
+        {(["managers", "admins", "members", "tcms", "owners"] as const).map((t) => (
           <button
             key={t}
             onClick={() => { setRoleTab(t); setExpandedId(null); setEditingId(null); }}
@@ -319,6 +326,50 @@ export function RolesTab() {
             </div>
           ))}
 
+          {/* TCMs */}
+          {roleTab === "tcms" && sortedTcms.map((mem) => (
+            <div key={mem.id} className="border rounded-xl bg-card overflow-hidden">
+              <button
+                onClick={() => setExpandedId(expandedId === mem.id ? null : mem.id)}
+                className="w-full flex items-center justify-between p-4 hover:bg-secondary/30 transition-colors"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-pink-500/10 flex items-center justify-center">
+                    <span className="text-pink-500 font-semibold text-sm">{mem.fullName?.charAt(0)?.toUpperCase()}</span>
+                  </div>
+                  <div className="text-left">
+                    <p className="text-sm font-medium">{mem.fullName}</p>
+                    <p className="text-xs text-muted-foreground">{mem.email}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  {mem.zones?.length > 0 && <Badge variant="outline" className="text-[10px]">{mem.zones.join(", ")}</Badge>}
+                  <ChevronRight size={16} className={"transition-transform " + (expandedId === mem.id ? "rotate-90" : "")} />
+                </div>
+              </button>
+
+              {expandedId === mem.id && (
+                <div className="border-t p-4 space-y-4 bg-secondary/10">
+                  {editingId === mem.id ? (
+                    <EditForm form={editForm} setForm={setEditForm} zones={zones} onSave={saveEdit} onCancel={() => setEditingId(null)} saving={updating} />
+                  ) : (
+                    <div className="flex items-start justify-between">
+                      <div className="space-y-1">
+                        <p className="text-xs text-muted-foreground">Phone: <span className="text-foreground">{mem.phone || "N/A"}</span></p>
+                        <p className="text-xs text-muted-foreground">Username: <span className="text-foreground">{mem.username}</span></p>
+                        <p className="text-xs text-muted-foreground">Zones: <span className="text-foreground">{mem.zones?.join(", ") || "None"}</span></p>
+                      </div>
+                      <div className="flex gap-1">
+                        <Button size="sm" variant="ghost" onClick={() => startEdit(mem, "tcm")}><Pencil size={12} /></Button>
+                        <Button size="sm" variant="ghost" onClick={() => resetPassword(mem.id, mem.fullName)}><KeyRound size={12} /></Button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+
           {/* Owners */}
           {roleTab === "owners" && sortedOwners.map((own) => (
             <div key={own.id} className="border rounded-xl bg-card overflow-hidden">
@@ -400,7 +451,7 @@ function EditForm({
         </div>
       </div>
 
-      {(form.role === "admin" || form.role === "member") && zones.length > 0 && (
+      {(form.role === "admin" || form.role === "member" || form.role === "tcm") && zones.length > 0 && (
         <div className="space-y-2">
           <Label className="text-xs flex items-center gap-1.5"><MapPin size={12} /> Zone</Label>
           <Select

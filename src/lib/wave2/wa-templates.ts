@@ -1,5 +1,5 @@
 /**
- * WhatsApp templates v2 — variable interpolation, language pack, A/B variants,
+ * WhatsApp templates v2 - variable interpolation, language pack, A/B variants,
  * and quiet-hours-aware "send-or-defer" wrapping. Pure data + render.
  */
 import type { Lead } from "@/contracts";
@@ -20,9 +20,9 @@ export const TEMPLATES: Template[] = [
     label: "First-touch intro",
     scenario: "intro",
     variants: {
-      en: "Hi {{name}}! This is {{agent}} from Gharpayy. Saw you're looking for a place in {{area}} around ₹{{budget}}. I have 3 great options ready — when can we hop on a quick call?",
-      hi: "Namaste {{name}}! Main {{agent}}, Gharpayy se. Aap {{area}} mein ₹{{budget}} ka kamra dhoond rahe ho — mere paas 3 zabardast options hain. Kab call kar sakte hain?",
-      kn: "Hi {{name}}! Naanu {{agent}}, Gharpayy inda. Neevu {{area}}-nalli ₹{{budget}} kelage room hudukutiddera — nanage 3 olleya options ide. Yaavaaga maatadabeku?",
+      en: "Hi {{name}}! This is {{agent}} from Gharpayy. Saw you're looking for a place in {{area}} around ₹{{budget}}. I have 3 great options ready - when can we hop on a quick call?",
+      hi: "Namaste {{name}}! Main {{agent}}, Gharpayy se. Aap {{area}} mein ₹{{budget}} ka kamra dhoond rahe ho - mere paas 3 zabardast options hain. Kab call kar sakte hain?",
+      kn: "Hi {{name}}! Naanu {{agent}}, Gharpayy inda. Neevu {{area}}-nalli ₹{{budget}} kelage room hudukutiddera - nanage 3 olleya options ide. Yaavaaga maatadabeku?",
     },
   },
   {
@@ -40,9 +40,9 @@ export const TEMPLATES: Template[] = [
     label: "Revival nudge",
     scenario: "revival",
     variants: {
-      en: "Hi {{name}}, hope you're doing well! Still looking for a place near {{area}}? I just got 2 new options under ₹{{budget}} — want me to share?",
-      hi: "Hi {{name}}! {{area}} mein ghar ki talaash abhi bhi hai? Mere paas ₹{{budget}} mein 2 naye options aaye hain — share karu?",
-      kn: "Hi {{name}}, {{area}} hattira innu room hudukutiddera? Nange ₹{{budget}} olage 2 hosa options bandide — share maadalaa?",
+      en: "Hi {{name}}, hope you're doing well! Still looking for a place near {{area}}? I just got 2 new options under ₹{{budget}} - want me to share?",
+      hi: "Hi {{name}}! {{area}} mein ghar ki talaash abhi bhi hai? Mere paas ₹{{budget}} mein 2 naye options aaye hain - share karu?",
+      kn: "Hi {{name}}, {{area}} hattira innu room hudukutiddera? Nange ₹{{budget}} olage 2 hosa options bandide - share maadalaa?",
     },
   },
 ];
@@ -73,9 +73,9 @@ export function pitchForLead(lead: Lead, tplId: string, lang: Lang = "en", agent
   });
 }
 
-/** Decide if a message should be sent now or scheduled — IST quiet-hours aware. */
+/** Decide if a message should be sent now or scheduled - IST quiet-hours aware. */
 export function planSend(): { sendNow: boolean; banner: string } {
   const d = decideSend();
-  if (d.send) return { sendNow: true, banner: "Within business hours — sending now" };
-  return { sendNow: false, banner: `Quiet hours · will send at ${d.deferUntil ? fmtIST(d.deferUntil) : "—"} (${d.deferMins}m)` };
+  if (d.send) return { sendNow: true, banner: "Within business hours - sending now" };
+  return { sendNow: false, banner: `Quiet hours · will send at ${d.deferUntil ? fmtIST(d.deferUntil) : "-"} (${d.deferMins}m)` };
 }

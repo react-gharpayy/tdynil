@@ -12,7 +12,7 @@ const TOURS_KEY = "myt:tours";
 const TENANT = "local";
 const USER = "local-user";
 
-// No seed leads — the live-leads UI shows empty state until the user adds one.
+// No seed leads - the live-leads UI shows empty state until the user adds one.
 const SEED_LEADS: Lead[] = [];
 
 // One-time cleanup: if the user previously ran in local mode, the old demo leads

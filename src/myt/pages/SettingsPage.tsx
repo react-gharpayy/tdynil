@@ -509,10 +509,10 @@ function ZonesEditor({ zones, onChange }: { zones: ZoneOrgUnit[]; onChange: (v: 
     <div className="space-y-3">
       <Card>
         <CardHeader className="pb-2">
-          <CardTitle className="text-base flex items-center gap-2"><Building2 className="h-4 w-4 text-accent" /> Org structure — Bangalore zones</CardTitle>
+          <CardTitle className="text-base flex items-center gap-2"><Building2 className="h-4 w-4 text-accent" /> Org structure - Bangalore zones</CardTitle>
           <p className="text-xs text-muted-foreground">
             Each zone owns a Flow Ops lead and a roster of TCMs. Routing rule R04 uses this map to
-            auto-assign new leads. Edit a zone or add a new one — changes apply immediately across
+            auto-assign new leads. Edit a zone or add a new one - changes apply immediately across
             the CRM.
           </p>
         </CardHeader>
@@ -589,8 +589,8 @@ function RoadmapCard() {
   const items: { title: string; body: string }[] = [
     { title: "Zone P&L dashboard", body: "Per-zone bookings, conversion %, supply utilisation. Compare Koramangala vs Whitefield in one screen." },
     { title: "Flow-Ops daily standup view", body: "Auto-generated 8am brief: open leads, SLA breaches, top-3 hot rooms, TCMs at risk of missing target." },
-    { title: "TCM mobile mode", body: "Compact, action-first UI for on-tour TCMs — start tour, capture feedback, request block, all in 3 taps." },
-    { title: "Owner-facing pipeline", body: "Show each owner the count of qualified leads currently being pitched into their property — drives compliance." },
+    { title: "TCM mobile mode", body: "Compact, action-first UI for on-tour TCMs - start tour, capture feedback, request block, all in 3 taps." },
+    { title: "Owner-facing pipeline", body: "Show each owner the count of qualified leads currently being pitched into their property - drives compliance." },
     { title: "PDF auto-attach over WhatsApp Cloud API", body: "Replace Drive deep-link with native PDF send via Meta WhatsApp Business API. Per-message audit trail." },
     { title: "Conversion learning loop", body: "Track which Plan A vs Plan B converted and feed back into matcher weights per zone, persona and budget band." },
     { title: "Lead scoring v2 with intent decay", body: "Decay confidence the longer a lead is unattended; auto-revive with Coach scripts at week 1, 2 and 4." },

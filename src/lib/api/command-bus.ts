@@ -1,4 +1,4 @@
-// Command bus — dispatch a typed command, optimistic application happens in the calling store.
+// Command bus - dispatch a typed command, optimistic application happens in the calling store.
 // Server validates and returns the produced events. Realtime delivers them to ALL connected clients.
 import { api } from "./client";
 import { Command, ulid, type Command as Cmd } from "@/contracts";

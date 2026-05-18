@@ -1,7 +1,7 @@
 /**
  * Distance Intelligence Layer v2.
  *
- * Local heuristic only — no external maps API. Computes:
+ * Local heuristic only - no external maps API. Computes:
  *   - km (haversine when coords known, else area centroid table fallback)
  *   - travel time @ normal & peak hours
  *   - walkability index (0..100)
@@ -24,7 +24,7 @@ export type CampusTag =
   | "Koramangala Hub"
   | "Indiranagar"
   | "City Core"
-  | "—";
+  | "-";
 
 export interface Distance {
   km: number | null;
@@ -80,7 +80,7 @@ function campusTagForLead(area: string): CampusTag {
   if (/koramangala/.test(n)) return "Koramangala Hub";
   if (/indiranagar/.test(n)) return "Indiranagar";
   if (/mg road|brigade|cubbon/.test(n)) return "City Core";
-  return "—";
+  return "-";
 }
 
 export function distanceLeadToPg(leadArea: string, pg: PG): Distance {
@@ -123,14 +123,14 @@ export function distanceLeadToPg(leadArea: string, pg: PG): Distance {
   const tag = campusTagForLead(leadArea);
   const oneLiner =
     km == null
-      ? "Distance unknown — confirm with lead"
+      ? "Distance unknown - confirm with lead"
       : b === "walk"
         ? `${walkMins} min walk · ${km < 1 ? Math.round(km * 1000) + "m" : km + " km"}`
         : b === "short"
           ? `Auto ${autoMins} min · peak ${peakMins} min · ${km} km`
           : b === "commutable"
             ? `Commutable · ${km} km · peak ${peakMins} min`
-            : `Far — ${km} km · peak ${peakMins} min`;
+            : `Far - ${km} km · peak ${peakMins} min`;
 
   return { km, walkMins, autoMins, peakMins, walkability, band: b, campusTag: tag, oneLiner };
 }

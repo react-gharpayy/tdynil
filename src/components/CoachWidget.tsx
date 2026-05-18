@@ -9,7 +9,7 @@ import { CoachPanel } from "./CoachPanel";
 import { cn } from "@/lib/utils";
 
 /**
- * Floating "Coach" launcher — shows the user a pulsing ring when there are
+ * Floating "Coach" launcher - shows the user a pulsing ring when there are
  * misses, the streak count when there aren't, and opens the Coach drawer.
  *
  * Hides automatically inside the LeadControlPanel sheet to avoid stacking.

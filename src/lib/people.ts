@@ -1,5 +1,5 @@
 /**
- * People seed — multiple humans per role so HR has comparison fodder
+ * People seed - multiple humans per role so HR has comparison fodder
  * and "View as" can switch identities to test cross-role flows.
  *
  * IDs here intentionally match the TCM ids in `mock-data.ts` so the
@@ -50,7 +50,7 @@ export const FLOWOPS_PEOPLE: Person[] = [
     stats: { missionPct: 45, streak: 1,  xp: 940,  closes: 2,  avgResponseMins: 11 } },
 ];
 
-/** TCM stats for HR comparison — keyed by the 4 core TCM ids. */
+/** TCM stats for HR comparison - keyed by the 4 core TCM ids. */
 export const TCM_STATS: Record<string, Person["stats"] & { name: string; focus: string }> = {
   "tcm-1": { name: "Aarav Mehta",  focus: "Koramangala · closer",  missionPct: 92, streak: 21, xp: 5630, closes: 14, avgResponseMins: 4 },
   "tcm-2": { name: "Priya Shah",   focus: "Indiranagar · nurturer", missionPct: 76, streak: 9,  xp: 3220, closes: 9,  avgResponseMins: 7 },

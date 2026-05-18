@@ -1,5 +1,5 @@
 // AUTO-GENERATED from gharpay_v4.jsx (base64 dataset) + Find PG GG + IQ Form.
-// Source of truth: per-bed prices ARE NOT FABRICATED — missing = 0 = not offered.
+// Source of truth: per-bed prices ARE NOT FABRICATED - missing = 0 = not offered.
 import type { PG } from './types';
 
 export const PGS: PG[] = [
@@ -242,10 +242,10 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹20,000/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -265,15 +265,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Christ University Back Gate, Dairy Circle, Christ University Central Campus)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — FORUM PRO BOYS matches what you need. It's a mid property in Koramangala, walking distance from Christ University Back Gate. Let me lock a visit slot today.",
+    "hook": "Perfect - FORUM PRO BOYS matches what you need. It's a mid property in Koramangala, walking distance from Christ University Back Gate. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -281,23 +281,23 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — FORUM PRO BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - FORUM PRO BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -315,7 +315,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -568,10 +568,10 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹19,333/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -591,15 +591,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Christ University Back Gate, Dairy Circle, Christ University Central Campus)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹14,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — FORUM 1 BOYS matches what you need. It's a mid property in Koramangala, walking distance from Christ University Back Gate. Let me lock a visit slot today.",
+    "hook": "Perfect - FORUM 1 BOYS matches what you need. It's a mid property in Koramangala, walking distance from Christ University Back Gate. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -607,23 +607,23 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — FORUM 1 BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - FORUM 1 BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -641,7 +641,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -888,7 +888,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Flipkart, Myntra, Cisco, IBM, JP Morgan, ThoughtWorks, Walmart Labs",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Hidden charges fear (electricity, deposit)",
@@ -896,10 +896,10 @@ export const PGS: PG[] = [
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹20,000/mo for Budget property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -911,7 +911,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -920,15 +920,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Cessna Business Park, Outer Ring Road Bellandur, EcoSpace Business Park Bellandur)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — KNOX COED matches what you need. It's a budget property in Bellandur, walking distance from Cessna Business Park. Let me lock a visit slot today.",
+    "hook": "Perfect - KNOX COED matches what you need. It's a budget property in Bellandur, walking distance from Cessna Business Park. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -936,27 +936,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Budget property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Budget property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — KNOX COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - KNOX COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. KNOX COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. KNOX COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -973,7 +973,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -1219,7 +1219,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Flipkart, Myntra, Cisco, IBM, JP Morgan, ThoughtWorks, Walmart Labs",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -1227,9 +1227,9 @@ export const PGS: PG[] = [
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,000/mo for Premium property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -1241,8 +1241,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -1251,15 +1251,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Cessna Business Park, EcoSpace Business Park Bellandur, Salarpuria Techzone Marathahalli)",
      "Are you a student or working professional?",
      "Budget range?",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — LIVIO COED FLATLIKE matches what you need. It's a premium property in Bellandur, walking distance from Cessna Business Park. Let me lock a visit slot today.",
+    "hook": "Perfect - LIVIO COED FLATLIKE matches what you need. It's a premium property in Bellandur, walking distance from Cessna Business Park. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -1267,39 +1267,39 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — LIVIO COED FLATLIKE is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - LIVIO COED FLATLIKE is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. LIVIO COED FLATLIKE is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. LIVIO COED FLATLIKE is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
    "pitch": {
     "location": "LIVIO COED FLATLIKE sits at KADUBEESANAHALLI. From here you can walk to Cessna Business Park, EcoSpace Business Park Bellandur, Salarpuria Techzone Marathahalli. 15 minutes walk to nearest tech park. No commute headache.",
     "lifestyle": "Working professional and posh crowd and area You get Lounge, Pantry, Rooftop, Non Veg food, and Every Alternate Day.",
-    "priceClose": "Pricing depends on room type — let me show you on the visit.",
+    "priceClose": "Pricing depends on room type - let me show you on the visit.",
     "closeQuestion": "Shall I block this room for you with a ₹3,000 refundable token? You'll have 24 hours to confirm."
    },
    "money": {
     "breakdown": [
-     "Pricing varies by room — confirm on visit",
+     "Pricing varies by room - confirm on visit",
      "Token to block: ₹3,000",
      "First month + deposit on move-in"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -1545,16 +1545,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Brigade, RMZ, IBM, Honeywell, Fidelity, Infosys",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Mahadevapura office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Mahadevapura key landmarks — show map screenshot",
+    "Walking distance to Mahadevapura key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹20,000/mo for Mid property at Mahadevapura = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -1566,7 +1566,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -1575,15 +1575,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Mahadevapura. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Mahadevapura. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Vigyan Nagar Mahadevapura, Brookfield Signal, Prestige Shantiniketan Marathahalli)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Zeal Coed matches what you need. It's a mid property in Mahadevapura, walking distance from Vigyan Nagar Mahadevapura. Let me lock a visit slot today.",
+    "hook": "Perfect - Zeal Coed matches what you need. It's a mid property in Mahadevapura, walking distance from Vigyan Nagar Mahadevapura. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -1591,27 +1591,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Zeal Coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Zeal Coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. Zeal Coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. Zeal Coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -1628,7 +1628,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -1874,16 +1874,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Brigade, RMZ, IBM, Honeywell, Fidelity, Infosys",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Mahadevapura office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Mahadevapura key landmarks — show map screenshot",
+    "Walking distance to Mahadevapura key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹27,000/mo for Mid property at Mahadevapura = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -1895,7 +1895,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -1904,15 +1904,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Mahadevapura. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Mahadevapura. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Mahadevapura Junction, RMZ Infinity Old Madras Road, Amazon India Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹27,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — PRIVE COED matches what you need. It's a mid property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
+    "hook": "Perfect - PRIVE COED matches what you need. It's a mid property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -1920,27 +1920,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹22,950/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹22,950/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — PRIVE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - PRIVE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. PRIVE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. PRIVE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -1956,7 +1956,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -2203,16 +2203,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Brigade, RMZ, IBM, Honeywell, Fidelity, Infosys",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Mahadevapura office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Mahadevapura key landmarks — show map screenshot",
+    "Walking distance to Mahadevapura key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹30,000/mo for Mid property at Mahadevapura = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -2224,7 +2224,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -2233,15 +2233,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Mahadevapura. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Mahadevapura. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Mahadevapura Junction, RMZ Infinity Old Madras Road, Amazon India Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹30,000–₹30,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — MIVON COED matches what you need. It's a mid property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
+    "hook": "Perfect - MIVON COED matches what you need. It's a mid property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -2249,27 +2249,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹25,500/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹25,500/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — MIVON COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - MIVON COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. MIVON COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. MIVON COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -2285,7 +2285,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -2532,16 +2532,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "EY, Brookefield IT, Indiqube tenants",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Marathahalli office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Marathahalli key landmarks — show map screenshot",
+    "Walking distance to Marathahalli key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹20,500/mo for Mid property at Marathahalli = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -2553,7 +2553,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -2562,15 +2562,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Marathahalli. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Marathahalli. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near AECS Layout Marathahalli, Prestige Shantiniketan Marathahalli, HP Campus Marathahalli)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹26,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — MYSTIC COED matches what you need. It's a mid property in Marathahalli, walking distance from AECS Layout Marathahalli. Let me lock a visit slot today.",
+    "hook": "Perfect - MYSTIC COED matches what you need. It's a mid property in Marathahalli, walking distance from AECS Layout Marathahalli. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -2578,27 +2578,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — MYSTIC COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - MYSTIC COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. MYSTIC COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. MYSTIC COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -2615,7 +2615,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -2863,16 +2863,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Brigade, RMZ, IBM, Honeywell, Fidelity, Infosys",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Mahadevapura office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Mahadevapura key landmarks — show map screenshot",
+    "Walking distance to Mahadevapura key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹25,500/mo for Mid property at Mahadevapura = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -2884,7 +2884,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -2893,15 +2893,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Mahadevapura. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Mahadevapura. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Brookfield Signal, Kundanahalli Gate, Prestige Shantiniketan Marathahalli)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹19,000–₹32,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — BIGBROOK matches what you need. It's a mid property in Mahadevapura, walking distance from Brookfield Signal. Let me lock a visit slot today.",
+    "hook": "Perfect - BIGBROOK matches what you need. It's a mid property in Mahadevapura, walking distance from Brookfield Signal. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -2909,27 +2909,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹21,675/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹21,675/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — BIGBROOK is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - BIGBROOK is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. BIGBROOK is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. BIGBROOK is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -2946,7 +2946,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -3193,16 +3193,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "EY, Brookefield IT, Indiqube tenants",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Marathahalli office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Marathahalli key landmarks — show map screenshot",
+    "Walking distance to Marathahalli key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹29,000/mo for Mid property at Marathahalli = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -3214,7 +3214,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -3223,15 +3223,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Marathahalli. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Marathahalli. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near AECS Layout Marathahalli, Oracle Campus Whitefield, Prestige Shantiniketan Marathahalli)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹29,000–₹29,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — ZION LUXE COED matches what you need. It's a mid property in Marathahalli, walking distance from AECS Layout Marathahalli. Let me lock a visit slot today.",
+    "hook": "Perfect - ZION LUXE COED matches what you need. It's a mid property in Marathahalli, walking distance from AECS Layout Marathahalli. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -3239,27 +3239,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹24,650/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹24,650/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — ZION LUXE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - ZION LUXE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. ZION LUXE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. ZION LUXE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -3275,7 +3275,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -3528,10 +3528,10 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹21,500/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -3551,15 +3551,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Christ University Back Gate, Dairy Circle, Christ University Central Campus)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹17,000–₹26,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — AIRA BOYS matches what you need. It's a mid property in Koramangala, walking distance from Christ University Back Gate. Let me lock a visit slot today.",
+    "hook": "Perfect - AIRA BOYS matches what you need. It's a mid property in Koramangala, walking distance from Christ University Back Gate. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -3567,23 +3567,23 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹18,275/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹18,275/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — AIRA BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - AIRA BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -3600,7 +3600,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -3847,16 +3847,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Flipkart, Myntra, Cisco, IBM, JP Morgan, ThoughtWorks, Walmart Labs",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹23,000/mo for Mid property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -3868,7 +3868,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -3877,15 +3877,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Bellandur Lake, Prestige Tech Park ORR, Pritech Park SEZ Bellandur)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹18,000–₹28,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — ZILLION COED matches what you need. It's a mid property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
+    "hook": "Perfect - ZILLION COED matches what you need. It's a mid property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -3893,27 +3893,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹19,550/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹19,550/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — ZILLION COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - ZILLION COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. ZILLION COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. ZILLION COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -3930,7 +3930,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -4183,10 +4183,10 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹17,500/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -4206,15 +4206,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Nexus Mall Koramangala, Fiserv India Koramangala, Accenture Koramangala)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹14,000–₹21,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Wink Boys matches what you need. It's a mid property in Koramangala, walking distance from Nexus Mall Koramangala. Let me lock a visit slot today.",
+    "hook": "Perfect - Wink Boys matches what you need. It's a mid property in Koramangala, walking distance from Nexus Mall Koramangala. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -4222,23 +4222,23 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹14,875/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹14,875/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Wink Boys is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Wink Boys is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent.) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent.) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -4255,7 +4255,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent.) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -4504,16 +4504,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Goldman Sachs, SAP Labs, Mphasis, L&T Infotech, Cognizant",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Nagawara Manyata office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Nagawara Manyata key landmarks — show map screenshot",
+    "Walking distance to Nagawara Manyata key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹19,500/mo for Mid property at Nagawara Manyata = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -4525,7 +4525,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -4534,15 +4534,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Nagawara Manyata. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Nagawara Manyata. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Manyata Tech Park, Outer Ring Road Nagawara, Hebbal Flyover)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹24,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — CIA COED matches what you need. It's a mid property in Nagawara Manyata, walking distance from Manyata Tech Park. Let me lock a visit slot today.",
+    "hook": "Perfect - CIA COED matches what you need. It's a mid property in Nagawara Manyata, walking distance from Manyata Tech Park. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -4550,27 +4550,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 2 Meals/ Day = effective cost is ₹16,575/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 2 Meals/ Day = effective cost is ₹16,575/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — CIA COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - CIA COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. CIA COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. CIA COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -4587,7 +4587,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -4834,16 +4834,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Goldman Sachs, SAP Labs, Mphasis, L&T Infotech, Cognizant",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Nagawara Manyata office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Nagawara Manyata key landmarks — show map screenshot",
+    "Walking distance to Nagawara Manyata key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹16,000/mo for Mid property at Nagawara Manyata = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -4855,7 +4855,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -4864,15 +4864,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Nagawara Manyata. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Nagawara Manyata. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Yeshwanthpur Railway Station, Christ University Yeshwanthpur Campus, MS Ramaiah Hospital Mathikere)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹13,000–₹20,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Magnus COED matches what you need. It's a mid property in Nagawara Manyata, walking distance from Yeshwanthpur Railway Station. Let me lock a visit slot today.",
+    "hook": "Perfect - Magnus COED matches what you need. It's a mid property in Nagawara Manyata, walking distance from Yeshwanthpur Railway Station. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -4880,27 +4880,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹14,025/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹14,025/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Magnus COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Magnus COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. Magnus COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. Magnus COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -4918,7 +4918,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -5171,10 +5171,10 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹29,000/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -5194,15 +5194,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Christ University Central Campus, Fiserv India Koramangala, Accenture Koramangala)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹29,000–₹29,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — ZEXUS BOYS matches what you need. It's a mid property in Koramangala, walking distance from Christ University Central Campus. Let me lock a visit slot today.",
+    "hook": "Perfect - ZEXUS BOYS matches what you need. It's a mid property in Koramangala, walking distance from Christ University Central Campus. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -5210,23 +5210,23 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹24,650/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹24,650/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — ZEXUS BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - ZEXUS BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -5242,7 +5242,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -5495,10 +5495,10 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹18,000/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -5521,15 +5521,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range?",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — GRAND GIRLY matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - GRAND GIRLY matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -5537,15 +5537,15 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — GRAND GIRLY is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - GRAND GIRLY is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -5553,23 +5553,23 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
    "pitch": {
     "location": "GRAND GIRLY sits at \"SG PALYA + all Koramangala / NEXUS/ tavrekere\". From here you can walk to Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road. 10 minutes to nearest tech park. No commute headache.",
     "lifestyle": "All restaurants nearby, good nightlife and area You get Lounge, Pantry, Rooftop, Veg food, and Every Alternate Day.",
-    "priceClose": "Pricing depends on room type — let me show you on the visit.",
+    "priceClose": "Pricing depends on room type - let me show you on the visit.",
     "closeQuestion": "Shall I block this room for you with a ₹3,000 refundable token? You'll have 24 hours to confirm."
    },
    "money": {
     "breakdown": [
-     "Pricing varies by room — confirm on visit",
+     "Pricing varies by room - confirm on visit",
      "Token to block: ₹3,000",
      "First month + deposit on move-in"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -5822,11 +5822,11 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹18,000/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -5849,15 +5849,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near IIMB Bannerghatta Road, Christ University Central Campus, Christ University Back Gate)",
      "Are you a student or working professional?",
      "Budget range?",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — S GIRLY RK matches what you need. It's a mid property in Koramangala, walking distance from IIMB Bannerghatta Road. Let me lock a visit slot today.",
+    "hook": "Perfect - S GIRLY RK matches what you need. It's a mid property in Koramangala, walking distance from IIMB Bannerghatta Road. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -5865,15 +5865,15 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — S GIRLY RK is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - S GIRLY RK is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -5881,23 +5881,23 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
    "pitch": {
     "location": "S GIRLY RK sits at \"SG PALYA + all Koramangala / NEXUS/ tavrekere\". From here you can walk to IIMB Bannerghatta Road, Christ University Central Campus, Christ University Back Gate. 10 minutes to nearest tech park. No commute headache.",
     "lifestyle": "All restaurants nearby, good nightlife and area You get Lounge, Gym, Pantry, Study Area, Rooftop, Veg food, and Every Alternate Day.",
-    "priceClose": "Pricing depends on room type — let me show you on the visit.",
+    "priceClose": "Pricing depends on room type - let me show you on the visit.",
     "closeQuestion": "Shall I block this room for you with a ₹3,000 refundable token? You'll have 24 hours to confirm."
    },
    "money": {
     "breakdown": [
-     "Pricing varies by room — confirm on visit",
+     "Pricing varies by room - confirm on visit",
      "Token to block: ₹3,000",
      "First month + deposit on move-in"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -6145,16 +6145,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Infosys, Wipro, HCL, TCS, Tech Mahindra",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Electronic City office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Electronic City key landmarks — show map screenshot",
+    "Walking distance to Electronic City key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹14,333/mo for Mid property at Electronic City = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -6166,7 +6166,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -6175,15 +6175,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Electronic City. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Electronic City. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Shanthipura Gate EC, Tech Mahindra Electronic City, HCL Technologies EC)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹11,000–₹19,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — FLEX COED matches what you need. It's a mid property in Electronic City, walking distance from Shanthipura Gate EC. Let me lock a visit slot today.",
+    "hook": "Perfect - FLEX COED matches what you need. It's a mid property in Electronic City, walking distance from Shanthipura Gate EC. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -6191,27 +6191,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹12,750/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹12,750/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — FLEX COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - FLEX COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. FLEX COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. FLEX COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -6229,7 +6229,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -6476,16 +6476,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Wipro, Infosys, mid-tier IT, freshers",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to BTM Layout office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to BTM Layout key landmarks — show map screenshot",
+    "Walking distance to BTM Layout key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,000/mo for Mid property at BTM Layout = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -6497,7 +6497,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -6506,15 +6506,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in BTM Layout. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in BTM Layout. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Tavarekere, Tavarekere Road BTM, Bosch Adugodi)",
      "Are you a student or working professional?",
      "Budget range?",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — STM COED matches what you need. It's a mid property in BTM Layout, walking distance from Tavarekere. Let me lock a visit slot today.",
+    "hook": "Perfect - STM COED matches what you need. It's a mid property in BTM Layout, walking distance from Tavarekere. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -6522,39 +6522,39 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — STM COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - STM COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 month's rent.) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 month's rent.) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. STM COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. STM COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
    "pitch": {
     "location": "STM COED sits at Silk Board/Btm. From here you can walk to Tavarekere, Tavarekere Road BTM, Bosch Adugodi. Near Landmark to nearest tech park. No commute headache.",
     "lifestyle": "Working professional and posh crowd and area You get Lounge, Gym, Pantry, Rooftop, Both food, and Every Alternate Day.",
-    "priceClose": "Pricing depends on room type — let me show you on the visit.",
+    "priceClose": "Pricing depends on room type - let me show you on the visit.",
     "closeQuestion": "Shall I block this room for you with a ₹3,000 refundable token? You'll have 24 hours to confirm."
    },
    "money": {
     "breakdown": [
-     "Pricing varies by room — confirm on visit",
+     "Pricing varies by room - confirm on visit",
      "Token to block: ₹3,000",
      "First month + deposit on move-in"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 month's rent.) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -6807,11 +6807,11 @@ export const PGS: PG[] = [
     "Commute to Jayanagar office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Jayanagar key landmarks — show map screenshot",
+    "Walking distance to Jayanagar key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹24,000/mo for Mid property at Jayanagar = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -6828,21 +6828,21 @@ export const PGS: PG[] = [
     "Don't joke about boys visiting",
     "Don't quote price without first creating value (location + amenities)"
    ],
-   "decisionMaker": "Parent (father/mother decides — daughter is influencer)",
+   "decisionMaker": "Parent (father/mother decides - daughter is influencer)",
    "conversionProbability": "40-55% if parent is convinced on safety"
   },
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Jayanagar. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Jayanagar. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Lalbagh West Gate, South End Circle Jayanagar, NIMHANS Hospital)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹18,000–₹33,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — LUNA GIRLS matches what you need. It's a mid property in Jayanagar, walking distance from Lalbagh West Gate. Let me lock a visit slot today.",
+    "hook": "Perfect - LUNA GIRLS matches what you need. It's a mid property in Jayanagar, walking distance from Lalbagh West Gate. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -6850,19 +6850,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹21,675/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹21,675/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — LUNA GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - LUNA GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -6870,7 +6870,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -6888,7 +6888,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -7135,16 +7135,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Flipkart, Myntra, Cisco, IBM, JP Morgan, ThoughtWorks, Walmart Labs",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,333/mo for Mid property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -7156,7 +7156,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -7165,15 +7165,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Bellandur Lake, Prestige Tech Park ORR, Pritech Park SEZ Bellandur)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹13,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — BELL COED matches what you need. It's a mid property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
+    "hook": "Perfect - BELL COED matches what you need. It's a mid property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -7181,27 +7181,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — BELL COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - BELL COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. BELL COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. BELL COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -7219,7 +7219,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -7466,16 +7466,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Flipkart, Myntra, Cisco, IBM, JP Morgan, ThoughtWorks, Walmart Labs",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,000/mo for Mid property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -7487,7 +7487,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -7496,15 +7496,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Outer Ring Road Bellandur, Embassy Tech Village Bellandur, Prestige Tech Park ORR)",
      "Are you a student or working professional?",
      "Budget range?",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — TREO COED matches what you need. It's a mid property in Bellandur, walking distance from Outer Ring Road Bellandur. Let me lock a visit slot today.",
+    "hook": "Perfect - TREO COED matches what you need. It's a mid property in Bellandur, walking distance from Outer Ring Road Bellandur. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -7512,39 +7512,39 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — TREO COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - TREO COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (one month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (one month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. TREO COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. TREO COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
    "pitch": {
     "location": "TREO COED sits at bellandur. From here you can walk to Outer Ring Road Bellandur, Embassy Tech Village Bellandur, Prestige Tech Park ORR. 40 minutes walking 15 minutes vehicle to nearest tech park. No commute headache.",
     "lifestyle": "Working professional and posh crowd and area You get Lounge, Gym, Pantry, Rooftop, Both food, and Every Alternate Day.",
-    "priceClose": "Pricing depends on room type — let me show you on the visit.",
+    "priceClose": "Pricing depends on room type - let me show you on the visit.",
     "closeQuestion": "Shall I block this room for you with a ₹3,000 refundable token? You'll have 24 hours to confirm."
    },
    "money": {
     "breakdown": [
-     "Pricing varies by room — confirm on visit",
+     "Pricing varies by room - confirm on visit",
      "Token to block: ₹3,000",
      "First month + deposit on move-in"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (one month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -7791,16 +7791,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Infosys, Wipro, HCL, TCS, Tech Mahindra",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Electronic City office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Electronic City key landmarks — show map screenshot",
+    "Walking distance to Electronic City key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹16,500/mo for Mid property at Electronic City = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -7812,7 +7812,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -7821,15 +7821,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Electronic City. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Electronic City. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Infosys EC Gate 1, Electronic City Phase 1 Gate, HCL Technologies EC)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹14,000–₹19,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — POP COED matches what you need. It's a mid property in Electronic City, walking distance from Infosys EC Gate 1. Let me lock a visit slot today.",
+    "hook": "Perfect - POP COED matches what you need. It's a mid property in Electronic City, walking distance from Infosys EC Gate 1. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -7837,27 +7837,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹14,025/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹14,025/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — POP COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - POP COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. POP COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. POP COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -7874,7 +7874,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -8121,15 +8121,15 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Swiggy, Razorpay, Byju's, Cult.fit, Accenture, Fiserv, Ola, Zomato",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
+    "No curfew - important for IT/late shifts",
     "₹21,000/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -8141,7 +8141,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -8150,15 +8150,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Christ University Back Gate, Dairy Circle, Christ University Central Campus)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹29,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — NEX COED matches what you need. It's a mid property in Koramangala, walking distance from Christ University Back Gate. Let me lock a visit slot today.",
+    "hook": "Perfect - NEX COED matches what you need. It's a mid property in Koramangala, walking distance from Christ University Back Gate. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -8166,27 +8166,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹18,700/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹18,700/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — NEX COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - NEX COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. NEX COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. NEX COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -8204,7 +8204,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -8451,16 +8451,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Swiggy, Razorpay, Byju's, Cult.fit, Accenture, Fiserv, Ola, Zomato",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹19,333/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -8472,7 +8472,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -8481,15 +8481,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Jayanagar Metro Station, South End Circle Jayanagar, Jayanagar 4th T Block)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹14,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — JOY GIRLS matches what you need. It's a mid property in Koramangala, walking distance from Jayanagar Metro Station. Let me lock a visit slot today.",
+    "hook": "Perfect - JOY GIRLS matches what you need. It's a mid property in Koramangala, walking distance from Jayanagar Metro Station. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -8497,27 +8497,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — JOY GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - JOY GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. JOY GIRLS is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. JOY GIRLS is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -8535,7 +8535,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -8788,11 +8788,11 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹18,000/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -8815,15 +8815,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near IIMB Bannerghatta Road, Christ University Central Campus, Christ University Back Gate)",
      "Are you a student or working professional?",
      "Budget range?",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — WYSE GIRLS matches what you need. It's a mid property in Koramangala, walking distance from IIMB Bannerghatta Road. Let me lock a visit slot today.",
+    "hook": "Perfect - WYSE GIRLS matches what you need. It's a mid property in Koramangala, walking distance from IIMB Bannerghatta Road. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -8831,15 +8831,15 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — WYSE GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - WYSE GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -8847,23 +8847,23 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
    "pitch": {
     "location": "WYSE GIRLS sits at \"CHRIST CENTRAL IBC KNOWLEDGE PARK\". From here you can walk to IIMB Bannerghatta Road, Christ University Central Campus, Christ University Back Gate. 10 min to nearest tech park. No commute headache.",
     "lifestyle": "All restaurants nearby, good nightlife and area You get Lounge, Gym, Pantry, Rooftop, Both food, and Every Alternate Day.",
-    "priceClose": "Pricing depends on room type — let me show you on the visit.",
+    "priceClose": "Pricing depends on room type - let me show you on the visit.",
     "closeQuestion": "Shall I block this room for you with a ₹3,000 refundable token? You'll have 24 hours to confirm."
    },
    "money": {
     "breakdown": [
-     "Pricing varies by room — confirm on visit",
+     "Pricing varies by room - confirm on visit",
      "Token to block: ₹3,000",
      "First month + deposit on move-in"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -9110,16 +9110,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Swiggy, Razorpay, Byju's, Cult.fit, Accenture, Fiserv, Ola, Zomato",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹19,000/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -9131,7 +9131,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -9140,15 +9140,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹13,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — XOLD FLAT LIKE matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - XOLD FLAT LIKE matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -9156,27 +9156,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — XOLD FLAT LIKE is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - XOLD FLAT LIKE is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. XOLD FLAT LIKE is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. XOLD FLAT LIKE is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -9194,7 +9194,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -9441,16 +9441,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Swiggy, Razorpay, Byju's, Cult.fit, Accenture, Fiserv, Ola, Zomato",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹21,000/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -9462,7 +9462,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -9471,15 +9471,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Adugodi, Christ University Back Gate, Dairy Circle)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Roar Colive matches what you need. It's a mid property in Koramangala, walking distance from Adugodi. Let me lock a visit slot today.",
+    "hook": "Perfect - Roar Colive matches what you need. It's a mid property in Koramangala, walking distance from Adugodi. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -9487,27 +9487,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Roar Colive is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Roar Colive is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. Roar Colive is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. Roar Colive is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -9524,7 +9524,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -9771,16 +9771,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Swiggy, Razorpay, Byju's, Cult.fit, Accenture, Fiserv, Ola, Zomato",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹17,000/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -9792,7 +9792,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -9801,15 +9801,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹11,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — SG COLIVE matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - SG COLIVE matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -9817,27 +9817,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,300/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,300/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — SG COLIVE is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - SG COLIVE is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. SG COLIVE is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. SG COLIVE is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -9855,7 +9855,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -10108,11 +10108,11 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹18,500/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -10135,15 +10135,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹22,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Orange Captial matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - Orange Captial matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -10151,19 +10151,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Orange Captial is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Orange Captial is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -10171,7 +10171,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -10188,7 +10188,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -10441,11 +10441,11 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹17,333/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -10468,15 +10468,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Christ University Back Gate, Dairy Circle, Christ University Central Campus)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹12,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Fab Girls matches what you need. It's a mid property in Koramangala, walking distance from Christ University Back Gate. Let me lock a visit slot today.",
+    "hook": "Perfect - Fab Girls matches what you need. It's a mid property in Koramangala, walking distance from Christ University Back Gate. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -10484,19 +10484,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Fab Girls is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Fab Girls is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -10504,7 +10504,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -10522,7 +10522,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -10769,16 +10769,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Brigade, RMZ, IBM, Honeywell, Fidelity, Infosys",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Mahadevapura office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Mahadevapura key landmarks — show map screenshot",
+    "Walking distance to Mahadevapura key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,000/mo for Mid property at Mahadevapura = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -10790,7 +10790,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -10799,15 +10799,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Mahadevapura. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Mahadevapura. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near ISRO Colony Whitefield, Vigyan Nagar Mahadevapura, Tin Factory Whitefield)",
      "Are you a student or working professional?",
      "Budget range?",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Zeest COED matches what you need. It's a mid property in Mahadevapura, walking distance from ISRO Colony Whitefield. Let me lock a visit slot today.",
+    "hook": "Perfect - Zeest COED matches what you need. It's a mid property in Mahadevapura, walking distance from ISRO Colony Whitefield. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -10815,39 +10815,39 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Zeest COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Zeest COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. Zeest COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. Zeest COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
    "pitch": {
     "location": "Zeest COED sits at Brookfield, bagmane, mahadevapura,  cv raman. From here you can walk to ISRO Colony Whitefield, Vigyan Nagar Mahadevapura, Tin Factory Whitefield. 10 minutes to nearest tech park. No commute headache.",
     "lifestyle": "Working professional and posh crowd and area You get Lounge, Gym, Pantry, Rooftop, Both food, and Every Alternate Day.",
-    "priceClose": "Pricing depends on room type — let me show you on the visit.",
+    "priceClose": "Pricing depends on room type - let me show you on the visit.",
     "closeQuestion": "Shall I block this room for you with a ₹3,000 refundable token? You'll have 24 hours to confirm."
    },
    "money": {
     "breakdown": [
-     "Pricing varies by room — confirm on visit",
+     "Pricing varies by room - confirm on visit",
      "Token to block: ₹3,000",
      "First month + deposit on move-in"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -11100,11 +11100,11 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹22,000/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -11121,21 +11121,21 @@ export const PGS: PG[] = [
     "Don't joke about boys visiting",
     "Don't quote price without first creating value (location + amenities)"
    ],
-   "decisionMaker": "Parent (father/mother decides — daughter is influencer)",
+   "decisionMaker": "Parent (father/mother decides - daughter is influencer)",
    "conversionProbability": "40-55% if parent is convinced on safety"
   },
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹17,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — GT GIRLS matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - GT GIRLS matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -11143,19 +11143,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹18,700/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹18,700/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — GT GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - GT GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -11163,7 +11163,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -11180,7 +11180,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -11427,16 +11427,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "IBM, Wipro, ITPL tenants, Capgemini, TCS, Mphasis",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Whitefield office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Whitefield key landmarks — show map screenshot",
+    "Walking distance to Whitefield key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹23,000/mo for Mid property at Whitefield = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -11448,7 +11448,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -11457,15 +11457,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Whitefield. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Whitefield. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Hope Farm Junction Whitefield, Phoenix Market City Whitefield, Intel Campus Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹23,000–₹23,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Bliss matches what you need. It's a mid property in Whitefield, walking distance from Hope Farm Junction Whitefield. Let me lock a visit slot today.",
+    "hook": "Perfect - Bliss matches what you need. It's a mid property in Whitefield, walking distance from Hope Farm Junction Whitefield. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -11473,27 +11473,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹19,550/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹19,550/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Bliss is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Bliss is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. Bliss is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. Bliss is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -11509,7 +11509,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -11762,11 +11762,11 @@ export const PGS: PG[] = [
     "Commute to Nagawara Manyata office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Nagawara Manyata key landmarks — show map screenshot",
+    "Walking distance to Nagawara Manyata key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹18,500/mo for Mid property at Nagawara Manyata = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -11789,15 +11789,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Nagawara Manyata. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Nagawara Manyata. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Manyata Tech Park, Outer Ring Road Nagawara, Hebbal Flyover)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹14,000–₹23,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — WISTA  GIRLS C matches what you need. It's a mid property in Nagawara Manyata, walking distance from Manyata Tech Park. Let me lock a visit slot today.",
+    "hook": "Perfect - WISTA  GIRLS C matches what you need. It's a mid property in Nagawara Manyata, walking distance from Manyata Tech Park. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -11805,19 +11805,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — WISTA  GIRLS C is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - WISTA  GIRLS C is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -11825,7 +11825,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -11842,7 +11842,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -12089,16 +12089,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "EY, Brookefield IT, Indiqube tenants",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Marathahalli office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Marathahalli key landmarks — show map screenshot",
+    "Walking distance to Marathahalli key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹17,333/mo for Mid property at Marathahalli = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -12110,7 +12110,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -12119,15 +12119,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Marathahalli. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Marathahalli. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Brookfield Signal, Vigyan Nagar Mahadevapura, Prestige Shantiniketan Marathahalli)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹12,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Kmahalli coed matches what you need. It's a mid property in Marathahalli, walking distance from Brookfield Signal. Let me lock a visit slot today.",
+    "hook": "Perfect - Kmahalli coed matches what you need. It's a mid property in Marathahalli, walking distance from Brookfield Signal. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -12135,27 +12135,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Kmahalli coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Kmahalli coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. Kmahalli coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. Kmahalli coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -12173,7 +12173,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -12426,11 +12426,11 @@ export const PGS: PG[] = [
     "Commute to MG Road office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to MG Road key landmarks — show map screenshot",
+    "Walking distance to MG Road key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹18,000/mo for Mid property at MG Road = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -12453,15 +12453,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in MG Road. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in MG Road. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near MG Road Metro Station, Brigade Road, UB City Mall)",
      "Are you a student or working professional?",
      "Budget range?",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — VELVET GIRLS matches what you need. It's a mid property in MG Road, walking distance from MG Road Metro Station. Let me lock a visit slot today.",
+    "hook": "Perfect - VELVET GIRLS matches what you need. It's a mid property in MG Road, walking distance from MG Road Metro Station. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -12469,15 +12469,15 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — VELVET GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - VELVET GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -12485,23 +12485,23 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
    "pitch": {
     "location": "VELVET GIRLS sits at \"MG ROAD VASANTH NAGAR\". From here you can walk to MG Road Metro Station, Brigade Road, UB City Mall. Near MG Road to nearest tech park. No commute headache.",
     "lifestyle": "Working professional and posh crowd and area You get Lounge, Gym, Pantry, Rooftop, Both food, and Every Alternate Day.",
-    "priceClose": "Pricing depends on room type — let me show you on the visit.",
+    "priceClose": "Pricing depends on room type - let me show you on the visit.",
     "closeQuestion": "Shall I block this room for you with a ₹3,000 refundable token? You'll have 24 hours to confirm."
    },
    "money": {
     "breakdown": [
-     "Pricing varies by room — confirm on visit",
+     "Pricing varies by room - confirm on visit",
      "Token to block: ₹3,000",
      "First month + deposit on move-in"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -12748,16 +12748,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "IBM, Wipro, ITPL tenants, Capgemini, TCS, Mphasis",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Whitefield office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Whitefield key landmarks — show map screenshot",
+    "Walking distance to Whitefield key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹22,000/mo for Mid property at Whitefield = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -12769,7 +12769,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -12778,15 +12778,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Whitefield. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Whitefield. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Hope Farm Junction Whitefield, Phoenix Market City Whitefield, Intel Campus Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹17,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — METROFIELD COED matches what you need. It's a mid property in Whitefield, walking distance from Hope Farm Junction Whitefield. Let me lock a visit slot today.",
+    "hook": "Perfect - METROFIELD COED matches what you need. It's a mid property in Whitefield, walking distance from Hope Farm Junction Whitefield. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -12794,27 +12794,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹18,700/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹18,700/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — METROFIELD COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - METROFIELD COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. METROFIELD COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. METROFIELD COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -12831,7 +12831,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -13078,16 +13078,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "IBM, Wipro, ITPL tenants, Capgemini, TCS, Mphasis",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Whitefield office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Whitefield key landmarks — show map screenshot",
+    "Walking distance to Whitefield key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹15,000/mo for Mid property at Whitefield = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -13099,7 +13099,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -13108,15 +13108,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Whitefield. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Whitefield. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Hope Farm Junction Whitefield, Intel Campus Whitefield, Phoenix Market City Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹11,000–₹19,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — WHIT COED matches what you need. It's a mid property in Whitefield, walking distance from Hope Farm Junction Whitefield. Let me lock a visit slot today.",
+    "hook": "Perfect - WHIT COED matches what you need. It's a mid property in Whitefield, walking distance from Hope Farm Junction Whitefield. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -13124,27 +13124,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹12,750/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹12,750/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — WHIT COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - WHIT COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. WHIT COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. WHIT COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -13161,7 +13161,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -13408,16 +13408,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Brigade, RMZ, IBM, Honeywell, Fidelity, Infosys",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Mahadevapura office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Mahadevapura key landmarks — show map screenshot",
+    "Walking distance to Mahadevapura key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,333/mo for Mid property at Mahadevapura = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -13429,7 +13429,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -13438,15 +13438,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Mahadevapura. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Mahadevapura. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Mahadevapura Junction, RMZ Infinity Old Madras Road, Amazon India Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹13,000–₹26,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — ITP coed matches what you need. It's a mid property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
+    "hook": "Perfect - ITP coed matches what you need. It's a mid property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -13454,27 +13454,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹16,575/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹16,575/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — ITP coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - ITP coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. ITP coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. ITP coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -13492,7 +13492,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -13739,16 +13739,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "IBM, Wipro, ITPL tenants, Capgemini, TCS, Mphasis",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Whitefield office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Whitefield key landmarks — show map screenshot",
+    "Walking distance to Whitefield key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹21,000/mo for Mid property at Whitefield = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -13760,7 +13760,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -13769,15 +13769,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Whitefield. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Whitefield. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Hope Farm Junction Whitefield, Intel Campus Whitefield, Phoenix Market City Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹16,000–₹26,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — ASTOR COED matches what you need. It's a mid property in Whitefield, walking distance from Hope Farm Junction Whitefield. Let me lock a visit slot today.",
+    "hook": "Perfect - ASTOR COED matches what you need. It's a mid property in Whitefield, walking distance from Hope Farm Junction Whitefield. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -13785,27 +13785,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — ASTOR COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - ASTOR COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. ASTOR COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. ASTOR COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -13822,7 +13822,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -14069,16 +14069,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Flipkart, Myntra, Cisco, IBM, JP Morgan, ThoughtWorks, Walmart Labs",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,000/mo for Mid property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -14090,7 +14090,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -14099,15 +14099,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Oracle Campus Whitefield, Kadubeesanahalli Junction, Cessna Business Park)",
      "Are you a student or working professional?",
      "Budget range?",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — PHANTOM COED matches what you need. It's a mid property in Bellandur, walking distance from Oracle Campus Whitefield. Let me lock a visit slot today.",
+    "hook": "Perfect - PHANTOM COED matches what you need. It's a mid property in Bellandur, walking distance from Oracle Campus Whitefield. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -14115,39 +14115,39 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — PHANTOM COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - PHANTOM COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. PHANTOM COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. PHANTOM COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
    "pitch": {
     "location": "PHANTOM COED sits at ECOWORLD, BELLANDUR, ETV. From here you can walk to Oracle Campus Whitefield, Kadubeesanahalli Junction, Cessna Business Park. 15 minutes to nearest tech park. No commute headache.",
     "lifestyle": "Working professional and posh crowd and area You get Lounge, Gym, Pantry, Rooftop, Both food, and Every Alternate Day.",
-    "priceClose": "Pricing depends on room type — let me show you on the visit.",
+    "priceClose": "Pricing depends on room type - let me show you on the visit.",
     "closeQuestion": "Shall I block this room for you with a ₹3,000 refundable token? You'll have 24 hours to confirm."
    },
    "money": {
     "breakdown": [
-     "Pricing varies by room — confirm on visit",
+     "Pricing varies by room - confirm on visit",
      "Token to block: ₹3,000",
      "First month + deposit on move-in"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -14394,16 +14394,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Flipkart, Myntra, Cisco, IBM, JP Morgan, ThoughtWorks, Walmart Labs",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,000/mo for Mid property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -14415,7 +14415,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -14424,15 +14424,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Kadubeesanahalli Junction, Salarpuria Techzone Marathahalli, Cessna Business Park)",
      "Are you a student or working professional?",
      "Budget range?",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — ZELITE COED matches what you need. It's a mid property in Bellandur, walking distance from Kadubeesanahalli Junction. Let me lock a visit slot today.",
+    "hook": "Perfect - ZELITE COED matches what you need. It's a mid property in Bellandur, walking distance from Kadubeesanahalli Junction. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -14440,39 +14440,39 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — ZELITE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - ZELITE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. ZELITE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. ZELITE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
    "pitch": {
     "location": "ZELITE COED sits at ECOWORLD, BELLANDUR, ETV. From here you can walk to Kadubeesanahalli Junction, Salarpuria Techzone Marathahalli, Cessna Business Park. 40 minutes walking 15 minutes vehicle to nearest tech park. No commute headache.",
     "lifestyle": "Working professional and posh crowd and area You get Lounge, Gym, Pantry, Rooftop, Both food, and Every Alternate Day.",
-    "priceClose": "Pricing depends on room type — let me show you on the visit.",
+    "priceClose": "Pricing depends on room type - let me show you on the visit.",
     "closeQuestion": "Shall I block this room for you with a ₹3,000 refundable token? You'll have 24 hours to confirm."
    },
    "money": {
     "breakdown": [
-     "Pricing varies by room — confirm on visit",
+     "Pricing varies by room - confirm on visit",
      "Token to block: ₹3,000",
      "First month + deposit on move-in"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -14719,16 +14719,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "EY, Brookefield IT, Indiqube tenants",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Marathahalli office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Marathahalli key landmarks — show map screenshot",
+    "Walking distance to Marathahalli key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,000/mo for Mid property at Marathahalli = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -14740,7 +14740,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -14749,15 +14749,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Marathahalli. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Marathahalli. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Marathahalli Bridge Signal, Outer Ring Road Marathahalli, HP Campus Marathahalli)",
      "Are you a student or working professional?",
      "Budget range?",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Gg Vistra matches what you need. It's a mid property in Marathahalli, walking distance from Marathahalli Bridge Signal. Let me lock a visit slot today.",
+    "hook": "Perfect - Gg Vistra matches what you need. It's a mid property in Marathahalli, walking distance from Marathahalli Bridge Signal. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -14765,39 +14765,39 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Gg Vistra is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Gg Vistra is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. Gg Vistra is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. Gg Vistra is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
    "pitch": {
     "location": "Gg Vistra sits at AECS. From here you can walk to Marathahalli Bridge Signal, Outer Ring Road Marathahalli, HP Campus Marathahalli. 40 minutes walking distance to nearest tech park. No commute headache.",
     "lifestyle": "Working professional and posh crowd and area You get Lounge, Gym, Pantry, Rooftop, Both food, and Every Alternate Day.",
-    "priceClose": "Pricing depends on room type — let me show you on the visit.",
+    "priceClose": "Pricing depends on room type - let me show you on the visit.",
     "closeQuestion": "Shall I block this room for you with a ₹3,000 refundable token? You'll have 24 hours to confirm."
    },
    "money": {
     "breakdown": [
-     "Pricing varies by room — confirm on visit",
+     "Pricing varies by room - confirm on visit",
      "Token to block: ₹3,000",
      "First month + deposit on move-in"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -15050,10 +15050,10 @@ export const PGS: PG[] = [
     "Commute to HSR Layout office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to HSR Layout key landmarks — show map screenshot",
+    "Walking distance to HSR Layout key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,000/mo for Mid property at HSR Layout = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -15073,15 +15073,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in HSR Layout. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in HSR Layout. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Silk Board Junction, Outer Ring Road HSR Silk Board, Madiwala Market)",
      "Are you a student or working professional?",
      "Budget range?",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Gg Nuovo BOYS matches what you need. It's a mid property in HSR Layout, walking distance from Silk Board Junction. Let me lock a visit slot today.",
+    "hook": "Perfect - Gg Nuovo BOYS matches what you need. It's a mid property in HSR Layout, walking distance from Silk Board Junction. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -15089,35 +15089,35 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Gg Nuovo BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Gg Nuovo BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
    "pitch": {
     "location": "Gg Nuovo BOYS sits at Hsr, silk board. From here you can walk to Silk Board Junction, Outer Ring Road HSR Silk Board, Madiwala Market. Nearby Landmark to nearest tech park. No commute headache.",
     "lifestyle": "Working professional and posh crowd and area You get Lounge, Gym, Pantry, Rooftop, Both food, and Every Alternate Day.",
-    "priceClose": "Pricing depends on room type — let me show you on the visit.",
+    "priceClose": "Pricing depends on room type - let me show you on the visit.",
     "closeQuestion": "Shall I block this room for you with a ₹3,000 refundable token? You'll have 24 hours to confirm."
    },
    "money": {
     "breakdown": [
-     "Pricing varies by room — confirm on visit",
+     "Pricing varies by room - confirm on visit",
      "Token to block: ₹3,000",
      "First month + deposit on move-in"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -15364,16 +15364,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Goldman Sachs, SAP Labs, Mphasis, L&T Infotech, Cognizant",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Nagawara Manyata office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Nagawara Manyata key landmarks — show map screenshot",
+    "Walking distance to Nagawara Manyata key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹19,000/mo for Mid property at Nagawara Manyata = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -15385,7 +15385,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -15394,15 +15394,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Nagawara Manyata. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Nagawara Manyata. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Manyata Tech Park, Outer Ring Road Nagawara, Nagawara Lake)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹14,000–₹24,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — MTPLUS COED matches what you need. It's a mid property in Nagawara Manyata, walking distance from Manyata Tech Park. Let me lock a visit slot today.",
+    "hook": "Perfect - MTPLUS COED matches what you need. It's a mid property in Nagawara Manyata, walking distance from Manyata Tech Park. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -15410,27 +15410,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹16,150/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹16,150/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — MTPLUS COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - MTPLUS COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. MTPLUS COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. MTPLUS COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -15447,7 +15447,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -15694,16 +15694,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Brigade, RMZ, IBM, Honeywell, Fidelity, Infosys",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Mahadevapura office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Mahadevapura key landmarks — show map screenshot",
+    "Walking distance to Mahadevapura key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹20,000/mo for Mid property at Mahadevapura = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -15715,7 +15715,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -15724,15 +15724,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Mahadevapura. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Mahadevapura. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Mahadevapura Junction, RMZ Infinity Old Madras Road, Amazon India Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — thub coed matches what you need. It's a mid property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
+    "hook": "Perfect - thub coed matches what you need. It's a mid property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -15740,27 +15740,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — thub coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - thub coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. thub coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. thub coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -15777,7 +15777,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -16024,16 +16024,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Goldman Sachs, SAP Labs, Mphasis, L&T Infotech, Cognizant",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Nagawara Manyata office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Nagawara Manyata key landmarks — show map screenshot",
+    "Walking distance to Nagawara Manyata key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹19,000/mo for Mid property at Nagawara Manyata = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -16045,7 +16045,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -16054,15 +16054,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Nagawara Manyata. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Nagawara Manyata. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Manyata Tech Park, Outer Ring Road Nagawara, Nagawara Lake)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹14,000–₹24,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — MTEK coed matches what you need. It's a mid property in Nagawara Manyata, walking distance from Manyata Tech Park. Let me lock a visit slot today.",
+    "hook": "Perfect - MTEK coed matches what you need. It's a mid property in Nagawara Manyata, walking distance from Manyata Tech Park. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -16070,27 +16070,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹16,150/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹16,150/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — MTEK coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - MTEK coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. MTEK coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. MTEK coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -16107,7 +16107,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -16354,16 +16354,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "EY, Brookefield IT, Indiqube tenants",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Marathahalli office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Marathahalli key landmarks — show map screenshot",
+    "Walking distance to Marathahalli key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹17,333/mo for Mid property at Marathahalli = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -16375,7 +16375,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -16384,15 +16384,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Marathahalli. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Marathahalli. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Brookfield Signal, Vigyan Nagar Mahadevapura, Kundanahalli Gate)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹12,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Solaria Coed matches what you need. It's a mid property in Marathahalli, walking distance from Brookfield Signal. Let me lock a visit slot today.",
+    "hook": "Perfect - Solaria Coed matches what you need. It's a mid property in Marathahalli, walking distance from Brookfield Signal. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -16400,27 +16400,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Solaria Coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Solaria Coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. Solaria Coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. Solaria Coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -16438,7 +16438,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -16685,16 +16685,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Brigade, RMZ, IBM, Honeywell, Fidelity, Infosys",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Mahadevapura office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Mahadevapura key landmarks — show map screenshot",
+    "Walking distance to Mahadevapura key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,333/mo for Mid property at Mahadevapura = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -16706,7 +16706,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -16715,15 +16715,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Mahadevapura. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Mahadevapura. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Intel Campus Whitefield, ITPL (International Tech Park), Kundanahalli Gate)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹13,000–₹26,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — itp one coed matches what you need. It's a mid property in Mahadevapura, walking distance from Intel Campus Whitefield. Let me lock a visit slot today.",
+    "hook": "Perfect - itp one coed matches what you need. It's a mid property in Mahadevapura, walking distance from Intel Campus Whitefield. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -16731,27 +16731,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹16,575/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹16,575/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — itp one coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - itp one coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 moth rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 moth rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. itp one coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. itp one coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -16769,7 +16769,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 moth rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -17016,16 +17016,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "IBM, Wipro, ITPL tenants, Capgemini, TCS, Mphasis",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Whitefield office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Whitefield key landmarks — show map screenshot",
+    "Walking distance to Whitefield key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹25,000/mo for Mid property at Whitefield = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -17037,7 +17037,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -17046,15 +17046,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Whitefield. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Whitefield. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Hope Farm Junction Whitefield, Phoenix Market City Whitefield, Intel Campus Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹25,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Snowy Luxe matches what you need. It's a mid property in Whitefield, walking distance from Hope Farm Junction Whitefield. Let me lock a visit slot today.",
+    "hook": "Perfect - Snowy Luxe matches what you need. It's a mid property in Whitefield, walking distance from Hope Farm Junction Whitefield. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -17062,27 +17062,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹21,250/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹21,250/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Snowy Luxe is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Snowy Luxe is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. Snowy Luxe is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. Snowy Luxe is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -17098,7 +17098,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -17351,10 +17351,10 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,666/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -17374,15 +17374,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near IIMB Bannerghatta Road, Christ University Back Gate, Dairy Circle)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹14,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — elite COED matches what you need. It's a mid property in Koramangala, walking distance from IIMB Bannerghatta Road. Let me lock a visit slot today.",
+    "hook": "Perfect - elite COED matches what you need. It's a mid property in Koramangala, walking distance from IIMB Bannerghatta Road. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -17390,23 +17390,23 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹16,575/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹16,575/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — elite COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - elite COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -17424,7 +17424,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -17671,16 +17671,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Infosys, Wipro, HCL, TCS, Tech Mahindra",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Electronic City office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Electronic City key landmarks — show map screenshot",
+    "Walking distance to Electronic City key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹16,500/mo for Mid property at Electronic City = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -17692,7 +17692,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -17701,15 +17701,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Electronic City. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Electronic City. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Infosys EC Gate 1, Electronic City Phase 1 Gate, HCL Technologies EC)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹14,000–₹19,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Quo coed matches what you need. It's a mid property in Electronic City, walking distance from Infosys EC Gate 1. Let me lock a visit slot today.",
+    "hook": "Perfect - Quo coed matches what you need. It's a mid property in Electronic City, walking distance from Infosys EC Gate 1. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -17717,27 +17717,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹14,025/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹14,025/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Quo coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Quo coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. Quo coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. Quo coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -17754,7 +17754,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -18002,16 +18002,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Wipro, Infosys, mid-tier IT, freshers",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to BTM Layout office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to BTM Layout key landmarks — show map screenshot",
+    "Walking distance to BTM Layout key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹25,000/mo for Mid property at BTM Layout = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -18023,7 +18023,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -18032,15 +18032,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in BTM Layout. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in BTM Layout. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near BTM Layout Main Road, Bosch Adugodi, Tavarekere)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹25,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Silq coed matches what you need. It's a mid property in BTM Layout, walking distance from BTM Layout Main Road. Let me lock a visit slot today.",
+    "hook": "Perfect - Silq coed matches what you need. It's a mid property in BTM Layout, walking distance from BTM Layout Main Road. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -18048,27 +18048,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹21,250/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹21,250/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Silq coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Silq coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. Silq coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. Silq coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -18084,7 +18084,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -18331,16 +18331,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Swiggy, Razorpay, Byju's, Cult.fit, Accenture, Fiserv, Ola, Zomato",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹20,500/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -18352,7 +18352,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -18361,15 +18361,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹26,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — byg coed matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - byg coed matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -18377,27 +18377,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — byg coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - byg coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. byg coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. byg coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -18414,7 +18414,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -18668,11 +18668,11 @@ export const PGS: PG[] = [
     "Commute to Sg Palya office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Sg Palya key landmarks — show map screenshot",
+    "Walking distance to Sg Palya key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹19,000/mo for Mid property at Sg Palya = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -18695,15 +18695,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Sg Palya. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Sg Palya. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near SGPalya, Koramangala 8th Block, Koramangala 7th Block)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹16,000–₹22,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — GG BUBBLO GIRLS matches what you need. It's a mid property in Sg Palya, walking distance from SGPalya. Let me lock a visit slot today.",
+    "hook": "Perfect - GG BUBBLO GIRLS matches what you need. It's a mid property in Sg Palya, walking distance from SGPalya. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -18711,19 +18711,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹16,150/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹16,150/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — GG BUBBLO GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - GG BUBBLO GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -18731,7 +18731,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -18748,7 +18748,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -18996,16 +18996,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Swiggy, Razorpay, Byju's, Cult.fit, Accenture, Fiserv, Ola, Zomato",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹27,000/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -19017,7 +19017,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -19026,15 +19026,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹20,000–₹34,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Jazz coed matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - Jazz coed matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -19042,27 +19042,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹22,950/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹22,950/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Jazz coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Jazz coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. Jazz coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. Jazz coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -19079,7 +19079,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -19326,16 +19326,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Flipkart, Myntra, Cisco, IBM, JP Morgan, ThoughtWorks, Walmart Labs",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹23,000/mo for Mid property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -19347,7 +19347,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -19356,15 +19356,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Lalbagh West Gate, South End Circle Jayanagar, Majestic Bus Stand)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹18,000–₹28,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — etv luxe coed matches what you need. It's a mid property in Bellandur, walking distance from Lalbagh West Gate. Let me lock a visit slot today.",
+    "hook": "Perfect - etv luxe coed matches what you need. It's a mid property in Bellandur, walking distance from Lalbagh West Gate. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -19372,27 +19372,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹19,550/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹19,550/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — etv luxe coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - etv luxe coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. etv luxe coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. etv luxe coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -19409,7 +19409,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -19663,11 +19663,11 @@ export const PGS: PG[] = [
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹19,333/mo for Mid property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -19690,15 +19690,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Bellandur Lake, Prestige Tech Park ORR, Pritech Park SEZ Bellandur)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹14,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — qual girls matches what you need. It's a mid property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
+    "hook": "Perfect - qual girls matches what you need. It's a mid property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -19706,19 +19706,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — qual girls is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - qual girls is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -19726,7 +19726,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -19744,7 +19744,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -19992,16 +19992,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Flipkart, Myntra, Cisco, IBM, JP Morgan, ThoughtWorks, Walmart Labs",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹17,000/mo for Mid property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -20013,7 +20013,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -20022,15 +20022,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Bellandur Lake, Prestige Tech Park ORR, Pritech Park SEZ Bellandur)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹11,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — eco coed matches what you need. It's a mid property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
+    "hook": "Perfect - eco coed matches what you need. It's a mid property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -20038,27 +20038,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,300/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,300/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — eco coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - eco coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. eco coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. eco coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -20076,7 +20076,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -20323,16 +20323,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "EY, Brookefield IT, Indiqube tenants",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Marathahalli office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Marathahalli key landmarks — show map screenshot",
+    "Walking distance to Marathahalli key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹17,333/mo for Mid property at Marathahalli = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -20344,7 +20344,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -20353,15 +20353,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Marathahalli. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Marathahalli. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Brookfield Signal, Vigyan Nagar Mahadevapura, Kundanahalli Gate)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹12,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Klear coed matches what you need. It's a mid property in Marathahalli, walking distance from Brookfield Signal. Let me lock a visit slot today.",
+    "hook": "Perfect - Klear coed matches what you need. It's a mid property in Marathahalli, walking distance from Brookfield Signal. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -20369,27 +20369,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Klear coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Klear coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. Klear coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. Klear coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -20407,7 +20407,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -20654,16 +20654,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Brigade, RMZ, IBM, Honeywell, Fidelity, Infosys",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Mahadevapura office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Mahadevapura key landmarks — show map screenshot",
+    "Walking distance to Mahadevapura key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹24,000/mo for Mid property at Mahadevapura = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -20675,7 +20675,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -20684,15 +20684,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Mahadevapura. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Mahadevapura. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Kundanahalli Gate, Brookfield Signal, Prestige Shantiniketan Marathahalli)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹19,000–₹29,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Cool coed balc matches what you need. It's a mid property in Mahadevapura, walking distance from Kundanahalli Gate. Let me lock a visit slot today.",
+    "hook": "Perfect - Cool coed balc matches what you need. It's a mid property in Mahadevapura, walking distance from Kundanahalli Gate. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -20700,27 +20700,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹20,400/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹20,400/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Cool coed balc is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Cool coed balc is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. Cool coed balc is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. Cool coed balc is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -20737,7 +20737,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -20990,11 +20990,11 @@ export const PGS: PG[] = [
     "Commute to Indranagar office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Indranagar key landmarks — show map screenshot",
+    "Walking distance to Indranagar key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹18,500/mo for Mid property at Indranagar = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -21017,15 +21017,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Indranagar. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Indranagar. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Indiranagar 100 Feet Road, Toit Brewery Indiranagar, Indiranagar Metro Station)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹14,000–₹23,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Dom girls matches what you need. It's a mid property in Indranagar, walking distance from Indiranagar 100 Feet Road. Let me lock a visit slot today.",
+    "hook": "Perfect - Dom girls matches what you need. It's a mid property in Indranagar, walking distance from Indiranagar 100 Feet Road. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -21033,19 +21033,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Dom girls is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Dom girls is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -21053,7 +21053,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -21070,7 +21070,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -21324,11 +21324,11 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹25,000/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -21345,21 +21345,21 @@ export const PGS: PG[] = [
     "Don't joke about boys visiting",
     "Don't quote price without first creating value (location + amenities)"
    ],
-   "decisionMaker": "Parent (father/mother decides — daughter is influencer)",
+   "decisionMaker": "Parent (father/mother decides - daughter is influencer)",
    "conversionProbability": "40-55% if parent is convinced on safety"
   },
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹25,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Ace Girls matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - Ace Girls matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -21367,19 +21367,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹21,250/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹21,250/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Ace Girls is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Ace Girls is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -21387,7 +21387,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -21403,7 +21403,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -21657,11 +21657,11 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹22,000/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -21678,21 +21678,21 @@ export const PGS: PG[] = [
     "Don't joke about boys visiting",
     "Don't quote price without first creating value (location + amenities)"
    ],
-   "decisionMaker": "Parent (father/mother decides — daughter is influencer)",
+   "decisionMaker": "Parent (father/mother decides - daughter is influencer)",
    "conversionProbability": "40-55% if parent is convinced on safety"
   },
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹17,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Quin GIRL KS matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - Quin GIRL KS matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -21700,19 +21700,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹18,700/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹18,700/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Quin GIRL KS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Quin GIRL KS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -21720,7 +21720,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -21737,7 +21737,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -21984,16 +21984,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Flipkart, Myntra, Cisco, IBM, JP Morgan, ThoughtWorks, Walmart Labs",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹24,500/mo for Mid property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -22005,7 +22005,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -22014,15 +22014,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Bellandur Lake, Prestige Tech Park ORR, Pritech Park SEZ Bellandur)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹18,000–₹31,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — bella gc flats GIRLS matches what you need. It's a mid property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
+    "hook": "Perfect - bella gc flats GIRLS matches what you need. It's a mid property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -22030,27 +22030,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹20,825/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹20,825/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — bella gc flats GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - bella gc flats GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. bella gc flats GIRLS is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. bella gc flats GIRLS is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -22067,7 +22067,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -22320,10 +22320,10 @@ export const PGS: PG[] = [
     "Commute to Christ Yeshwanthpur Campus office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Christ Yeshwanthpur Campus key landmarks — show map screenshot",
+    "Walking distance to Christ Yeshwanthpur Campus key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹19,000/mo for Mid property at Christ Yeshwanthpur Campus = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -22343,15 +22343,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Christ Yeshwanthpur Campus. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Christ Yeshwanthpur Campus. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Christ University Yeshwanthpur Campus, Yeshwanthpur Railway Station, MS Ramaiah Hospital Mathikere)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹19,000–₹19,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Fort boys matches what you need. It's a mid property in Christ Yeshwanthpur Campus, walking distance from Christ University Yeshwanthpur Campus. Let me lock a visit slot today.",
+    "hook": "Perfect - Fort boys matches what you need. It's a mid property in Christ Yeshwanthpur Campus, walking distance from Christ University Yeshwanthpur Campus. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -22359,23 +22359,23 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹16,150/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹16,150/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Fort boys is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Fort boys is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -22391,7 +22391,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -22638,16 +22638,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Flipkart, Myntra, Cisco, IBM, JP Morgan, ThoughtWorks, Walmart Labs",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹21,000/mo for Mid property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -22659,7 +22659,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -22668,15 +22668,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Bellandur Lake, Pritech Park SEZ Bellandur, Prestige Tech Park ORR)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — STANNY COED matches what you need. It's a mid property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
+    "hook": "Perfect - STANNY COED matches what you need. It's a mid property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -22684,27 +22684,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — STANNY COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - STANNY COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. STANNY COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. STANNY COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -22721,7 +22721,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -22968,16 +22968,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Flipkart, Myntra, Cisco, IBM, JP Morgan, ThoughtWorks, Walmart Labs",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹21,000/mo for Mid property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -22989,7 +22989,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -22998,15 +22998,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Bellandur Lake, Pritech Park SEZ Bellandur, Prestige Tech Park ORR)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — GLEN COED matches what you need. It's a mid property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
+    "hook": "Perfect - GLEN COED matches what you need. It's a mid property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -23014,27 +23014,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — GLEN COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - GLEN COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. GLEN COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. GLEN COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -23051,7 +23051,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -23305,11 +23305,11 @@ export const PGS: PG[] = [
     "Commute to Vasanth Nagar office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Vasanth Nagar key landmarks — show map screenshot",
+    "Walking distance to Vasanth Nagar key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹18,000/mo for Mid property at Vasanth Nagar = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -23332,15 +23332,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Vasanth Nagar. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Vasanth Nagar. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Vasanth Nagar, Cubbon Park, UB City Mall)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹16,000–₹20,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — QUEEN'S MCC GIRLS matches what you need. It's a mid property in Vasanth Nagar, walking distance from Vasanth Nagar. Let me lock a visit slot today.",
+    "hook": "Perfect - QUEEN'S MCC GIRLS matches what you need. It's a mid property in Vasanth Nagar, walking distance from Vasanth Nagar. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -23348,19 +23348,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹15,300/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹15,300/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — QUEEN'S MCC GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - QUEEN'S MCC GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 Month Rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -23368,7 +23368,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -23385,7 +23385,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 Month Rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -23638,11 +23638,11 @@ export const PGS: PG[] = [
     "Commute to Christ Yeshwanthpur Campus office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Christ Yeshwanthpur Campus key landmarks — show map screenshot",
+    "Walking distance to Christ Yeshwanthpur Campus key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹21,000/mo for Mid property at Christ Yeshwanthpur Campus = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -23659,21 +23659,21 @@ export const PGS: PG[] = [
     "Don't joke about boys visiting",
     "Don't quote price without first creating value (location + amenities)"
    ],
-   "decisionMaker": "Parent (father/mother decides — daughter is influencer)",
+   "decisionMaker": "Parent (father/mother decides - daughter is influencer)",
    "conversionProbability": "40-55% if parent is convinced on safety"
   },
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Christ Yeshwanthpur Campus. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Christ Yeshwanthpur Campus. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Christ University Yeshwanthpur Campus, Yeshwanthpur Railway Station, MS Ramaiah Hospital Mathikere)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹20,000–₹22,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — paradise girls matches what you need. It's a mid property in Christ Yeshwanthpur Campus, walking distance from Christ University Yeshwanthpur Campus. Let me lock a visit slot today.",
+    "hook": "Perfect - paradise girls matches what you need. It's a mid property in Christ Yeshwanthpur Campus, walking distance from Christ University Yeshwanthpur Campus. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -23681,19 +23681,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — paradise girls is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - paradise girls is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -23701,7 +23701,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -23718,7 +23718,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -23971,10 +23971,10 @@ export const PGS: PG[] = [
     "Commute to Christ Yeshwanthpur Campus office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Christ Yeshwanthpur Campus key landmarks — show map screenshot",
+    "Walking distance to Christ Yeshwanthpur Campus key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹20,500/mo for Mid property at Christ Yeshwanthpur Campus = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -23994,15 +23994,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Christ Yeshwanthpur Campus. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Christ Yeshwanthpur Campus. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Yeshwanthpur Railway Station, Christ University Yeshwanthpur Campus, MS Ramaiah Hospital Mathikere)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹16,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Wise boys matches what you need. It's a mid property in Christ Yeshwanthpur Campus, walking distance from Yeshwanthpur Railway Station. Let me lock a visit slot today.",
+    "hook": "Perfect - Wise boys matches what you need. It's a mid property in Christ Yeshwanthpur Campus, walking distance from Yeshwanthpur Railway Station. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -24010,23 +24010,23 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Wise boys is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Wise boys is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -24043,7 +24043,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -24290,16 +24290,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Brigade, RMZ, IBM, Honeywell, Fidelity, Infosys",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Mahadevapura office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Mahadevapura key landmarks — show map screenshot",
+    "Walking distance to Mahadevapura key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹21,000/mo for Mid property at Mahadevapura = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -24311,7 +24311,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -24320,15 +24320,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Mahadevapura. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Mahadevapura. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Mahadevapura Junction, RMZ Infinity Old Madras Road, Amazon India Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — PHIX BGM matches what you need. It's a mid property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
+    "hook": "Perfect - PHIX BGM matches what you need. It's a mid property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -24336,27 +24336,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — PHIX BGM is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - PHIX BGM is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. PHIX BGM is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. PHIX BGM is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -24373,7 +24373,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -24620,16 +24620,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Brigade, RMZ, IBM, Honeywell, Fidelity, Infosys",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Mahadevapura office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Mahadevapura key landmarks — show map screenshot",
+    "Walking distance to Mahadevapura key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹20,000/mo for Mid property at Mahadevapura = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -24641,7 +24641,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -24650,15 +24650,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Mahadevapura. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Mahadevapura. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Mahadevapura Junction, RMZ Infinity Old Madras Road, Amazon India Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — bgm max coed matches what you need. It's a mid property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
+    "hook": "Perfect - bgm max coed matches what you need. It's a mid property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -24666,27 +24666,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — bgm max coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - bgm max coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. bgm max coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. bgm max coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -24703,7 +24703,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -24950,16 +24950,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Brigade, RMZ, IBM, Honeywell, Fidelity, Infosys",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Mahadevapura office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Mahadevapura key landmarks — show map screenshot",
+    "Walking distance to Mahadevapura key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹22,500/mo for Mid property at Mahadevapura = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -24971,7 +24971,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -24980,15 +24980,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Mahadevapura. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Mahadevapura. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Mahadevapura Junction, RMZ Infinity Old Madras Road, Amazon India Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹18,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — ESTEEM COED matches what you need. It's a mid property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
+    "hook": "Perfect - ESTEEM COED matches what you need. It's a mid property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -24996,27 +24996,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹19,125/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹19,125/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — ESTEEM COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - ESTEEM COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. ESTEEM COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. ESTEEM COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -25033,7 +25033,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -25280,16 +25280,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Brigade, RMZ, IBM, Honeywell, Fidelity, Infosys",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Mahadevapura office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Mahadevapura key landmarks — show map screenshot",
+    "Walking distance to Mahadevapura key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹21,000/mo for Mid property at Mahadevapura = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -25301,7 +25301,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -25310,15 +25310,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Mahadevapura. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Mahadevapura. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Mahadevapura Junction, RMZ Infinity Old Madras Road, Amazon India Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — BALC PHIX  BGM COED matches what you need. It's a mid property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
+    "hook": "Perfect - BALC PHIX  BGM COED matches what you need. It's a mid property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -25326,27 +25326,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — BALC PHIX  BGM COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - BALC PHIX  BGM COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. BALC PHIX  BGM COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. BALC PHIX  BGM COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -25363,7 +25363,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -25610,16 +25610,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "IBM, Wipro, ITPL tenants, Capgemini, TCS, Mphasis",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Whitefield office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Whitefield key landmarks — show map screenshot",
+    "Walking distance to Whitefield key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹23,000/mo for Mid property at Whitefield = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -25631,7 +25631,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -25640,15 +25640,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Whitefield. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Whitefield. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Hope Farm Junction Whitefield, Phoenix Market City Whitefield, Intel Campus Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹17,000–₹29,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — SF VALLEY matches what you need. It's a mid property in Whitefield, walking distance from Hope Farm Junction Whitefield. Let me lock a visit slot today.",
+    "hook": "Perfect - SF VALLEY matches what you need. It's a mid property in Whitefield, walking distance from Hope Farm Junction Whitefield. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -25656,27 +25656,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + Self-Cook / No Meals = effective cost is ₹19,550/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + Self-Cook / No Meals = effective cost is ₹19,550/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — SF VALLEY is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - SF VALLEY is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. SF VALLEY is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. SF VALLEY is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -25693,7 +25693,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -25940,16 +25940,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Swiggy, Razorpay, Byju's, Cult.fit, Accenture, Fiserv, Ola, Zomato",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹22,500/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -25961,7 +25961,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -25970,15 +25970,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala 8th Block, SGPalya, Koramangala 7th Block)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹18,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — MVS PEARLS-SOLD OUT matches what you need. It's a mid property in Koramangala, walking distance from Koramangala 8th Block. Let me lock a visit slot today.",
+    "hook": "Perfect - MVS PEARLS-SOLD OUT matches what you need. It's a mid property in Koramangala, walking distance from Koramangala 8th Block. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -25986,27 +25986,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹19,125/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹19,125/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — MVS PEARLS-SOLD OUT is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - MVS PEARLS-SOLD OUT is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. MVS PEARLS-SOLD OUT is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. MVS PEARLS-SOLD OUT is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -26023,7 +26023,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -26276,11 +26276,11 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹25,500/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -26297,21 +26297,21 @@ export const PGS: PG[] = [
     "Don't joke about boys visiting",
     "Don't quote price without first creating value (location + amenities)"
    ],
-   "decisionMaker": "Parent (father/mother decides — daughter is influencer)",
+   "decisionMaker": "Parent (father/mother decides - daughter is influencer)",
    "conversionProbability": "40-55% if parent is convinced on safety"
   },
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹21,000–₹30,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — HOMY GIRLS matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - HOMY GIRLS matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -26319,19 +26319,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹21,675/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹21,675/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — HOMY GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - HOMY GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -26339,7 +26339,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -26356,7 +26356,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -26611,8 +26611,8 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹19,333/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -26632,15 +26632,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹14,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — TOM BOYS matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - TOM BOYS matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -26648,23 +26648,23 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — TOM BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - TOM BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 MONTH DEPOSIT) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 MONTH DEPOSIT) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -26682,7 +26682,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 MONTH DEPOSIT) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -26929,16 +26929,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Swiggy, Razorpay, Byju's, Cult.fit, Accenture, Fiserv, Ola, Zomato",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,333/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -26950,7 +26950,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -26959,15 +26959,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Christ University Central Campus, Christ University Back Gate, Dairy Circle)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹14,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — SNOOK COED matches what you need. It's a mid property in Koramangala, walking distance from Christ University Central Campus. Let me lock a visit slot today.",
+    "hook": "Perfect - SNOOK COED matches what you need. It's a mid property in Koramangala, walking distance from Christ University Central Campus. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -26975,27 +26975,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹16,575/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹16,575/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — SNOOK COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - SNOOK COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. SNOOK COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. SNOOK COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -27013,7 +27013,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -27260,16 +27260,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Swiggy, Razorpay, Byju's, Cult.fit, Accenture, Fiserv, Ola, Zomato",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹15,500/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -27281,7 +27281,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -27290,15 +27290,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹12,000–₹19,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — TAVZ COED matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - TAVZ COED matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -27306,27 +27306,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹13,175/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹13,175/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — TAVZ COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - TAVZ COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. TAVZ COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. TAVZ COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -27343,7 +27343,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -27596,11 +27596,11 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹17,500/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -27623,15 +27623,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Christ University Central Campus, Christ University Back Gate, Dairy Circle)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹20,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Pink capital matches what you need. It's a mid property in Koramangala, walking distance from Christ University Central Campus. Let me lock a visit slot today.",
+    "hook": "Perfect - Pink capital matches what you need. It's a mid property in Koramangala, walking distance from Christ University Central Campus. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -27639,19 +27639,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹14,875/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹14,875/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Pink capital is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Pink capital is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -27659,7 +27659,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -27676,7 +27676,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -27929,11 +27929,11 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹18,333/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -27956,15 +27956,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹13,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — khb girls matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - khb girls matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -27972,19 +27972,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — khb girls is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - khb girls is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -27992,7 +27992,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -28010,7 +28010,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -28263,10 +28263,10 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹15,666/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -28286,15 +28286,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near IIMB Bannerghatta Road, Christ University Back Gate, Dairy Circle)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹11,000–₹22,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — John Boys matches what you need. It's a mid property in Koramangala, walking distance from IIMB Bannerghatta Road. Let me lock a visit slot today.",
+    "hook": "Perfect - John Boys matches what you need. It's a mid property in Koramangala, walking distance from IIMB Bannerghatta Road. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -28302,23 +28302,23 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹14,025/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹14,025/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — John Boys is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - John Boys is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -28336,7 +28336,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -28583,16 +28583,16 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Swiggy, Razorpay, Byju's, Cult.fit, Accenture, Fiserv, Ola, Zomato",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹20,500/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -28604,7 +28604,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -28613,15 +28613,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹19,000–₹22,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — jack coed matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - jack coed matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -28629,27 +28629,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — jack coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - jack coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. jack coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. jack coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -28666,7 +28666,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -28919,11 +28919,11 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹20,000/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -28946,15 +28946,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Christ University Central Campus, Christ University Back Gate, Dairy Circle)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹16,000–₹24,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — G Forum GIRLS matches what you need. It's a mid property in Koramangala, walking distance from Christ University Central Campus. Let me lock a visit slot today.",
+    "hook": "Perfect - G Forum GIRLS matches what you need. It's a mid property in Koramangala, walking distance from Christ University Central Campus. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -28962,19 +28962,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — G Forum GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - G Forum GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -28982,7 +28982,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -28999,7 +28999,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -29252,10 +29252,10 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹20,666/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -29275,15 +29275,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Christ University Back Gate, Dairy Circle, Christ University Central Campus)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹16,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Homely BOYS matches what you need. It's a mid property in Koramangala, walking distance from Christ University Back Gate. Let me lock a visit slot today.",
+    "hook": "Perfect - Homely BOYS matches what you need. It's a mid property in Koramangala, walking distance from Christ University Back Gate. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -29291,23 +29291,23 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹18,275/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹18,275/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Homely BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Homely BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -29325,7 +29325,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -29578,11 +29578,11 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹21,000/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -29599,21 +29599,21 @@ export const PGS: PG[] = [
     "Don't joke about boys visiting",
     "Don't quote price without first creating value (location + amenities)"
    ],
-   "decisionMaker": "Parent (father/mother decides — daughter is influencer)",
+   "decisionMaker": "Parent (father/mother decides - daughter is influencer)",
    "conversionProbability": "40-55% if parent is convinced on safety"
   },
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — AFFO GIRLS NV matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - AFFO GIRLS NV matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -29621,19 +29621,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹17,850/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — AFFO GIRLS NV is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - AFFO GIRLS NV is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -29641,7 +29641,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -29658,7 +29658,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -29911,11 +29911,11 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹20,666/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -29932,21 +29932,21 @@ export const PGS: PG[] = [
     "Don't joke about boys visiting",
     "Don't quote price without first creating value (location + amenities)"
    ],
-   "decisionMaker": "Parent (father/mother decides — daughter is influencer)",
+   "decisionMaker": "Parent (father/mother decides - daughter is influencer)",
    "conversionProbability": "40-55% if parent is convinced on safety"
   },
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹16,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Homely GIRLS matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - Homely GIRLS matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -29954,19 +29954,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹18,275/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹18,275/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Homely GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Homely GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -29974,7 +29974,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -29992,7 +29992,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -30245,11 +30245,11 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹23,000/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -30266,21 +30266,21 @@ export const PGS: PG[] = [
     "Don't joke about boys visiting",
     "Don't quote price without first creating value (location + amenities)"
    ],
-   "decisionMaker": "Parent (father/mother decides — daughter is influencer)",
+   "decisionMaker": "Parent (father/mother decides - daughter is influencer)",
    "conversionProbability": "40-55% if parent is convinced on safety"
   },
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near IIMB Bannerghatta Road, Christ University Central Campus, Christ University Back Gate)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹19,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — GQ girl matches what you need. It's a mid property in Koramangala, walking distance from IIMB Bannerghatta Road. Let me lock a visit slot today.",
+    "hook": "Perfect - GQ girl matches what you need. It's a mid property in Koramangala, walking distance from IIMB Bannerghatta Road. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -30288,19 +30288,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹19,550/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹19,550/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — GQ girl is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - GQ girl is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -30308,7 +30308,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -30325,7 +30325,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -30580,11 +30580,11 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "No curfew — important for IT/late shifts",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "No curfew - important for IT/late shifts",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹31,333/mo for Budget property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -30601,21 +30601,21 @@ export const PGS: PG[] = [
     "Don't joke about boys visiting",
     "Don't quote price without first creating value (location + amenities)"
    ],
-   "decisionMaker": "Parent (father/mother decides — daughter is influencer)",
+   "decisionMaker": "Parent (father/mother decides - daughter is influencer)",
    "conversionProbability": "40-55% if parent is convinced on safety"
   },
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹25,000–₹41,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — ESPLANADE GIRLS matches what you need. It's a budget property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - ESPLANADE GIRLS matches what you need. It's a budget property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -30623,19 +30623,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Budget property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹28,050/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Budget property + all-inclusive bill (no separate electricity) + 4 Meals / Day = effective cost is ₹28,050/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — ESPLANADE GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - ESPLANADE GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (One month rent) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -30643,7 +30643,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -30661,7 +30661,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (One month rent) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -30831,7 +30831,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Whitefield IT, ITPL tenants",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -30839,8 +30839,8 @@ export const PGS: PG[] = [
     "Commute to BROOKFIELD office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to BROOKFIELD key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to BROOKFIELD key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹22,000/mo for Premium property at BROOKFIELD = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -30852,8 +30852,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -30862,15 +30862,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in BROOKFIELD. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in BROOKFIELD. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near )",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹17,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — BROOKLUXE COED matches what you need. It's a premium property in BROOKFIELD, walking distance from your office. Let me lock a visit slot today.",
+    "hook": "Perfect - BROOKLUXE COED matches what you need. It's a premium property in BROOKFIELD, walking distance from your office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -30878,27 +30878,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹18,700/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹18,700/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — BROOKLUXE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - BROOKLUXE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. BROOKLUXE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. BROOKLUXE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -30915,7 +30915,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 MONTH) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -31086,7 +31086,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Whitefield IT, ITPL tenants",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -31094,9 +31094,9 @@ export const PGS: PG[] = [
     "Commute to BROOKFIELD office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to BROOKFIELD key landmarks — show map screenshot",
+    "Walking distance to BROOKFIELD key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹23,500/mo for Premium property at BROOKFIELD = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -31108,8 +31108,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -31118,15 +31118,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in BROOKFIELD. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in BROOKFIELD. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near )",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹32,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — SWIZZ LUXE COED matches what you need. It's a premium property in BROOKFIELD, walking distance from your office. Let me lock a visit slot today.",
+    "hook": "Perfect - SWIZZ LUXE COED matches what you need. It's a premium property in BROOKFIELD, walking distance from your office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -31134,27 +31134,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹19,975/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹19,975/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — SWIZZ LUXE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - SWIZZ LUXE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (Deposit details per person  SWIZZ LUXE COED  Triple Sharing  8k Deposit 5k refundable  Double Sharing  10k Deposit 6k refundable  Single Sharing  15k Deposit  10k refundable) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (Deposit details per person  SWIZZ LUXE COED  Triple Sharing  8k Deposit 5k refundable  Double Sharing  10k Deposit 6k refundable  Single Sharing  15k Deposit  10k refundable) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. SWIZZ LUXE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. SWIZZ LUXE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -31171,7 +31171,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (Deposit details per person  SWIZZ LUXE COED  Triple Sharing  8k Deposit 5k refundable  Double Sharing  10k Deposit 6k refundable  Single Sharing  15k Deposit  10k refundable) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -31420,7 +31420,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Brigade, RMZ, IBM, Honeywell, Fidelity, Infosys",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Hidden charges fear (electricity, deposit)",
@@ -31428,8 +31428,8 @@ export const PGS: PG[] = [
     "Commute to Mahadevapura office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Mahadevapura key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to Mahadevapura key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹22,500/mo for Budget property at Mahadevapura = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -31441,7 +31441,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -31450,15 +31450,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Mahadevapura. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Mahadevapura. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Mahadevapura Junction, RMZ Infinity Old Madras Road, Amazon India Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹18,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — FINN AFFO COED matches what you need. It's a budget property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
+    "hook": "Perfect - FINN AFFO COED matches what you need. It's a budget property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -31466,27 +31466,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Budget property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹19,125/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Budget property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹19,125/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — FINN AFFO COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - FINN AFFO COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (Three Sharing - 9.5k  Deposit 6k 3 Maintenance   Two Sharing -14k Deposit 6k 3 Maintenance   Single Sharing 24/23k (213) deposit 10k 3k Maintenance) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (Three Sharing - 9.5k  Deposit 6k 3 Maintenance   Two Sharing -14k Deposit 6k 3 Maintenance   Single Sharing 24/23k (213) deposit 10k 3k Maintenance) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. FINN AFFO COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. FINN AFFO COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -31503,7 +31503,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (Three Sharing - 9.5k  Deposit 6k 3 Maintenance   Two Sharing -14k Deposit 6k 3 Maintenance   Single Sharing 24/23k (213) deposit 10k 3k Maintenance) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -31760,9 +31760,9 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹17,333/mo for Budget property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -31785,15 +31785,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹13,000–₹24,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — KORAVILL GIRLS matches what you need. It's a budget property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - KORAVILL GIRLS matches what you need. It's a budget property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -31801,19 +31801,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Budget property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Budget property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — KORAVILL GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - KORAVILL GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -31821,7 +31821,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -31839,7 +31839,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 MONTH) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -32008,14 +32008,14 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "HSR/Bellandur startups",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to SJR office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to SJR key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to SJR key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,500/mo for Mid property at SJR = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -32027,7 +32027,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -32036,15 +32036,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in SJR. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in SJR. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near )",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹14,000–₹23,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — SJR  AFFO COED matches what you need. It's a mid property in SJR, walking distance from your office. Let me lock a visit slot today.",
+    "hook": "Perfect - SJR  AFFO COED matches what you need. It's a mid property in SJR, walking distance from your office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -32052,27 +32052,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — SJR  AFFO COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - SJR  AFFO COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (Single Sharing 17k  Dual sharing. 9k Diposit 5k 3k maintenance  2k refund) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (Single Sharing 17k  Dual sharing. 9k Diposit 5k 3k maintenance  2k refund) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. SJR  AFFO COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. SJR  AFFO COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -32089,7 +32089,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (Single Sharing 17k  Dual sharing. 9k Diposit 5k 3k maintenance  2k refund) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -32338,7 +32338,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "EY, Brookefield IT, Indiqube tenants",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Hidden charges fear (electricity, deposit)",
@@ -32346,8 +32346,8 @@ export const PGS: PG[] = [
     "Commute to Marathahalli office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Marathahalli key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to Marathahalli key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,500/mo for Budget property at Marathahalli = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -32359,7 +32359,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -32368,15 +32368,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Marathahalli. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Marathahalli. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Marathahalli Bridge Signal, Outer Ring Road Marathahalli, HP Campus Marathahalli)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹22,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — MUNE COED matches what you need. It's a budget property in Marathahalli, walking distance from Marathahalli Bridge Signal. Let me lock a visit slot today.",
+    "hook": "Perfect - MUNE COED matches what you need. It's a budget property in Marathahalli, walking distance from Marathahalli Bridge Signal. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -32384,27 +32384,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Budget property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Budget property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — MUNE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - MUNE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. MUNE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. MUNE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -32421,7 +32421,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 MONTH) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -32664,7 +32664,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "EY, Brookefield IT, Indiqube tenants",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -32672,9 +32672,9 @@ export const PGS: PG[] = [
     "Commute to Marathahalli office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Marathahalli key landmarks — show map screenshot",
+    "Walking distance to Marathahalli key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹20,000/mo for Premium property at Marathahalli = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -32686,8 +32686,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -32696,15 +32696,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Marathahalli. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Marathahalli. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Marathahalli Bridge Signal, Outer Ring Road Marathahalli, HP Campus Marathahalli)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹20,000–₹20,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — HOOD  COED matches what you need. It's a premium property in Marathahalli, walking distance from Marathahalli Bridge Signal. Let me lock a visit slot today.",
+    "hook": "Perfect - HOOD  COED matches what you need. It's a premium property in Marathahalli, walking distance from Marathahalli Bridge Signal. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -32712,27 +32712,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + 2 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + 2 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — HOOD  COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - HOOD  COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (READ TERMS AND CONDITIONS) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (READ TERMS AND CONDITIONS) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. HOOD  COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. HOOD  COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -32748,7 +32748,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (READ TERMS AND CONDITIONS) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -32997,7 +32997,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Razorpay, Cred, MPL, gaming startups, Hustle Hub residents",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -33005,9 +33005,9 @@ export const PGS: PG[] = [
     "Commute to HSR Layout office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to HSR Layout key landmarks — show map screenshot",
+    "Walking distance to HSR Layout key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹27,000/mo for Premium property at HSR Layout = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -33019,8 +33019,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -33029,15 +33029,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in HSR Layout. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in HSR Layout. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near HSR Layout 27th Main, Hustle Hub Tech Park HSR, BDA Complex HSR)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹27,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — HS METRO COED matches what you need. It's a premium property in HSR Layout, walking distance from HSR Layout 27th Main. Let me lock a visit slot today.",
+    "hook": "Perfect - HS METRO COED matches what you need. It's a premium property in HSR Layout, walking distance from HSR Layout 27th Main. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -33045,27 +33045,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹22,950/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹22,950/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — HS METRO COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - HS METRO COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (READ T&C) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (READ T&C) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. HS METRO COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. HS METRO COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -33081,7 +33081,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (READ T&C) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -33330,7 +33330,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Razorpay, Cred, MPL, gaming startups, Hustle Hub residents",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -33338,8 +33338,8 @@ export const PGS: PG[] = [
     "Commute to HSR Layout office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to HSR Layout key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to HSR Layout key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹27,000/mo for Premium property at HSR Layout = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -33351,8 +33351,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -33361,15 +33361,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in HSR Layout. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in HSR Layout. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near HSR Layout 27th Main, Hustle Hub Tech Park HSR, BDA Complex HSR)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹27,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — HS HUGO COED matches what you need. It's a premium property in HSR Layout, walking distance from HSR Layout 27th Main. Let me lock a visit slot today.",
+    "hook": "Perfect - HS HUGO COED matches what you need. It's a premium property in HSR Layout, walking distance from HSR Layout 27th Main. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -33377,27 +33377,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹22,950/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹22,950/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — HS HUGO COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - HS HUGO COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (READ T&C) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (READ T&C) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. HS HUGO COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. HS HUGO COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -33413,7 +33413,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (READ T&C) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -33583,7 +33583,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "IIM-B, Bannerghatta corporates",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -33591,9 +33591,9 @@ export const PGS: PG[] = [
     "Commute to JP NAGAR office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to JP NAGAR key landmarks — show map screenshot",
+    "Walking distance to JP NAGAR key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹31,000/mo for Premium property at JP NAGAR = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -33605,8 +33605,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -33615,15 +33615,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in JP NAGAR. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in JP NAGAR. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near )",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹31,000–₹31,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — VeLuxe COED matches what you need. It's a premium property in JP NAGAR, walking distance from your office. Let me lock a visit slot today.",
+    "hook": "Perfect - VeLuxe COED matches what you need. It's a premium property in JP NAGAR, walking distance from your office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -33631,27 +33631,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹26,350/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹26,350/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — VeLuxe COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - VeLuxe COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (READ T&C) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (READ T&C) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. VeLuxe COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. VeLuxe COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -33667,7 +33667,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (READ T&C) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -33837,7 +33837,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "IIM-B, Bannerghatta corporates",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -33845,9 +33845,9 @@ export const PGS: PG[] = [
     "Commute to JP NAGAR office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to JP NAGAR key landmarks — show map screenshot",
+    "Walking distance to JP NAGAR key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹27,000/mo for Premium property at JP NAGAR = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -33859,8 +33859,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -33869,15 +33869,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in JP NAGAR. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in JP NAGAR. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near )",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹27,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — VEGAS COED matches what you need. It's a premium property in JP NAGAR, walking distance from your office. Let me lock a visit slot today.",
+    "hook": "Perfect - VEGAS COED matches what you need. It's a premium property in JP NAGAR, walking distance from your office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -33885,27 +33885,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹22,950/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹22,950/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — VEGAS COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - VEGAS COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (READ T&C) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (READ T&C) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. VEGAS COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. VEGAS COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -33921,7 +33921,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (READ T&C) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -34170,7 +34170,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Razorpay, Cred, MPL, gaming startups, Hustle Hub residents",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -34178,8 +34178,8 @@ export const PGS: PG[] = [
     "Commute to HSR Layout office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to HSR Layout key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to HSR Layout key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹23,000/mo for Premium property at HSR Layout = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -34191,8 +34191,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -34201,15 +34201,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in HSR Layout. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in HSR Layout. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near HSR Layout 27th Main, Hustle Hub Tech Park HSR, BDA Complex HSR)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹23,000–₹23,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — HS/EDGE COED matches what you need. It's a premium property in HSR Layout, walking distance from HSR Layout 27th Main. Let me lock a visit slot today.",
+    "hook": "Perfect - HS/EDGE COED matches what you need. It's a premium property in HSR Layout, walking distance from HSR Layout 27th Main. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -34217,27 +34217,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹19,550/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹19,550/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — HS/EDGE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - HS/EDGE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (READ T&C) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (READ T&C) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. HS/EDGE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. HS/EDGE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -34253,7 +34253,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (READ T&C) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -34502,7 +34502,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Razorpay, Cred, MPL, gaming startups, Hustle Hub residents",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Hidden charges fear (electricity, deposit)",
@@ -34510,8 +34510,8 @@ export const PGS: PG[] = [
     "Commute to HSR Layout office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to HSR Layout key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to HSR Layout key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,500/mo for Budget property at HSR Layout = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -34523,7 +34523,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -34532,15 +34532,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in HSR Layout. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in HSR Layout. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near HSR Layout 27th Main, Hustle Hub Tech Park HSR, BDA Complex HSR)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹22,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — HS AFFO COED matches what you need. It's a budget property in HSR Layout, walking distance from HSR Layout 27th Main. Let me lock a visit slot today.",
+    "hook": "Perfect - HS AFFO COED matches what you need. It's a budget property in HSR Layout, walking distance from HSR Layout 27th Main. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -34548,27 +34548,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Budget property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Budget property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — HS AFFO COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - HS AFFO COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (DEPENDS/ADJUSTABLE) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (DEPENDS/ADJUSTABLE) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. HS AFFO COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. HS AFFO COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -34585,7 +34585,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (DEPENDS/ADJUSTABLE) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -34834,15 +34834,15 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Flipkart, Myntra, Cisco, IBM, JP Morgan, ThoughtWorks, Walmart Labs",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹20,500/mo for Mid property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -34854,7 +34854,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -34863,15 +34863,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Kadubeesanahalli Junction, Oracle Campus Whitefield, AECS Layout Marathahalli)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹26,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — MYNT COED matches what you need. It's a mid property in Bellandur, walking distance from Kadubeesanahalli Junction. Let me lock a visit slot today.",
+    "hook": "Perfect - MYNT COED matches what you need. It's a mid property in Bellandur, walking distance from Kadubeesanahalli Junction. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -34879,27 +34879,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,425/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — MYNT COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - MYNT COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (DEPENDS/ADJUSTABLE) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (DEPENDS/ADJUSTABLE) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. MYNT COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. MYNT COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -34916,7 +34916,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (DEPENDS/ADJUSTABLE) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -35157,7 +35157,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "EY, Brookefield IT, Indiqube tenants",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -35165,7 +35165,7 @@ export const PGS: PG[] = [
     "Commute to Marathahalli office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Marathahalli key landmarks — show map screenshot",
+    "Walking distance to Marathahalli key landmarks - show map screenshot",
     "₹18,000/mo for Premium property at Marathahalli = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -35177,8 +35177,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -35187,15 +35187,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Marathahalli. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Marathahalli. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near AECS Layout Marathahalli, Oracle Campus Whitefield, Prestige Shantiniketan Marathahalli)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹18,000–₹18,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — LEXUS COED matches what you need. It's a premium property in Marathahalli, walking distance from AECS Layout Marathahalli. Let me lock a visit slot today.",
+    "hook": "Perfect - LEXUS COED matches what you need. It's a premium property in Marathahalli, walking distance from AECS Layout Marathahalli. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -35203,27 +35203,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + 2 Meals/ Day = effective cost is ₹15,300/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + 2 Meals/ Day = effective cost is ₹15,300/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — LEXUS COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - LEXUS COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (READ IN T&C) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (READ IN T&C) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. LEXUS COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. LEXUS COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -35239,7 +35239,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (READ IN T&C) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -35480,7 +35480,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "EY, Brookefield IT, Indiqube tenants",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -35488,7 +35488,7 @@ export const PGS: PG[] = [
     "Commute to Marathahalli office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Marathahalli key landmarks — show map screenshot",
+    "Walking distance to Marathahalli key landmarks - show map screenshot",
     "₹18,000/mo for Premium property at Marathahalli = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -35500,8 +35500,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -35510,15 +35510,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Marathahalli. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Marathahalli. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Marathahalli Bridge Signal, Outer Ring Road Marathahalli, HP Campus Marathahalli)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹18,000–₹18,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — MAXX COED matches what you need. It's a premium property in Marathahalli, walking distance from Marathahalli Bridge Signal. Let me lock a visit slot today.",
+    "hook": "Perfect - MAXX COED matches what you need. It's a premium property in Marathahalli, walking distance from Marathahalli Bridge Signal. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -35526,27 +35526,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + 2 Meals/ Day = effective cost is ₹15,300/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + 2 Meals/ Day = effective cost is ₹15,300/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — MAXX COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - MAXX COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (READ T&C) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (READ T&C) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. MAXX COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. MAXX COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -35562,7 +35562,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (READ T&C) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -35803,7 +35803,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Brigade, RMZ, IBM, Honeywell, Fidelity, Infosys",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -35811,7 +35811,7 @@ export const PGS: PG[] = [
     "Commute to Mahadevapura office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Mahadevapura key landmarks — show map screenshot",
+    "Walking distance to Mahadevapura key landmarks - show map screenshot",
     "₹34,000/mo for Premium property at Mahadevapura = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -35823,8 +35823,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -35833,15 +35833,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Mahadevapura. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Mahadevapura. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Mahadevapura Junction, RMZ Infinity Old Madras Road, Amazon India Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹34,000–₹34,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — AUXX COED matches what you need. It's a premium property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
+    "hook": "Perfect - AUXX COED matches what you need. It's a premium property in Mahadevapura, walking distance from Mahadevapura Junction. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -35849,27 +35849,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + read the terms and condition = effective cost is ₹28,900/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + read the terms and condition = effective cost is ₹28,900/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — AUXX COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - AUXX COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (PMC Digital 1mb (1).pdf) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (PMC Digital 1mb (1).pdf) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. AUXX COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. AUXX COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -35885,7 +35885,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (PMC Digital 1mb (1).pdf) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -36134,14 +36134,14 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Wipro, Infosys, mid-tier IT, freshers",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to BTM Layout office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to BTM Layout key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to BTM Layout key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹19,000/mo for Mid property at BTM Layout = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -36153,7 +36153,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -36162,15 +36162,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in BTM Layout. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in BTM Layout. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near BTM Layout Main Road, Bosch Adugodi, Tavarekere)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹14,000–₹24,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — LUKAS COED matches what you need. It's a mid property in BTM Layout, walking distance from BTM Layout Main Road. Let me lock a visit slot today.",
+    "hook": "Perfect - LUKAS COED matches what you need. It's a mid property in BTM Layout, walking distance from BTM Layout Main Road. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -36178,27 +36178,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹16,150/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹16,150/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — LUKAS COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - LUKAS COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (DEPEND AND ADJUSTABLE) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (DEPEND AND ADJUSTABLE) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. LUKAS COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. LUKAS COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -36215,7 +36215,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (DEPEND AND ADJUSTABLE) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -36463,14 +36463,14 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "IBM, Wipro, ITPL tenants, Capgemini, TCS, Mphasis",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Whitefield office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Whitefield key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to Whitefield key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹20,000/mo for Mid property at Whitefield = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -36482,7 +36482,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -36491,15 +36491,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Whitefield. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Whitefield. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Hope Farm Junction Whitefield, Phoenix Market City Whitefield, Intel Campus Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — ARK COED matches what you need. It's a mid property in Whitefield, walking distance from Hope Farm Junction Whitefield. Let me lock a visit slot today.",
+    "hook": "Perfect - ARK COED matches what you need. It's a mid property in Whitefield, walking distance from Hope Farm Junction Whitefield. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -36507,27 +36507,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — ARK COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - ARK COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. ARK COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. ARK COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -36544,7 +36544,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 MONTH) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -36793,7 +36793,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Flipkart, Myntra, Cisco, IBM, JP Morgan, ThoughtWorks, Walmart Labs",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -36801,9 +36801,9 @@ export const PGS: PG[] = [
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹27,500/mo for Premium property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -36815,8 +36815,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -36825,15 +36825,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Bellandur Lake, Prestige Tech Park ORR, Pritech Park SEZ Bellandur)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹22,000–₹33,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — ELUX COED matches what you need. It's a premium property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
+    "hook": "Perfect - ELUX COED matches what you need. It's a premium property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -36841,27 +36841,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹23,375/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹23,375/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — ELUX COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - ELUX COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 month) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 month) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. ELUX COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. ELUX COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -36878,7 +36878,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 month) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -37120,7 +37120,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "IBM, Wipro, ITPL tenants, Capgemini, TCS, Mphasis",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -37128,7 +37128,7 @@ export const PGS: PG[] = [
     "Commute to Whitefield office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Whitefield key landmarks — show map screenshot",
+    "Walking distance to Whitefield key landmarks - show map screenshot",
     "₹32,000/mo for Premium property at Whitefield = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -37140,8 +37140,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -37150,15 +37150,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Whitefield. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Whitefield. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Kundanahalli Gate, Brookfield Signal, Vigyan Nagar Mahadevapura)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹32,000–₹32,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — ITP LUXE COED matches what you need. It's a premium property in Whitefield, walking distance from Kundanahalli Gate. Let me lock a visit slot today.",
+    "hook": "Perfect - ITP LUXE COED matches what you need. It's a premium property in Whitefield, walking distance from Kundanahalli Gate. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -37166,27 +37166,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + \"ALL-INCLUSIVE AMENITIES (BUILT INTO YOUR RENT) This isn’t a place to stay. It’s a system designed to remove friction from daily life. SIGMA COED  🧹 Housekeeping * Professional cleaning twice a week, based on room type  🍽️ Food (Weekdays) * Breakfast & Dinner * Monday to Friday  ⚙️ Utilities & Daily Essentials * Maintenance & Water * RO Drinking Water * High-Speed Wi-Fi * Scheduled Pest Control * 24×7 CCTV & Security  🧺 Laundry Support 2–4 Laundry Coupons (Varies by room category)  🛏️ In-Room Comforts * Refrigerator * Dedicated Workstation (Table & Chair) * Wardrobe Organizer Sets   COMMUNITY & LIFESTYLE SPACES  🎯 Social & Recreation * Game Room: Table Tennis, Pool, Foosball * Board Games * PS4 Gaming Console  🎬 Entertainment Zones * Home Theater with Netflix, Prime & Hotstar * TV with Tata Sky in common areas  🏡 Shared Living Spaces * Lounge Area • Dining Area * Sky Deck & Terrace Access   Self-Use Convenience* • Fully equipped self-cooking kitchen stations   TRANSPARENCY, ALWAYS * Electricity charged on actual consumption * All prices are inclusive of applicable taxes and charges  Designed for people who value time, comfort, and clarity. Everything you need. Nothing you need to chase.\" = effective cost is ₹27,200/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + \"ALL-INCLUSIVE AMENITIES (BUILT INTO YOUR RENT) This isn’t a place to stay. It’s a system designed to remove friction from daily life. SIGMA COED  🧹 Housekeeping * Professional cleaning twice a week, based on room type  🍽️ Food (Weekdays) * Breakfast & Dinner * Monday to Friday  ⚙️ Utilities & Daily Essentials * Maintenance & Water * RO Drinking Water * High-Speed Wi-Fi * Scheduled Pest Control * 24×7 CCTV & Security  🧺 Laundry Support 2–4 Laundry Coupons (Varies by room category)  🛏️ In-Room Comforts * Refrigerator * Dedicated Workstation (Table & Chair) * Wardrobe Organizer Sets   COMMUNITY & LIFESTYLE SPACES  🎯 Social & Recreation * Game Room: Table Tennis, Pool, Foosball * Board Games * PS4 Gaming Console  🎬 Entertainment Zones * Home Theater with Netflix, Prime & Hotstar * TV with Tata Sky in common areas  🏡 Shared Living Spaces * Lounge Area • Dining Area * Sky Deck & Terrace Access   Self-Use Convenience* • Fully equipped self-cooking kitchen stations   TRANSPARENCY, ALWAYS * Electricity charged on actual consumption * All prices are inclusive of applicable taxes and charges  Designed for people who value time, comfort, and clarity. Everything you need. Nothing you need to chase.\" = effective cost is ₹27,200/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — ITP LUXE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - ITP LUXE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (CHECK IN PDF) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (CHECK IN PDF) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. ITP LUXE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. ITP LUXE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -37202,7 +37202,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (CHECK IN PDF) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -37450,15 +37450,15 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Swiggy, Razorpay, Byju's, Cult.fit, Accenture, Fiserv, Ola, Zomato",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,500/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -37470,7 +37470,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -37479,15 +37479,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹22,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — zexx coed matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - zexx coed matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -37495,27 +37495,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — zexx coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - zexx coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. zexx coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. zexx coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -37532,7 +37532,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 MONTH) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -37787,10 +37787,10 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹16,666/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -37813,15 +37813,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹13,000–₹22,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — QUT GIRLS matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - QUT GIRLS matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -37829,19 +37829,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹14,875/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹14,875/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — QUT GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - QUT GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -37849,7 +37849,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -37867,7 +37867,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 MONTH) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -38116,8 +38116,8 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹14,666/mo for Budget property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -38137,15 +38137,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹10,000–₹20,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — TOVE BOYS matches what you need. It's a budget property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - TOVE BOYS matches what you need. It's a budget property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -38153,23 +38153,23 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Budget property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹12,750/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Budget property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹12,750/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — TOVE BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - TOVE BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 MONTH DEPOSIT) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 MONTH DEPOSIT) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -38187,7 +38187,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 MONTH DEPOSIT) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -38441,9 +38441,9 @@ export const PGS: PG[] = [
     "Commute to BTM Layout office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to BTM Layout key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
-    "CCTV + 24/7 security + female warden — share with parents on WA",
+    "Walking distance to BTM Layout key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
+    "CCTV + 24/7 security + female warden - share with parents on WA",
     "₹19,000/mo for Mid property at BTM Layout = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -38466,15 +38466,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in BTM Layout. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in BTM Layout. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near BTM Layout Main Road, Bosch Adugodi, Tavarekere)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹12,000–₹28,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — FABLE GIRLS matches what you need. It's a mid property in BTM Layout, walking distance from BTM Layout Main Road. Let me lock a visit slot today.",
+    "hook": "Perfect - FABLE GIRLS matches what you need. It's a mid property in BTM Layout, walking distance from BTM Layout Main Road. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -38482,19 +38482,19 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Absolutely. Just one thing — the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
+      "resp": "Absolutely. Just one thing - the room you saw today, I have 2 other leads on it. Let me hold it for you for 24 hours with just a ₹3,000 token (fully refundable if parents say no). Fair?"
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — FABLE GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - FABLE GIRLS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Is it safe? My parents are worried.",
@@ -38502,7 +38502,7 @@ export const PGS: PG[] = [
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -38520,7 +38520,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 MONTH) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -38769,7 +38769,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Whitefield IT, ITPL tenants",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -38777,8 +38777,8 @@ export const PGS: PG[] = [
     "Commute to BROOKFIELD office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to BROOKFIELD key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to BROOKFIELD key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,000/mo for Premium property at BROOKFIELD = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -38790,8 +38790,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -38800,15 +38800,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in BROOKFIELD. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in BROOKFIELD. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Kundanahalli Gate, Brookfield Signal, Prestige Shantiniketan Marathahalli)",
      "Are you a student or working professional?",
      "Budget range?",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — ZELUXE COED matches what you need. It's a premium property in BROOKFIELD, walking distance from Kundanahalli Gate. Let me lock a visit slot today.",
+    "hook": "Perfect - ZELUXE COED matches what you need. It's a premium property in BROOKFIELD, walking distance from Kundanahalli Gate. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -38816,39 +38816,39 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — ZELUXE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - ZELUXE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. ZELUXE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. ZELUXE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
    "pitch": {
     "location": "ZELUXE COED sits at ACES/BROOKIELD. From here you can walk to Kundanahalli Gate, Brookfield Signal, Prestige Shantiniketan Marathahalli. 3 MIN to nearest tech park. No commute headache.",
     "lifestyle": "GOOD You get AMENITIES AS PER CHAT, Both food, and Every Alternate Day.",
-    "priceClose": "Pricing depends on room type — let me show you on the visit.",
+    "priceClose": "Pricing depends on room type - let me show you on the visit.",
     "closeQuestion": "Shall I block this room for you with a ₹3,000 refundable token? You'll have 24 hours to confirm."
    },
    "money": {
     "breakdown": [
-     "Pricing varies by room — confirm on visit",
+     "Pricing varies by room - confirm on visit",
      "Token to block: ₹3,000",
      "First month + deposit on move-in"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 MONTH) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -39097,14 +39097,14 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "IBM, Wipro, ITPL tenants, Capgemini, TCS, Mphasis",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Whitefield office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Whitefield key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to Whitefield key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹18,500/mo for Mid property at Whitefield = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -39116,7 +39116,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -39125,15 +39125,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Whitefield. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Whitefield. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Hope Farm Junction Whitefield, Intel Campus Whitefield, Phoenix Market City Whitefield)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹14,000–₹23,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — Zeeta coed matches what you need. It's a mid property in Whitefield, walking distance from Hope Farm Junction Whitefield. Let me lock a visit slot today.",
+    "hook": "Perfect - Zeeta coed matches what you need. It's a mid property in Whitefield, walking distance from Hope Farm Junction Whitefield. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -39141,27 +39141,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,725/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — Zeeta coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - Zeeta coed is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. Zeeta coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. Zeeta coed is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -39178,7 +39178,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 MONTH) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -39426,14 +39426,14 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "EY, Brookefield IT, Indiqube tenants",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Marathahalli office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Marathahalli key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to Marathahalli key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹25,000/mo for Mid property at Marathahalli = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -39445,7 +39445,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -39454,15 +39454,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Marathahalli. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Marathahalli. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near AECS Layout Marathahalli, Prestige Shantiniketan Marathahalli, HP Campus Marathahalli)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹25,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — KLM COED matches what you need. It's a mid property in Marathahalli, walking distance from AECS Layout Marathahalli. Let me lock a visit slot today.",
+    "hook": "Perfect - KLM COED matches what you need. It's a mid property in Marathahalli, walking distance from AECS Layout Marathahalli. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -39470,27 +39470,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹21,250/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹21,250/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — KLM COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - KLM COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 month) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 month) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. KLM COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. KLM COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -39506,7 +39506,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 month) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -39761,8 +39761,8 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹17,333/mo for Mid property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -39782,15 +39782,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Koramangala Post Office, Tonic Koramangala, Jyoti Nivas College Road)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹12,000–₹24,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — KHB BOYS matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
+    "hook": "Perfect - KHB BOYS matches what you need. It's a mid property in Koramangala, walking distance from Koramangala Post Office. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -39798,23 +39798,23 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,300/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹15,300/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — KHB BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - KHB BOYS is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -39832,7 +39832,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 MONTH) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -40081,14 +40081,14 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "EY, Brookefield IT, Indiqube tenants",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Marathahalli office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Marathahalli key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to Marathahalli key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹21,500/mo for Mid property at Marathahalli = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -40100,7 +40100,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -40109,15 +40109,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Marathahalli. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Marathahalli. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near AECS Layout Marathahalli, Prestige Shantiniketan Marathahalli, HP Campus Marathahalli)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹16,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — MAQ COED matches what you need. It's a mid property in Marathahalli, walking distance from AECS Layout Marathahalli. Let me lock a visit slot today.",
+    "hook": "Perfect - MAQ COED matches what you need. It's a mid property in Marathahalli, walking distance from AECS Layout Marathahalli. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -40125,27 +40125,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹18,275/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹18,275/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — MAQ COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - MAQ COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (13/24) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (13/24) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. MAQ COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. MAQ COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -40162,7 +40162,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (13/24) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -40411,7 +40411,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Razorpay, Cred, MPL, gaming startups, Hustle Hub residents",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -40419,8 +40419,8 @@ export const PGS: PG[] = [
     "Commute to HSR Layout office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to HSR Layout key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to HSR Layout key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹31,000/mo for Premium property at HSR Layout = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -40432,8 +40432,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -40442,15 +40442,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in HSR Layout. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in HSR Layout. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near HSR Layout 27th Main, Hustle Hub Tech Park HSR, BDA Complex HSR)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹31,000–₹31,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — HS ARQ COED matches what you need. It's a premium property in HSR Layout, walking distance from HSR Layout 27th Main. Let me lock a visit slot today.",
+    "hook": "Perfect - HS ARQ COED matches what you need. It's a premium property in HSR Layout, walking distance from HSR Layout 27th Main. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -40458,27 +40458,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹26,350/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹26,350/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — HS ARQ COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - HS ARQ COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 MONTH) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. HS ARQ COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. HS ARQ COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -40494,7 +40494,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 MONTH) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -40735,7 +40735,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Swiggy, Razorpay, Byju's, Cult.fit, Accenture, Fiserv, Ola, Zomato",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -40743,7 +40743,7 @@ export const PGS: PG[] = [
     "Commute to Koramangala office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Koramangala key landmarks — show map screenshot",
+    "Walking distance to Koramangala key landmarks - show map screenshot",
     "₹30,000/mo for Premium property at Koramangala = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -40755,8 +40755,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -40765,15 +40765,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Koramangala. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Koramangala. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Accenture Koramangala, IBC Knowledge Park, Fiserv India Koramangala)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹30,000–₹30,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — KORVE COED matches what you need. It's a premium property in Koramangala, walking distance from Accenture Koramangala. Let me lock a visit slot today.",
+    "hook": "Perfect - KORVE COED matches what you need. It's a premium property in Koramangala, walking distance from Accenture Koramangala. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -40781,27 +40781,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + weekdays - 2 times weekends-3 times = effective cost is ₹25,500/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + weekdays - 2 times weekends-3 times = effective cost is ₹25,500/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — KORVE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - KORVE COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (DPENDS) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (DPENDS) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. KORVE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. KORVE COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -40817,7 +40817,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (DPENDS) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -41066,15 +41066,15 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Flipkart, Myntra, Cisco, IBM, JP Morgan, ThoughtWorks, Walmart Labs",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
     "Gym + games included = ₹2K/mo savings vs separate gym",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹22,000/mo for Mid property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -41086,7 +41086,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -41095,15 +41095,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Oracle Campus Whitefield, Kadubeesanahalli Junction, Cessna Business Park)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹16,000–₹28,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — PAVION COED matches what you need. It's a mid property in Bellandur, walking distance from Oracle Campus Whitefield. Let me lock a visit slot today.",
+    "hook": "Perfect - PAVION COED matches what you need. It's a mid property in Bellandur, walking distance from Oracle Campus Whitefield. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -41111,27 +41111,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹18,700/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹18,700/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — PAVION COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - PAVION COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 MONTH DEPOSIT) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 MONTH DEPOSIT) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. PAVION COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. PAVION COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -41148,7 +41148,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 MONTH DEPOSIT) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -41396,14 +41396,14 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "EY, Brookefield IT, Indiqube tenants",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Commute to Marathahalli office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Marathahalli key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to Marathahalli key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹26,500/mo for Mid property at Marathahalli = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -41415,7 +41415,7 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (will decide within 24-48 hours after visit)",
@@ -41424,15 +41424,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Marathahalli. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Marathahalli. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Brookfield Signal, Kundanahalli Gate, Prestige Shantiniketan Marathahalli)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹18,000–₹35,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — AURA COED matches what you need. It's a mid property in Marathahalli, walking distance from Brookfield Signal. Let me lock a visit slot today.",
+    "hook": "Perfect - AURA COED matches what you need. It's a mid property in Marathahalli, walking distance from Brookfield Signal. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -41440,27 +41440,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹22,525/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Mid property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹22,525/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — AURA COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - AURA COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (1 month) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (1 month) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. AURA COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. AURA COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -41477,7 +41477,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (1 month) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -41726,7 +41726,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "IBM, Wipro, ITPL tenants, Capgemini, TCS, Mphasis",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -41734,8 +41734,8 @@ export const PGS: PG[] = [
     "Commute to Whitefield office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Whitefield key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to Whitefield key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹20,000/mo for Premium property at Whitefield = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -41747,8 +41747,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -41757,15 +41757,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Whitefield. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Whitefield. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Intel Campus Whitefield, Kundanahalli Gate, ITPL (International Tech Park))",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹15,000–₹25,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — MEXA COED matches what you need. It's a premium property in Whitefield, walking distance from Intel Campus Whitefield. Let me lock a visit slot today.",
+    "hook": "Perfect - MEXA COED matches what you need. It's a premium property in Whitefield, walking distance from Intel Campus Whitefield. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -41773,27 +41773,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹17,000/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — MEXA COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - MEXA COED is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (11/20) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (11/20) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. MEXA COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. MEXA COED is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -41810,7 +41810,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (11/20) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",
@@ -42058,7 +42058,7 @@ export const PGS: PG[] = [
    "salary": "₹10L-25L",
    "likelyCompanies": "Flipkart, Myntra, Cisco, IBM, JP Morgan, ThoughtWorks, Walmart Labs",
    "painPoints": [
-    "Doesn't want to be called PG — wants 'co-living'",
+    "Doesn't want to be called PG - wants 'co-living'",
     "Wants flat-like privacy",
     "Mixed gender comfort",
     "Doesn't want shared washroom",
@@ -42066,8 +42066,8 @@ export const PGS: PG[] = [
     "Commute to Bellandur office (Bangalore traffic)"
    ],
    "pitchAngle": [
-    "Walking distance to Bellandur key landmarks — show map screenshot",
-    "All-inclusive bill — no surprise electricity at month-end",
+    "Walking distance to Bellandur key landmarks - show map screenshot",
+    "All-inclusive bill - no surprise electricity at month-end",
     "₹22,000/mo for Premium property at Bellandur = competitive vs Stanza/Colive"
    ],
    "qualifyingQuestions": [
@@ -42079,8 +42079,8 @@ export const PGS: PG[] = [
    ],
    "doNot": [
     "Don't disclose actual rent ranges before site visit",
-    "NEVER call it a 'PG' — say 'co-living' or 'flat-like setup'",
-    "Don't compare to budget PGs — talk amenities + crowd quality",
+    "NEVER call it a 'PG' - say 'co-living' or 'flat-like setup'",
+    "Don't compare to budget PGs - talk amenities + crowd quality",
     "Don't quote price without first creating value (location + amenities)"
    ],
    "decisionMaker": "Self (senior, decides on the visit)",
@@ -42089,15 +42089,15 @@ export const PGS: PG[] = [
   "scripts": {
    "call1": {
     "goal": "Qualify lead in 90 seconds. Get budget, area, gender, move-in. Book site visit.",
-    "opening": "Hi! Gharpayy here — calling about your enquiry for PG in Bellandur. Quick question — is now a good time? Just 2 minutes.",
+    "opening": "Hi! Gharpayy here - calling about your enquiry for PG in Bellandur. Quick question - is now a good time? Just 2 minutes.",
     "questions": [
      "Where is your office or college? (we have property near Bellandur Lake, Pritech Park SEZ Bellandur, Flipkart HQ Bellandur)",
      "Are you a student or working professional?",
      "Budget range you're looking at? (we have options ₹17,000–₹27,000)",
-     "Which type of room — single, double, or triple sharing?",
+     "Which type of room - single, double, or triple sharing?",
      "When do you want to move in?"
     ],
-    "hook": "Perfect — ZONEGL matches what you need. It's a premium property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
+    "hook": "Perfect - ZONEGL matches what you need. It's a premium property in Bellandur, walking distance from Bellandur Lake. Let me lock a visit slot today.",
     "close": "Can you come at 6pm today or 11am tomorrow? I'll send the location pin on WhatsApp now."
    },
    "call2": {
@@ -42105,27 +42105,27 @@ export const PGS: PG[] = [
     "objections": [
      {
       "obj": "It's over my budget",
-      "resp": "I hear you. Look — Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹18,700/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
+      "resp": "I hear you. Look - Premium property + all-inclusive bill (no separate electricity) + 3 Meals/ Day = effective cost is ₹18,700/mo. Plus we have an offer right now: 2K off monthly on 12-month stay. Want me to lock that for you?"
      },
      {
       "obj": "Let me think about it / discuss with parents",
-      "resp": "Of course. Quick favour — let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
+      "resp": "Of course. Quick favour - let me hold this room for you for 24 hours with a ₹3,000 token. Fully refundable if you change your mind. That way you don't lose it."
      },
      {
       "obj": "I'll come visit later this week",
-      "resp": "Got it. Just so you know — ZONEGL is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
+      "resp": "Got it. Just so you know - ZONEGL is one of our top-converting properties this month. I have 4 visits scheduled tomorrow. If you can come today even for 15 mins, I'll personally show you. Otherwise next available slot is Sunday."
      },
      {
       "obj": "Why is the deposit 1 month? Others ask 10K",
-      "resp": "Fair question. Our deposit is one month rent (13-14K/24-25K) because the property is fully furnished — bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
+      "resp": "Fair question. Our deposit is one month rent (13-14K/24-25K) because the property is fully furnished - bed, mattress, wardrobe, AC, all included. The deposit covers any damage. 100% refundable on checkout with a 30-day notice. Cheaper PGs ask 10K because they don't trust their own setup."
      },
      {
       "obj": "I don't want to stay in a PG",
-      "resp": "Totally — and you won't be. ZONEGL is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
+      "resp": "Totally - and you won't be. ZONEGL is co-living, not a PG. Think of it as a flat with privacy + community. No mess-style food, no curfew, professional crowd only. Closer to a serviced apartment than a hostel."
      },
      {
       "obj": "Can I get a discount?",
-      "resp": "Best I can do right now — ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied — owner sets the price."
+      "resp": "Best I can do right now - ₹2,000/month off if you commit to 12 months and pay token today. That's ₹24K saved over the year. Beyond that, my hands are tied - owner sets the price."
      }
     ]
    },
@@ -42142,7 +42142,7 @@ export const PGS: PG[] = [
      "Token to block: ₹3,000 (adjusted in first month rent)",
      "Move-in: First month rent + deposit on or before key handover"
     ],
-    "payLater": "Sir/ma'am, I get it. Here's what we can do — pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
+    "payLater": "Sir/ma'am, I get it. Here's what we can do - pay just ₹3,000 token today (UPI, takes 30 seconds) to block the room. First month rent + deposit you can pay on move-in day. That way the room is yours and you have time to arrange funds.",
     "depositObjection": "The deposit (13-14K/24-25K) is fully refundable. We return it within 7 working days of checkout (with 30-day notice and no damage). Send me your bank account during checkout, money is in your account in a week. I'll add this in writing on the receipt.",
     "checklist": [
      "Send Google Pay / PhonePe / UPI ID for ₹3,000 token",

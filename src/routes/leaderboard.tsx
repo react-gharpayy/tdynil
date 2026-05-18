@@ -6,7 +6,7 @@ import { Trophy } from "lucide-react";
 export const Route = createFileRoute("/leaderboard")({
   head: () => ({
     meta: [
-      { title: "Leaderboard — Gharpayy" },
+      { title: "Leaderboard - Gharpayy" },
       { name: "description", content: "Members ranked by tours scheduled." },
     ],
   }),
@@ -22,7 +22,7 @@ function LeaderboardPage() {
             <Trophy className="h-6 w-6 text-accent" /> Leaderboard
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
-            Members ranked purely by tours scheduled — the metric that drives Gharpayy.
+            Members ranked purely by tours scheduled - the metric that drives Gharpayy.
           </p>
         </header>
         <CreatorLeaderboardPanel />

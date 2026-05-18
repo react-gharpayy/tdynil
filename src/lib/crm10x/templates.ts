@@ -104,8 +104,8 @@ export const WA_TEMPLATES: Record<
     label: "Ghost #1 · soft",
     group: "non-responder",
     body: {
-      en: "Hi {name}, didn't hear back — totally fine if timing changed. Should I pause or keep options ready?",
-      hi: "नमस्ते {name}, reply नहीं आया — कोई बात नहीं। options रखूँ या pause कर दूँ?",
+      en: "Hi {name}, didn't hear back - totally fine if timing changed. Should I pause or keep options ready?",
+      hi: "नमस्ते {name}, reply नहीं आया - कोई बात नहीं। options रखूँ या pause कर दूँ?",
     },
   },
   "ghost-2-direct": {
@@ -113,23 +113,23 @@ export const WA_TEMPLATES: Record<
     group: "non-responder",
     body: {
       en: "{name}, last 2 messages went unread. One reply (Yes / No / Later) and I'll act accordingly. Saves both of us time 🙏",
-      hi: "{name}, पिछले 2 messages unread हैं। बस एक reply (Yes / No / Later) — आगे उसी से चलूँगा/चलूँगी।",
+      hi: "{name}, पिछले 2 messages unread हैं। बस एक reply (Yes / No / Later) - आगे उसी से चलूँगा/चलूँगी।",
     },
   },
   "ghost-3-final": {
     label: "Ghost #3 · final",
     group: "non-responder",
     body: {
-      en: "{name}, closing your file today unless I hear back. If you're still searching just reply 1 — I'll reopen.",
-      hi: "{name}, आज file close कर रहा/रही हूँ। अब भी search कर रहे हैं तो बस 1 reply करें — फिर से खोल दूँगा/दूँगी।",
+      en: "{name}, closing your file today unless I hear back. If you're still searching just reply 1 - I'll reopen.",
+      hi: "{name}, आज file close कर रहा/रही हूँ। अब भी search कर रहे हैं तो बस 1 reply करें - फिर से खोल दूँगा/दूँगी।",
     },
   },
   "no-pickup-1": {
     label: "Call not picked",
     group: "non-responder",
     body: {
-      en: "Hi {name}, tried calling — couldn't reach. Sharing options on WhatsApp so you can see them anytime.",
-      hi: "नमस्ते {name}, call try की — uthi नहीं। WhatsApp पर options भेज रहा/रही हूँ, कभी भी देख लीजिए।",
+      en: "Hi {name}, tried calling - couldn't reach. Sharing options on WhatsApp so you can see them anytime.",
+      hi: "नमस्ते {name}, call try की - uthi नहीं। WhatsApp पर options भेज रहा/रही हूँ, कभी भी देख लीजिए।",
     },
   },
   "no-pickup-callback": {
@@ -154,7 +154,7 @@ export const WA_TEMPLATES: Record<
     label: "Comparing other PGs",
     group: "scenario",
     body: {
-      en: "{name}, fair to compare. Send me the other PG's price + room and I'll do an honest side-by-side — no pressure.",
+      en: "{name}, fair to compare. Send me the other PG's price + room and I'll do an honest side-by-side - no pressure.",
       hi: "{name}, compare करना सही है। दूसरे PG का price + room भेजिए, मैं honest comparison बना दूँगा/दूँगी।",
     },
   },
@@ -162,7 +162,7 @@ export const WA_TEMPLATES: Record<
     label: "Price stall",
     group: "scenario",
     body: {
-      en: "{name}, on price — what number works for you for the room you liked? Let me see what I can do at {property}.",
+      en: "{name}, on price - what number works for you for the room you liked? Let me see what I can do at {property}.",
       hi: "{name}, बजट कितना तक comfortable है? {property} पर कोशिश करता/करती हूँ।",
     },
   },
@@ -170,7 +170,7 @@ export const WA_TEMPLATES: Record<
     label: "Weekend nudge",
     group: "scenario",
     body: {
-      en: "Hi {name}, weekend is the best time to visit — quiet, manager available. Slot at {property} on Sat or Sun?",
+      en: "Hi {name}, weekend is the best time to visit - quiet, manager available. Slot at {property} on Sat or Sun?",
       hi: "नमस्ते {name}, weekend visit के लिए best रहता है। Sat या Sun {property} में slot लूँ?",
     },
   },
@@ -179,14 +179,14 @@ export const WA_TEMPLATES: Record<
     group: "scenario",
     body: {
       en: "Hi {name}, sending today's options before you sleep so you can decide tomorrow morning. Sweet dreams!",
-      hi: "नमस्ते {name}, आज के options भेज रहा/रही हूँ — सुबह decide कर लीजिए। शुभ रात्रि!",
+      hi: "नमस्ते {name}, आज के options भेज रहा/रही हूँ - सुबह decide कर लीजिए। शुभ रात्रि!",
     },
   },
   "shifting-postponed": {
     label: "Shifting moved to next month",
     group: "scenario",
     body: {
-      en: "Hi {name}, no problem if shifting moved — I've updated your file to {date}. Same options will be re-checked closer to date.",
+      en: "Hi {name}, no problem if shifting moved - I've updated your file to {date}. Same options will be re-checked closer to date.",
       hi: "नमस्ते {name}, shifting date {date} पर update कर दी है। उस वक़्त options फिर check कर लूँगा/लूँगी।",
     },
   },
@@ -195,7 +195,7 @@ export const WA_TEMPLATES: Record<
     group: "scenario",
     body: {
       en: "Hi {name}, totally fine to discuss with parents. Want me to share a 2-min property video they can see?",
-      hi: "नमस्ते {name}, parents से बात कर लीजिए। एक 2 मिनट का video भेज दूँ — वो भी देख लें?",
+      hi: "नमस्ते {name}, parents से बात कर लीजिए। एक 2 मिनट का video भेज दूँ - वो भी देख लें?",
     },
   },
   "visit-noshow": {
@@ -210,8 +210,8 @@ export const WA_TEMPLATES: Record<
     label: "Visit rescheduled",
     group: "scenario",
     body: {
-      en: "Done — your visit is now on {date} at {time}. Manager will be ready. See you then!",
-      hi: "Done — visit अब {date} {time} पर है। Manager तैयार रहेंगे। मिलते हैं!",
+      en: "Done - your visit is now on {date} at {time}. Manager will be ready. See you then!",
+      hi: "Done - visit अब {date} {time} पर है। Manager तैयार रहेंगे। मिलते हैं!",
     },
   },
   "shortlist-final-2": {
@@ -244,7 +244,7 @@ export const WA_TEMPLATES: Record<
     label: "Revival 30d",
     group: "revival",
     body: {
-      en: "Hi {name}, it's been a month. Still looking? Prices in {area} just dropped — worth another look?",
+      en: "Hi {name}, it's been a month. Still looking? Prices in {area} just dropped - worth another look?",
       hi: "नमस्ते {name}, एक महीना हो गया। PG ढूंढ़ रहे हैं? {area} में rates कम हुए हैं।",
     },
   },
@@ -260,8 +260,8 @@ export const WA_TEMPLATES: Record<
     label: "Revival 90d",
     group: "revival",
     body: {
-      en: "{name}, last check — if you still need a PG, I have a verified place in {area} for ₹{budget}.",
-      hi: "{name}, आख़िरी बार — अगर PG चाहिए तो {area} में ₹{budget} में verified जगह है।",
+      en: "{name}, last check - if you still need a PG, I have a verified place in {area} for ₹{budget}.",
+      hi: "{name}, आख़िरी बार - अगर PG चाहिए तो {area} में ₹{budget} में verified जगह है।",
     },
   },
 };

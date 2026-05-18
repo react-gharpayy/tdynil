@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import type { SlaState } from "@/lib/engine";
 
-/** Live SLA dot — green/amber/red. */
+/** Live SLA dot - green/amber/red. */
 export function SlaPulse({ state, label }: { state: SlaState; label?: string }) {
   const cls = {
     ok: "bg-success",

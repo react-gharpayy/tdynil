@@ -103,7 +103,7 @@ export default function InventoryFeedback() {
       </div>
 
       <Card>
-        <CardHeader><CardTitle className="text-base">All properties — conversion ranking</CardTitle></CardHeader>
+        <CardHeader><CardTitle className="text-base">All properties - conversion ranking</CardTitle></CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -125,7 +125,7 @@ export default function InventoryFeedback() {
                     <td className="py-1.5 text-right tabular-nums">{p.tours}</td>
                     <td className="py-1.5 text-right tabular-nums">{p.bookings}</td>
                     <td className="py-1.5 text-right tabular-nums">{Math.round(p.conv * 100)}%</td>
-                    <td className="py-1.5 pl-4 text-xs text-muted-foreground">{p.topObjection ?? "—"}</td>
+                    <td className="py-1.5 pl-4 text-xs text-muted-foreground">{p.topObjection ?? "-"}</td>
                   </tr>
                 ))}
               </tbody>

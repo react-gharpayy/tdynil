@@ -16,7 +16,7 @@ import { LeadDeepProfile } from "./LeadDeepProfile";
 import { SmartWaLayer } from "./SmartWaLayer";
 
 /**
- * The "Dossier" tab — booking probability, best-call-time, deep profile,
+ * The "Dossier" tab - booking probability, best-call-time, deep profile,
  * call logger with attempts/duration/outcome, objection capture, WA templates.
  */
 export function LeadDossierPanel({ lead }: { lead: Lead }) {
@@ -95,7 +95,7 @@ export function LeadDossierPanel({ lead }: { lead: Lead }) {
       <div className="flex items-center gap-2 text-xs">
         <Clock className="h-3.5 w-3.5 text-muted-foreground" />
         <span className="text-muted-foreground">Best time to call:</span>
-        <span className="font-medium">{bestTime ?? profile?.bestCallTime ?? "—"}</span>
+        <span className="font-medium">{bestTime ?? profile?.bestCallTime ?? "-"}</span>
         <span className="text-muted-foreground">· Attempts: {calls.length}</span>
       </div>
 
@@ -128,7 +128,7 @@ export function LeadDossierPanel({ lead }: { lead: Lead }) {
           <div>
             <Label className="text-[10px] uppercase tracking-wider text-muted-foreground">Language</Label>
             <Select value={language} onValueChange={(v) => setLanguage(v as LangPref)}>
-              <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="—" /></SelectTrigger>
+              <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="-" /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="english">English</SelectItem>
                 <SelectItem value="hindi">Hindi</SelectItem>

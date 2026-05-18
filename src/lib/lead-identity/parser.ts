@@ -96,7 +96,7 @@ const NULL_WORD_RE = /\b(?:name|form|full|thank\s*you|thanks|gharpayy|gharpayy\.
 const LINK_RE = /(?:https?:\/\/|www\.)\S+|\b(?:maps\.app\.goo\.gl|goo\.gl|bit\.ly)\/\S+/gi;
 
 // WhatsApp forwarded message header pattern: "[1:04 PM, 26/6/2025]" or "[1:05 PM, 26/6/2025]"
-const WA_FORWARD_RE = /^\[?\d{1,2}[/:]\d{2}\s*(?:AM|PM|am|pm)?,?\s*\d{1,2}[/.-]\d{1,2}[/.-]\d{2,4}\]?\s*[-–—]?\s*/gm;
+const WA_FORWARD_RE = /^\[?\d{1,2}[/:]\d{2}\s*(?:AM|PM|am|pm)?,?\s*\d{1,2}[/.-]\d{1,2}[/.-]\d{2,4}\]?\s*[-–-]?\s*/gm;
 
 // Key-value pattern for structured form submissions like "Name: Value"
 // Allow 'Name:' to appear anywhere on a physical line (not only at line start)
@@ -319,7 +319,7 @@ export function parseLead(raw: string): ParsedLeadDraft | null {
       if (m?.[1]) {
         let v = m[1].replace(EMOJI_RE, "").trim();
         v = cutAtNextLabel(v);
-        return v.replace(/^[\s,;:|.\-–—]+|[\s,;:|.\-–—]+$/g, "").trim();
+        return v.replace(/^[\s,;:|.\-–-]+|[\s,;:|.\-–-]+$/g, "").trim();
       }
     }
     return "";

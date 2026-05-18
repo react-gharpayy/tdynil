@@ -1,4 +1,4 @@
-// Reusable Tasks panel for ANY entity — drop into Tour, Owner, Unit, Deal detail views.
+// Reusable Tasks panel for ANY entity - drop into Tour, Owner, Unit, Deal detail views.
 // This is just an opinionated wrapper around <TodoPanel> with sensible defaults +
 // a contextual heading so users instantly understand the scope.
 import { TodoPanel } from "@/components/todos/TodoPanel";

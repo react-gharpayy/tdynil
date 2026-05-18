@@ -19,11 +19,11 @@ import { format } from "date-fns";
  *
  * Single-screen, non-skippable queue per agent, sorted by hard scoring.
  * Bands:
- *   1. FIRE — never-called urgent (24h+) and post-visit ghosts
- *   2. CONFIRM — visits today/tomorrow that need confirmation
- *   3. RECOVER — overdue follow-ups
- *   4. NURTURE — follow-ups due today
- *   5. PROSPECT — leads with no follow-up at all (SLA breach)
+ *   1. FIRE - never-called urgent (24h+) and post-visit ghosts
+ *   2. CONFIRM - visits today/tomorrow that need confirmation
+ *   3. RECOVER - overdue follow-ups
+ *   4. NURTURE - follow-ups due today
+ *   5. PROSPECT - leads with no follow-up at all (SLA breach)
  *
  * Each row = one decision. No browsing. The queue blocks when empty.
  */
@@ -35,19 +35,19 @@ const BAND_META: Record<Band, { label: string; tone: string; icon: typeof Flame;
     label: "🔥 FIRE",
     tone: "border-destructive bg-destructive/10 text-destructive",
     icon: Flame,
-    desc: "Top priority — every minute costs revenue.",
+    desc: "Top priority - every minute costs revenue.",
   },
   confirm: {
     label: "📞 CONFIRM",
     tone: "border-warning bg-warning/10 text-warning",
     icon: Phone,
-    desc: "Visits today/tomorrow — call to confirm.",
+    desc: "Visits today/tomorrow - call to confirm.",
   },
   recover: {
     label: "⚡ RECOVER",
     tone: "border-accent bg-accent/10 text-accent",
     icon: Zap,
-    desc: "Overdue follow-ups — re-engage now.",
+    desc: "Overdue follow-ups - re-engage now.",
   },
   nurture: {
     label: "🌱 NURTURE",
@@ -59,7 +59,7 @@ const BAND_META: Record<Band, { label: string; tone: string; icon: typeof Flame;
     label: "📋 PROSPECT",
     tone: "border-border bg-muted/50 text-muted-foreground",
     icon: ClipboardCheck,
-    desc: "Leads without a follow-up — set one.",
+    desc: "Leads without a follow-up - set one.",
   },
 };
 
@@ -109,7 +109,7 @@ export function DailyActionQueue() {
           <h1 className="font-display text-2xl font-semibold tracking-tight">Daily Action Queue</h1>
           <p className="text-sm text-muted-foreground">
             {role === "tcm"
-              ? `Your queue · ${tcms.find((t) => t.id === currentTcmId)?.name ?? "—"}`
+              ? `Your queue · ${tcms.find((t) => t.id === currentTcmId)?.name ?? "-"}`
               : "Team queue · all agents"}
             {" · "}{mounted ? format(new Date(now), "EEEE, MMM d") : "\u00a0"}
           </p>
@@ -124,7 +124,7 @@ export function DailyActionQueue() {
       {totalToDo === 0 && (
         <Card className="p-12 text-center space-y-3">
           <div className="text-5xl">🎯</div>
-          <h2 className="font-display text-xl">Inbox zero — all clear.</h2>
+          <h2 className="font-display text-xl">Inbox zero - all clear.</h2>
           <p className="text-sm text-muted-foreground">
             No pending actions. Use this time to add fresh leads or coach the team.
           </p>
@@ -189,7 +189,7 @@ export function DailyActionQueue() {
                           )}
                         </div>
                         <div className="text-[11px] text-muted-foreground truncate">
-                          {a.reason} · {tcm?.initials ?? "—"} · {lead.preferredArea}
+                          {a.reason} · {tcm?.initials ?? "-"} · {lead.preferredArea}
                         </div>
                       </button>
                       <div className="flex items-center gap-1 shrink-0">

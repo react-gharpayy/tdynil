@@ -1,5 +1,5 @@
 /**
- * Persona registry — every named user (HR, Flow Ops, TCM, Owner) has a
+ * Persona registry - every named user (HR, Flow Ops, TCM, Owner) has a
  * deep behavioural profile. Coach reads this to tailor messages, and the
  * seed engine reads it to skew each user's day differently.
  *
@@ -22,7 +22,7 @@ export interface Persona {
   strengths: string[];
   /** the gap to coach against */
   weakSpots: string[];
-  /** what motivates them — used in greeting variations */
+  /** what motivates them - used in greeting variations */
   motivators: string[];
   /** preferred outbound channels (most → least) */
   channels: Channel[];
@@ -32,7 +32,7 @@ export interface Persona {
   ritual: string;
   /** the storyline arc they're in this week */
   arc: string;
-  /** mission cap — how many cleared items per day = "complete" for them */
+  /** mission cap - how many cleared items per day = "complete" for them */
   missionCap: number;
 }
 
@@ -223,7 +223,7 @@ const OWNERS: Persona[] = [
     channels: ["in-app", "email"],
     signature: "What does the yield look like this month?",
     ritual: "Compares his property to peers every Sunday.",
-    arc: "Considering a 2-room block for his nephew — needs nudge.",
+    arc: "Considering a 2-room block for his nephew - needs nudge.",
     missionCap: 4,
   },
   {
@@ -235,7 +235,7 @@ const OWNERS: Persona[] = [
     channels: ["whatsapp", "in-app"],
     signature: "Send me the highlights.",
     ritual: "Reviews the dashboard every evening with her family.",
-    arc: "Big block of 14 vacancies — needs price + push.",
+    arc: "Big block of 14 vacancies - needs price + push.",
     missionCap: 4,
   },
 ];
@@ -246,7 +246,7 @@ export const PERSONA_BY_ID: Record<string, Persona> =
   Object.fromEntries(PERSONAS.map((p) => [p.id, p]));
 
 /** Find the active persona for a (role, id) pair. Falls back to a synthetic one.
- *  Strict on role match — passing a tcm id while role==='hr' falls back to first hr persona.
+ *  Strict on role match - passing a tcm id while role==='hr' falls back to first hr persona.
  */
 export function activePersona(role: Role, id: string | undefined): Persona {
   if (id && PERSONA_BY_ID[id] && PERSONA_BY_ID[id].role === role) return PERSONA_BY_ID[id];
@@ -263,14 +263,14 @@ export function activePersona(role: Role, id: string | undefined): Persona {
     motivators: [],
     channels: ["in-app"],
     signature: "What's next?",
-    ritual: "—",
-    arc: "—",
+    ritual: "-",
+    arc: "-",
     missionCap: 6,
   };
 }
 
 /* ============================================================== */
-/*  Coach copy generators — keyed by tone + persona                */
+/*  Coach copy generators - keyed by tone + persona                */
 /* ============================================================== */
 
 export interface CoachVoice {
@@ -294,7 +294,7 @@ export function voiceFor(p: Persona, missionDone: number, missionTarget: number)
     "drill-sgt": [
       `${p.name.split(" ")[0]}. Get to it.`,
       `Stand up, ${p.name.split(" ")[0]}. Today doesn't run itself.`,
-      `${p.name.split(" ")[0]} — the clock is on.`,
+      `${p.name.split(" ")[0]} - the clock is on.`,
     ],
     "warm-mentor": [
       `Good to see you, ${p.name.split(" ")[0]}.`,
@@ -304,7 +304,7 @@ export function voiceFor(p: Persona, missionDone: number, missionTarget: number)
     "data-nerd": [
       `${p.name.split(" ")[0]}, the numbers want a word.`,
       `Pulled the diff, ${p.name.split(" ")[0]}. Have a look.`,
-      `${p.name.split(" ")[0]} — variance is up.`,
+      `${p.name.split(" ")[0]} - variance is up.`,
     ],
     "hype-friend": [
       `Yo ${p.name.split(" ")[0]}!`,
@@ -326,8 +326,8 @@ export function voiceFor(p: Persona, missionDone: number, missionTarget: number)
 
   const missionLine =
     p.coachTone === "drill-sgt" ? `Target ${missionTarget}. Done ${missionDone}. No excuses.`
-    : p.coachTone === "data-nerd" ? `${missionDone}/${missionTarget} — completion ${Math.round(ratio * 100)}%.`
-    : p.coachTone === "hype-friend" ? `${missionDone} of ${missionTarget} — keep the energy 💥`
+    : p.coachTone === "data-nerd" ? `${missionDone}/${missionTarget} - completion ${Math.round(ratio * 100)}%.`
+    : p.coachTone === "hype-friend" ? `${missionDone} of ${missionTarget} - keep the energy 💥`
     : p.coachTone === "stoic" ? `${missionDone}/${missionTarget}.`
     : `${missionDone} done, ${Math.max(0, missionTarget - missionDone)} to go.`;
 

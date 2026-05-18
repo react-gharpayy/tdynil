@@ -5,7 +5,7 @@ import { DailyProgressView } from "@/components/stats/DailyProgressView";
 export const Route = createFileRoute("/daily-progress")({
   head: () => ({
     meta: [
-      { title: "Daily Progress — Gharpayy" },
+      { title: "Daily Progress - Gharpayy" },
       { name: "description", content: "Daily leads and tours progress for members." },
     ],
   }),

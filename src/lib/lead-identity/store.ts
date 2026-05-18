@@ -1,5 +1,5 @@
 // Zustand store for the Lead Identity, Dedup & Ownership system.
-// Mock layer — replaced by Lovable Cloud in the next pass.
+// Mock layer - replaced by Lovable Cloud in the next pass.
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type {

@@ -5,7 +5,7 @@ import { ZonesPage } from "@/components/ZonesPage";
 import { useAuthUser } from "@/lib/auth-store";
 
 export const Route = createFileRoute("/zones")({
-  head: () => ({ meta: [{ title: "Zones — Gharpayy" }] }),
+  head: () => ({ meta: [{ title: "Zones - Gharpayy" }] }),
   component: ZonesRoute,
 });
 

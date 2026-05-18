@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { Lead, LeadStage, Intent, Todo, TodoEntityType, TodoPriority, Activity, ActivityKind, ActivityEntityType, ActivityDirection, ActivityOutcome, TourStatus, TourOutcome } from "./entities.js";
 
-// Command registry — every state-changing intent. Validated client + server.
+// Command registry - every state-changing intent. Validated client + server.
 export const CommandType = z.enum([
   "cmd.lead.create",
   "cmd.lead.update",
@@ -31,7 +31,7 @@ export const CommandType = z.enum([
 export type CommandType = z.infer<typeof CommandType>;
 
 const Base = z.object({
-  _id: z.string(),                       // command ULID — used as Idempotency-Key
+  _id: z.string(),                       // command ULID - used as Idempotency-Key
   issuedAt: z.string(),
   actor: z.string().optional(),          // server fills from JWT
   tenantId: z.string().optional(),       // server fills from JWT
@@ -51,7 +51,7 @@ export const CreateLeadCmd = Base.extend({
   }).extend({
     intent: Intent.optional(),
     tags: z.array(z.string()).max(10).optional(),
-    // Extended Quick-Add fields — all optional, server fills defaults.
+    // Extended Quick-Add fields - all optional, server fills defaults.
     email: z.string().max(160).optional(),
     areas: z.array(z.string().max(80)).max(20).optional(),
     fullAddress: z.string().max(1000).optional(),

@@ -3,7 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Align Deal Flow — design tokens
+/* Align Deal Flow - design tokens
  * Light, Linear/Stripe-inspired neutral base + dark sidebar + Gharpayy orange accent.
  * All values in oklch.
  */

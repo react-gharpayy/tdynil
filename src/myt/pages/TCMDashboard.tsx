@@ -47,7 +47,7 @@ export default function TCMDashboard() {
       <div>
         <h1 className="text-xl md:text-2xl font-heading font-bold text-foreground">Today's Tours</h1>
         <p className="text-xs text-muted-foreground">
-          {currentMemberId ? 'Sorted by intent — fight for hard ones first' : 'Select yourself in the header ↑'}
+          {currentMemberId ? 'Sorted by intent - fight for hard ones first' : 'Select yourself in the header ↑'}
         </p>
       </div>
 

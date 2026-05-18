@@ -1,5 +1,5 @@
 /**
- * CRM 10x — additive intelligence layer on top of the core lead store.
+ * CRM 10x - additive intelligence layer on top of the core lead store.
  *
  * Nothing here REPLACES the existing types in src/lib/types.ts. Every record
  * is keyed by leadId / tourId so it can hang off the canonical entities
@@ -53,7 +53,7 @@ export interface DeepLeadProfile {
   source?: LeadSource;
   referralName?: string;
   preferredMoveInDate?: string;     // current/active shifting date (ISO)
-  shiftingHistory?: ShiftingDateEntry[]; // versioned trail — Gharpayy never forgets
+  shiftingHistory?: ShiftingDateEntry[]; // versioned trail - Gharpayy never forgets
   flexible?: boolean;
   budgetStated?: number;
   budgetMax?: number;
@@ -67,7 +67,7 @@ export interface DeepLeadProfile {
   updatedAt: string;
 }
 
-/** Logged on every "Called — Answered" or "Visit Completed" activity. */
+/** Logged on every "Called - Answered" or "Visit Completed" activity. */
 export interface ObjectionRecord {
   id: string;
   leadId: string;
@@ -81,7 +81,7 @@ export interface ObjectionRecord {
   resolution: ObjectionResolution;
 }
 
-/** Call intelligence — beyond a simple "call logged". */
+/** Call intelligence - beyond a simple "call logged". */
 export interface CallRecord {
   id: string;
   leadId: string;
@@ -117,7 +117,7 @@ export interface LeadCommitment {
   id: string;
   leadId: string;
   ts: string;
-  decisionBy: string;        // ISO date — "I'll decide by Thursday"
+  decisionBy: string;        // ISO date - "I'll decide by Thursday"
   exactWords: string;
   status: "pending" | "kept" | "missed";
 }

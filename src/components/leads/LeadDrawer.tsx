@@ -1,4 +1,4 @@
-// Salesforce-style lead detail drawer — 10x density edition.
+// Salesforce-style lead detail drawer - 10x density edition.
 //   - Sticky header rail with hover-card chips (stage / intent / source / assignee)
 //   - Auto-suggest "Next best action" banner driven by stage + last activity
 //   - Keyboard shortcuts inside the drawer:
@@ -224,7 +224,7 @@ type Suggestion = { label: string; cta: string; act: (ctx: SuggestCtx) => void }
 // Auto-suggest: drives "Next best action" banner. Pure function of stage + last activity.
 function suggestNext(lead: Lead, last: Activity | undefined): Suggestion {
   if (lead.stage === "new") {
-    return { label: "Hot lead just landed — first contact under 5 min wins ~3x more.", cta: "Call now",
+    return { label: "Hot lead just landed - first contact under 5 min wins ~3x more.", cta: "Call now",
       act: (c) => c.telHref && window.open(c.telHref, "_blank") };
   }
   if (lead.stage === "contacted" && (!last || last.kind === "call")) {
@@ -232,11 +232,11 @@ function suggestNext(lead: Lead, last: Activity | undefined): Suggestion {
       act: (c) => c.waHref && window.open(c.waHref, "_blank") };
   }
   if (lead.stage === "tour-scheduled") {
-    return { label: "Confirm the tour 24h prior — no-show risk drops 40%.", cta: "Log confirmation",
+    return { label: "Confirm the tour 24h prior - no-show risk drops 40%.", cta: "Log confirmation",
       act: (c) => { void c.log({ kind: "follow_up", subject: "Confirmed tour 24h prior", body: "Auto-suggested" }); c.setTab("activity"); } };
   }
   if (lead.stage === "tour-done" && (!last || last.kind !== "follow_up")) {
-    return { label: "Tour done — push to negotiation while interest is hot.", cta: "Log next step",
+    return { label: "Tour done - push to negotiation while interest is hot.", cta: "Log next step",
       act: (c) => c.setTab("activity") };
   }
   if (lead.stage === "negotiation") {
@@ -254,13 +254,13 @@ function DetailsGrid({ lead }: { lead: Lead }) {
     ["Budget", `₹${lead.budget?.toLocaleString()}`],
     ["Move-in", lead.moveInDate],
     ["Preferred area", lead.preferredArea],
-    ["Zone", lead.zoneId ?? "—"],
-    ["Assigned TCM", lead.assignedTcmId ?? "—"],
+    ["Zone", lead.zoneId ?? "-"],
+    ["Assigned TCM", lead.assignedTcmId ?? "-"],
     ["Stage", lead.stage],
     ["Intent", lead.intent],
     ["Confidence", `${lead.confidence}%`],
-    ["Tags", lead.tags?.join(", ") || "—"],
-    ["Next follow-up", lead.nextFollowUpAt ? new Date(lead.nextFollowUpAt).toLocaleString() : "—"],
+    ["Tags", lead.tags?.join(", ") || "-"],
+    ["Next follow-up", lead.nextFollowUpAt ? new Date(lead.nextFollowUpAt).toLocaleString() : "-"],
     ["Response speed", `${lead.responseSpeedMins} min`],
     ["Created", new Date(lead.createdAt).toLocaleString()],
     ["Updated", new Date(lead.updatedAt).toLocaleString()],

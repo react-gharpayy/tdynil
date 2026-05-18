@@ -77,7 +77,7 @@ export function DuplicateModal({ open, onClose, result, onForceCreate, onUseExis
           <Button variant="outline" onClick={onClose}>Cancel</Button>
           {type !== "exact" && (
             <Button onClick={onForceCreate}>
-              {type === "new" ? "Create lead" : "This is a new lead — create anyway"}
+              {type === "new" ? "Create lead" : "This is a new lead - create anyway"}
             </Button>
           )}
         </DialogFooter>

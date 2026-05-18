@@ -187,7 +187,7 @@ export const useCRM10x = create<CRM10xState>()(
         set((s) => ({
           messageOutcomes: s.messageOutcomes.map((m) => {
             if (m.leadId !== leadId) return m;
-            if (m.attributedBookingId) return m; // already credited — never re-attribute
+            if (m.attributedBookingId) return m; // already credited - never re-attribute
             const sentTs = +new Date(m.ts);
             // Send must be BEFORE the booking AND within 14d window before booking.
             if (sentTs > bookingTime) return m;

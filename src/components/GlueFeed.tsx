@@ -34,7 +34,7 @@ export function GlueFeed({ limit = 30, title = 'Closed-loop activity' }: { limit
         <span className="text-[10px] text-muted-foreground font-mono ml-auto">{events.length} events · live</span>
       </header>
       {events.length === 0 ? (
-        <div className="px-4 py-6 text-xs text-muted-foreground text-center">No events yet — perform an action to see the loop fire.</div>
+        <div className="px-4 py-6 text-xs text-muted-foreground text-center">No events yet - perform an action to see the loop fire.</div>
       ) : (
         <ul className="divide-y divide-border">
           {events.map((e, i) => (

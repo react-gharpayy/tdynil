@@ -1,5 +1,5 @@
 /**
- * Cross-role connector — a tiny pub/sub that lets Flow Ops, TCM, HR and Owner
+ * Cross-role connector - a tiny pub/sub that lets Flow Ops, TCM, HR and Owner
  * "see each other". Every meaningful action a role takes fires an event here;
  * other roles subscribe to react (Coach missions, HR scoreboard, Owner
  * inventory, etc.).
@@ -26,7 +26,7 @@ export interface ConnectorEvent {
   id: string;
   kind: ConnectorEventKind;
   ts: number;
-  /** primary actor — TCM id, "flow-ops", "hr", owner id */
+  /** primary actor - TCM id, "flow-ops", "hr", owner id */
   actorRole: Role;
   actorId: string;
   /** entities involved */
@@ -76,7 +76,7 @@ const seenIds = new Set<string>();
 export function emit(e: Omit<ConnectorEvent, "id" | "ts"> & { id?: string; ts?: number }): ConnectorEvent {
   const id = e.id ?? `${e.kind}:${Math.random().toString(36).slice(2, 10)}`;
   if (seenIds.has(id)) {
-    // Already broadcast this exact id — no-op.
+    // Already broadcast this exact id - no-op.
     return { ...e, id, ts: e.ts ?? Date.now() } as ConnectorEvent;
   }
   seenIds.add(id);

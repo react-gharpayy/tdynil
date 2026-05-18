@@ -38,7 +38,7 @@ const OBJ_LABEL: Record<string, string> = {
 };
 
 /**
- * Conversion Intelligence Engine — manager-grade analytics on top of the
+ * Conversion Intelligence Engine - manager-grade analytics on top of the
  * raw CRM data. Intentionally numbers-only with explicit recommendations.
  */
 export function ConversionIntelligence() {

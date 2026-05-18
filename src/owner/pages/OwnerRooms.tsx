@@ -206,7 +206,7 @@ export function OwnerRooms() {
                       </div>
                       <div className="text-white">
                         <div className="font-mono text-[9px] opacity-80 tracking-widest uppercase">Room</div>
-                        <div className="text-lg font-display font-semibold leading-none capitalize">{r?.type ?? '—'}</div>
+                        <div className="text-lg font-display font-semibold leading-none capitalize">{r?.type ?? '-'}</div>
                       </div>
                     </div>
 
@@ -256,7 +256,7 @@ export function OwnerRooms() {
                       )}
 
                       {s.lockedUnsellable && (
-                        <div className="text-[11px] text-destructive font-medium">⚠ Auto-locked — not verified by 11 AM</div>
+                        <div className="text-[11px] text-destructive font-medium">⚠ Auto-locked - not verified by 11 AM</div>
                       )}
 
                       <div className="text-[10px] text-muted-foreground inline-flex items-center gap-2">
@@ -430,7 +430,7 @@ export function OwnerRooms() {
         <DialogContent className="max-w-lg">
           <DialogHeader>
             <DialogTitle>Bulk actions</DialogTitle>
-            <DialogDescription>Apply the same change to many rooms — emergency lever only.</DialogDescription>
+            <DialogDescription>Apply the same change to many rooms - emergency lever only.</DialogDescription>
           </DialogHeader>
           <div className="space-y-3">
             <div className="space-y-1.5">
@@ -457,7 +457,7 @@ export function OwnerRooms() {
                         setBulkSelected((prev) => v ? [...prev, s.roomId] : prev.filter((x) => x !== s.roomId));
                       }} />
                       <span className="flex-1 truncate">{p?.name} · {r?.type} ({r?.bedsTotal}b)</span>
-                      <span className="font-mono text-muted-foreground">₹{s.rentConfirmed?.toLocaleString() ?? '—'}</span>
+                      <span className="font-mono text-muted-foreground">₹{s.rentConfirmed?.toLocaleString() ?? '-'}</span>
                     </label>
                   );
                 })}

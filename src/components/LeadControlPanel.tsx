@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { api } from "@/lib/api/client";
+import { useAuthUser } from "@/lib/auth-store";
 import { useApp, getProperty, getTcm } from "@/lib/store";
 import type { Tour as CrmTour } from "@/lib/types";
 import { useAppState } from "@/myt/lib/app-context";
@@ -59,7 +60,7 @@ const TOUR_TYPES = [
 const TEMPLATES = [
   { id: "tour-confirm", label: "Tour confirmation", body: "Hi! Confirming your tour today. Looking forward to meeting you." },
   { id: "post-tour", label: "Post-tour check-in", body: "Hi! How did you find the property? Happy to answer any questions." },
-  { id: "scarcity", label: "Scarcity", body: "Just a heads-up — only a couple of beds left at this price." },
+  { id: "scarcity", label: "Scarcity", body: "Just a heads-up - only a couple of beds left at this price." },
 ];
 
 function parseSafeDate(value?: string | null): Date | null {
@@ -105,6 +106,7 @@ export function LeadControlPanel() {
   } = useApp();
   const { currentMemberId, setTours } = useAppState();
   const { members: orgMembers } = useOrgMembers();
+  const authUser = useAuthUser((s) => s.user);
   const { settings } = useSettings();
 
   const lead = useMemo(() => leads.find((l) => l.id === selectedLeadId) ?? null, [leads, selectedLeadId]);
@@ -131,7 +133,33 @@ export function LeadControlPanel() {
     [activities, lead],
   );
 
-  const memberUsers = useMemo(() => orgMembers.filter(m => m.role === 'member' || m.role === 'tcm').sort((a, b) => a.name.localeCompare(b.name)), [orgMembers]);
+  const tcmUsers = useMemo(
+    () => orgMembers.filter((m) => m.role === "tcm").sort((a, b) => a.name.localeCompare(b.name)),
+    [orgMembers],
+  );
+  const scheduleAssignees = useMemo(() => {
+    if (authUser?.role !== "member") return tcmUsers;
+
+    const selfFromDirectory = orgMembers.find((m) => m.id === authUser.id);
+    const selfOption = selfFromDirectory
+      ? { ...selfFromDirectory }
+      : {
+          id: authUser.id,
+          name: authUser.fullName || authUser.username || authUser.email,
+          role: "member",
+          zones: authUser.zones ?? [],
+        };
+
+    const unique = new Map<string, typeof selfOption>();
+    for (const tcm of tcmUsers) unique.set(tcm.id, tcm);
+    unique.set(selfOption.id, selfOption);
+    return Array.from(unique.values()).sort((a, b) => a.name.localeCompare(b.name));
+  }, [authUser, orgMembers, tcmUsers]);
+  const defaultSelfAssigneeId = useMemo(() => {
+    if (!authUser?.id) return "";
+    if (authUser.role !== "tcm" && authUser.role !== "member") return "";
+    return scheduleAssignees.some((option) => option.id === authUser.id) ? authUser.id : "";
+  }, [authUser, scheduleAssignees]);
 
   // Tour scheduling form state
   const [tcmId, setTcmId] = useState("");
@@ -173,7 +201,14 @@ export function LeadControlPanel() {
 
   useEffect(() => {
     if (!lead) return;
-    setTcmId(tourToShow?.tcmId ?? lead.assignedTcmId ?? currentMemberId ?? "");
+    const tourAssigneeId = tourToShow ? ((tourToShow as any).assignedTo ?? tourToShow.tcmId ?? "") : "";
+    const isSelfDefaultRole = authUser?.role === "tcm" || authUser?.role === "member";
+    const roleDefaultAssignee = isSelfDefaultRole ? defaultSelfAssigneeId : "";
+    const preferredAssignee = tourAssigneeId || lead.assignedTcmId || currentMemberId || "";
+    const preferredExists = preferredAssignee
+      ? scheduleAssignees.some((option) => option.id === preferredAssignee)
+      : false;
+    setTcmId(roleDefaultAssignee || (preferredExists ? preferredAssignee : ""));
     setPropertyId(tourToShow?.propertyId ?? "");
     setScheduledAt(tourToShow ? toLocal(tourToShow.scheduledAt) : "");
     setScheduleAnswers((answers) => ({
@@ -184,7 +219,17 @@ export function LeadControlPanel() {
       keyConcern: lead.tags.join(", "),
     }));
     setTab(pendingPostTour ? "post" : hasScheduledTour ? "tour" : settings.matching.drawerDefaultTab);
-  }, [lead, pendingPostTour, hasScheduledTour, settings.matching.drawerDefaultTab, tourToShow]);
+  }, [
+    authUser?.role,
+    currentMemberId,
+    defaultSelfAssigneeId,
+    hasScheduledTour,
+    lead,
+    pendingPostTour,
+    scheduleAssignees,
+    settings.matching.drawerDefaultTab,
+    tourToShow,
+  ]);
 
   useEffect(() => {
     if (!lead || !hasScheduledTour || leadTours.length > 0 || scheduledTourFromActivity) return;
@@ -297,7 +342,7 @@ export function LeadControlPanel() {
       toast.error("Member and time are required");
       return;
     }
-    const assignee = memberUsers.find((m) => m.id === tcmId) ?? null;
+    const assignee = scheduleAssignees.find((m) => m.id === tcmId) ?? null;
     const scheduler = currentMemberId ? (orgMembers.find((m) => m.id === currentMemberId) ?? null) : null;
 
     try {
@@ -370,7 +415,7 @@ export function LeadControlPanel() {
           ...(scheduler?.id && scheduler.id !== tcmId ? [{ id: scheduler.id, name: scheduler.name }] : []),
         ],
       });
-      setTcmId("");
+      setTcmId(defaultSelfAssigneeId);
       setPropertyId("");
       setScheduledAt("");
       toast.success("Tour scheduled");
@@ -406,7 +451,7 @@ export function LeadControlPanel() {
           </div>
         </SheetHeader>
 
-        {/* CRM 10x — commitment banner + 48h post-visit gate */}
+        {/* CRM 10x - commitment banner + 48h post-visit gate */}
         <CommitmentBanner lead={lead} />
         <PostVisitGate lead={lead} />
 
@@ -504,7 +549,7 @@ export function LeadControlPanel() {
               </Section>
             </TabsContent>
 
-            {/* CONTROL — status, intent, follow-up, action engine, notes, tags */}
+            {/* CONTROL - status, intent, follow-up, action engine, notes, tags */}
             <TabsContent value="control" className="space-y-4 pt-4">
               <SequenceChip leadId={lead.id} />
 
@@ -522,7 +567,7 @@ export function LeadControlPanel() {
                   </Button>
                 </div>
                 <div className="text-[11px] text-muted-foreground">
-                  Currently with <span className="text-foreground font-medium">{selectedMember?.name ?? "—"}</span>
+                  Currently with <span className="text-foreground font-medium">{selectedMember?.name ?? "-"}</span>
                 </div>
               </Section>
 
@@ -687,7 +732,7 @@ export function LeadControlPanel() {
                 <InlineScheduleTour
                   lead={lead}
                   properties={properties}
-                  tcms={memberUsers}
+                  tcms={scheduleAssignees}
                   propertyId={propertyId}
                   tcmId={tcmId}
                   scheduledAt={scheduledAt}
@@ -747,7 +792,7 @@ export function LeadControlPanel() {
                       Tour at <span className="text-foreground font-medium">{prop?.name}</span> · {formatSafeDate(target.scheduledAt, "MMM d, p", "time unknown")}
                     </div>
 
-                    {/* Send updates / reminders — one row, always visible post-tour */}
+                    {/* Send updates / reminders - one row, always visible post-tour */}
                     <div className="flex flex-wrap gap-1.5">
                       <Button
                         size="sm" variant="outline" className="h-8 text-xs gap-1.5"
@@ -769,7 +814,7 @@ export function LeadControlPanel() {
                       <Button
                         size="sm" variant="outline" className="h-8 text-xs gap-1.5"
                         onClick={() => {
-                          sendMessage(lead.id, 'Quick update — any thoughts on the property?');
+                          sendMessage(lead.id, 'Quick update - any thoughts on the property?');
                           toast.success('Update sent');
                         }}
                       >
@@ -789,7 +834,7 @@ export function LeadControlPanel() {
 
                     <Section title="Outcome (mandatory · explicit)">
                       <div className="text-[11px] text-muted-foreground mb-1.5">
-                        Choose carefully — the lead's stage <em>and</em> closure status update only when you click here.
+                        Choose carefully - the lead's stage <em>and</em> closure status update only when you click here.
                         Nothing is auto-assigned by the system.
                       </div>
                       <div className="grid grid-cols-2 gap-2">
@@ -816,7 +861,7 @@ export function LeadControlPanel() {
                       </div>
                     </Section>
 
-                    <Section title={`Deal confidence — ${pt.confidence}%`}>
+                    <Section title={`Deal confidence - ${pt.confidence}%`}>
                       <input
                         type="range" min={0} max={100} value={pt.confidence}
                         onChange={(e) => updatePostTour(target.id, { confidence: +e.target.value })}
@@ -872,7 +917,7 @@ export function LeadControlPanel() {
                       </div>
                     )}
 
-                    {/* Close deal — one click, blocks the bed, fires the booking */}
+                    {/* Close deal - one click, blocks the bed, fires the booking */}
                     {lead.stage !== "booked" && (
                       <Button
                         size="lg" className="w-full bg-success text-success-foreground hover:bg-success/90"
@@ -904,7 +949,7 @@ export function LeadControlPanel() {
               })()}
             </TabsContent>
 
-            {/* HANDOFF — FlowOps ↔ TCM thread for this lead */}
+            {/* HANDOFF - FlowOps ↔ TCM thread for this lead */}
             <TabsContent value="handoff" className="pt-4">
               <Section title="FlowOps ↔ TCM thread">
                 <HandoffThread leadId={lead.id} />
@@ -1170,7 +1215,7 @@ function InlineScheduleTour({
     <Section title="Schedule Tour in drawer">
       <div className="rounded-lg border border-border bg-card p-3 space-y-3">
         <div className="text-xs text-muted-foreground">
-          Lead is already known: <span className="font-medium text-foreground">{lead.name}</span>. Fill the tour details below and assign it to any CRM member.
+          Lead is already known: <span className="font-medium text-foreground">{lead.name}</span>. Fill the tour details below and assign it to a TCM (members can also assign to themselves).
         </div>
         <div className="grid grid-cols-3 gap-2 text-[11px]">
           <div className="rounded-md bg-muted/60 px-2 py-1.5">
@@ -1424,7 +1469,7 @@ function priorityFor(c: number): FollowUpPriority {
   return c >= 75 ? "high" : c >= 50 ? "medium" : "low";
 }
 
-// Salesforce-style activity tab — backed by the new VPS contracts (or local
+// Salesforce-style activity tab - backed by the new VPS contracts (or local
 // adapter when offline). Auto-logs every system change AND lets the user
 // quickly log calls, emails, WhatsApp, notes, meetings and site visits.
 function LeadActivityTab({ leadId }: { leadId: string }) {

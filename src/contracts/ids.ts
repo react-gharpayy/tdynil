@@ -1,5 +1,5 @@
-// ULID generation — sortable, URL-safe, 26 chars. Used as primary key for every entity + command.
-// No external dep — small inline impl works in browser + Node + Worker.
+// ULID generation - sortable, URL-safe, 26 chars. Used as primary key for every entity + command.
+// No external dep - small inline impl works in browser + Node + Worker.
 
 const ENCODING = "0123456789ABCDEFGHJKMNPQRSTVWXYZ";
 const TIME_LEN = 10;

@@ -11,7 +11,7 @@ const CreateBody = z.object({
   email: z.string().email(),
   phone: z.string().min(0).max(40).optional(),
   password: z.string().min(8).max(72),
-  role: z.enum(["manager", "admin", "member", "owner"]),
+  role: z.enum(["manager", "admin", "member", "owner", "tcm"]),
   zones: z.array(z.string()).optional(),
 });
 
@@ -102,6 +102,11 @@ export function registerUserRoutes(app: FastifyInstance) {
     return reply.send(list.map(userOut));
   });
 
+  app.get("/api/tcms", { preHandler: [requireAuth, requireScope("user.read")] }, async (req, reply) => {
+    const list = await roleList(req, "tcm");
+    return reply.send(list.map(userOut));
+  });
+
   app.get("/api/owners", { preHandler: [requireAuth, requireScope("user.read")] }, async (req, reply) => {
     const list = await roleList(req, "owner");
     return reply.send(list.map(userOut));
@@ -111,8 +116,8 @@ export function registerUserRoutes(app: FastifyInstance) {
   app.post("/api/users", { preHandler: [requireAuth, requireScope("user.admin")] }, async (req, reply) => {
     try {
       const body = CreateBody.parse(req.body);
-      if ((body.role === "admin" || body.role === "member") && (!body.zones || body.zones.length === 0)) {
-        return reply.code(400).send({ code: "VALIDATION_FAILED", message: "Zones required for admin/member" });
+      if ((body.role === "admin" || body.role === "member" || body.role === "tcm") && (!body.zones || body.zones.length === 0)) {
+        return reply.code(400).send({ code: "VALIDATION_FAILED", message: "Zones required for admin/member/tcm" });
       }
       const u = await createManagedUser(body);
       return reply.code(201).send(userOut(u));

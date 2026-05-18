@@ -12,7 +12,7 @@ import { Shield, Sparkles } from "lucide-react";
 export const Route = createFileRoute("/leads/add")({
   head: () => ({
     meta: [
-      { title: "Add Lead — Gharpayy" },
+      { title: "Add Lead - Gharpayy" },
       { name: "description", content: "Direct entry with live dedup, zone detection, and one-click ownership." },
     ],
   }),

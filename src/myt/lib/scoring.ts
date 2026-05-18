@@ -21,7 +21,7 @@ function demandScore(p: Property, leads: Lead[]): number {
  */
 function conversionScore(p: Property, tours: Tour[]): number {
   const propertyTours = tours.filter(t => t.propertyName === p.name);
-  if (propertyTours.length === 0) return 50; // unknown — neutral
+  if (propertyTours.length === 0) return 50; // unknown - neutral
   const completed = propertyTours.filter(t => t.status === 'completed').length;
   const bookings = propertyTours.filter(
     t => t.outcome === 'booked' || t.outcome === 'token-paid' || t.tokenPaid
@@ -53,11 +53,11 @@ function deriveSignal(demand: number, available: number, total: number): Invento
 
 function suggestActions(p: Property, demand: number, conversion: number, velocity: number, available: number): string[] {
   const out: string[] = [];
-  if (demand >= 70 && conversion >= 60 && available > 0) out.push(`Raise price ₹500 — demand strong`);
-  if (demand >= 70 && conversion < 50) out.push(`Fix conversion — top objection: ${p.foodRating < 3.5 ? 'food quality' : 'pricing'}`);
-  if (demand < 40 && conversion >= 60) out.push(`Hidden gem — push reels & ads`);
-  if (demand < 40 && conversion < 40) out.push(`Deprioritize — low demand & weak close`);
-  if (available === 0) out.push(`Sold out — capture waitlist`);
+  if (demand >= 70 && conversion >= 60 && available > 0) out.push(`Raise price ₹500 - demand strong`);
+  if (demand >= 70 && conversion < 50) out.push(`Fix conversion - top objection: ${p.foodRating < 3.5 ? 'food quality' : 'pricing'}`);
+  if (demand < 40 && conversion >= 60) out.push(`Hidden gem - push reels & ads`);
+  if (demand < 40 && conversion < 40) out.push(`Deprioritize - low demand & weak close`);
+  if (available === 0) out.push(`Sold out - capture waitlist`);
   if (p.foodRating < 3.5) out.push(`Improve food rating (${p.foodRating}/5)`);
   if (p.photoCount < 6) out.push(`Add more photos (${p.photoCount} live)`);
   return out.slice(0, 3);

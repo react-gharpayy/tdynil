@@ -67,6 +67,7 @@ export function AppShell({ children }: { children: ReactNode }) {
     manager:     ["hr"],
     admin:       ["hr"],
     member:      ["flow-ops"],
+    tcm:         ["tcm"],
     owner:       ["owner"],
   };
   const dbRole = authUser?.role;
@@ -100,7 +101,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   const incompletePostTour = tours.filter((t) => t.status === "completed" && !t.postTour.filledAt).length;
   const unreadHandoffs = handoffs.filter((h) => !h.read && h.to === role).length;
 
-  // Booking XP awarder — credit the TCM once per booking id.
+  // Booking XP awarder - credit the TCM once per booking id.
   // Both awardXp and registerBooking are idempotent via persisted dedupe keys,
   // so safe to re-run across remounts.
   const awardXp = useGame((s) => s.awardXp);
@@ -123,7 +124,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
   // Attribute prior WhatsApp sends to bookings (ROI for templates).
   // Guard: only matching leadId, only sends BEFORE the booking, only within 14d
-  // window — the store enforces this and never re-credits a message twice.
+  // window - the store enforces this and never re-credits a message twice.
   const markMessageBookedAfter = useCRM10x((s) => s.markMessageBookedAfter);
   useEffect(() => {
     if (!mounted) return;
@@ -158,13 +159,12 @@ export function AppShell({ children }: { children: ReactNode }) {
     tcm: withTailNav([
       { to: "/today", label: "Today", icon: Sun, badge: queue.length },
       { to: "/inbox", label: "Inbox", icon: Inbox },
-      { to: "/myt/tcm", label: "TCM Desk", icon: Target },
-      { to: "/tours", label: "My Tours", icon: CalendarPlus, badge: incompletePostTour },
-      { to: "/follow-ups", label: "Follow-ups", icon: ClipboardList, badge: overdueCount },
+      { to: "/leads", label: "Leads", icon: Target },
+      { to: "/myt/schedule", label: "Schedule", icon: CalendarPlus },
       { to: "/calendar", label: "Calendar", icon: Calendar },
-      { to: "/handoffs", label: "Handoffs", icon: MessageSquare, badge: unreadHandoffs },
       { to: "/myt/marketplace", label: "Marketplace", icon: Store },
-      { to: "/myt/tcm/performance", label: "My Stats", icon: Activity },
+      { to: "/supply-hub", label: "Supply Hub", icon: Layers },
+      { to: "/sequences", label: "Outreach", icon: Zap },
       { to: "/my-tasks", label: "My Tasks", icon: ListTodo },
     ]),
     owner: [
@@ -213,7 +213,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
         {(() => {
           const roleMeta = {
-            "flow-ops": { label: "Flow Ops / TCM", dot: "bg-info" },
+            "flow-ops": { label: "Flow Ops", dot: "bg-info" },
             tcm: { label: "TCM Desk", dot: "bg-accent" },
             hr: { label: "HR / Leadership", dot: "bg-success" },
             owner: { label: "Owner Portal", dot: "bg-warning" },
@@ -269,7 +269,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           <div className="text-[10px] uppercase tracking-wider text-sidebar-foreground px-1">View as</div>
           {(() => {
             const labels: Record<string, string> = {
-              "flow-ops": "Flow Ops / TCM",
+              "flow-ops": "Flow Ops",
               tcm: "TCM",
               hr: "HR / Leadership",
               owner: "Property Owner",
@@ -300,18 +300,6 @@ export function AppShell({ children }: { children: ReactNode }) {
               </Select>
             );
           })()}
-          {role === "tcm" && allowed.includes("tcm") && (
-            <Select value={currentTcmId} onValueChange={setCurrentTcmId}>
-              <SelectTrigger className="bg-sidebar-accent border-sidebar-border text-sidebar-accent-foreground h-8 text-xs">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                {tcms.map((t) => (
-                  <SelectItem key={t.id} value={t.id}>{t.name}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          )}
         </div>
       </aside>
 

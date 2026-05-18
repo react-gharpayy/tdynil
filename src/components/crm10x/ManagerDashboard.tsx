@@ -202,7 +202,7 @@ export function ManagerDashboard() {
               <div key={i} className="flex items-center justify-between text-xs border-b border-border/50 py-1.5">
                 <div>
                   <div className="font-medium">{f.lead.name}</div>
-                  <div className="text-muted-foreground text-[10px]">{tcm?.name ?? "—"} · {f.detail}</div>
+                  <div className="text-muted-foreground text-[10px]">{tcm?.name ?? "-"} · {f.detail}</div>
                 </div>
                 <Badge variant="outline" className="text-[10px] capitalize">{f.kind.replace(/-/g, " ")}</Badge>
               </div>
@@ -239,7 +239,7 @@ export function ManagerDashboard() {
             return (
               <div key={c.id} className={`flex items-center justify-between text-xs border-b border-border/50 py-1.5 ${overdue ? "text-destructive" : ""}`}>
                 <div>
-                  <div className="font-medium">{lead?.name ?? "—"}</div>
+                  <div className="font-medium">{lead?.name ?? "-"}</div>
                   <div className="text-muted-foreground italic">"{c.exactWords}"</div>
                 </div>
                 <div className="text-right">
@@ -260,7 +260,7 @@ export function ManagerDashboard() {
             const lead = leads.find((l) => l.id === n.leadId);
             return (
               <div key={n.id} className="text-xs border-l-2 border-accent pl-2 py-1">
-                <div className="font-medium">{lead?.name ?? "—"}</div>
+                <div className="font-medium">{lead?.name ?? "-"}</div>
                 <div className="text-muted-foreground">{n.text}</div>
                 <div className="text-[10px] text-muted-foreground">{format(new Date(n.ts), "MMM d, p")}</div>
               </div>

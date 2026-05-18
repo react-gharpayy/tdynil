@@ -1,4 +1,4 @@
-// Mega lead parser — extracts directly into the cmd.lead.create payload shape.
+// Mega lead parser - extracts directly into the cmd.lead.create payload shape.
 // No "intermediate random data". Every extraction is grounded in the source text;
 // missing fields are reported as validation issues, NOT hallucinated.
 //
@@ -39,7 +39,7 @@ export interface ExtractedLead {
 export interface ParseResult {
   extracted: ExtractedLead;
   issues: ParseIssue[];
-  confidence: number;           // 0-100 — proportion of required fields filled
+  confidence: number;           // 0-100 - proportion of required fields filled
   raw: string;
 }
 
@@ -121,7 +121,7 @@ function extractName(text: string, phone: string | undefined, issues: ParseIssue
     candidate = m ? firstLine.slice(0, m.index) : firstLine.split(/\s+/).slice(0, 4).join(" ");
   }
   candidate = cleanNameCandidate(candidate);
-  // Validate: must look like a name — alphabetic words only, 1-4 words
+  // Validate: must look like a name - alphabetic words only, 1-4 words
   const words = candidate.split(/\s+/).filter(Boolean);
   if (words.length >= 1 && words.length <= 4 && words.every((w) => /^[a-zA-Z][a-zA-Z'.\-]*$/.test(w)) && candidate.length <= 60) {
     return titleCase(candidate);
@@ -154,7 +154,7 @@ function titleCase(s: string): string {
 }
 
 function extractBudget(text: string, issues: ParseIssue[]): number | undefined {
-  // 1. Labelled budget — pull the value chunk first
+  // 1. Labelled budget - pull the value chunk first
   const labelled = extractByLabel(text, FIELD_LABELS.budget);
   const candidates: string[] = [];
   if (labelled) candidates.push(labelled);
@@ -216,7 +216,7 @@ function extractBhk(text: string): string | undefined {
 }
 
 function extractMoveIn(text: string, issues: ParseIssue[]): string | undefined {
-  // 1. Labelled — try ISO / dd/mm/yyyy / "next week" inside
+  // 1. Labelled - try ISO / dd/mm/yyyy / "next week" inside
   const labelled = extractByLabel(text, FIELD_LABELS.moveIn);
   const candidates = labelled ? [labelled, text] : [text];
   for (const chunk of candidates) {
@@ -250,7 +250,7 @@ function extractMoveIn(text: string, issues: ParseIssue[]): string | undefined {
       }
     }
   }
-  issues.push({ field: "moveInDate", severity: "warning", message: "No move-in date — defaulting to today", suggestion: "Add 'Move in: next week' or '01 Jan 2026'" });
+  issues.push({ field: "moveInDate", severity: "warning", message: "No move-in date - defaulting to today", suggestion: "Add 'Move in: next week' or '01 Jan 2026'" });
   return new Date().toISOString().slice(0, 10);
 }
 
@@ -274,7 +274,7 @@ export function parseLeadText(raw: string): ParseResult {
   if (!text) {
     return {
       extracted: {},
-      issues: [{ field: "general", severity: "error", message: "Empty input — paste the lead text first" }],
+      issues: [{ field: "general", severity: "error", message: "Empty input - paste the lead text first" }],
       confidence: 0,
       raw,
     };

@@ -1,5 +1,5 @@
 /**
- * Timing engine — IST-aware quiet hours, business windows, "send-now vs wait"
+ * Timing engine - IST-aware quiet hours, business windows, "send-now vs wait"
  * decisions, and human-friendly relative time. Pure & deterministic.
  */
 const IST_OFFSET_MIN = 330; // +05:30
@@ -55,15 +55,15 @@ export function decideSend(now: Date = new Date(), p: TimingPolicy = DEFAULT_TIM
   const mins = Math.round((next.getTime() - now.getTime()) / 60_000);
   return {
     send: false,
-    reason: isQuietHours(now, p) ? "Quiet hours — defer to morning" : "Outside business window",
+    reason: isQuietHours(now, p) ? "Quiet hours - defer to morning" : "Outside business window",
     deferUntil: next.toISOString(),
     deferMins: mins,
   };
 }
 
-/** Human relative time — "in 3h", "5m ago", "tomorrow 9am". */
+/** Human relative time - "in 3h", "5m ago", "tomorrow 9am". */
 export function relTime(at: string | Date | null | undefined, base: Date = new Date()): string {
-  if (!at) return "—";
+  if (!at) return "-";
   const t = typeof at === "string" ? new Date(at) : at;
   const diff = t.getTime() - base.getTime();
   const abs = Math.abs(diff);

@@ -11,7 +11,7 @@ import { useMountedNow } from "@/hooks/use-now";
 
 export const Route = createFileRoute("/follow-ups")({
   head: () => ({
-    meta: [{ title: "Follow-ups — Gharpayy" }, { name: "description", content: "Daily follow-up queue ranked by deal probability and urgency." }],
+    meta: [{ title: "Follow-ups - Gharpayy" }, { name: "description", content: "Daily follow-up queue ranked by deal probability and urgency." }],
   }),
   component: FollowUpsPage,
 });
@@ -107,7 +107,7 @@ function Bucket({
               <div className="col-span-2"><ConfidenceBar value={lead!.confidence} /></div>
               <div className="col-span-3 text-xs">
                 <div>{f.reason}</div>
-                <div className="text-muted-foreground text-[11px]">{format(new Date(f.dueAt), "MMM d, p")} · {mounted ? formatDistanceToNow(new Date(f.dueAt), { addSuffix: true }) : "—"}</div>
+                <div className="text-muted-foreground text-[11px]">{format(new Date(f.dueAt), "MMM d, p")} · {mounted ? formatDistanceToNow(new Date(f.dueAt), { addSuffix: true }) : "-"}</div>
               </div>
               <div className="col-span-2 flex justify-end gap-1.5">
                 <Button size="sm" variant="outline" className="h-8" onClick={() => onOpen(lead!.id)}>Open</Button>

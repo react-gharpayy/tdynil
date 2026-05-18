@@ -35,7 +35,7 @@ export function OwnerInsights() {
         <Tile label="Leads pitched" value={insight?.leadsPitched ?? 0} icon={TrendingUp} />
         <Tile label="Visits done" value={insight?.visitsDone ?? 0} icon={Activity} />
         <Tile label="High intent" value={insight?.highIntent ?? 0} icon={Sparkles} />
-        <Tile label="Top objection" value={insight?.topObjection ?? '—'} icon={MessageSquare} small />
+        <Tile label="Top objection" value={insight?.topObjection ?? '-'} icon={MessageSquare} small />
       </div>
 
       {insight?.priceMismatchSignal && (
@@ -89,7 +89,7 @@ export function OwnerInsights() {
               return (
                 <div key={s.roomId} className="flex items-center justify-between gap-3 py-2 text-xs">
                   <div className="min-w-0">
-                    <div className="font-medium truncate">{p?.name ?? '—'} · {r?.type ?? 'room'}</div>
+                    <div className="font-medium truncate">{p?.name ?? '-'} · {r?.type ?? 'room'}</div>
                     <div className="text-[10px] text-muted-foreground font-mono inline-flex items-center gap-1">
                       <IndianRupee className="h-2.5 w-2.5" />{(s.rentConfirmed ?? r?.currentPrice ?? 0).toLocaleString()}/mo
                     </div>
@@ -113,7 +113,7 @@ export function OwnerInsights() {
             {reports.map((r, i) => (
               <div key={i} className="border-b border-border last:border-0 py-1.5">
                 Tour <span className="font-mono">{(r as any).tourId}</span> ·
-                {' '}objection: <span className="font-medium">{(r as any).objection ?? '—'}</span>
+                {' '}objection: <span className="font-medium">{(r as any).objection ?? '-'}</span>
               </div>
             ))}
           </div>

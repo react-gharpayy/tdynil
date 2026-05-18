@@ -157,7 +157,7 @@ export function LeadPasteParser({ onDone }: Props) {
     setAssigneeId(defaultAssigneeId); setStage(STAGES[0]); setNotes("");
   };
 
-  // Validation matching Quick Add — Email and Full Address are optional.
+  // Validation matching Quick Add - Email and Full Address are optional.
   const phoneClean = phone.replace(/\D/g, "");
   const phoneValid = /^[6-9]\d{9}$/.test(phoneClean);
   const errors: string[] = [];
@@ -313,7 +313,7 @@ export function LeadPasteParser({ onDone }: Props) {
         />
         {parsedOnce && (
           <p className="flex items-center gap-1 text-[11px] text-green-600">
-            <CheckCircle2 className="h-3 w-3" /> Parsed — review fields below before saving
+            <CheckCircle2 className="h-3 w-3" /> Parsed - review fields below before saving
           </p>
         )}
       </Card>

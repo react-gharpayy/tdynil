@@ -1,5 +1,5 @@
 /**
- * Coach 4.0 — Auto-Pilot card.
+ * Coach 4.0 - Auto-Pilot card.
  * Renders the 3-step plan + streak multiplier badge.
  * Drop-in surface used by CoachPanel and the Today page.
  */
@@ -47,7 +47,7 @@ export function CoachAutoPilot({
     return (
       <div className="rounded-lg border border-border bg-card p-3 text-xs text-muted-foreground flex items-center gap-2">
         <Sparkles className="h-3.5 w-3.5 text-success" />
-        Auto-Pilot is idle — your queue is clear. Take a breath.
+        Auto-Pilot is idle - your queue is clear. Take a breath.
       </div>
     );
   }
@@ -64,7 +64,7 @@ export function CoachAutoPilot({
             "text-[10px] font-mono rounded-full px-1.5 py-0.5",
             mult >= 2 ? "bg-destructive/15 text-destructive" : mult > 1 ? "bg-accent/15 text-accent" : "bg-muted text-muted-foreground",
           )}
-          title="XP combo multiplier — keep clearing within 8 minutes to grow it."
+          title="XP combo multiplier - keep clearing within 8 minutes to grow it."
         >
           {multiplierLabel(mult)}
         </span>

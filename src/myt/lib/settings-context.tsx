@@ -54,7 +54,7 @@ export interface MatchingV2Settings {
   radiusDefault: number;
   // Output
   topMatchCount: number;
-  primaryCount: number;        // locked min 2 — defended in UI
+  primaryCount: number;        // locked min 2 - defended in UI
   diversityWeight: number;     // % tolerance band for Primary B
   showOnlyVerified: boolean;
   hideLowCompliance: boolean;
@@ -155,7 +155,7 @@ const DEFAULT_TEMPLATES: MessageTemplate[] = [
     label: "Social Proof Boost",
     scenario: "Send within 5 mins of confirmation if no YES reply",
     body:
-      "Just so you know — *12 people* booked tours at {{propertyName}} this week. " +
+      "Just so you know - *12 people* booked tours at {{propertyName}} this week. " +
       "Your slot at {{when}} is reserved. Reply *YES* to lock it. {{signature}}",
   },
   {
@@ -163,7 +163,7 @@ const DEFAULT_TEMPLATES: MessageTemplate[] = [
     label: "Follow-up T+5min (no reply)",
     scenario: "Auto-follow if customer hasn't confirmed in 5 mins",
     body:
-      "Hi {{leadName}}, just checking — did you get your tour confirmation for {{propertyName}} at {{when}}? " +
+      "Hi {{leadName}}, just checking - did you get your tour confirmation for {{propertyName}} at {{when}}? " +
       "Reply *YES* so we hold your slot. {{signature}}",
   },
   {
@@ -177,7 +177,7 @@ const DEFAULT_TEMPLATES: MessageTemplate[] = [
   {
     id: "reminder_4h",
     label: "T-4h Context Reminder",
-    scenario: "4 hours before the tour — remind WHY this is relevant",
+    scenario: "4 hours before the tour - remind WHY this is relevant",
     body:
       "Hi {{leadName}}, your {{siteName}} tour is in *4 hours*.\n" +
       "Based on your budget *₹{{budget}}* and your work area *{{workLocation}}*, " +
@@ -187,17 +187,17 @@ const DEFAULT_TEMPLATES: MessageTemplate[] = [
   {
     id: "reminder_2h",
     label: "T-2h Logistics",
-    scenario: "2 hours before — directions + coordinator contact",
+    scenario: "2 hours before - directions + coordinator contact",
     body:
       "Hi {{leadName}}, your {{siteName}} tour is in *2 hours*.\n" +
       "📍 {{propertyName}}, {{area}}\n" +
-      "👤 {{tcmName}} — call: {{tcmPhone}}\n" +
+      "👤 {{tcmName}} - call: {{tcmPhone}}\n" +
       "Tap for directions: {{mapsLink}}\n{{signature}}",
   },
   {
     id: "reminder_30m",
     label: "T-30m Action Trigger",
-    scenario: "30 minutes before — leave now",
+    scenario: "30 minutes before - leave now",
     body:
       "Hi {{leadName}}, *time to leave* 🚗\n" +
       "Your tour at {{propertyName}} starts in 30 mins.\n" +
@@ -206,7 +206,7 @@ const DEFAULT_TEMPLATES: MessageTemplate[] = [
   {
     id: "tcm_eta",
     label: "TCM On The Way (ETA)",
-    scenario: "TCM taps 'On the way' — auto-share with customer",
+    scenario: "TCM taps 'On the way' - auto-share with customer",
     body:
       "Hi {{leadName}}, your coordinator {{tcmName}} is *on the way* to {{propertyName}}. " +
       "ETA: {{etaMinutes}} mins. Call: {{tcmPhone}}. {{signature}}",
@@ -222,15 +222,15 @@ const DEFAULT_TEMPLATES: MessageTemplate[] = [
   {
     id: "tour_start_otp",
     label: "Tour Start OTP",
-    scenario: "Customer arrives — share OTP for verified start",
+    scenario: "Customer arrives - share OTP for verified start",
     body:
-      "Hi {{leadName}}, share this OTP with {{tcmName}} to start your tour: *{{otp}}* — " +
+      "Hi {{leadName}}, share this OTP with {{tcmName}} to start your tour: *{{otp}}* - " +
       "valid for 10 mins. {{signature}}",
   },
   {
     id: "tour_started",
     label: "Tour Started",
-    scenario: "After OTP/geo verified — confirm to customer",
+    scenario: "After OTP/geo verified - confirm to customer",
     body:
       "Your {{siteName}} tour at {{propertyName}} has *officially started*. " +
       "We're walking you through options tailored to your needs. {{signature}}",
@@ -247,7 +247,7 @@ const DEFAULT_TEMPLATES: MessageTemplate[] = [
   {
     id: "post_tour_predictive",
     label: "Post-Tour Predictive Nudge",
-    scenario: "1-3 hrs after tour — push conversion",
+    scenario: "1-3 hrs after tour - push conversion",
     body:
       "Hi {{leadName}}, *people with similar preferences booked {{propertyName}} within 24 hrs* " +
       "of their tour. Want us to block your room before someone else does? Reply *BLOCK*. {{signature}}",
@@ -353,7 +353,7 @@ const DEFAULT_SETTINGS: SettingsState = {
     "Needs family approval",
   ],
   siteName: "Gharpayy",
-  signatureLine: "— Team Gharpayy",
+  signatureLine: "- Team Gharpayy",
   matching: DEFAULT_MATCHING,
   automation: DEFAULT_AUTOMATION,
   roleAccess: DEFAULT_ROLE_ACCESS,

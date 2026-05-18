@@ -70,7 +70,7 @@ function MetricTile({
   );
 }
 
-/** Daily progress body — member self-view or manager/admin team view. */
+/** Daily progress body - member self-view or manager/admin team view. */
 export function DailyProgressView() {
   const authUser = useAuthUser((s) => s.user);
   const role = authUser?.role ?? "";

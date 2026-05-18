@@ -6,7 +6,7 @@ import { useAuthUser } from "@/lib/auth-store";
 import { useEffect } from "react";
 
 export const Route = createFileRoute("/settings")({
-  head: () => ({ meta: [{ title: "Settings — Gharpayy" }] }),
+  head: () => ({ meta: [{ title: "Settings - Gharpayy" }] }),
   component: SettingsRoute,
 });
 

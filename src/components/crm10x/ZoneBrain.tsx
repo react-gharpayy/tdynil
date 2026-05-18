@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 /**
- * Zone P&L + Capacity Brain — per-zone revenue, conversion, SLA and
+ * Zone P&L + Capacity Brain - per-zone revenue, conversion, SLA and
  * TCM load with auto rebalancing recommendations.
  */
 export function ZoneBrain() {

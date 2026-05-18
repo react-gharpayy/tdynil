@@ -60,7 +60,7 @@ export function CoachInline({ page, hint, compact = false }: Props) {
       ? top.title
       : report.mission.done >= report.mission.target
         ? "Mission cleared. Use this hour to revive a cold lead."
-        : "Coach has nothing urgent — keep working the deck.");
+        : "Coach has nothing urgent - keep working the deck.");
 
   const severity: "missed" | "todo" | "calm" = top
     ? (report.missed[0] ? "missed" : "todo")

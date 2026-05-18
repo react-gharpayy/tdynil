@@ -1,5 +1,5 @@
 /**
- * Coach 4.0 — Auto-Pilot priorities + Streak Multiplier.
+ * Coach 4.0 - Auto-Pilot priorities + Streak Multiplier.
  *
  * Builds on top of `src/lib/coach.ts` to add two zero-config features any
  * role gets:
@@ -15,7 +15,7 @@ import type { CoachItem, CoachReport } from "./coach";
 
 export interface AutoPilotPick {
   item: CoachItem;
-  /** 0–100 — how confident Auto-Pilot is this is the right next action */
+  /** 0–100 - how confident Auto-Pilot is this is the right next action */
   confidence: number;
   /** 1-line plain-English reason */
   rationale: string;
@@ -54,7 +54,7 @@ export function autoPilotPlan(report: CoachReport): AutoPilotPlan {
       const rationale = isMissed
         ? `Recovers a slipped commitment (+${item.xp} XP).`
         : item.score >= 80
-          ? `Top of queue — high impact (+${item.xp} XP).`
+          ? `Top of queue - high impact (+${item.xp} XP).`
           : `Keeps momentum, low effort (+${item.xp} XP).`;
       return { item, confidence, rationale };
     })

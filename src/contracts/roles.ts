@@ -1,9 +1,9 @@
 import { z } from "zod";
 
-// Top-level roles — match the legacy CRM exactly. The "View as" persona
+// Top-level roles - match the legacy CRM exactly. The "View as" persona
 // switcher in the sidebar (flow-ops / tcm / hr / property-owner) is a
 // display lens on top of these real DB roles, not a separate enum.
-export const TopRole = z.enum(["super_admin", "manager", "admin", "member", "owner"]);
+export const TopRole = z.enum(["super_admin", "manager", "admin", "member", "owner", "tcm"]);
 export type TopRole = z.infer<typeof TopRole>;
 
 // Status mirrors the legacy User.status enum.
@@ -21,7 +21,7 @@ export const SubRole = z.enum([
 ]);
 export type SubRole = z.infer<typeof SubRole>;
 
-// RBAC scopes — checked server-side, used to hide UI client-side.
+// RBAC scopes - checked server-side, used to hide UI client-side.
 export const Scope = z.enum([
   "lead.read",
   "lead.create",
@@ -66,6 +66,13 @@ export const DEFAULT_SCOPES: Record<TopRole, Scope[]> = {
     "activity.read", "activity.log",
   ],
   member: [
+    "lead.read", "lead.create", "lead.update", "lead.claim",
+    "tour.read", "tour.schedule", "tour.complete",
+    "inventory.read",
+    "todo.read", "todo.create", "todo.update",
+    "activity.read", "activity.log",
+  ],
+  tcm: [
     "lead.read", "lead.create", "lead.update", "lead.claim",
     "tour.read", "tour.schedule", "tour.complete",
     "inventory.read",

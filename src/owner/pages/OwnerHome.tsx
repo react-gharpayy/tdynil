@@ -90,7 +90,7 @@ export function OwnerHome() {
 
   return (
     <div className="space-y-6 pb-12">
-      {/* OWNER SWITCHER — compact identity control */}
+      {/* OWNER SWITCHER - compact identity control */}
       <div className="flex items-center gap-1.5 overflow-x-auto -mx-1 px-1 pb-1 opacity-80">
         {owners.map((o) => {
           const active = o.id === owner.id;
@@ -134,16 +134,16 @@ export function OwnerHome() {
         <div className={`text-[11px] font-mono inline-flex items-center gap-2 rounded-md border px-2 py-1 ${phaseColor}`}>
           <Clock className="h-3 w-3" />
           {truth.phase === 'idle' && 'Update window opens 9:30 AM'}
-          {truth.phase === 'open' && 'OPEN — update all rooms'}
-          {truth.phase === 'warning' && 'WARNING — auto-lock at 11 AM'}
-          {truth.phase === 'locked' && 'LOCKED — unverified rooms removed from supply'}
+          {truth.phase === 'open' && 'OPEN - update all rooms'}
+          {truth.phase === 'warning' && 'WARNING - auto-lock at 11 AM'}
+          {truth.phase === 'locked' && 'LOCKED - unverified rooms removed from supply'}
           {mounted && truth.msToNextTransition > 0 && truth.phase !== 'locked' && (
             <span>· {formatDistanceToNowStrict(new Date(Date.now() + truth.msToNextTransition))}</span>
           )}
         </div>
       </header>
 
-      {/* TRUST TIER + COMPLIANCE — premium band */}
+      {/* TRUST TIER + COMPLIANCE - premium band */}
       <section className="rounded-xl border border-border bg-card overflow-hidden">
         <div className={cn(
           'h-2 w-full',
@@ -193,7 +193,7 @@ export function OwnerHome() {
         </div>
       </section>
 
-      {/* OPERATING ALIGNMENT — Flow Ops + TCM signal */}
+      {/* OPERATING ALIGNMENT - Flow Ops + TCM signal */}
       <section className="rounded-xl border border-border bg-card p-4 space-y-3">
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <div>
@@ -223,10 +223,10 @@ export function OwnerHome() {
         <StatCard icon={Clock} label="Pending" value={pendingBlocks.length} sub="Owner approvals" tone="warning" />
       </div>
 
-      {/* PENDING BLOCKS — top priority, inline */}
+      {/* PENDING BLOCKS - top priority, inline */}
       {pendingBlocks.length > 0 && (
         <section className="space-y-3">
-          <SectionHeader icon={Inbox} title="Pending block requests" subtitle="Approve or reject — auto-released after 15 min" tone="warning" />
+          <SectionHeader icon={Inbox} title="Pending block requests" subtitle="Approve or reject - auto-released after 15 min" tone="warning" />
           <div className="space-y-2">
             {pendingBlocks.map((req) => {
               const room = myRooms.find((r) => r.id === req.roomId);
@@ -240,7 +240,7 @@ export function OwnerHome() {
                   <div className="flex-1 min-w-[180px]">
                     <div className="text-sm font-semibold">{req.leadName} <span className="text-muted-foreground font-normal">· intent {req.intent}</span></div>
                     <div className="text-[11px] text-muted-foreground font-mono mt-0.5">
-                      {prop?.name ?? 'Room'} · {room?.type ?? 'room'} ({room?.bedsTotal ?? '—'} beds)
+                      {prop?.name ?? 'Room'} · {room?.type ?? 'room'} ({room?.bedsTotal ?? '-'} beds)
                     </div>
                     <div className="text-[11px] mt-1 inline-flex items-center gap-1.5">
                       <Clock className="h-3 w-3 text-warning-foreground" />
@@ -271,7 +271,7 @@ export function OwnerHome() {
       {/* TODAY CHECKLIST */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
         <ChecklistTile to="/owner/rooms" icon={Building2} label="Update rooms"
-          subtitle={truth.phase === 'locked' ? `${locked} locked — fix now` : `${myStatuses.length - verified} pending`}
+          subtitle={truth.phase === 'locked' ? `${locked} locked - fix now` : `${myStatuses.length - verified} pending`}
           accent={truth.phase === 'locked' ? 'destructive' : verified === myStatuses.length ? 'success' : 'warning'}
         />
         <ChecklistTile to="/owner/blocks" icon={Inbox} label="Block requests"
@@ -316,7 +316,7 @@ export function OwnerHome() {
             <Mini label="Leads pitched" value={insight.leadsPitched} />
             <Mini label="Visits done" value={insight.visitsDone} />
             <Mini label="High intent" value={insight.highIntent} />
-            <Mini label="Top objection" value={insight.topObjection ?? '—'} small />
+            <Mini label="Top objection" value={insight.topObjection ?? '-'} small />
           </div>
           {insight.priceMismatchSignal && (
             <div className="rounded-md border border-warning/30 bg-warning/5 px-3 py-2 text-xs flex items-center gap-2">
@@ -328,7 +328,7 @@ export function OwnerHome() {
         </section>
       )}
 
-      {/* DEMAND SIGNALS — objection bars */}
+      {/* DEMAND SIGNALS - objection bars */}
       {Object.keys(demandBars).length > 0 && (
         <section className="space-y-3">
           <SectionHeader icon={TrendingUp} title="Demand signals" subtitle="Why deals don't close" />
@@ -361,7 +361,7 @@ export function OwnerHome() {
                   {items.map((s) => {
                     const r = myRooms.find((x) => x.id === s.roomId);
                     const p = properties.find((x) => x.id === s.propertyId);
-                    return `${p?.name ?? '—'} ${r?.type ?? ''}`;
+                    return `${p?.name ?? '-'} ${r?.type ?? ''}`;
                   }).join(' · ')}
                 </div>
                 <div className="text-[10px] font-mono text-warning-foreground bg-warning/10 border border-warning/30 px-2 py-0.5 rounded-full">

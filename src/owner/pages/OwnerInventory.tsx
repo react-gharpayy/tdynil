@@ -2,7 +2,7 @@ import { useOwner } from "../owner-context";
 import { Building2, MapPin } from "lucide-react";
 
 // Owner sees ONLY: their property's masked display name + area / locality.
-// No prices, no manager contacts, no scripts, no internal tools — that data
+// No prices, no manager contacts, no scripts, no internal tools - that data
 // is reserved for HR / Flow Ops / TCM in the Supply Hub.
 export function OwnerInventory() {
   const { owners, currentOwnerId, properties } = useOwner();
@@ -53,7 +53,7 @@ export function OwnerInventory() {
               <div className="mt-4 grid grid-cols-2 gap-2 text-[11px]">
                 <div className="rounded border border-border bg-muted/20 px-2 py-1.5">
                   <div className="uppercase tracking-wider text-muted-foreground">Zone</div>
-                  <div className="text-xs mt-0.5">{p.area || "—"}</div>
+                  <div className="text-xs mt-0.5">{p.area || "-"}</div>
                 </div>
                 <div className="rounded border border-border bg-muted/20 px-2 py-1.5">
                   <div className="uppercase tracking-wider text-muted-foreground">Internal ID</div>

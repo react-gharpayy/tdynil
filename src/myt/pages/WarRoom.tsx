@@ -109,7 +109,7 @@ export default function WarRoom() {
 
       {/* 5 tiles */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-        {/* Tile 1 — Today expected vs actual */}
+        {/* Tile 1 - Today expected vs actual */}
         <div className="glass-card p-4 space-y-2">
           <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-wide">
             <Target className="h-3.5 w-3.5" /> Today: Expected vs Actual
@@ -132,7 +132,7 @@ export default function WarRoom() {
           </div>
         </div>
 
-        {/* Tile 2 — 7-day forecast */}
+        {/* Tile 2 - 7-day forecast */}
         <div className="glass-card p-4 space-y-2">
           <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-wide">
             <TrendingUp className="h-3.5 w-3.5" /> Next 7-Day Revenue (₹k)
@@ -147,7 +147,7 @@ export default function WarRoom() {
           </ResponsiveContainer>
         </div>
 
-        {/* Tile 3 — Conversion by zone */}
+        {/* Tile 3 - Conversion by zone */}
         <div className="glass-card p-4 space-y-2">
           <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-wide">
             <Zap className="h-3.5 w-3.5" /> Conversion Rate by Zone
@@ -166,7 +166,7 @@ export default function WarRoom() {
           </ResponsiveContainer>
         </div>
 
-        {/* Tile 4 — Top leak point */}
+        {/* Tile 4 - Top leak point */}
         <div className="glass-card p-4 space-y-2">
           <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-wide">
             <AlertTriangle className="h-3.5 w-3.5 text-danger" /> Top Leak Point
@@ -179,7 +179,7 @@ export default function WarRoom() {
         </div>
       </div>
 
-      {/* Tile 5 — Immediate action */}
+      {/* Tile 5 - Immediate action */}
       <a
         href={data.action.link}
         className="block rounded-xl border-2 border-primary bg-primary/10 hover:bg-primary/15 transition-colors p-4"

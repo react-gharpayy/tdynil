@@ -1,4 +1,4 @@
-// Realtime Todos hook — works for any (entityType, entityId) combo, OR
+// Realtime Todos hook - works for any (entityType, entityId) combo, OR
 // for "my tasks" (where assignedTo === current user OR createdBy === current user
 // with no assignee). Subscribes to Socket.IO evt.todo.* events.
 import { useEffect, useState, useCallback, useMemo } from "react";
@@ -42,7 +42,7 @@ export function useTodos(opts: UseTodosOpts = {}) {
     void refresh();
     const off = onEvent((e: DomainEvent) => {
       if (!e.type.startsWith("evt.todo.")) return;
-      // Just refresh — todos volume is low and filter logic is non-trivial.
+      // Just refresh - todos volume is low and filter logic is non-trivial.
       void refresh();
     });
     return off;

@@ -7,7 +7,7 @@ import type { Lead } from "../../../../src/contracts/entities.js";
 import type { Tour } from "../../../../src/contracts/entities.js";
 import { buildIstDayRange, getPeriodBounds, GOALS, type LeaderboardPeriod } from "./ist.js";
 
-const STAFF_ROLES = ["super_admin", "manager", "admin", "member"] as const;
+const STAFF_ROLES = ["super_admin", "manager", "admin", "member", "tcm"] as const;
 
 async function getScopedMemberIdsForAdmin(tenantId: string, adminId: string) {
   const adminUser = await col<UserDoc>("users").findOne({ _id: adminId, tenantId });
@@ -45,7 +45,7 @@ export function registerStatsRoutes(app: FastifyInstance) {
 
     let members: Pick<UserDoc, "_id" | "fullName" | "zones">[] = [];
 
-    if (role === "member") {
+    if (role === "member" || role === "tcm") {
       const me = await col<UserDoc>("users").findOne(
         { _id: req.user!.sub, tenantId },
         { projection: { _id: 1, fullName: 1, zones: 1 } },

@@ -1,4 +1,4 @@
-// Owner Portal types — Daily Truth + Compliance Engine
+// Owner Portal types - Daily Truth + Compliance Engine
 
 export type RoomStatusKind = 'occupied' | 'vacating' | 'vacant' | 'blocked';
 
@@ -9,7 +9,7 @@ export interface OwnerRoomStatus {
   kind: RoomStatusKind;
   vacatingDate?: string; // ISO, required when kind='vacating'
   rentConfirmed?: number; // required when kind='vacating'
-  floorPrice?: number;          // private — owner's minimum acceptable rent
+  floorPrice?: number;          // private - owner's minimum acceptable rent
   notes?: string;
   updatedAt: string; // ISO
   verifiedToday: boolean;

@@ -14,7 +14,7 @@ import { ArrowLeft, Copy, Phone, MessageCircle, Flame, BadgeCheck, MapPin, Coins
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/supply-hub/$id")({
-  head: () => ({ meta: [{ title: "PG Detail — Supply Hub" }] }),
+  head: () => ({ meta: [{ title: "PG Detail - Supply Hub" }] }),
   component: SupplyHubDetail,
 });
 
@@ -97,7 +97,7 @@ function SupplyHubDetail() {
             </div>
             <div className="text-right">
               <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Starting</div>
-              <div className="font-display text-3xl font-semibold">{cheap < 99999 ? `₹${(cheap / 1000).toFixed(1)}k` : "—"}</div>
+              <div className="font-display text-3xl font-semibold">{cheap < 99999 ? `₹${(cheap / 1000).toFixed(1)}k` : "-"}</div>
               {cheap < 99999 && <div className="text-xs text-muted-foreground">{perDayLabel(cheap)} · all inclusive</div>}
               <div className="mt-3 flex justify-end gap-2">
                 {pg.manager.phone && telLink(pg.manager.phone) && (
@@ -145,8 +145,8 @@ function SupplyHubDetail() {
                 {pg.prices.single > 0 && <Row label="Single" value={`₹${pg.prices.single.toLocaleString("en-IN")}/mo`} sub={`₹${perDay(pg.prices.single)}/day`} />}
                 {pg.prices.double > 0 && <Row label="Double" value={`₹${pg.prices.double.toLocaleString("en-IN")}/mo`} sub={`₹${perDay(pg.prices.double)}/day`} />}
                 {pg.prices.triple > 0 && <Row label="Triple" value={`₹${pg.prices.triple.toLocaleString("en-IN")}/mo`} sub={`₹${perDay(pg.prices.triple)}/day`} />}
-                <Row label="Deposit" value={pg.deposit || "—"} />
-                <Row label="Min stay" value={pg.minStay || "—"} />
+                <Row label="Deposit" value={pg.deposit || "-"} />
+                <Row label="Min stay" value={pg.minStay || "-"} />
               </div>
             </Card>
 
@@ -188,16 +188,16 @@ function SupplyHubDetail() {
             {/* Food */}
             <Card title="Food & Vibe" icon={Utensils}>
               <div className="space-y-1 text-sm">
-                <Row label="Food type" value={pg.foodType || "—"} />
-                <Row label="Meals" value={pg.mealsIncluded || "—"} />
-                <Row label="Cleaning" value={pg.cleaning || "—"} />
-                <Row label="Noise" value={pg.noise || "—"} />
-                <Row label="Vibe" value={pg.vibe || "—"} />
+                <Row label="Food type" value={pg.foodType || "-"} />
+                <Row label="Meals" value={pg.mealsIncluded || "-"} />
+                <Row label="Cleaning" value={pg.cleaning || "-"} />
+                <Row label="Noise" value={pg.noise || "-"} />
+                <Row label="Vibe" value={pg.vibe || "-"} />
               </div>
             </Card>
 
             {/* Area mood */}
-            <Card title={`Area mood — ${pg.area}`} icon={Users}>
+            <Card title={`Area mood - ${pg.area}`} icon={Users}>
               {mood ? (
                 <div className="space-y-1 text-sm">
                   <Row label="Crowd" value={mood.crowd} />
@@ -275,7 +275,7 @@ function SupplyHubDetail() {
 
         {tab === "scripts" && (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <Card title="Call 1 — discovery" icon={Phone}>
+            <Card title="Call 1 - discovery" icon={Phone}>
               <div className="space-y-2 text-sm">
                 <div><span className="text-xs uppercase tracking-wider text-muted-foreground">Goal</span><div>{pg.scripts.call1.goal}</div></div>
                 <div><span className="text-xs uppercase tracking-wider text-muted-foreground">Opening</span><div className="italic">"{pg.scripts.call1.opening}"</div></div>
@@ -283,7 +283,7 @@ function SupplyHubDetail() {
                 <div><span className="text-xs uppercase tracking-wider text-muted-foreground">Close</span><div className="italic">"{pg.scripts.call1.close}"</div></div>
               </div>
             </Card>
-            <Card title="Call 2 — objections" icon={MessageCircle}>
+            <Card title="Call 2 - objections" icon={MessageCircle}>
               <div className="space-y-2 text-sm">
                 <div className="text-muted-foreground">{pg.scripts.call2.goal}</div>
                 {pg.scripts.call2.objections.slice(0, 6).map((o, i) => (
@@ -341,7 +341,7 @@ function SupplyHubDetail() {
             </div>
 
             <div>
-              <div className="text-sm font-semibold mb-3">Budget stretch — what +₹2k / +₹5k unlocks</div>
+              <div className="text-sm font-semibold mb-3">Budget stretch - what +₹2k / +₹5k unlocks</div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                 {stretch.map((s) => (
                   <div key={s.budget} className="rounded-lg border bg-card p-4">
@@ -397,7 +397,7 @@ function AltTile({ pg }: { pg: typeof PGS[number] }) {
       <div className="font-semibold text-sm mt-0.5 truncate">{pg.name}</div>
       <div className="mt-1 flex items-center justify-between text-xs">
         <span className="text-muted-foreground">IQ {pg.iq}</span>
-        <span className="font-semibold">{cheap < 99999 ? `₹${(cheap / 1000).toFixed(0)}k` : "—"}</span>
+        <span className="font-semibold">{cheap < 99999 ? `₹${(cheap / 1000).toFixed(0)}k` : "-"}</span>
       </div>
     </Link>
   );

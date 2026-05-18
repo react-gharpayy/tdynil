@@ -49,7 +49,7 @@ const SignupBody = z.object({
   email: z.string().email(),
   password: z.string().min(8).max(72),
   name: z.string().min(1).max(120),
-  role: z.enum(["super_admin", "manager", "admin", "member"]).optional(),
+  role: z.enum(["super_admin", "manager", "admin", "member", "tcm"]).optional(),
 });
 
 const UpdateMeBody = z.object({

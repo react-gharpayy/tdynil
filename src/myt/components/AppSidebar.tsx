@@ -130,7 +130,7 @@ export function AppSidebar() {
         </button>
       </aside>
 
-      {/* Mobile bottom nav — show first 5 items */}
+      {/* Mobile bottom nav - show first 5 items */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-sidebar border-t border-border">
         <div className="flex justify-around items-center h-14">
           {items.slice(0, 5).map(item => {

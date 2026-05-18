@@ -61,7 +61,7 @@ export default function DraftTracker() {
                   <td className="py-2.5 px-2 text-muted-foreground">{t.assignedToName}</td>
                   <td className="py-2.5 px-2 text-muted-foreground">{t.tourDate}</td>
                   <td className="py-2.5 px-2 text-muted-foreground">₹{t.budget.toLocaleString()}</td>
-                  <td className="py-2.5 px-2 text-muted-foreground text-xs">{t.remarks || '—'}</td>
+                  <td className="py-2.5 px-2 text-muted-foreground text-xs">{t.remarks || '-'}</td>
                   <td className="py-2.5 px-2">
                     <div className="flex gap-1">
                       <button className="p-1.5 rounded-md bg-primary/10 text-primary hover:bg-primary/20"><Phone className="h-3.5 w-3.5" /></button>

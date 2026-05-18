@@ -10,7 +10,7 @@ import { ClientOnly } from "@/components/ClientOnly";
 export const Route = createFileRoute("/handoffs")({
   head: () => ({
     meta: [
-      { title: "Handoffs — Gharpayy" },
+      { title: "Handoffs - Gharpayy" },
       { name: "description", content: "FlowOps ↔ TCM communication thread. Every lead handover, every urgent ping." },
     ],
   }),
@@ -50,7 +50,7 @@ function HandoffsPage() {
             <MessageSquare className="h-6 w-6 text-accent" /> Handoffs
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
-            FlowOps qualifies and routes. TCM closes. Both sides stay in sync here — every lead, in real time.
+            FlowOps qualifies and routes. TCM closes. Both sides stay in sync here - every lead, in real time.
           </p>
         </header>
 

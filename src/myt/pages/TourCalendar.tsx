@@ -63,7 +63,7 @@ export default function TourCalendar() {
       <div className="flex items-start justify-between flex-wrap gap-3">
         <div>
           <h1 className="text-xl md:text-2xl font-heading font-bold text-foreground">Tour Calendar</h1>
-          <p className="text-xs text-muted-foreground">7-day slot availability — color = intent</p>
+          <p className="text-xs text-muted-foreground">7-day slot availability - color = intent</p>
         </div>
         <select
           value={tcmFilter}

@@ -42,7 +42,7 @@ export function useActivities({ entityType, entityId, kind }: UseActivitiesOpts)
         && entityType === "lead"
         && (("leadId" in e.payload ? e.payload.leadId : null) === entityId)
       ) {
-        // server auto-logs an activity for these — refetch to pick it up
+        // server auto-logs an activity for these - refetch to pick it up
         void refresh();
       }
     });

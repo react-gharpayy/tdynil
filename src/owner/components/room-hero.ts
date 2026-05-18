@@ -1,4 +1,4 @@
-// Deterministic gradient class per room id — every room has a unique visual identity.
+// Deterministic gradient class per room id - every room has a unique visual identity.
 const PALETTE = [
   'bg-gradient-to-br from-rose-400 to-rose-600',
   'bg-gradient-to-br from-amber-400 to-orange-500',

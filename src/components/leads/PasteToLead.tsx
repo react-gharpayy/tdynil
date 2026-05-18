@@ -40,12 +40,12 @@ export function PasteToLead({ onCreated }: Props) {
   const onParse = () => {
     const p = parseLead(raw);
     if (!p) {
-      toast.error("Couldn't parse — need at least name, phone, or email.");
+      toast.error("Couldn't parse - need at least name, phone, or email.");
       return;
     }
     setDraft(p);
     setParsed(true);
-    toast.success("Parsed — review fields and run duplicate check.");
+    toast.success("Parsed - review fields and run duplicate check.");
   };
 
   const autoParse = (text: string) => {
@@ -64,7 +64,7 @@ export function PasteToLead({ onCreated }: Props) {
       const p = parseLead(text);
       if (p) { setDraft(p); setParsed(true); toast.success("Pasted & parsed"); }
     } catch {
-      toast.error("Clipboard blocked — paste manually.");
+      toast.error("Clipboard blocked - paste manually.");
     }
   };
 
@@ -111,7 +111,7 @@ export function PasteToLead({ onCreated }: Props) {
             <h3 className="font-semibold text-sm flex items-center gap-2">
               <Sparkles className="h-4 w-4 text-primary" /> Paste lead
             </h3>
-            <p className="text-[11px] text-muted-foreground">WhatsApp form, plain text, spreadsheet row — anything works.</p>
+            <p className="text-[11px] text-muted-foreground">WhatsApp form, plain text, spreadsheet row - anything works.</p>
           </div>
           <div className="flex gap-2">
             <Button size="sm" variant="outline" className="h-8 text-xs gap-1" onClick={onPasteFromClipboard}>

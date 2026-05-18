@@ -79,7 +79,7 @@ export function HandoffThread({ leadId }: { leadId: string }) {
           <Button
             size="sm" variant="destructive" disabled={!text.trim()}
             onClick={() => send("urgent")} className="h-8 text-[10px] px-2"
-            title="Mark urgent — pages the other side"
+            title="Mark urgent - pages the other side"
           >
             URGENT
           </Button>

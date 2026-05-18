@@ -1,5 +1,5 @@
 /**
- * useLeadIntel — one hook to compute lead score, SLA, best-time, dossier
+ * useLeadIntel - one hook to compute lead score, SLA, best-time, dossier
  * and next-best-action for a single live lead. Recomputes whenever the
  * lead, its activities or its todos change (all already realtime via the
  * event bus). Tick every 60s so SLA timers stay live without re-fetching.

@@ -116,7 +116,7 @@ export function CoachPanel({ compact = false }: Props) {
         </div>
       </div>
 
-      {/* PERSONA PLAYBOOK TIP — voice + tactical hint of the day */}
+      {/* PERSONA PLAYBOOK TIP - voice + tactical hint of the day */}
       {report.playbookTip && (
         <div className="rounded-md border border-border bg-card/40 p-2.5">
           <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-muted-foreground font-semibold mb-1">
@@ -127,10 +127,10 @@ export function CoachPanel({ compact = false }: Props) {
         </div>
       )}
 
-      {/* PREDICT-AND-SAVE — leads about to slip in next 6h */}
+      {/* PREDICT-AND-SAVE - leads about to slip in next 6h */}
       <PredictBar leads={leads} tours={tours} now={now} role={role} currentTcmId={currentTcmId} onOpen={openLead} />
 
-      {/* AUTO-PILOT (Coach 4.0) — top-3 plan with confidence + streak multiplier */}
+      {/* AUTO-PILOT (Coach 4.0) - top-3 plan with confidence + streak multiplier */}
       <CoachAutoPilot
         report={report}
         compact={compact}
@@ -251,7 +251,7 @@ export function CoachPanel({ compact = false }: Props) {
           </ScrollArea>
         </TabsContent>
 
-        {/* LIVE — connector feed across roles */}
+        {/* LIVE - connector feed across roles */}
         <TabsContent value="live" className="mt-3">
           <ScrollArea className={cn(compact ? "h-[260px]" : "h-[420px]")}>
             <LiveFeed compact={compact} />
@@ -404,7 +404,7 @@ function Empty({ icon, title, hint }: { icon: React.ReactNode; title: string; hi
   );
 }
 
-/* LIVE FEED — cross-role connector ticker. */
+/* LIVE FEED - cross-role connector ticker. */
 function LiveFeed({ compact }: { compact: boolean }) {
   const events = useConnectorFeed(40);
   if (events.length === 0) {
@@ -438,7 +438,7 @@ function LiveFeed({ compact }: { compact: boolean }) {
         </li>
       ))}
       {compact && (
-        <li className="text-[10px] text-muted-foreground text-center pt-2">— live across all roles —</li>
+        <li className="text-[10px] text-muted-foreground text-center pt-2">- live across all roles -</li>
       )}
     </ul>
   );
@@ -467,7 +467,7 @@ function relTime(ts: number): string {
   return `${Math.round(h / 24)}d`;
 }
 
-/* PREDICT-AND-SAVE — leads about to slip in next ~6 hours. */
+/* PREDICT-AND-SAVE - leads about to slip in next ~6 hours. */
 function PredictBar({
   leads, tours, now, role, currentTcmId, onOpen,
 }: {
@@ -485,7 +485,7 @@ function PredictBar({
       .map((l) => {
         const silentH = (now - +new Date(l.updatedAt)) / 36e5;
         const intentBoost = l.intent === "hot" ? 24 : l.intent === "warm" ? 12 : 4;
-        // Risk score 0-100 — silence + intent + recent tour
+        // Risk score 0-100 - silence + intent + recent tour
         const hasUpcoming = tours.some((t) => t.leadId === l.id && t.status === "scheduled");
         const risk = Math.min(100, Math.round(silentH * 4 + intentBoost - (hasUpcoming ? 30 : 0)));
         return { lead: l, risk, silentH };
@@ -537,7 +537,7 @@ function CoachSkeleton() {
   );
 }
 
-/* MISSION RING — circular progress with streak in center */
+/* MISSION RING - circular progress with streak in center */
 function MissionRing({ pct, streak }: { pct: number; streak: number }) {
   const size = 76;
   const stroke = 6;

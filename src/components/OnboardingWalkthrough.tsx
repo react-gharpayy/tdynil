@@ -8,7 +8,7 @@ const STORAGE_KEY = 'gharpayy.onboarding.completed.v1';
 const STEPS = [
   {
     title: 'Welcome to Gharpayy Arena Infrastructure',
-    body: 'One operating layer for HR, Flow Ops, TCM, and Owners. Every action triggers the next — no module works in isolation.',
+    body: 'One operating layer for HR, Flow Ops, TCM, and Owners. Every action triggers the next - no module works in isolation.',
     cta: { label: 'Show me the rhythm', to: '/help' },
   },
   {

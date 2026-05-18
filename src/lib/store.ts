@@ -312,7 +312,7 @@ export const useApp = create<AppState>((set, get) => ({
     }));
     pushActivity(set, get, {
       kind: "decision_logged", actor: t.tcmId, leadId: t.leadId, tourId,
-      text: `Decision: ${decision ?? "—"}`,
+      text: `Decision: ${decision ?? "-"}`,
     });
   },
 
@@ -518,7 +518,7 @@ export const useApp = create<AppState>((set, get) => ({
       ),
     }));
     pushActivity(set, get, { kind: "decision_logged", actor: tcmId, leadId, tourId, propertyId, text: `Deal closed · ₹${amount.toLocaleString("en-IN")}/mo` });
-    // Connector — find which Flop scheduled this lead's tour, give them assist XP.
+    // Connector - find which Flop scheduled this lead's tour, give them assist XP.
     const sched = get().activities.find(
       (a) => a.kind === "tour_scheduled" && a.leadId === leadId && a.tourId === tourId,
     );

@@ -83,7 +83,7 @@ export function LeadControlPanel({ subject, trigger, defaultTab = "overview" }: 
 
   const name = tour?.leadName ?? lead?.name ?? "Lead";
   const phone = tour?.phone ?? lead?.phone ?? "";
-  const area = tour?.area ?? lead?.area ?? "—";
+  const area = tour?.area ?? lead?.area ?? "-";
   const budget = tour?.budget ?? lead?.budget ?? 0;
   const property = tour?.propertyName;
 
@@ -277,7 +277,7 @@ export function LeadControlPanel({ subject, trigger, defaultTab = "overview" }: 
               <Info icon={<MapPin className="h-3.5 w-3.5" />} label="Area" value={area} />
               {tour && <Info icon={<Building2 className="h-3.5 w-3.5" />} label="Property" value={property!} />}
               {tour && <Info icon={<Clock className="h-3.5 w-3.5" />} label="Slot" value={`${tour.tourDate} ${formatTime12h(tour.tourTime)}`} />}
-              {lead && <Info icon={<Tag className="h-3.5 w-3.5" />} label="Source" value={lead.addedByName ?? "—"} />}
+              {lead && <Info icon={<Tag className="h-3.5 w-3.5" />} label="Source" value={lead.addedByName ?? "-"} />}
               {lead && <Info icon={<Clock className="h-3.5 w-3.5" />} label="Move-in" value={lead.moveInDate} />}
             </div>
 
@@ -365,9 +365,9 @@ export function LeadControlPanel({ subject, trigger, defaultTab = "overview" }: 
                 <Select value={fuPriority} onValueChange={(v) => setFuPriority(v as any)}>
                   <SelectTrigger className="h-9 text-sm"><SelectValue /></SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="hot">🔥 Hot — today</SelectItem>
-                    <SelectItem value="warm">☀️ Warm — 24h</SelectItem>
-                    <SelectItem value="cold">❄️ Cold — this week</SelectItem>
+                    <SelectItem value="hot">🔥 Hot - today</SelectItem>
+                    <SelectItem value="warm">☀️ Warm - 24h</SelectItem>
+                    <SelectItem value="cold">❄️ Cold - this week</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

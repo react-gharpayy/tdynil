@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-// Per-tour runtime data (events, customer feedback, TCM report) — all in localStorage
+// Per-tour runtime data (events, customer feedback, TCM report) - all in localStorage
 export type TourEventKind =
   | "booked"
   | "confirmation_sent"

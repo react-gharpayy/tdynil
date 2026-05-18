@@ -8,7 +8,7 @@ import { Sparkles, Target, ArrowLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/supply-hub/match")({
-  head: () => ({ meta: [{ title: "Lead Matcher — Supply Hub" }] }),
+  head: () => ({ meta: [{ title: "Lead Matcher - Supply Hub" }] }),
   component: SupplyHubMatch,
 });
 
@@ -93,7 +93,7 @@ function SupplyHubMatch() {
               <h2 className="font-semibold">Top {results.length} matches</h2>
             </div>
             <div className="rounded-lg border bg-card p-3 grid gap-2 md:grid-cols-3 text-xs">
-              <Cell k="Lead distance input" v={lead.area || "—"} />
+              <Cell k="Lead distance input" v={lead.area || "-"} />
               <Cell k="Nearest Supply Hub PG" v={results.find((r) => r.commuteKm !== null)?.pg.name ?? "Need known area/landmark"} />
               <Cell k="Lead distance" v={results.find((r) => r.commuteKm !== null)?.commuteKm !== null && results.find((r) => r.commuteKm !== null) ? `${results.find((r) => r.commuteKm !== null)!.commuteKm} km` : "Map/area needed"} />
             </div>
@@ -124,7 +124,7 @@ function SupplyHubMatch() {
                     <div className="mt-2 grid grid-cols-1 md:grid-cols-3 gap-2 text-xs">
                       <Cell k="Best fit" v={r.bedLabel} />
                       <Cell k="Lead distance" v={r.commuteKm !== null ? `${r.commuteKm} km from ${lead.area}` : "Need map/known area"} />
-                      <Cell k="Per day" v={r.bedPrice ? perDayLabel(r.bedPrice) : "—"} />
+                      <Cell k="Per day" v={r.bedPrice ? perDayLabel(r.bedPrice) : "-"} />
                     </div>
                     <div className="mt-2 text-xs italic text-muted-foreground">{r.reasoning}</div>
                     <div className="mt-1 text-[10px] uppercase tracking-wider text-accent font-semibold">{rt.action}{sc.hot && ` · ${sc.level}`}</div>

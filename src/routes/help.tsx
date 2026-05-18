@@ -4,7 +4,7 @@ import { Sun, Lock, Zap, ClipboardCheck, BarChart3, Users, Sparkles } from 'luci
 
 export const Route = createFileRoute('/help')({
   head: () => ({ meta: [
-    { title: 'How to use this — Gharpayy' },
+    { title: 'How to use this - Gharpayy' },
     { name: 'description', content: 'Daily operating rhythm for HR, Flow Ops, TCM, and Owners.' },
   ] }),
   component: HelpPage,
@@ -17,7 +17,7 @@ function HelpPage() {
         <header>
           <h1 className="font-display text-3xl font-semibold tracking-tight">How to use this</h1>
           <p className="text-sm text-muted-foreground mt-2">
-            Three roles, three landing pages, one connected machine. Below is the daily rhythm — follow it and the system runs itself.
+            Three roles, three landing pages, one connected machine. Below is the daily rhythm - follow it and the system runs itself.
           </p>
         </header>
 
@@ -32,7 +32,7 @@ function HelpPage() {
             <Step time="11 AM – 1 PM" title="Flow Ops activates new rooms" link={{ to: '/myt/flow-ops', label: 'Flow Ops' }}
               body="Every new room: 5 pitches or 2 qualified matches within 2 hours." />
             <Step time="1 PM – 7 PM" title="TCM runs visits" link={{ to: '/myt/tcm', label: 'TCM Desk' }}
-              body="Each visit tied to a room_id. Post-visit report filed within 15 min — captures objection, budget gap, timeline." />
+              body="Each visit tied to a room_id. Post-visit report filed within 15 min - captures objection, budget gap, timeline." />
             <Step time="Anytime" title="Owners approve blocks within 15 min" link={{ to: '/owner/blocks', label: 'Block requests' }}
               body="High-intent leads need an owner OK in 15 min, else auto-released." />
             <Step time="7 PM" title="HR reviews compliance + leaderboard" link={{ to: '/myt', label: 'HR Tower' }}
@@ -52,9 +52,9 @@ function HelpPage() {
         <section className="rounded-xl border border-border bg-card p-4 space-y-2">
           <h2 className="font-display text-lg font-semibold flex items-center gap-2"><Sparkles className="h-4 w-4 text-info" /> One way to do things</h2>
           <ul className="text-sm text-muted-foreground space-y-1.5 list-disc list-inside">
-            <li>Same action menu (⋯) on every lead — same actions, same order, everywhere.</li>
+            <li>Same action menu (⋯) on every lead - same actions, same order, everywhere.</li>
             <li>Same card style across Tours, Properties, Owners, and Leads.</li>
-            <li>Tour confirmation messages share one template library — no inconsistencies.</li>
+            <li>Tour confirmation messages share one template library - no inconsistencies.</li>
             <li>Every action publishes to the closed-loop event bus → owner sees team activity, team sees owner updates.</li>
           </ul>
         </section>

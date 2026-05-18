@@ -6,7 +6,7 @@
 //
 // Determinism: anything pseudo-random (scarcity, freshness) uses a stable
 // hash of the PG id so the same property always shows the same state across
-// reloads — reps can call leads back and the message stays consistent.
+// reloads - reps can call leads back and the message stays consistent.
 
 import type { PG } from "../data/types";
 import { AREAS } from "../data/areas";
@@ -31,7 +31,7 @@ export function perDay(monthly: number): number {
 
 export function perDayLabel(monthly: number): string {
   const d = perDay(monthly);
-  return d ? `₹${d}/day` : "—";
+  return d ? `₹${d}/day` : "-";
 }
 
 /* ---------- 3. Property persona badge (#8) ---------- */
@@ -66,19 +66,19 @@ export function personaBadge(pg: PG): PersonaBadge {
 }
 
 const PERSONA_STYLE: Record<PersonaBadge, { color: string; pitch: string }> = {
-  "IT Corridor Crowd":      { color: "text-cyan-300 border-cyan-400/40 bg-cyan-400/10",       pitch: "Pitch commute first — they care about office distance over everything." },
+  "IT Corridor Crowd":      { color: "text-cyan-300 border-cyan-400/40 bg-cyan-400/10",       pitch: "Pitch commute first - they care about office distance over everything." },
   "College Student Belt":   { color: "text-amber-300 border-amber-400/40 bg-amber-400/10",     pitch: "Lead with food + study desk + parents-friendly. Price comes second." },
-  "First-Job Bangalore":    { color: "text-emerald-300 border-emerald-400/40 bg-emerald-400/10", pitch: "All-in pricing wins — no surprises. Stress \"₹X/day, nothing extra\"." },
+  "First-Job Bangalore":    { color: "text-emerald-300 border-emerald-400/40 bg-emerald-400/10", pitch: "All-in pricing wins - no surprises. Stress \"₹X/day, nothing extra\"." },
   "Senior Professional":    { color: "text-violet-300 border-violet-400/40 bg-violet-400/10",   pitch: "Privacy + quiet + premium amenities. Don't lead with price." },
-  "Parent-Approved Girls":  { color: "text-pink-300 border-pink-400/40 bg-pink-400/10",         pitch: "Open the parent pack first — close the parent, close the daughter." },
+  "Parent-Approved Girls":  { color: "text-pink-300 border-pink-400/40 bg-pink-400/10",         pitch: "Open the parent pack first - close the parent, close the daughter." },
   "Boys Hostel Vibe":       { color: "text-blue-300 border-blue-400/40 bg-blue-400/10",         pitch: "Vibe + crew + nightlife > amenities. Mention games/gym." },
-  "Co-live Community":      { color: "text-fuchsia-300 border-fuchsia-400/40 bg-fuchsia-400/10", pitch: "Sell the community first — events, common area, peer network." },
-  "Premium Working Pro":    { color: "text-indigo-300 border-indigo-400/40 bg-indigo-400/10",   pitch: "Service-grade pitch — daily housekeeping, premium furnishing, deposits." },
+  "Co-live Community":      { color: "text-fuchsia-300 border-fuchsia-400/40 bg-fuchsia-400/10", pitch: "Sell the community first - events, common area, peer network." },
+  "Premium Working Pro":    { color: "text-indigo-300 border-indigo-400/40 bg-indigo-400/10",   pitch: "Service-grade pitch - daily housekeeping, premium furnishing, deposits." },
 };
 
 export function personaStyle(b: PersonaBadge) { return PERSONA_STYLE[b]; }
 
-/* ---------- 4. Scarcity signal (#9) — derived, deterministic ---------- */
+/* ---------- 4. Scarcity signal (#9) - derived, deterministic ---------- */
 
 export type ScarcityLevel = "FULL" | "1 LEFT" | "2 LEFT" | "FEW LEFT" | "AVAILABLE";
 
@@ -86,8 +86,8 @@ export interface ScarcityState {
   level: ScarcityLevel;
   /** Per-occupancy availability ("S" | "D" | "T" → null/n) */
   perBed: { single: number | null; double: number | null; triple: number | null };
-  hot: boolean;        // urgency badge — 1 or 2 left in any tier
-  reason: string;      // human reason — why this state
+  hot: boolean;        // urgency badge - 1 or 2 left in any tier
+  reason: string;      // human reason - why this state
 }
 
 /** High IQ + premium tier → typically near full. Low IQ + budget → tons left.
@@ -132,10 +132,10 @@ export function scarcity(pg: PG): ScarcityState {
   const hot = level === "1 LEFT" || level === "2 LEFT";
 
   const reason =
-    level === "1 LEFT"  ? `Only 1 ${shortTier(perBed)} sharing left — call now`
+    level === "1 LEFT"  ? `Only 1 ${shortTier(perBed)} sharing left - call now`
   : level === "2 LEFT"  ? `Only 2 ${shortTier(perBed)} sharing left this week`
-  : level === "FULL"    ? "Currently full — waitlist only"
-  : level === "FEW LEFT"? "Filling fast — fewer than 5 beds open"
+  : level === "FULL"    ? "Currently full - waitlist only"
+  : level === "FEW LEFT"? "Filling fast - fewer than 5 beds open"
   : "Multiple beds available across sharing types";
 
   return { level, perBed, hot, reason };
@@ -151,7 +151,7 @@ function shortTier(p: ScarcityState["perBed"]): string {
   return "double";
 }
 
-/* ---------- 5. Freshness tag (#14) — deterministic ---------- */
+/* ---------- 5. Freshness tag (#14) - deterministic ---------- */
 
 export interface Freshness {
   isFresh: boolean;       // updated in last 30 days?
@@ -168,10 +168,10 @@ export function freshness(pg: PG): Freshness {
   const kinds: Freshness["changeKind"][] = ["Price drop", "New photos", "Room opened", "Amenity added"];
   const kind = kinds[h % kinds.length]!;
   const messages: Record<NonNullable<Freshness["changeKind"]>, string> = {
-    "Price drop":   "Manager just revised pricing — worth a fresh pitch.",
-    "New photos":   "Fresh photos uploaded — ideal forward to undecided leads.",
-    "Room opened":  "A room just opened — perfect re-engagement reason.",
-    "Amenity added":"Amenity upgraded recently — counters old objections.",
+    "Price drop":   "Manager just revised pricing - worth a fresh pitch.",
+    "New photos":   "Fresh photos uploaded - ideal forward to undecided leads.",
+    "Room opened":  "A room just opened - perfect re-engagement reason.",
+    "Amenity added":"Amenity upgraded recently - counters old objections.",
   };
   return { isFresh, daysAgo, changeKind: kind, message: messages[kind] };
 }
@@ -188,7 +188,7 @@ export function valueScore(pg: PG): number {
   const mealScore = pg.mealsIncluded?.match(/\d/) ? Number(pg.mealsIncluded.match(/\d/)![0]) * 4 : 0; // 0..16
   const iqWeight = pg.iq * 0.5;                                        // 0..50
   const raw = (amenScore + safeScore + mealScore + iqWeight);
-  // Normalise per ₹1000 — more value per rupee = higher score
+  // Normalise per ₹1000 - more value per rupee = higher score
   const perK = (raw / (cheapest / 1000)) * 100;
   return Math.round(perK);
 }
@@ -253,7 +253,7 @@ export function areaMood(area: string): AreaMood | null {
               : isStudent ? "College students + young pros"
               : isCorporate ? "IT professionals" : "Working professionals";
   const ageBand = isStudent ? "18–24" : isCorporate ? "23–32" : "24–34";
-  const weekend = nightlife === "High" ? "Cafés + breweries packed till 1am" : nightlife === "Medium" ? "Quieter Saturdays, busy malls" : "Calm — residents head out for nightlife";
+  const weekend = nightlife === "High" ? "Cafés + breweries packed till 1am" : nightlife === "Medium" ? "Quieter Saturdays, busy malls" : "Calm - residents head out for nightlife";
   return {
     area: intel.area, crowd, ageBand, nightlife, noise, weekend,
     metroAccess: intel.commute, priceBand: intel.budget, topCompanies: companies,
@@ -311,7 +311,7 @@ export function budgetStretch(base: number, allPGs: PG[], gender?: string): Stre
     }).flatMap((p) => p.amenities.map((a) => a.toLowerCase())));
     const newAmen = new Set(inBudget.flatMap((p) => p.amenities.map((a) => a.toLowerCase())));
     const unlocks = i === 0
-      ? ["Baseline — what your money buys today"]
+      ? ["Baseline - what your money buys today"]
       : Array.from(newAmen).filter((a) => !baseAmen.has(a)).slice(0, 4).map(capitalise);
     return { budget: b, pgs: inBudget, unlocks: unlocks.length ? unlocks : ["Better IQ scores · larger room sizes"], perDayDelta: Math.round((b - base) / 30) };
   });
@@ -323,10 +323,10 @@ function capitalise(s: string) { return s.replace(/\b\w/g, (c) => c.toUpperCase(
 
 export function seasonalNudge(date = new Date()): string {
   const m = date.getMonth();
-  if (m === 0) return "January hiring wave — IT joiners moving cities now.";
-  if (m === 3 || m === 4) return "April–May college admission rush — parents are deciding now.";
-  if (m === 5 || m === 6) return "July new-batch joining — book before rooms get scarce.";
-  if (m === 9) return "Diwali season — many residents leaving, rooms opening up.";
-  if (m === 10 || m === 11) return "End-of-year project moves — short-stay demand spike.";
-  return "Steady season — ideal time to lock the deal before next demand wave.";
+  if (m === 0) return "January hiring wave - IT joiners moving cities now.";
+  if (m === 3 || m === 4) return "April–May college admission rush - parents are deciding now.";
+  if (m === 5 || m === 6) return "July new-batch joining - book before rooms get scarce.";
+  if (m === 9) return "Diwali season - many residents leaving, rooms opening up.";
+  if (m === 10 || m === 11) return "End-of-year project moves - short-stay demand spike.";
+  return "Steady season - ideal time to lock the deal before next demand wave.";
 }

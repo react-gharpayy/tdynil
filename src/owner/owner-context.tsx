@@ -127,7 +127,7 @@ export function OwnerProvider({ children }: { children: React.ReactNode }) {
   const [objections, setObjections] = useState<OwnerObjection[]>(persisted.objections ?? []);
   const [violations, setViolations] = useState<number>(persisted.violations ?? 0);
 
-  // Truth phase ticker — client only
+  // Truth phase ticker - client only
   const [truth, setTruth] = useState<DailyTruthState>({
     phase: 'idle', msToNextTransition: 0, todayKey: todayKey(),
   });

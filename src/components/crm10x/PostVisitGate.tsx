@@ -72,7 +72,7 @@ export function PostVisitGate({ lead }: { lead: Lead }) {
       "high",
       `Post-visit reason: ${reason}`,
     );
-    toast.success("Follow-up scheduled — gate cleared");
+    toast.success("Follow-up scheduled - gate cleared");
     setReason("");
   };
 

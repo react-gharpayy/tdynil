@@ -1,4 +1,4 @@
-// Mega lexicon — base patterns. Generator produces 30k+ variants for QA/coverage,
+// Mega lexicon - base patterns. Generator produces 30k+ variants for QA/coverage,
 // but the matcher itself uses these compact patterns at runtime (millisecond performance).
 //
 // Coverage: WhatsApp forwards, 99acres / Housing.com / Magicbricks / NoBroker / OLX
@@ -18,7 +18,7 @@ export const PHONE_PATTERNS: RegExp[] = [
 
 export const EMAIL_PATTERN = /[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/g;
 
-// Field labels — left side of "Name: Rahul" style lines. Lower-cased for matching.
+// Field labels - left side of "Name: Rahul" style lines. Lower-cased for matching.
 export const FIELD_LABELS = {
   name: [
     "name", "candidate", "guest", "client", "lead", "tenant", "customer", "applicant",
@@ -151,7 +151,7 @@ export const INTENT_WORDS: Record<"hot" | "warm" | "cold", string[]> = {
   ],
 };
 
-// Source detection — strings that indicate where the lead came from
+// Source detection - strings that indicate where the lead came from
 export const SOURCE_HINTS: { re: RegExp; source: string }[] = [
   { re: /\bwhats?app\b|\bwa\b/i, source: "whatsapp" },
   { re: /\b99\s*acres?\b/i, source: "99acres" },
@@ -184,7 +184,7 @@ export const MOVE_IN_HINTS: { re: RegExp; daysFromNow: number | "parse" }[] = [
   { re: /\bimmediate(?:ly)?\b/i, daysFromNow: 0 },
 ];
 
-// Common Indian first names — used to disambiguate "name" when no label is present
+// Common Indian first names - used to disambiguate "name" when no label is present
 // (compact base, generator expands)
 export const COMMON_NAMES: string[] = [
   "Aarav","Aditya","Akash","Amit","Anil","Anand","Arjun","Ashish","Ayush","Bharat",

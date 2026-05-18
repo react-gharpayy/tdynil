@@ -1,4 +1,4 @@
-// Drop-in widget — embed inside any entity detail view to show + manage that entity's todos.
+// Drop-in widget - embed inside any entity detail view to show + manage that entity's todos.
 // Usage: <TodoPanel entityType="lead" entityId={lead._id} />
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
@@ -88,7 +88,7 @@ interface RowProps {
 function TodoRow({ todo, currentUserId, assignees, onAccept, onDecline, onComplete, onCancel, onAssign }: RowProps) {
   const mine = currentUserId && (todo.assignedTo === currentUserId || (todo.createdBy === currentUserId && !todo.assignedTo));
   const pendingForMe = todo.status === "pending-accept" && todo.assignedTo === currentUserId;
-  const lookupName = (id: string | null) => id ? (assignees.find((a) => a.id === id)?.label ?? id.slice(-6)) : "—";
+  const lookupName = (id: string | null) => id ? (assignees.find((a) => a.id === id)?.label ?? id.slice(-6)) : "-";
   return (
     <div className="py-2 flex items-center justify-between gap-3">
       <div className="min-w-0 flex-1">

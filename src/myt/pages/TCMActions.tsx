@@ -28,14 +28,14 @@ export default function TCMActions() {
     <div className="space-y-4 md:space-y-6 animate-slide-up">
       <div>
         <h1 className="text-xl md:text-2xl font-heading font-bold text-foreground">Action Queue</h1>
-        <p className="text-xs text-muted-foreground">Hard intent surfaced first — fight for the highest-conversion tours</p>
+        <p className="text-xs text-muted-foreground">Hard intent surfaced first - fight for the highest-conversion tours</p>
       </div>
 
       <Section title="📞 Confirm Attendance" count={toConfirm.length} color="text-primary">
         {toConfirm.map(t => <TourCard key={t.id} tour={t} onUpdate={updateTour} variant="compact" />)}
       </Section>
 
-      <Section title="❌ Missed — Follow Up" count={missed.length} color="text-danger">
+      <Section title="❌ Missed - Follow Up" count={missed.length} color="text-danger">
         {missed.map(t => <TourCard key={t.id} tour={t} onUpdate={updateTour} variant="compact" />)}
       </Section>
 

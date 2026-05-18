@@ -8,7 +8,7 @@ import { useMountedNow } from "@/hooks/use-now";
 
 export const Route = createFileRoute("/tours")({
   head: () => ({
-    meta: [{ title: "Tours — Gharpayy" }, { name: "description", content: "Live tour pipeline with post-tour enforcement on every completed visit." }],
+    meta: [{ title: "Tours - Gharpayy" }, { name: "description", content: "Live tour pipeline with post-tour enforcement on every completed visit." }],
   }),
   component: ToursPage,
 });

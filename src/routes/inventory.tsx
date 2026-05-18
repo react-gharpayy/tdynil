@@ -5,7 +5,7 @@ import { useMemo } from "react";
 
 export const Route = createFileRoute("/inventory")({
   head: () => ({
-    meta: [{ title: "Inventory pressure — Gharpayy" }, { name: "description", content: "Demand, conversion and pressure scores per property — directs where to push." }],
+    meta: [{ title: "Inventory pressure - Gharpayy" }, { name: "description", content: "Demand, conversion and pressure scores per property - directs where to push." }],
   }),
   component: InventoryPage,
 });
@@ -113,7 +113,7 @@ function Signal({ signal }: { signal: ReturnType<typeof computePropertyMetrics>[
 
 function Recommendation({ signal, property }: { signal: ReturnType<typeof computePropertyMetrics>[number]["signal"]; property: import("@/lib/types").Property }) {
   const text = {
-    "high-demand-low-conv": `Strong demand but conversion lags — review pricing at ₹${property.pricePerBed.toLocaleString()}.`,
+    "high-demand-low-conv": `Strong demand but conversion lags - review pricing at ₹${property.pricePerBed.toLocaleString()}.`,
     "low-demand-high-vacancy": `${property.vacantBeds} beds vacant. Push marketing in ${property.area}.`,
     "high-conv-low-supply": `Hot conversion with only ${property.vacantBeds} bed${property.vacantBeds === 1 ? "" : "s"} left. Plan expansion.`,
     "balanced": `Healthy. Maintain current playbook.`,

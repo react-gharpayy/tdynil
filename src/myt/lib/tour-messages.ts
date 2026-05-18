@@ -1,4 +1,4 @@
-// Real messaging — replaces the previous no-op stub.
+// Real messaging - replaces the previous no-op stub.
 import type { Tour } from "./types";
 import { glueBus } from "@/owner/event-bus";
 

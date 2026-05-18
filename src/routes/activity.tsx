@@ -10,7 +10,7 @@ import type { ActivityKind } from "@/lib/types";
 
 export const Route = createFileRoute("/activity")({
   head: () => ({
-    meta: [{ title: "Activity — Gharpayy" }, { name: "description", content: "Auto-generated activity log across all leads, tours and follow-ups." }],
+    meta: [{ title: "Activity - Gharpayy" }, { name: "description", content: "Auto-generated activity log across all leads, tours and follow-ups." }],
   }),
   component: ActivityPage,
 });

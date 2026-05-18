@@ -3,7 +3,7 @@
  * Pure functions consumed by Conversion Intelligence Engine, Zone Brain
  * and the Smart WhatsApp Layer.
  *
- * Everything here is deterministic from store data — no side-effects, safe
+ * Everything here is deterministic from store data - no side-effects, safe
  * to call inside React render via useMemo.
  */
 
@@ -11,7 +11,7 @@ import type { Lead, Tour, TCM, Booking } from "@/lib/types";
 import type { CallRecord, ObjectionRecord, MessageOutcome } from "./types";
 
 /* ============================================================
- * FUNNEL VELOCITY — average days between consecutive stages.
+ * FUNNEL VELOCITY - average days between consecutive stages.
  * Powers the "where leads slow down" timeline on Manager Dash.
  * ============================================================ */
 const STAGE_ORDER: Lead["stage"][] = [
@@ -93,7 +93,7 @@ export function objectionLossCorrelation(
 }
 
 /* ============================================================
- * AGENT COHORT ANALYSIS — apples-to-apples agent compare.
+ * AGENT COHORT ANALYSIS - apples-to-apples agent compare.
  * Normalises by lead count so a TCM with 3 leads doesn't look
  * better than one with 30 just because of small numbers.
  * ============================================================ */
@@ -152,7 +152,7 @@ export function agentCohort(
 }
 
 /* ============================================================
- * "WHAT TO FIX THIS WEEK" — auto-recommendations for managers.
+ * "WHAT TO FIX THIS WEEK" - auto-recommendations for managers.
  * Reads funnel + objections + agents and produces concrete moves.
  * ============================================================ */
 export interface Recommendation {
@@ -205,7 +205,7 @@ export function weeklyRecommendations(input: {
       id: "agent-coaching",
       priority: "medium",
       title: `Coach ${worst.name}`,
-      detail: `${worst.name} converts at ${worst.conv}% vs ${best.name} at ${best.conv}%. Same zone challenge — ride along on 3 calls.`,
+      detail: `${worst.name} converts at ${worst.conv}% vs ${best.name} at ${best.conv}%. Same zone challenge - ride along on 3 calls.`,
       expectedImpact: `Closing half the gap = +${Math.round((best.conv - worst.conv) / 2)}pp on ${worst.leads} leads.`,
     });
   }
@@ -228,7 +228,7 @@ export function weeklyRecommendations(input: {
 }
 
 /* ============================================================
- * ZONE INTELLIGENCE — per-zone P&L and capacity signals.
+ * ZONE INTELLIGENCE - per-zone P&L and capacity signals.
  * ============================================================ */
 export interface ZoneSnapshot {
   zoneId: string;
@@ -270,7 +270,7 @@ export function zoneSnapshots(input: {
     ).length;
 
     let pressureLevel: ZoneSnapshot["pressureLevel"] = "balanced";
-    let recommendation = "Holding steady — monitor weekly.";
+    let recommendation = "Holding steady - monitor weekly.";
     if (zoneTcms.length === 0 && myLeads.length > 0) {
       pressureLevel = "leaking";
       recommendation = `No TCMs assigned to ${z.name}. Reassign existing leads or hire.`;
@@ -279,10 +279,10 @@ export function zoneSnapshots(input: {
       recommendation = `Load ${loadPerTcm}/TCM is high. Add 1 TCM or rebalance ~${Math.round(active.length - 25 * zoneTcms.length)} leads.`;
     } else if (loadPerTcm < 5 && active.length > 0) {
       pressureLevel = "underloaded";
-      recommendation = `Capacity available — pull leads from overloaded zones or boost demand.`;
+      recommendation = `Capacity available - pull leads from overloaded zones or boost demand.`;
     } else if (slaBreaches >= 3) {
       pressureLevel = "leaking";
-      recommendation = `${slaBreaches} leads never contacted 24h+. Hard SLA breach — escalate today.`;
+      recommendation = `${slaBreaches} leads never contacted 24h+. Hard SLA breach - escalate today.`;
     } else if (conv < 15 && myLeads.length >= 5) {
       pressureLevel = "leaking";
       recommendation = `Conversion ${conv}% is low. Audit calls + objections this week.`;
@@ -308,7 +308,7 @@ export function zoneSnapshots(input: {
 }
 
 /* ============================================================
- * SMART TEMPLATE PICKER — for a given lead state, recommend
+ * SMART TEMPLATE PICKER - for a given lead state, recommend
  * the highest-leverage WhatsApp template + a "why" reason.
  * ============================================================ */
 export type TemplateRecommendation = {
@@ -331,37 +331,37 @@ export function recommendTemplate(input: {
   const moveDays = (+new Date(lead.moveInDate) - Date.now()) / 86_400_000;
 
   if (lead.stage === "booked") {
-    return { stage: "booking-confirm", reason: "Lead just booked — send confirmation + welcome.", urgency: "high" };
+    return { stage: "booking-confirm", reason: "Lead just booked - send confirmation + welcome.", urgency: "high" };
   }
   if (upcomingTour) {
-    return { stage: "visit-confirm", reason: "Upcoming visit — auto-confirm to reduce no-show.", urgency: "high" };
+    return { stage: "visit-confirm", reason: "Upcoming visit - auto-confirm to reduce no-show.", urgency: "high" };
   }
   if (completedTour && lastContactDays >= 1) {
-    return { stage: "post-visit", reason: "Tour done — check reaction + push for decision.", urgency: "high" };
+    return { stage: "post-visit", reason: "Tour done - check reaction + push for decision.", urgency: "high" };
   }
   if (lead.stage === "negotiation") {
-    return { stage: "price-offer", reason: "In negotiation — send time-bound price offer.", urgency: "high" };
+    return { stage: "price-offer", reason: "In negotiation - send time-bound price offer.", urgency: "high" };
   }
   if (lead.stage === "new" || lastContactDays === Infinity) {
-    return { stage: "first-intro", reason: "First touch — open with intro + budget hook.", urgency: "high" };
+    return { stage: "first-intro", reason: "First touch - open with intro + budget hook.", urgency: "high" };
   }
   if (lastContactDays >= 90) {
-    return { stage: "revival-90d", reason: "Cold 90d+ — last-attempt revival.", urgency: "low" };
+    return { stage: "revival-90d", reason: "Cold 90d+ - last-attempt revival.", urgency: "low" };
   }
   if (lastContactDays >= 60) {
-    return { stage: "revival-60d", reason: "Cold 60d — fresh inventory bait.", urgency: "low" };
+    return { stage: "revival-60d", reason: "Cold 60d - fresh inventory bait.", urgency: "low" };
   }
   if (lastContactDays >= 30) {
-    return { stage: "revival-30d", reason: "Cold 30d — re-engage with price-drop angle.", urgency: "medium" };
+    return { stage: "revival-30d", reason: "Cold 30d - re-engage with price-drop angle.", urgency: "medium" };
   }
   if (moveDays <= 7) {
-    return { stage: "follow-up", reason: "Move-in close — push follow-up before they decide elsewhere.", urgency: "high" };
+    return { stage: "follow-up", reason: "Move-in close - push follow-up before they decide elsewhere.", urgency: "high" };
   }
   return { stage: "follow-up", reason: "Standard follow-up cadence.", urgency: "medium" };
 }
 
 /* ============================================================
- * TEMPLATE PERFORMANCE — per-template send-to-book conversion.
+ * TEMPLATE PERFORMANCE - per-template send-to-book conversion.
  * Reads message-outcome log (CRM10x store).
  * ============================================================ */
 export interface TemplatePerf {

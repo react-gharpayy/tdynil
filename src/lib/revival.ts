@@ -63,7 +63,7 @@ export function scanRevivals(
       }
     }
 
-    // Objection: budget — find property that now fits
+    // Objection: budget - find property that now fits
     const tour = tours.find((t) => t.leadId === lead.id && t.postTour.objection === "Budget");
     if (tour && lead.stage !== "booked") {
       const fit = properties.find(

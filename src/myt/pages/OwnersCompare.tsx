@@ -114,7 +114,7 @@ export default function OwnersCompare() {
                   <td className="px-3 py-2.5 text-right">
                     {row.pendingBlocks > 0
                       ? <span className="inline-flex items-center gap-1 text-warning"><Inbox className="h-3 w-3" />{row.pendingBlocks}</span>
-                      : <span className="text-muted-foreground">—</span>}
+                      : <span className="text-muted-foreground">-</span>}
                   </td>
                 </tr>
               ))}

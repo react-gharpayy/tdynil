@@ -1,4 +1,4 @@
-// Quick Add Lead — full lead schema in a single floating panel.
+// Quick Add Lead - full lead schema in a single floating panel.
 // Designed for the "WhatsApp + PiP dashboard" workflow:
 //  • Paste an entire WhatsApp message into ANY field → auto-parse every column
 //  • Manual edit any auto-filled field

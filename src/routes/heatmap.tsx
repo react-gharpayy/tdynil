@@ -7,7 +7,7 @@ import { MapPin, TrendingUp, TrendingDown, AlertCircle } from "lucide-react";
 export const Route = createFileRoute("/heatmap")({
   head: () => ({
     meta: [
-      { title: "Demand heatmap — Gharpayy" },
+      { title: "Demand heatmap - Gharpayy" },
       { name: "description", content: "Area-level demand vs supply: leads, tours, conversion, vacancy, with strategic insights." },
     ],
   }),
@@ -63,13 +63,13 @@ function HeatmapPage() {
       const supply = vacantBeds;
       let insight: AreaRow["insight"];
       if (demand >= supply * 2 && supply > 0) {
-        insight = { label: "Expand supply", tone: "hot", detail: `${demand} leads vs ${supply} beds — high demand, undersupplied.` };
+        insight = { label: "Expand supply", tone: "hot", detail: `${demand} leads vs ${supply} beds - high demand, undersupplied.` };
       } else if (supply >= demand * 2 && totalBeds > 0) {
-        insight = { label: "Push marketing", tone: "cold", detail: `${supply} vacant vs ${demand} leads — oversupply, weak demand.` };
+        insight = { label: "Push marketing", tone: "cold", detail: `${supply} vacant vs ${demand} leads - oversupply, weak demand.` };
       } else if (conversion >= 40) {
-        insight = { label: "High-converting", tone: "warm", detail: `${conversion}% close rate — replicate playbook elsewhere.` };
+        insight = { label: "High-converting", tone: "warm", detail: `${conversion}% close rate - replicate playbook elsewhere.` };
       } else if (demand > 0 && conversion < 15) {
-        insight = { label: "Pricing issue?", tone: "hot", detail: `${demand} leads but only ${conversion}% convert — investigate.` };
+        insight = { label: "Pricing issue?", tone: "hot", detail: `${demand} leads but only ${conversion}% convert - investigate.` };
       } else {
         insight = { label: "Balanced", tone: "balanced", detail: "Healthy demand-supply ratio." };
       }
@@ -121,7 +121,7 @@ function HeatmapPage() {
                   <Stat label="Booked" value={r.bookings} mono />
                   <Stat label="Conv %" value={`${r.conversion}%`} mono />
                   <Stat label="Vacant" value={`${r.vacantBeds}/${r.totalBeds}`} mono />
-                  <Stat label="Avg ₹" value={r.avgBudget ? `${(r.avgBudget / 1000).toFixed(0)}k` : "—"} mono />
+                  <Stat label="Avg ₹" value={r.avgBudget ? `${(r.avgBudget / 1000).toFixed(0)}k` : "-"} mono />
                 </div>
 
                 <div className="h-1.5 rounded-full bg-muted overflow-hidden">

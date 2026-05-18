@@ -167,7 +167,7 @@ export default function FlowOpsDashboard() {
         <h3 className="font-heading font-semibold text-xs md:text-sm mb-3 text-foreground">Tours I Scheduled</h3>
         <div className="space-y-2">
           {myTours.length === 0 && (
-            <p className="text-xs text-muted-foreground text-center py-4">No tours yet — hit "Schedule Tour" above to add one.</p>
+            <p className="text-xs text-muted-foreground text-center py-4">No tours yet - hit "Schedule Tour" above to add one.</p>
           )}
           {myTours.map(t => (
             <div key={t.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-3 py-2.5 rounded-lg bg-surface-2/50">

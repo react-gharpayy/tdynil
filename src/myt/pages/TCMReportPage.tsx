@@ -122,7 +122,7 @@ export default function TCMReportPage() {
     };
     setReport(report);
     addEvent({ tourId: id, kind: "tcm_report_filed", notes: `Outcome: ${report.outcome}` });
-    toast.success("Report filed — next task unlocked");
+    toast.success("Report filed - next task unlocked");
     nav(`/tour/${id}`);
   }
 
@@ -134,7 +134,7 @@ export default function TCMReportPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle>TCM Intelligence Form — {tour.leadName}</CardTitle>
+          <CardTitle>TCM Intelligence Form - {tour.leadName}</CardTitle>
           <p className="text-xs text-muted-foreground">
             Forced closure: you can't move on until every required field is filled. Your input is matched against the customer feedback to detect mismatches.
           </p>

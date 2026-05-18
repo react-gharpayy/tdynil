@@ -1,4 +1,4 @@
-// Single card primitive — every card across the app extends this.
+// Single card primitive - every card across the app extends this.
 // One way to do things: same padding, same hover, same status placement.
 
 import { cn } from '@/lib/utils';

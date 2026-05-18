@@ -1,5 +1,5 @@
 /**
- * Unified notification bus — priority bands, channel routing, delivery receipts,
+ * Unified notification bus - priority bands, channel routing, delivery receipts,
  * grouping, do-not-disturb, and toast bridge. Sits on top of notif-smart.ts
  * (dedup + snooze) and is fully browser-side.
  */

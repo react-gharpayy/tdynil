@@ -27,7 +27,7 @@ interface GameState {
   rolloverIfNeeded: (who: WhoKey) => void;
   resetUser: (who: WhoKey) => void;
   setShownIntro: (v: boolean) => void;
-  /** Pure selector — never mutates state. Use this from render. */
+  /** Pure selector - never mutates state. Use this from render. */
   getStats: (who: WhoKey) => PerUserStats;
 }
 
@@ -61,7 +61,7 @@ export const useGame = create<GameState>()(
       byUser: {},
       shownIntro: false,
 
-      // Pure read — never mutates state during render.
+      // Pure read - never mutates state during render.
       getStats: (who) => viewStats(get().byUser[who]),
 
       // Side-effecting day rollover. Call from useEffect.
@@ -95,7 +95,7 @@ export const useGame = create<GameState>()(
         return amount;
       },
 
-      // Idempotent — uses persisted `cleared` map, so navigating away
+      // Idempotent - uses persisted `cleared` map, so navigating away
       // and back never double-counts a booking.
       registerBooking: (who, bookingId) => {
         const cur = viewStats(get().byUser[who]);

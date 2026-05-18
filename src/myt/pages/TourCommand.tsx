@@ -85,9 +85,9 @@ export default function TourCommand() {
     area: tour.area,
     when: fmtWhen(tour.tourDate, tour.tourTime),
     tcmName: tour.assignedToName,
-    tcmPhone: "—",
-    budget: tour.budget?.toLocaleString("en-IN") ?? "—",
-    workLocation: tour.qualification?.workLocation ?? "—",
+    tcmPhone: "-",
+    budget: tour.budget?.toLocaleString("en-IN") ?? "-",
+    workLocation: tour.qualification?.workLocation ?? "-",
     mapsLink: mapsLink(tour.area, tour.propertyName),
     etaMinutes,
     otp: otp || "______",
@@ -134,7 +134,7 @@ export default function TourCommand() {
   function handleEndTour() {
     logEvent("tour_ended");
     setTours((prev) => prev.map((t) => (t.id === safeTour.id ? { ...t, status: "completed" } : t)));
-    toast.success("Tour ended — please file TCM report");
+    toast.success("Tour ended - please file TCM report");
   }
 
   function handleNoShow() {

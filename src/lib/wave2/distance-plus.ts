@@ -1,5 +1,5 @@
 /**
- * Distance Plus — value-add layer over `lib/distance.ts`. Adds:
+ * Distance Plus - value-add layer over `lib/distance.ts`. Adds:
  *   - cost estimates (auto/cab/metro+walk)
  *   - tour clustering (group nearby PGs for same site visit)
  *   - travel-time SLA for ops (ETA banding)
@@ -33,15 +33,15 @@ export function costFor(d: Distance): CostEstimate {
   return { auto, cab, metroWalk, cheapest };
 }
 
-/** ETA SLA banding — for ops dispatching agents to PGs. */
+/** ETA SLA banding - for ops dispatching agents to PGs. */
 export type EtaBand = "fast" | "normal" | "slow" | "blocked";
 export function etaBand(d: Distance): { band: EtaBand; minutes: number; label: string } {
   const m = d.peakMins ?? d.autoMins ?? 0;
   if (m === 0)        return { band: "blocked", minutes: 0, label: "ETA unknown" };
-  if (m <= 15)        return { band: "fast",    minutes: m, label: `${m}m — fast` };
-  if (m <= 35)        return { band: "normal",  minutes: m, label: `${m}m — normal` };
-  if (m <= 60)        return { band: "slow",    minutes: m, label: `${m}m — slow (peak)` };
-  return                     { band: "blocked", minutes: m, label: `${m}m — too far for one slot` };
+  if (m <= 15)        return { band: "fast",    minutes: m, label: `${m}m - fast` };
+  if (m <= 35)        return { band: "normal",  minutes: m, label: `${m}m - normal` };
+  if (m <= 60)        return { band: "slow",    minutes: m, label: `${m}m - slow (peak)` };
+  return                     { band: "blocked", minutes: m, label: `${m}m - too far for one slot` };
 }
 
 /**
@@ -64,7 +64,7 @@ export function clusterPgs(pgs: { pg: PG; d: Distance }[]): PgCluster[] {
 }
 
 /**
- * Suggest the optimal tour slot order — greedy nearest-neighbor from the
+ * Suggest the optimal tour slot order - greedy nearest-neighbor from the
  * lead's home area through a list of PGs.
  */
 export function tourRoute(pgsWithD: { pg: PG; d: Distance }[]): PG[] {
@@ -76,11 +76,11 @@ export interface CommuteVerdict {
   band: "loved" | "ok" | "stretch" | "deal-breaker";
   oneLine: string;
 }
-/** Subjective verdict — for chat templates and sales narration. */
+/** Subjective verdict - for chat templates and sales narration. */
 export function commuteVerdict(d: Distance): CommuteVerdict {
-  if (d.band === "walk")        return { band: "loved",       oneLine: `Walking distance — ${d.walkMins}m on foot` };
-  if (d.band === "short")       return { band: "ok",          oneLine: `Quick auto — ${d.autoMins}m off-peak` };
+  if (d.band === "walk")        return { band: "loved",       oneLine: `Walking distance - ${d.walkMins}m on foot` };
+  if (d.band === "short")       return { band: "ok",          oneLine: `Quick auto - ${d.autoMins}m off-peak` };
   if (d.band === "commutable")  return { band: "stretch",     oneLine: `Bearable: ${d.autoMins}m off-peak, ${d.peakMins}m peak` };
-  if (d.band === "far")         return { band: "deal-breaker", oneLine: `Likely too far — ${d.km}km, peak ${d.peakMins}m` };
+  if (d.band === "far")         return { band: "deal-breaker", oneLine: `Likely too far - ${d.km}km, peak ${d.peakMins}m` };
   return                              { band: "stretch",     oneLine: "Distance unknown" };
 }

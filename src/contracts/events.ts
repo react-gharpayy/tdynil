@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { Lead, Todo, Activity, TourStatus } from "./entities.js";
 
-// Event registry — every event the system can emit. Server publishes, client + workers subscribe.
+// Event registry - every event the system can emit. Server publishes, client + workers subscribe.
 export const EventType = z.enum([
   "evt.lead.created",
   "evt.lead.updated",
@@ -20,7 +20,7 @@ export const EventType = z.enum([
   "evt.activity.logged",
   "evt.activity.updated",
   "evt.activity.deleted",
-  // Future modules — declare now so contracts stay stable.
+  // Future modules - declare now so contracts stay stable.
   "evt.tour.scheduled",
   "evt.tour.rescheduled",
   "evt.tour.completed",

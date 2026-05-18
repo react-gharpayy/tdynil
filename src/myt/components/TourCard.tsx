@@ -191,7 +191,7 @@ export function TourCard({ tour: t, onUpdate, variant = 'full' }: Props) {
           <Textarea
             value={remarks}
             onChange={e => setRemarks(e.target.value)}
-            placeholder="Remarks — objections, feedback…"
+            placeholder="Remarks - objections, feedback…"
             className="bg-surface-3 border-border text-xs h-14 resize-none"
           />
           <select

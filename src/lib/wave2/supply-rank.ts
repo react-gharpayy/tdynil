@@ -1,5 +1,5 @@
 /**
- * Supply ranking v2 — combines match score, distance band, occupancy and
+ * Supply ranking v2 - combines match score, distance band, occupancy and
  * recency-of-availability into a single "fit score" for the lead, plus a
  * one-line WhatsApp pitch generator.
  */
@@ -53,7 +53,7 @@ export function rankSupplyForLead(lead: Lead, pgs: PG[]): FitResult[] {
     if (upd) {
       const days = (Date.now() - new Date(upd).getTime()) / 86_400_000;
       if (days < 3)        { score += 5; signals.push("Just-listed inventory"); }
-      else if (days > 30)  { score -= 6; signals.push("Stale inventory — reverify"); }
+      else if (days > 30)  { score -= 6; signals.push("Stale inventory - reverify"); }
     }
 
     // Landmark density

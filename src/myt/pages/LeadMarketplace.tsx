@@ -46,7 +46,7 @@ export default function LeadMarketplace() {
     }
     setLeads(prev => prev.map(l => l.id === leadId ? { ...l, claimedBy: currentMemberId, status: 'qualified' } : l));
     const member = teamMembers.find(m => m.id === currentMemberId);
-    toast.success(`Claimed — go schedule the tour now`, {
+    toast.success(`Claimed - go schedule the tour now`, {
       description: `${member?.name} owns this lead`,
     });
   };
@@ -72,7 +72,7 @@ export default function LeadMarketplace() {
         </h1>
         <p className="text-xs text-muted-foreground">
           {currentRole === 'tcm'
-            ? 'Live unassigned leads — claim before they expire'
+            ? 'Live unassigned leads - claim before they expire'
             : 'Watch demand flow through the funnel in real time'}
         </p>
       </div>

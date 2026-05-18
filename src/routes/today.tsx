@@ -13,7 +13,7 @@ import { KpiCard } from "@/components/atoms";
 export const Route = createFileRoute("/today")({
   head: () => ({
     meta: [
-      { title: "Today — Gharpayy" },
+      { title: "Today - Gharpayy" },
       { name: "description", content: "Your morning command center. The exact next action, ranked by impact." },
     ],
   }),

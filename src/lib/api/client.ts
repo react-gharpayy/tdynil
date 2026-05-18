@@ -1,8 +1,8 @@
 // Frontend API client. Reads VITE_API_URL from env. Sends Bearer token from localStorage.
-// Server is hosted on YOUR VPS — set VITE_API_URL to e.g. https://api.gharpayy.com
+// Server is hosted on YOUR VPS - set VITE_API_URL to e.g. https://api.gharpayy.com
 //
 // Falls back to a localStorage adapter when VITE_API_URL is unset or the
-// server is unreachable — so todos / activities work end-to-end even before
+// server is unreachable - so todos / activities work end-to-end even before
 // the VPS is provisioned. As soon as VITE_API_URL is set and reachable,
 // real network mode kicks in automatically.
 import { localAdapter, isLocalMode } from "./local-adapter";
@@ -87,7 +87,7 @@ async function safe<T>(networkFn: () => Promise<T>, localFn: () => T): Promise<T
 }
 
 // ---------- Types shared with Settings UI ----------
-export type ManagedRole = "manager" | "admin" | "member" | "owner";
+export type ManagedRole = "manager" | "admin" | "member" | "owner" | "tcm";
 export type AnyRole = "super_admin" | ManagedRole;
 export type UserStatus = "active" | "inactive" | "invited" | "deleted";
 
@@ -246,6 +246,9 @@ export const api = {
   },
   members: {
     list: () => request<ManagedUser[]>("/api/members"),
+  },
+  tcms: {
+    list: () => request<ManagedUser[]>("/api/tcms"),
   },
   owners: {
     list: () => request<ManagedUser[]>("/api/owners"),

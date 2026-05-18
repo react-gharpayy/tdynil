@@ -1,4 +1,4 @@
-// Direct Lead Form — full schema, with Email and Full Address optional,
+// Direct Lead Form - full schema, with Email and Full Address optional,
 // persists to the
 // backend (Mongo) via cmd.lead.create so it shows up in /myt/leads everywhere
 // and respects role-based visibility on the server.
@@ -399,7 +399,7 @@ export function DirectLeadForm({ onCreated }: Props) {
         <div className="rounded-xl border border-border bg-card p-3 flex items-center justify-between gap-3 flex-wrap">
           <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
             {Object.keys(errors).length === 0 ? (
-              <><CheckCircle2 className="h-3.5 w-3.5 text-primary" /> All required fields filled — ready to save</>
+              <><CheckCircle2 className="h-3.5 w-3.5 text-primary" /> All required fields filled - ready to save</>
             ) : (
               <><AlertCircle className="h-3.5 w-3.5 text-amber-500" /> {Object.keys(errors).length} field(s) remaining</>
             )}

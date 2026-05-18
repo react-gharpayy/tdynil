@@ -78,7 +78,7 @@ export default function MismatchConsole() {
         <CardHeader><CardTitle className="text-base flex items-center gap-2"><AlertTriangle className="h-4 w-4 text-destructive" /> Flagged tours</CardTitle></CardHeader>
         <CardContent>
           {flagged.length === 0 ? (
-            <p className="text-sm text-muted-foreground">No mismatches detected — TCM reports and customer feedback are aligned.</p>
+            <p className="text-sm text-muted-foreground">No mismatches detected - TCM reports and customer feedback are aligned.</p>
           ) : (
             <div className="space-y-2">
               {flagged.map(({ tour, reasons, sev }) => (

@@ -19,7 +19,7 @@ import { toast } from "sonner";
 import { PGS as PG_LIST } from "@/supply-hub/data/pgs";
 
 /**
- * Smart WhatsApp Layer — auto-suggests the right template per lead state,
+ * Smart WhatsApp Layer - auto-suggests the right template per lead state,
  * offers one-tap multi-property pitch with PDFs, tracks reply outcomes,
  * and writes message-outcome rows for ROI analytics.
  */
@@ -87,7 +87,7 @@ export function SmartWaLayer({ lead }: { lead: Lead }) {
       loggedBy: lead.assignedTcmId,
     });
     sendMessage(lead.id, `[${WA_TEMPLATES[stage].label} · ${lang}] sent`);
-    toast.success("WhatsApp opened — reply tracker enabled", {
+    toast.success("WhatsApp opened - reply tracker enabled", {
       action: {
         label: "Mark replied",
         onClick: () => {
@@ -127,7 +127,7 @@ export function SmartWaLayer({ lead }: { lead: Lead }) {
     toast.success(`Brochure sent · ${pg.name}`);
   };
 
-  // (timeline component handles its own filtering — see MessageTimeline below)
+  // (timeline component handles its own filtering - see MessageTimeline below)
   const repliedCount = outcomes.filter((o) => o.replied).length;
   const totalSent = outcomes.length;
   const replyRate = totalSent === 0 ? 0 : Math.round((repliedCount / totalSent) * 100);
@@ -162,7 +162,7 @@ export function SmartWaLayer({ lead }: { lead: Lead }) {
         )}
       </div>
 
-      {/* Template picker — grouped by intent */}
+      {/* Template picker - grouped by intent */}
       <div className="rounded-lg border border-border bg-card p-3 space-y-2">
         <div className="flex items-center gap-2 text-xs font-semibold">
           <MessageSquare className="h-3.5 w-3.5" /> Template picker

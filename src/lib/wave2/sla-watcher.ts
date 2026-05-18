@@ -1,5 +1,5 @@
 /**
- * SLA Watcher — runs in the browser tab, scans live leads + todos, and
+ * SLA Watcher - runs in the browser tab, scans live leads + todos, and
  * pushes notifications via the unified notif-bus when an SLA is about to
  * breach or has breached. Idempotent (dedup window in notif-bus prevents
  * spam). Start once at app shell mount.
@@ -37,7 +37,7 @@ function tick(): void {
         kind: "lead.sla.warn",
         leadId: l._id,
         title: `SLA warning · ${l.name}`,
-        body: `Stage ${l.stage} — ${sla.message}`,
+        body: `Stage ${l.stage} - ${sla.message}`,
         severity: "warn",
         href: `/live-leads?focus=${l._id}`,
         groupKey: `sla|${l._id}`,

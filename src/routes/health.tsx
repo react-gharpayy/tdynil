@@ -10,7 +10,7 @@ import { format } from "date-fns";
 export const Route = createFileRoute("/health")({
   head: () => ({
     meta: [
-      { title: "System Health — Gharpayy" },
+      { title: "System Health - Gharpayy" },
       { name: "description", content: "Live module mount status, build info and data integrity check for the Arena Infrastructure CRM." },
     ],
   }),
@@ -51,7 +51,7 @@ function HealthPage() {
     {
       id: "queue", label: "Daily Action Queue", icon: Zap, href: "/queue",
       ok: true,
-      detail: "Mounted at /queue — fire/confirm/recover/nurture bands",
+      detail: "Mounted at /queue - fire/confirm/recover/nurture bands",
     },
     {
       id: "zone-brain", label: "Zone Brain", icon: Brain, href: "/zone-brain",
@@ -61,7 +61,7 @@ function HealthPage() {
     {
       id: "conversion", label: "Conversion Intelligence", icon: Activity, href: "/manager",
       ok: true,
-      detail: "Mounted on Manager dashboard — funnel velocity, objection-loss, agent cohort",
+      detail: "Mounted on Manager dashboard - funnel velocity, objection-loss, agent cohort",
     },
     {
       id: "supply", label: "Supply Hub", icon: Layers, href: "/supply-hub",
@@ -80,7 +80,7 @@ function HealthPage() {
           <div>
             <h1 className="font-display text-2xl font-semibold tracking-tight">System Health</h1>
             <p className="text-sm text-muted-foreground">
-              Arena Infrastructure runtime check —{" "}
+              Arena Infrastructure runtime check -{" "}
               <span className={allGreen ? "text-success font-mono" : "text-destructive font-mono"}>
                 {okCount}/{checks.length} modules OK
               </span>
@@ -120,8 +120,8 @@ function HealthPage() {
           <div className="font-display font-semibold text-sm mb-2">Build info</div>
           <Row k="App" v="Gharpayy · Arena Infrastructure" />
           <Row k="Stack" v="TanStack Start · Vite · Zustand (persisted)" />
-          <Row k="Persistence" v="localStorage v1 — gharpayy.crm10x.v1" />
-          <Row k="Last hydrated" v={mounted ? format(new Date(now), "PPpp") : "—"} />
+          <Row k="Persistence" v="localStorage v1 - gharpayy.crm10x.v1" />
+          <Row k="Last hydrated" v={mounted ? format(new Date(now), "PPpp") : "-"} />
         </section>
       </div>
     </AppShell>
