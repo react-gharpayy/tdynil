@@ -481,7 +481,6 @@ export function LeadControlPanel() {
                 >
                   Tour
                 </TabsTrigger>
-                <TabsTrigger value="activity" className="text-xs shrink-0 whitespace-nowrap">Activity</TabsTrigger>
                 <TabsTrigger value="best-fit" className="text-xs shrink-0 whitespace-nowrap">Best Fit</TabsTrigger>
                 <TabsTrigger value="control" className="text-xs shrink-0 whitespace-nowrap">Control</TabsTrigger>
                 <TabsTrigger value="details" className="text-xs shrink-0 whitespace-nowrap">Details</TabsTrigger>
@@ -492,6 +491,7 @@ export function LeadControlPanel() {
                   Post {pendingPostTour && <span className="ml-1 h-1.5 w-1.5 rounded-full bg-destructive" />}
                 </TabsTrigger>
                 <TabsTrigger value="tasks" className="text-xs shrink-0 whitespace-nowrap">Tasks</TabsTrigger>
+                <TabsTrigger value="activity" className="text-xs shrink-0 whitespace-nowrap">Activity</TabsTrigger>
               </TabsList>
 
             <TabsContent value="activity" className="space-y-3 pt-4">

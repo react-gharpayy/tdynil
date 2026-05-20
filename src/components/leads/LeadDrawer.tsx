@@ -44,7 +44,7 @@ export function LeadDrawer({ lead, open, onOpenChange, currentUserId, assignees 
 
 function DrawerInner({ lead, currentUserId, assignees }: { lead: Lead; currentUserId?: string; assignees: { id: string; label: string }[] }) {
   const { activities, loading, log, remove } = useActivities({ entityType: "lead", entityId: lead._id });
-  const [tab, setTab] = useState("activity");
+  const [tab, setTab] = useState("details");
   const [showHelp, setShowHelp] = useState(false);
 
   const counts = useMemo(() => ({
@@ -79,7 +79,7 @@ function DrawerInner({ lead, currentUserId, assignees }: { lead: Lead; currentUs
       if (key === "t") { setTab("tasks"); e.preventDefault(); return; }
       if (key === "d") { setTab("details"); e.preventDefault(); return; }
       if (["1","2","3","4","5","6","7","8","9"].includes(key)) {
-        const tabs = ["activity","details","tasks","notes","calls","emails","messages","visits","files"];
+        const tabs = ["details","tasks","notes","calls","emails","messages","visits","files","related"];
         const idx = parseInt(key, 10) - 1;
         if (tabs[idx]) { setTab(tabs[idx]); e.preventDefault(); }
       }
@@ -155,7 +155,6 @@ function DrawerInner({ lead, currentUserId, assignees }: { lead: Lead; currentUs
       {/* Tabs */}
       <Tabs value={tab} onValueChange={setTab} className="flex-1 flex flex-col min-h-0">
         <TabsList className="rounded-none border-b w-full justify-start overflow-x-auto h-auto px-3">
-          <TabsTrigger value="activity" className="gap-1.5"><ActivityIcon className="h-3.5 w-3.5" />Activity <Badge variant="secondary" className="ml-1 text-[10px]">{activities.length}</Badge></TabsTrigger>
           <TabsTrigger value="details" className="gap-1.5"><Info className="h-3.5 w-3.5" />Details</TabsTrigger>
           <TabsTrigger value="tasks" className="gap-1.5"><ListTodo className="h-3.5 w-3.5" />Tasks</TabsTrigger>
           <TabsTrigger value="notes" className="gap-1.5">Notes {counts.notes > 0 && <Badge variant="secondary" className="ml-1 text-[10px]">{counts.notes}</Badge>}</TabsTrigger>
@@ -165,6 +164,7 @@ function DrawerInner({ lead, currentUserId, assignees }: { lead: Lead; currentUs
           <TabsTrigger value="visits" className="gap-1.5">Visits {counts.visits > 0 && <Badge variant="secondary" className="ml-1 text-[10px]">{counts.visits}</Badge>}</TabsTrigger>
           <TabsTrigger value="files" className="gap-1.5"><FileText className="h-3.5 w-3.5" />Files</TabsTrigger>
           <TabsTrigger value="related" className="gap-1.5"><Link2 className="h-3.5 w-3.5" />Related</TabsTrigger>
+          <TabsTrigger value="activity" className="gap-1.5"><ActivityIcon className="h-3.5 w-3.5" />Activity <Badge variant="secondary" className="ml-1 text-[10px]">{activities.length}</Badge></TabsTrigger>
         </TabsList>
 
         <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
