@@ -150,11 +150,12 @@ async function applyCommand(cmd: Command, user: JwtClaims): Promise<LedgerDoc["r
         if (existingLeadId) {
           const existingLead = await col(LEADS).findOne({ _id: existingLeadId, tenantId: user.tenantId });
           if (existingLead) {
+            const lead = Lead.parse(existingLead);
             const evtId = newEventId();
             await emit({
               _id: evtId, type: "evt.lead.created", occurredAt: now,
               actor: user.sub, tenantId: user.tenantId, correlationId, causationId: null, version: 1,
-              payload: { lead: { _id: existingLeadId } } as unknown as { lead: Lead },
+              payload: { lead },
             });
             return { ok: true, eventIds: [evtId], data: { duplicate: true, leadId: existingLeadId } };
           }
