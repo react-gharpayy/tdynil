@@ -1,7 +1,7 @@
 export type Role = "flow-ops" | "tcm" | "hr" | "owner" | "super-admin";
 export type Intent = "hot" | "warm" | "cold";
-export type TourStatus = "scheduled" | "completed" | "no-show" | "cancelled";
-export type ClientDecision = "booked" | "thinking" | "dropped" | null;
+export type TourStatus = "scheduled" | "confirmed" | "completed" | "no-show" | "cancelled";
+export type ClientDecision = "booked" | "thinking" | "dropped" | "token-paid" | "draft" | "follow-up" | "rejected" | "not-interested" | null;
 export type LeadStage =
   | "new"
   | "contacted"
@@ -67,7 +67,7 @@ export interface Lead {
 }
 
 export interface PostTourUpdate {
-  outcome: "booked" | "thinking" | "not-interested" | null;
+  outcome: ClientDecision;
   confidence: number;
   objection: string | null;
   objectionNote: string;
@@ -79,11 +79,15 @@ export interface PostTourUpdate {
 export interface Tour {
   id: string;
   leadId: string;
+  leadName?: string;
+  phone?: string;
   propertyId?: string;
   tcmId: string;
   scheduledBy?: string;
   scheduledAt: string;
   status: TourStatus;
+  showUp?: boolean | null;
+  customPropertyName?: string;
   decision: ClientDecision;
   postTour: PostTourUpdate;
   createdAt: string;
@@ -93,6 +97,7 @@ export interface Tour {
 export type ActivityKind =
   | "lead_created"
   | "status_changed"
+  | "site_visit"
   | "tour_scheduled"
   | "tour_completed"
   | "tour_cancelled"

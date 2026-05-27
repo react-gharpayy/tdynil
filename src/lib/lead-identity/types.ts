@@ -14,9 +14,30 @@ export type LifecycleState =
 export type MatchType = "exact" | "strong" | "possible" | "new";
 
 export type LeadQuality = "hot" | "good" | "bad" | null;
+export type LeadPriority = "high" | "medium" | "low";
+export type InterestLevel = "HOT" | "WARM" | "COLD" | null;
+export type ObjectionTagStr =
+  | "PRICE-HIGH" | "LOCATION-MISMATCH" | "COMPARING" | "FAMILY-APPROVAL"
+  | "TIMING" | "AMENITY-GAP" | "UNRESPONSIVE" | "SWITCHED-PLATFORM"
+  | "PLANS-CHANGED" | "UNKNOWN";
+export type LeadPhaseNum = 1 | 2 | 3 | 4 | 5;
+export type LeadStageTag = string;
+
+export type AssignmentEntry = {
+  tcmId: string;
+  assignedAt: string;
+  assignedBy?: string;
+};
+
+export interface LeadAnchors {
+  leadDate: string;
+  tourDate?: string;
+  bookingDate?: string;
+  checkInDate?: string;
+}
 
 export interface UnifiedLead {
-  ulid: string;                 // Universal Lead ID
+  id: string;                 // Universal Lead ID
   name: string;
   phoneE164: string;            // normalized: +91XXXXXXXXXX
   phoneRaw: string;
@@ -28,9 +49,13 @@ export interface UnifiedLead {
   zone: string;                 // South / East / North / West / Central / "" or categorical bucket
   zoneCategory?: string;        // editor-chosen bucket (e.g. "KORA CORE")
   quality?: LeadQuality;        // hot / good / bad
+  priority?: LeadPriority;
+  tags?: string[];
+  earliestCheckIn?: string;
   stage?: string;               // Lead stage label (MYT [TENANT], etc.)
   assigneeId?: string | null;
   assigneeName?: string | null;
+  assignmentHistory?: AssignmentEntry[];
   budget: number;
   moveInDate: string;
   type: string;                 // Student / Working / etc
@@ -50,10 +75,24 @@ export interface UnifiedLead {
   updatedAt: string;
   lastActivityAt: string;
   rawSource?: string;           // original pasted text
+  lastContactAt?: string;
+  anchors?: LeadAnchors;
+  phase?: LeadPhaseNum;
+  stageTag?: LeadStageTag;
+  interestLevel?: InterestLevel;
+  primaryObjection?: ObjectionTagStr | null;
+  replied?: boolean;
+  noShowFlag?: boolean;
+  noShowCount?: number;
+  followUpCount?: number;
+  propertyName?: string;
+  managerEscalated?: boolean;
+  lostReason?: string;
+  closedReason?: string;
 }
 
 export interface OwnershipHistoryEntry {
-  ulid: string;
+  id: string;
   ownerId: string;
   role: "primary" | "secondary";
   fromTs: string;
@@ -65,7 +104,7 @@ export type AccessRequestState = "pending" | "approved" | "rejected" | "auto-esc
 
 export interface AccessRequest {
   id: string;
-  ulid: string;
+  leadId: string;
   requesterId: string;
   requesterName: string;
   toOwnerId: string;
@@ -94,7 +133,7 @@ export type ActivityKind =
 
 export interface ActivityEntry {
   id: string;
-  ulid: string;
+  leadId: string;
   ts: string;
   actorId: string;
   actorName: string;
