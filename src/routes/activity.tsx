@@ -28,6 +28,7 @@ const ICON: Record<ActivityKind, typeof Activity> = {
   note_added: FileText,
   message_sent: MessageSquare,
   call_logged: Phone,
+  site_visit: Calendar,
   escalation: AlertTriangle,
   stale_alert: AlertTriangle,
 };

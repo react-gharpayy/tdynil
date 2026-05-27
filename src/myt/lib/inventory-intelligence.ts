@@ -48,6 +48,7 @@ export function detectAreaZone(areaText: string) {
     id: 'unassigned',
     name: areaText || 'Unassigned',
     city: '',
+    area: areaText || 'Unassigned',
     areas: areaText ? [areaText] : [],
     color: '',
   };

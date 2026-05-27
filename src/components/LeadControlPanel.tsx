@@ -121,7 +121,7 @@ export function LeadControlPanel() {
       ? tours
           .filter((tour) => {
             // Match by leadId (primary), then fallback to phone/name for legacy tours
-            if ((tour as any).leadId === lead.id) return true;
+            if (tour.leadId === lead.id) return true;
             return tour.phone === lead.phone || tour.leadName === lead.name;
           })
           .sort((a, b) => +new Date(b.scheduledAt) - +new Date(a.scheduledAt))
@@ -192,7 +192,7 @@ export function LeadControlPanel() {
     (t) => t.status === "completed" && !t.postTour.filledAt,
   );
   const upcomingTour = leadTours.find((t) => t.status === "scheduled");
-  const hasScheduledTour = Boolean(upcomingTour) || lead.stage === "tour-scheduled";
+  const hasScheduledTour = Boolean(upcomingTour) || lead?.stage === "tour-scheduled";
   const scheduledTourActivity = leadActivities.find((a) => (a.kind === "tour_scheduled" || a.kind === "site_visit") && a.tourId) ?? null;
   const scheduledTourFromActivity = scheduledTourActivity?.tourId
     ? tours.find((candidate) => candidate.id === scheduledTourActivity.tourId)
@@ -201,7 +201,7 @@ export function LeadControlPanel() {
 
   useEffect(() => {
     if (!lead) return;
-    const tourAssigneeId = tourToShow ? ((tourToShow as any).assignedTo ?? tourToShow.tcmId ?? "") : "";
+    const tourAssigneeId = tourToShow?.tcmId ?? "";
     const isSelfDefaultRole = authUser?.role === "tcm" || authUser?.role === "member";
     const roleDefaultAssignee = isSelfDefaultRole ? defaultSelfAssigneeId : "";
     const preferredAssignee = tourAssigneeId || lead.assignedTcmId || currentMemberId || "";

@@ -264,7 +264,7 @@ export function LeadPasteParser({ onDone }: Props) {
     // Optimistically add to the main app store for immediate visibility
     const now = new Date().toISOString();
     addLead({
-      id: newLeadId || identityLead.ulid,
+      id: newLeadId || identityLead.id,
       name: name.trim(),
       phone: `+91${phoneClean}`,
       source: "paste",

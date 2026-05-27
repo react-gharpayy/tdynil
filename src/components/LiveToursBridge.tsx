@@ -6,6 +6,54 @@ import type { DomainEvent, Tour as WireTour, Lead as WireLead } from "@/contract
 import type { Tour as MytTour } from "@/myt/lib/types";
 import type { Property } from "@/lib/types";
 
+type LiveTourEvent = {
+  _id: string;
+  leadId: string;
+  lead?: {
+    name: string;
+    phone: string;
+    budget: number;
+  };
+};
+
+function isWireLead(value: unknown): value is WireLead {
+  if (!value || typeof value !== "object") return false;
+  const candidate = value as Record<string, unknown>;
+  return (
+    typeof candidate._id === "string" &&
+    typeof candidate.name === "string" &&
+    typeof candidate.phone === "string" &&
+    typeof candidate.budget === "number"
+  );
+}
+
+function toWireTour(tour: LiveTourEvent & Partial<WireTour>): WireTour {
+  return {
+    _id: tour._id,
+    leadId: tour.leadId,
+    propertyId: tour.propertyId ?? null,
+    assignedTo: tour.assignedTo ?? "",
+    scheduledBy: tour.scheduledBy ?? "",
+    scheduledAt: tour.scheduledAt ?? new Date().toISOString(),
+    status: tour.status ?? "scheduled",
+    showUp: tour.showUp ?? null,
+    customPropertyName: tour.customPropertyName ?? "",
+    bookingSource: tour.bookingSource ?? "whatsapp",
+    postTour: tour.postTour ?? {
+      outcome: null,
+      confidence: 0,
+      objection: null,
+      objectionNote: "",
+      expectedDecisionAt: null,
+      nextFollowUpAt: null,
+      filledAt: null,
+    },
+    createdAt: tour.createdAt ?? new Date().toISOString(),
+    updatedAt: tour.updatedAt ?? tour.createdAt ?? new Date().toISOString(),
+    tenantId: tour.tenantId ?? "",
+  };
+}
+
 function toMytTour(tour: WireTour, leads: Record<string, WireLead>, properties: Record<string, Property>, users: Record<string, string>): MytTour & { leadId: string } {
   const lead = leads[tour.leadId];
   const property = tour.propertyId ? properties[tour.propertyId] : undefined;
@@ -22,7 +70,7 @@ function toMytTour(tour: WireTour, leads: Record<string, WireLead>, properties: 
     assignedToName: users[tour.assignedTo] ?? tour.assignedTo,
     propertyName: tour.propertyId ? (properties[tour.propertyId]?.name ?? "Property Tour") : (tour.customPropertyName || "Property Tour"),
     propertyId: tour.propertyId ?? undefined,
-    area: lead?.preferredArea ?? "",
+	    area: lead?.preferredArea ?? property?.area ?? "",
     zoneId: "",
     tourDate: datePart,
     tourTime: timePart,
@@ -89,7 +137,7 @@ export function LiveToursBridge() {
         const tcmsRes = await api.tcms.list().catch(() => []);
         
         const leadMap: Record<string, WireLead> = {};
-        (leadsRes.items as WireLead[]).forEach((lead) => { leadMap[lead._id] = lead; });
+        leadsRes.items.filter(isWireLead).forEach((lead) => { leadMap[lead._id] = lead; });
         const propertyMap: Record<string, Property> = {};
         properties.forEach((property) => { propertyMap[property.id] = property; });
         const userMap: Record<string, string> = {};
@@ -115,10 +163,10 @@ export function LiveToursBridge() {
           Promise.all(missingLeadIds.map(id => api.leads.get(id).catch(() => null)))
             .then(fetchedLeads => {
               fetchedLeads.forEach(l => {
-                if (l) leadMapRef.current[l._id] = l as WireLead;
+                if (isWireLead(l)) leadMapRef.current[l._id] = l;
               });
               const remapped = currentToursRef.current.map(t => {
-                if (leadMapRef.current[t.leadId]) {
+                if (t.leadId && leadMapRef.current[t.leadId]) {
                   const wt = toursRes.items.find(wt => wt._id === t.id);
                   if (wt) return toMytTour(wt, leadMapRef.current, propertyMapRef.current, userMapRef.current);
                 }
@@ -139,12 +187,12 @@ export function LiveToursBridge() {
        // Helper to hydrate a single tour's lead if missing
        const ensureLead = (tourId: string, leadId: string) => {
          if (!leadMapRef.current[leadId]) {
-           api.leads.get(leadId).then((fetchedLead) => {
-             if (fetchedLead) {
-               leadMapRef.current[leadId] = fetchedLead as WireLead;
-               setTours((prev) => {
-                 return prev.map(t => {
-                   if (t.id === tourId) {
+	           api.leads.get(leadId).then((fetchedLead) => {
+	             if (isWireLead(fetchedLead)) {
+	               leadMapRef.current[leadId] = fetchedLead;
+	               setTours((prev) => {
+	                 return prev.map(t => {
+	                   if (t.id === tourId) {
                       return { ...t, leadName: fetchedLead.name, phone: fetchedLead.phone ?? t.phone, budget: fetchedLead.budget ?? t.budget };
                    }
                    return t;
@@ -156,11 +204,48 @@ export function LiveToursBridge() {
        };
 
        if (e.type === "evt.tour.scheduled" && e.payload.tour) {
-         const tour = e.payload.tour as WireTour;
-         if (!leadMapRef.current[tour.leadId]) {
-           api.leads.get(tour.leadId).then((fetchedLead) => {
-             if (fetchedLead) {
-               leadMapRef.current[tour.leadId] = fetchedLead as WireLead;
+	         const scheduledTour: LiveTourEvent & Partial<WireTour> = e.payload.tour;
+	         const tour = toWireTour(scheduledTour);
+	         if (scheduledTour.lead) {
+	           leadMapRef.current[scheduledTour.leadId] = {
+	             _id: scheduledTour.leadId,
+	             name: scheduledTour.lead.name,
+	             phone: scheduledTour.lead.phone,
+	             budget: scheduledTour.lead.budget,
+		             source: "",
+		             preferredArea: "",
+		             zoneId: null,
+		             moveInDate: "",
+		             assignedTcmId: tour.assignedTo,
+	             stage: "tour-scheduled",
+	             intent: "warm",
+	             confidence: 50,
+	             tags: [],
+	             nextFollowUpAt: null,
+		             responseSpeedMins: 0,
+		             email: "",
+		             areas: [],
+		             fullAddress: "",
+		             type: "",
+		             room: "",
+		             need: "",
+		             inBLR: null,
+		             quality: null,
+		             specialReqs: "",
+		             notes: "",
+		             zoneCategory: "",
+		             assigneeId: tour.assignedTo,
+		             stageLabel: "",
+		             createdAt: tour.createdAt,
+		             updatedAt: tour.updatedAt,
+		             createdBy: tour.scheduledBy,
+		             tenantId: tour.tenantId,
+		           };
+	         }
+	         if (!leadMapRef.current[tour.leadId]) {
+	           api.leads.get(tour.leadId).then((fetchedLead) => {
+	             if (isWireLead(fetchedLead)) {
+	               leadMapRef.current[tour.leadId] = fetchedLead;
                const mytTour = toMytTour(
                  tour,
                  leadMapRef.current,
@@ -217,8 +302,8 @@ export function LiveToursBridge() {
           next = prev.map((t) => (t.id === e.payload.tourId ? { ...t, ...patch } : t));
           // Post-process for lead name if still missing
           const existing = next.find(t => t.id === e.payload.tourId);
-          if (existing && existing.leadName === existing.leadId) {
-            ensureLead(existing.id, existing.leadId);
+	          if (existing?.leadId && existing.leadName === existing.leadId) {
+	            ensureLead(existing.id, existing.leadId);
           }
         }
         currentToursRef.current = next;

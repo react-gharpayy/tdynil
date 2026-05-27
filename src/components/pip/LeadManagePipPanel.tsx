@@ -31,15 +31,15 @@ export function LeadManagePipPanel() {
   const logActivity = useIdentityStore((s) => s.logActivity);
   const [bucket, setBucket] = useState<Bucket>("new");
   const [q, setQ] = useState("");
-  const [selected, setSelected] = useState<string | null>(leads[0]?.ulid ?? null);
+  const [selected, setSelected] = useState<string | null>(leads[0]?.id ?? null);
   const [note, setNote] = useState("");
 
   const filtered = useMemo(() => leads
     .filter((l) => bucketFor(l) === bucket)
     .filter((l) => !q || `${l.name} ${l.phoneRaw} ${l.area} ${l.stage}`.toLowerCase().includes(q.toLowerCase()))
     .sort((a, b) => +new Date(b.updatedAt) - +new Date(a.updatedAt)), [leads, bucket, q]);
-  const lead = leads.find((l) => l.ulid === selected) ?? filtered[0];
-  const timeline = lead ? activities.filter((a) => a.ulid === lead.ulid).slice(0, 5) : [];
+  const lead = leads.find((l) => l.id === selected) ?? filtered[0];
+  const timeline = lead ? activities.filter((a) => a.id === lead.id).slice(0, 5) : [];
 
   return (
     <div className="min-h-screen bg-background text-foreground p-3 space-y-3 pip-compact">
@@ -58,7 +58,7 @@ export function LeadManagePipPanel() {
 
       <div className="grid grid-cols-1 gap-2">
         {filtered.slice(0, 8).map((l) => (
-          <button key={l.ulid} onClick={() => setSelected(l.ulid)} className={cn("text-left rounded-lg border p-2", lead?.ulid === l.ulid ? "border-primary bg-primary/5" : "border-border bg-card")}>
+          <button key={l.id} onClick={() => setSelected(l.id)} className={cn("text-left rounded-lg border p-2", lead?.id === l.id ? "border-primary bg-primary/5" : "border-border bg-card")}>
             <div className="flex items-center justify-between gap-2">
               <span className="text-sm font-medium truncate">{l.name}</span>
               <Badge variant="secondary" className="text-[9px] capitalize">{l.state}</Badge>
@@ -81,11 +81,11 @@ export function LeadManagePipPanel() {
           </div>
           <div className="grid grid-cols-2 gap-1">
             {states.map((s) => (
-              <button key={s} onClick={() => setLifecycleState(lead.ulid, s)} className={cn("rounded-md border px-2 py-1 text-[10px]", lead.state === s ? "bg-primary text-primary-foreground border-primary" : "border-border text-muted-foreground")}>{s}</button>
+              <button key={s} onClick={() => setLifecycleState(lead.id, s)} className={cn("rounded-md border px-2 py-1 text-[10px]", lead.state === s ? "bg-primary text-primary-foreground border-primary" : "border-border text-muted-foreground")}>{s}</button>
             ))}
           </div>
           <Textarea value={note} onChange={(e) => setNote(e.target.value)} placeholder="Add quick note…" className="min-h-16 text-xs" />
-          <Button size="sm" className="w-full gap-1" onClick={() => { if (note.trim()) { logActivity(lead.ulid, "note-added", note.trim()); setNote(""); } }}><PlusCircle className="h-3.5 w-3.5" /> Add note</Button>
+          <Button size="sm" className="w-full gap-1" onClick={() => { if (note.trim()) { logActivity(lead.id, "note-added", note.trim()); setNote(""); } }}><PlusCircle className="h-3.5 w-3.5" /> Add note</Button>
           <div className="space-y-1">
             <div className="text-[10px] uppercase tracking-wide text-muted-foreground">Micro timeline</div>
             {timeline.map((a) => <div key={a.id} className="text-[10px] text-muted-foreground flex gap-1"><Clock className="h-3 w-3" /> {a.text}</div>)}

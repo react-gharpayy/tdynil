@@ -272,6 +272,8 @@ export const localAdapter = {
           scheduledBy: USER,
           scheduledAt: p.scheduledAt,
           status: "scheduled",
+          showUp: false,
+          customPropertyName: "",
           bookingSource: p.bookingSource ?? "whatsapp",
           postTour: { outcome: null, confidence: 0, objection: null, objectionNote: "", expectedDecisionAt: null, nextFollowUpAt: null, filledAt: null },
           createdAt: nowISO(),

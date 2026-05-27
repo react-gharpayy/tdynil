@@ -69,13 +69,18 @@ export function generateRooms(): Room[] {
 
 export function generateInitialBlocks(): RoomBlock[] {
   const rooms = generateRooms();
+  const now = Date.now();
   return rooms.slice(0, 6).map((r, i) => ({
     id: `blk-seed-${i}`,
     roomId: r.id,
     propertyId: r.propertyId,
+    leadName: `Seed lead ${i + 1}`,
+    intent: i % 2 === 0 ? 'hard' : 'medium',
+    createdAt: new Date(now - Math.random() * 86400000 * 30).toISOString(),
+    expiresAt: new Date(now + Math.random() * 86400000 * 10).toISOString(),
     checkIn: new Date(Date.now() - Math.random() * 86400000 * 30).toISOString().split('T')[0],
     checkOut: new Date(Date.now() + Math.random() * 86400000 * 10).toISOString().split('T')[0],
-    status: Math.random() > 0.5 ? 'booked' : 'pending',
+    status: Math.random() > 0.5 ? 'active' : 'released',
   }));
 }
 

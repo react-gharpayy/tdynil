@@ -17,3 +17,7 @@ export function formatTime12h(time24?: string) {
   if (hour === 0) hour = 12;
   return `${hour}:${m} ${ampm}`;
 }
+
+export function formatINR(n: number): string {
+  return "₹" + Number(n || 0).toLocaleString("en-IN");
+}

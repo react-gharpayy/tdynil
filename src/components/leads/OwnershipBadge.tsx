@@ -18,7 +18,7 @@ export function OwnershipBadge({ lead, ownerName, compact }: Props) {
   const slotsFull = !!lead.secondaryOwnerId;
 
   const onRequest = () => {
-    const r = requestAccess(lead.ulid);
+    const r = requestAccess(lead.id);
     if (r) toast.success("Access request sent to owner");
     else toast.info("Already pending or you're the owner");
   };

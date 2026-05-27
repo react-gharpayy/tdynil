@@ -16,6 +16,7 @@ const KIND_META: Record<ActivityKind, { icon: typeof Phone; label: string; tone:
   assigned:          { icon: UserPlus,      label: "Assigned",        tone: "bg-sky-500/10 text-sky-600 dark:text-sky-400" },
   field_changed:     { icon: Pencil,        label: "Updated",         tone: "bg-zinc-500/10 text-zinc-600 dark:text-zinc-400" },
   todo_linked:       { icon: Link2,         label: "Todo linked",     tone: "bg-amber-500/10 text-amber-600 dark:text-amber-400" },
+  tour_scheduled:    { icon: Calendar,      label: "Tour scheduled",  tone: "bg-purple-500/10 text-purple-600 dark:text-purple-400" },
   call:              { icon: Phone,         label: "Call",            tone: "bg-blue-500/10 text-blue-600 dark:text-blue-400" },
   email:             { icon: Mail,          label: "Email",           tone: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400" },
   sms:               { icon: MessageSquare, label: "SMS",             tone: "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400" },

@@ -4,6 +4,7 @@ export interface Zone {
   id: string;
   name: string;
   city?: string;
+  area: string;
   areas: string[];
   color?: string;
 }
@@ -60,11 +61,13 @@ export interface TourQualification {
 
 export interface Tour {
   id: string;
+  leadId?: string;
   leadName: string;
   phone: string;
   assignedTo: string;
   assignedToName: string;
   propertyName: string;
+  customPropertyName?: string;
   propertyId?: string;
   area: string;
   zoneId: string;

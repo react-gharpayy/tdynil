@@ -87,7 +87,7 @@ export function PasteToLead({ onCreated }: Props) {
 
   const onForceCreate = () => {
     const lead = createLead(draft);
-    toast.success(`Lead created · ULID ${lead.ulid.slice(0, 12)}…`);
+    toast.success(`Lead created · ULID ${lead.id.slice(0, 12)}…`);
     setShowModal(false);
     setRaw(""); setDraft(emptyDraft()); setParsed(false); setMatch(null);
     onCreated?.(lead);

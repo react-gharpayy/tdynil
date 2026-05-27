@@ -25,13 +25,13 @@ export function RequestAccessSheet() {
       ) : (
         <div className="space-y-2">
           {incoming.map((r) => {
-            const lead = leads.find((l) => l.ulid === r.ulid);
+            const lead = leads.find((l) => l.id === r.id);
             return (
               <div key={r.id} className="flex items-center justify-between gap-2 p-2 rounded-lg bg-muted/30">
                 <div className="min-w-0">
                   <div className="text-sm font-medium">{r.requesterName}</div>
                   <div className="text-[11px] text-muted-foreground">
-                    wants secondary access on {lead?.name ?? r.ulid.slice(0, 8)} ·{" "}
+                    wants secondary access on {lead?.name ?? r.id.slice(0, 8)} ·{" "}
                     {formatDistanceToNow(new Date(r.ts), { addSuffix: true })}
                   </div>
                 </div>

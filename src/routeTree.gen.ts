@@ -26,11 +26,13 @@ import { Route as LeadsRouteImport } from './routes/leads'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as InventoryRouteImport } from './routes/inventory'
 import { Route as InboxRouteImport } from './routes/inbox'
+import { Route as ImpactRouteImport } from './routes/impact'
 import { Route as HelpRouteImport } from './routes/help'
 import { Route as HeatmapRouteImport } from './routes/heatmap'
 import { Route as HealthRouteImport } from './routes/health'
 import { Route as HandoffsRouteImport } from './routes/handoffs'
 import { Route as FollowUpsRouteImport } from './routes/follow-ups'
+import { Route as ExecutionRouteImport } from './routes/execution'
 import { Route as DailyProgressRouteImport } from './routes/daily-progress'
 import { Route as CoachRouteImport } from './routes/coach'
 import { Route as CalendarRouteImport } from './routes/calendar'
@@ -160,6 +162,11 @@ const InboxRoute = InboxRouteImport.update({
   path: '/inbox',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ImpactRoute = ImpactRouteImport.update({
+  id: '/impact',
+  path: '/impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HelpRoute = HelpRouteImport.update({
   id: '/help',
   path: '/help',
@@ -183,6 +190,11 @@ const HandoffsRoute = HandoffsRouteImport.update({
 const FollowUpsRoute = FollowUpsRouteImport.update({
   id: '/follow-ups',
   path: '/follow-ups',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExecutionRoute = ExecutionRouteImport.update({
+  id: '/execution',
+  path: '/execution',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DailyProgressRoute = DailyProgressRouteImport.update({
@@ -407,11 +419,13 @@ export interface FileRoutesByFullPath {
   '/calendar': typeof CalendarRoute
   '/coach': typeof CoachRoute
   '/daily-progress': typeof DailyProgressRoute
+  '/execution': typeof ExecutionRoute
   '/follow-ups': typeof FollowUpsRoute
   '/handoffs': typeof HandoffsRoute
   '/health': typeof HealthRoute
   '/heatmap': typeof HeatmapRoute
   '/help': typeof HelpRoute
+  '/impact': typeof ImpactRoute
   '/inbox': typeof InboxRoute
   '/inventory': typeof InventoryRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -474,11 +488,13 @@ export interface FileRoutesByTo {
   '/calendar': typeof CalendarRoute
   '/coach': typeof CoachRoute
   '/daily-progress': typeof DailyProgressRoute
+  '/execution': typeof ExecutionRoute
   '/follow-ups': typeof FollowUpsRoute
   '/handoffs': typeof HandoffsRoute
   '/health': typeof HealthRoute
   '/heatmap': typeof HeatmapRoute
   '/help': typeof HelpRoute
+  '/impact': typeof ImpactRoute
   '/inbox': typeof InboxRoute
   '/inventory': typeof InventoryRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -542,11 +558,13 @@ export interface FileRoutesById {
   '/calendar': typeof CalendarRoute
   '/coach': typeof CoachRoute
   '/daily-progress': typeof DailyProgressRoute
+  '/execution': typeof ExecutionRoute
   '/follow-ups': typeof FollowUpsRoute
   '/handoffs': typeof HandoffsRoute
   '/health': typeof HealthRoute
   '/heatmap': typeof HeatmapRoute
   '/help': typeof HelpRoute
+  '/impact': typeof ImpactRoute
   '/inbox': typeof InboxRoute
   '/inventory': typeof InventoryRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -611,11 +629,13 @@ export interface FileRouteTypes {
     | '/calendar'
     | '/coach'
     | '/daily-progress'
+    | '/execution'
     | '/follow-ups'
     | '/handoffs'
     | '/health'
     | '/heatmap'
     | '/help'
+    | '/impact'
     | '/inbox'
     | '/inventory'
     | '/leaderboard'
@@ -678,11 +698,13 @@ export interface FileRouteTypes {
     | '/calendar'
     | '/coach'
     | '/daily-progress'
+    | '/execution'
     | '/follow-ups'
     | '/handoffs'
     | '/health'
     | '/heatmap'
     | '/help'
+    | '/impact'
     | '/inbox'
     | '/inventory'
     | '/leaderboard'
@@ -745,11 +767,13 @@ export interface FileRouteTypes {
     | '/calendar'
     | '/coach'
     | '/daily-progress'
+    | '/execution'
     | '/follow-ups'
     | '/handoffs'
     | '/health'
     | '/heatmap'
     | '/help'
+    | '/impact'
     | '/inbox'
     | '/inventory'
     | '/leaderboard'
@@ -813,11 +837,13 @@ export interface RootRouteChildren {
   CalendarRoute: typeof CalendarRoute
   CoachRoute: typeof CoachRoute
   DailyProgressRoute: typeof DailyProgressRoute
+  ExecutionRoute: typeof ExecutionRoute
   FollowUpsRoute: typeof FollowUpsRoute
   HandoffsRoute: typeof HandoffsRoute
   HealthRoute: typeof HealthRoute
   HeatmapRoute: typeof HeatmapRoute
   HelpRoute: typeof HelpRoute
+  ImpactRoute: typeof ImpactRoute
   InboxRoute: typeof InboxRoute
   InventoryRoute: typeof InventoryRoute
   LeaderboardRoute: typeof LeaderboardRoute
@@ -992,6 +1018,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InboxRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/impact': {
+      id: '/impact'
+      path: '/impact'
+      fullPath: '/impact'
+      preLoaderRoute: typeof ImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/help': {
       id: '/help'
       path: '/help'
@@ -1025,6 +1058,13 @@ declare module '@tanstack/react-router' {
       path: '/follow-ups'
       fullPath: '/follow-ups'
       preLoaderRoute: typeof FollowUpsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/execution': {
+      id: '/execution'
+      path: '/execution'
+      fullPath: '/execution'
+      preLoaderRoute: typeof ExecutionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/daily-progress': {
@@ -1372,11 +1412,13 @@ const rootRouteChildren: RootRouteChildren = {
   CalendarRoute: CalendarRoute,
   CoachRoute: CoachRoute,
   DailyProgressRoute: DailyProgressRoute,
+  ExecutionRoute: ExecutionRoute,
   FollowUpsRoute: FollowUpsRoute,
   HandoffsRoute: HandoffsRoute,
   HealthRoute: HealthRoute,
   HeatmapRoute: HeatmapRoute,
   HelpRoute: HelpRoute,
+  ImpactRoute: ImpactRoute,
   InboxRoute: InboxRoute,
   InventoryRoute: InventoryRoute,
   LeaderboardRoute: LeaderboardRoute,

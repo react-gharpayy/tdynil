@@ -39,7 +39,7 @@ export function DuplicateModal({ open, onClose, result, onForceCreate, onUseExis
         {candidates.length > 0 && (
           <div className="space-y-2 max-h-72 overflow-y-auto">
             {candidates.map((c) => (
-              <div key={c.lead.ulid} className="rounded-lg border border-border p-3 bg-muted/30">
+              <div key={c.lead.id} className="rounded-lg border border-border p-3 bg-muted/30">
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
                     <div className="font-medium text-sm">{c.lead.name}</div>

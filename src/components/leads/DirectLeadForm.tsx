@@ -23,7 +23,6 @@ import { useOrgMembers, useOrgZones } from "@/hooks/useOrgDirectory";
 import { useAuthUser } from "@/lib/auth-store";
 import { dispatch } from "@/lib/api/command-bus";
 import { useApp } from "@/lib/store";
-import type { LeadStage, Intent } from "@/lib/types";
 
 interface Props {
   onCreated?: (lead: UnifiedLead) => void;
@@ -31,12 +30,12 @@ interface Props {
 
 type Quality = "hot" | "good" | "bad";
 
-interface Draft extends ParsedLeadDraft {
+type Draft = Omit<ParsedLeadDraft, "quality"> & {
   quality: Quality | "";
   zoneBucket: string;
   assigneeId: string;
   stage: string;
-}
+};
 
 const STAGES = [
   "new",
@@ -130,7 +129,11 @@ export function DirectLeadForm({ onCreated }: Props) {
       toast.error(`Fix the highlighted fields: ${first}`);
       return;
     }
-    const result = checkDuplicates(draft);
+    const parsedDraft: ParsedLeadDraft = {
+      ...draft,
+      quality: draft.quality || null,
+    };
+    const result = checkDuplicates(parsedDraft);
     if (result.type === "exact" || result.type === "strong") {
       setMatch(result);
       setShowModal(true);
@@ -178,15 +181,15 @@ export function DirectLeadForm({ onCreated }: Props) {
       return;
     }
 
-    const newLeadId = (result as any).data?.leadId;
-
     // Mirror locally so dedup hints stay current this session
-    const identityLead = createLead(draft);
+    const parsedDraft: ParsedLeadDraft = {
+      ...draft,
+      quality: draft.quality || null,
+    };
+    const identityLead = createLead(parsedDraft);
 
     // Optimistically add to the main app store for immediate visibility
-    const now = new Date().toISOString();
     addLead({
-      id: newLeadId || identityLead.ulid,
       name: draft.name.trim(),
       phone: `+91${phoneClean}`,
       source: "direct-form",
@@ -194,26 +197,8 @@ export function DirectLeadForm({ onCreated }: Props) {
       moveInDate: draft.moveIn,
       preferredArea: areasArr[0] ?? draft.location.trim(),
       assignedTcmId: assignee?.id ?? "",
-      stage: (draft.stage as LeadStage) || "new",
-      intent: (draft.quality === "hot" ? "hot" : draft.quality === "bad" ? "cold" : "warm") as Intent,
-      confidence: draft.quality === "hot" ? 90 : draft.quality === "good" ? 70 : draft.quality === "bad" ? 30 : 50,
+      intent: draft.quality === "hot" ? "hot" : draft.quality === "bad" ? "cold" : "warm",
       tags: [],
-      nextFollowUpAt: null,
-      responseSpeedMins: 0,
-      createdAt: now,
-      updatedAt: now,
-      email: draft.email.trim(),
-      areas: areasArr,
-      fullAddress: draft.fullAddress.trim(),
-      type: draft.type,
-      room: draft.room,
-      need: draft.need,
-      inBLR: draft.inBLR,
-      quality: draft.quality as Quality,
-      specialReqs: draft.specialReqs.trim(),
-      notes: "",
-      zoneCategory: draft.zoneBucket,
-      stageLabel: draft.stage,
     });
 
     toast.success(`Lead saved · ${draft.name.trim()}`);
