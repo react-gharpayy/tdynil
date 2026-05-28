@@ -19,6 +19,7 @@ import { registerZoneRoutes } from "./modules/zones/routes.js";
 import { registerPropertyRoutes } from "./modules/properties/routes.js";
 import { registerActivityFeedRoutes } from "./modules/activity/feed-routes.js";
 import { registerStatsRoutes } from "./modules/stats/routes.js";
+import { registerQuotationsRoutes } from "./modules/quotations/routes.js";
 import { ensureDefaultSuperAdmin } from "./auth/auth.js";
 
 async function main() {
@@ -86,6 +87,7 @@ h1{margin:0 0 .5rem;font-size:1.5rem;color:#34d399}p{margin:.25rem 0;color:#94a3
   registerPropertyRoutes(app);
   registerActivityFeedRoutes(app);
   registerStatsRoutes(app);
+  registerQuotationsRoutes(app);
 
   // Idempotent — bootstraps the canonical Super Admin if missing.
   await ensureDefaultSuperAdmin().catch((err) => app.log.warn({ err }, "ensureDefaultSuperAdmin failed"));

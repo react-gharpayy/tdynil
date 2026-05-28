@@ -1,9 +1,18 @@
 /**
  * Base API Client wrapper using native fetch.
- * Handles auth token injection, error parsing, and base URLs.
+ * Handles auth token injection, cookie auth, error parsing, and base URLs.
  */
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "/api/v1";
+const RAW_API_BASE_URL = (import.meta.env.VITE_API_URL as string | undefined)?.trim() || "";
+
+function normalizeApiBaseUrl(value: string): string {
+  const trimmed = value.replace(/\/$/, "");
+  if (!trimmed) return "/api/v1";
+  if (/\/api(?:\/v1)?$/.test(trimmed)) return trimmed;
+  return `${trimmed}/api/v1`;
+}
+
+const API_BASE_URL = normalizeApiBaseUrl(RAW_API_BASE_URL);
 
 interface RequestOptions extends RequestInit {
   params?: Record<string, string | number | boolean | undefined>;
@@ -22,12 +31,12 @@ class ApiError extends Error {
 }
 
 /**
- * Get JWT token from local storage or cookie.
- * Assumes 'gharpayy_auth_token' is set during login.
+ * Get JWT token from local storage.
+ * Supports both token keys used across the app while the auth flow is being unified.
  */
 function getAuthToken(): string | null {
   if (typeof window === "undefined") return null;
-  return localStorage.getItem("gharpayy_auth_token");
+  return localStorage.getItem("gharpayy.access_token") ?? localStorage.getItem("gharpayy_auth_token");
 }
 
 async function fetchClient<T>(endpoint: string, options: RequestOptions = {}): Promise<T> {
@@ -57,6 +66,7 @@ async function fetchClient<T>(endpoint: string, options: RequestOptions = {}): P
 
   const config: RequestInit = {
     ...customConfig,
+    credentials: "include",
     headers: {
       ...defaultHeaders,
       ...headers,
