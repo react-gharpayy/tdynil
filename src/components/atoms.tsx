@@ -11,7 +11,7 @@ export function IntentChip({ intent, className }: { intent: Intent; className?: 
   return (
     <span
       className={cn(
-        "inline-flex items-center justify-center gap-1 w-[58px] rounded-md border py-0.5 text-[10px] font-semibold uppercase tracking-wide",
+        "inline-flex items-center justify-center gap-1 w-14.5 rounded-md border py-0.5 text-[10px] font-semibold uppercase tracking-wide",
         map[intent],
         className,
       )}

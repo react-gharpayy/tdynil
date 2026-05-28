@@ -29,6 +29,7 @@ import { PostVisitGate } from "./crm10x/PostVisitGate";
 import { CommitmentBanner } from "./crm10x/CommitmentBanner";
 import { ObjectionTag } from "./crm10x/ObjectionLogger";
 import { LeadDossierPanel } from "./crm10x/LeadDossierPanel";
+import { QuotationBuilder } from "./crm10x/QuotationBuilder";
 import {
   Phone, MessageSquare, Calendar as CalendarIcon, Tag, ClipboardCheck,
   AlertTriangle, CheckCircle2, X, Activity as ActivityIcon, MapPin,
@@ -181,7 +182,7 @@ export function LeadControlPanel() {
     keyConcern: "",
     tourType: "physical",
   });
-  const [tab, setTab] = useState("control");
+  const [tab, setTab] = useState("dossier");
   const [, mounted] = useMountedNow();
 
   // Note state
@@ -218,9 +219,9 @@ export function LeadControlPanel() {
       workLocation: lead.preferredArea || "",
       keyConcern: lead.tags.join(", "),
     }));
-    // Default to the Tour tab when opening a lead. If there's a pending post-tour,
-    // prefer the post form; otherwise always show the tour view by default.
-    setTab(pendingPostTour ? "post" : "tour");
+    // Default to the Dossier tab when opening a lead. If there's a pending post-tour,
+    // prefer the post form; otherwise show the dossier view by default.
+    setTab(pendingPostTour ? "post" : "dossier");
   }, [
     authUser?.role,
     currentMemberId,
@@ -475,16 +476,17 @@ export function LeadControlPanel() {
         <div className="flex-1 overflow-y-auto scrollbar-thin">
           <Tabs value={tab} onValueChange={setTab} className="px-5 py-4">
             <TabsList className="flex h-auto w-full overflow-x-auto gap-1 scrollbar-micro justify-start">
+                <TabsTrigger value="dossier" className="text-xs shrink-0 whitespace-nowrap">Dossier</TabsTrigger>
                 <TabsTrigger
                   value="tour"
                   className={`text-xs shrink-0 whitespace-nowrap ${tab === "tour" ? "rounded-md px-2 py-1 bg-accent/10 text-accent ring-1 ring-accent/20" : ""}`}
                 >
                   Tour
                 </TabsTrigger>
+                <TabsTrigger value="quote" className="text-xs shrink-0 whitespace-nowrap">Quote</TabsTrigger>
                 <TabsTrigger value="best-fit" className="text-xs shrink-0 whitespace-nowrap">Best Fit</TabsTrigger>
                 <TabsTrigger value="control" className="text-xs shrink-0 whitespace-nowrap">Control</TabsTrigger>
                 <TabsTrigger value="details" className="text-xs shrink-0 whitespace-nowrap">Details</TabsTrigger>
-                <TabsTrigger value="dossier" className="text-xs shrink-0 whitespace-nowrap">Dossier</TabsTrigger>
                 <TabsTrigger value="handoff" className="text-xs shrink-0 whitespace-nowrap">Handoff</TabsTrigger>
                 <TabsTrigger value="log" className="text-xs shrink-0 whitespace-nowrap">Log</TabsTrigger>
                 <TabsTrigger value="post" className="text-xs shrink-0 whitespace-nowrap">
@@ -543,6 +545,10 @@ export function LeadControlPanel() {
 
             <TabsContent value="dossier" className="space-y-4 pt-4">
               <LeadDossierPanel lead={lead} />
+            </TabsContent>
+
+            <TabsContent value="quote" className="space-y-4 pt-4">
+              <QuotationBuilder lead={lead} />
             </TabsContent>
 
             <TabsContent value="best-fit" className="space-y-4 pt-4">
