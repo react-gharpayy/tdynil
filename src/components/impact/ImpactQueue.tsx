@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type ClipboardEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type ClipboardEvent } from "react";
 import { cn } from "@/lib/utils";
 import { PGS } from "@/property-genius/data/pgs";
 import type { PG } from "@/types/entities";
@@ -16,7 +16,14 @@ import {
   allCatalogProperties,
   type CatalogProperty,
 } from "@/lib/crm10x/property-catalog";
-import { isTodayIST } from "@/lib/crm10x/dates";
+import { fmtTourScheduleLabel, isTodayIST } from "@/lib/crm10x/dates";
+import {
+  classifyTourBand,
+  TOUR_BAND_META,
+  TOUR_BAND_ORDER,
+  tourTimeHint as buildTourTimeHint,
+  type TourQueueBand,
+} from "@/lib/crm10x/tour-queue-bands";
 import {
   IMPACT_TEMPLATES, renderImpactTemplate,
   type ImpactScenario, type ImpactTpl, type ImpactTplCtx,
@@ -226,9 +233,12 @@ export function ImpactQueue() {
     nba: NextBestAction;
     score: number;
     column: ColumnKey;
+    tourBand?: TourQueueBand;
+    tourTimeHint?: string;
   };
 
   const enriched: Enriched[] = useMemo(() => {
+    const at = typeof window !== "undefined" ? Date.now() : 0;
     const tFilter = (lead: Lead) =>
       (tcmFilter === "all" || lead.assignedTcmId === tcmFilter) &&
       (intent === "all" || lead.intent === intent) &&
@@ -255,20 +265,33 @@ export function ImpactQueue() {
 
       const nba = computeNBA(lead, openTour, lastQuote);
       const { score } = scoreLead(lead, openTour, lastQuote);
-      return { lead, openTour, lastQuote, nba, score, column };
+      const tourBand =
+        column === "scheduled" || column === "onTour"
+          ? classifyTourBand(column, openTour, lead, nba, at)
+          : undefined;
+      const tourTimeHint =
+        openTour && (column === "scheduled" || column === "onTour")
+          ? buildTourTimeHint(openTour.scheduledAt, at) ?? undefined
+          : undefined;
+      return { lead, openTour, lastQuote, nba, score, column, tourBand, tourTimeHint };
     });
   }, [leads, tours, quotes, tcmFilter, query, intent, tick]);
 
   /* Auto-promote tour-scheduled → on-tour when tour day is today (IST). */
+  const autoPromotedRef = useRef(new Set<string>());
   useEffect(() => {
     const due = leads.filter((lead) => {
-      if (lead.stage !== "tour-scheduled") return false;
+      if (lead.stage === "on-tour" || autoPromotedRef.current.has(lead.id)) return false;
       const openTour = tours.find((t) => t.leadId === lead.id && t.status === "scheduled");
       return openTour && isTodayIST(openTour.scheduledAt);
     });
     for (const lead of due) {
       const tour = tours.find((t) => t.leadId === lead.id && t.status === "scheduled");
-      if (tour) void markTourStarted(tour.id).catch(() => {});
+      if (!tour) continue;
+      autoPromotedRef.current.add(lead.id);
+      void markTourStarted(tour.id).catch(() => {
+        autoPromotedRef.current.delete(lead.id);
+      });
     }
   }, [leads, tours, tick, markTourStarted]);
 
@@ -294,11 +317,24 @@ export function ImpactQueue() {
       inbox: [], scheduled: [], onTour: [], quoted: [], booked: [],
     };
     filtered.forEach((e) => b[e.column].push(e));
-    Object.keys(b).forEach((k) => {
-      b[k as ColumnKey].sort((a, b) => b.score - a.score);
+    const at = Date.now();
+    (["scheduled", "onTour"] as ColumnKey[]).forEach((key) => {
+      b[key].sort((a, bb) => {
+        const bandA = a.tourBand ?? classifyTourBand(key, a.openTour, a.lead, a.nba, at);
+        const bandB = bb.tourBand ?? classifyTourBand(key, bb.openTour, bb.lead, bb.nba, at);
+        const orderA = TOUR_BAND_ORDER.indexOf(bandA);
+        const orderB = TOUR_BAND_ORDER.indexOf(bandB);
+        if (orderA !== orderB) return orderA - orderB;
+        const ta = a.openTour ? +new Date(a.openTour.scheduledAt) : Infinity;
+        const tb = bb.openTour ? +new Date(bb.openTour.scheduledAt) : Infinity;
+        return ta - tb;
+      });
+    });
+    (["inbox", "quoted", "booked"] as ColumnKey[]).forEach((key) => {
+      b[key].sort((a, bb) => bb.score - a.score);
     });
     return b;
-  }, [filtered]);
+  }, [filtered, tick]);
 
   /* --------- live counters --------- */
   const counters = useMemo(() => {
@@ -463,24 +499,15 @@ export function ImpactQueue() {
                   {boardBuckets[c.key].length}
                 </span>
               </div>
-              <div className="space-y-2">
-                {boardBuckets[c.key].length === 0 && (
-                  <div className="text-[11px] italic text-muted-foreground px-2 py-6 text-center">
-                    Nothing here.
-                  </div>
-                )}
-                {boardBuckets[c.key].map((e) => (
-                  <LeadRow
-                    key={e.lead.id}
-                    enriched={e}
-                    tcms={tcms}
-                    properties={properties}
-                    compact
-                    autoOpen={focusLeadId === e.lead.id}
-                    onAutoOpenConsumed={() => setFocusLeadId(null)}
-                  />
-                ))}
-              </div>
+              <BoardColumnBody
+                columnKey={c.key}
+                items={boardBuckets[c.key]}
+                tcms={tcms}
+                properties={properties}
+                nowMs={tick ? Date.now() : 0}
+                focusLeadId={focusLeadId}
+                onFocusConsumed={() => setFocusLeadId(null)}
+              />
               </div>
             ))}
           </div>
@@ -664,12 +691,121 @@ function Chip({
 }
 
 /* ================================================================== */
+/*  Board column — action-queue bands for tour lanes                   */
+/* ================================================================== */
+
+function BoardColumnBody({
+  columnKey,
+  items,
+  tcms,
+  properties,
+  nowMs,
+  focusLeadId,
+  onFocusConsumed,
+}: {
+  columnKey: ColumnKey;
+  items: Enriched[];
+  tcms: TCM[];
+  properties: Property[];
+  nowMs: number;
+  focusLeadId: string | null;
+  onFocusConsumed: () => void;
+}) {
+  const useBands = columnKey === "scheduled" || columnKey === "onTour";
+
+  const grouped = useMemo(() => {
+    const map: Record<TourQueueBand, Enriched[]> = {
+      fire: [], confirm: [], soon: [], later: [],
+    };
+    if (!useBands) return map;
+    const at = nowMs || Date.now();
+    for (const e of items) {
+      const band =
+        e.tourBand ??
+        classifyTourBand(columnKey as "scheduled" | "onTour", e.openTour, e.lead, e.nba, at);
+      map[band].push(e);
+    }
+    for (const band of TOUR_BAND_ORDER) {
+      map[band].sort((a, b) => {
+        const ta = a.openTour ? +new Date(a.openTour.scheduledAt) : Infinity;
+        const tb = b.openTour ? +new Date(b.openTour.scheduledAt) : Infinity;
+        return ta - tb;
+      });
+    }
+    return map;
+  }, [items, columnKey, useBands, nowMs]);
+
+  if (items.length === 0) {
+    return (
+      <div className="text-[11px] italic text-muted-foreground px-2 py-6 text-center">
+        Nothing here.
+      </div>
+    );
+  }
+
+  if (!useBands) {
+    return (
+      <div className="space-y-2">
+        {items.map((e) => (
+          <LeadRow
+            key={e.lead.id}
+            enriched={e}
+            tcms={tcms}
+            properties={properties}
+            compact
+            autoOpen={focusLeadId === e.lead.id}
+            onAutoOpenConsumed={onFocusConsumed}
+          />
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-2">
+      {TOUR_BAND_ORDER.map((band) => {
+        const list = grouped[band];
+        if (list.length === 0) return null;
+        const meta = TOUR_BAND_META[band];
+        return (
+          <section key={band} className={`rounded-md border ${meta.border} overflow-hidden`}>
+            <div className={`px-2 py-1.5 ${meta.header}`}>
+              <div className="text-[9px] uppercase tracking-wider font-bold">
+                {meta.label} · {list.length}
+              </div>
+              <div className="text-[8px] font-normal normal-case opacity-90 leading-tight mt-0.5">
+                {meta.desc}
+              </div>
+            </div>
+            <div className="space-y-1.5 p-1.5 bg-card/60">
+              {list.map((e) => (
+                <LeadRow
+                  key={e.lead.id}
+                  enriched={e}
+                  tcms={tcms}
+                  properties={properties}
+                  compact
+                  autoOpen={focusLeadId === e.lead.id}
+                  onAutoOpenConsumed={onFocusConsumed}
+                />
+              ))}
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  );
+}
+
+/* ================================================================== */
 /*  Lead row — collapses to summary, expands to Command Mode           */
 /* ================================================================== */
 
 type EnrichedLite = {
   lead: Lead; openTour?: Tour; lastQuote?: Quotation;
   nba: NextBestAction; score: number; column: ColumnKey;
+  tourBand?: TourQueueBand;
+  tourTimeHint?: string;
 };
 
 function LeadRow({
@@ -678,7 +814,7 @@ function LeadRow({
   enriched: EnrichedLite; rank?: number; tcms: TCM[]; properties: Property[]; compact?: boolean;
   autoOpen?: boolean; onAutoOpenConsumed?: () => void;
 }) {
-  const { lead, openTour, lastQuote, nba, column } = enriched;
+  const { lead, openTour, lastQuote, nba, column, tourTimeHint } = enriched;
   const [open, setOpen] = useState(false);
   const tcm = tcms.find((t) => t.id === lead.assignedTcmId);
   const catalogProperty = openTour
@@ -720,6 +856,17 @@ function LeadRow({
             {!compact && <><span>·</span><span>{formatINR(lead.budget)}</span></>}
             {tcm && !compact && <><span>·</span><span>{tcm.name.split(" ")[0]}</span></>}
           </div>
+          {openTour && (
+            <div className="mt-1 space-y-0.5">
+              <div className="text-[10px] font-semibold text-accent flex items-center gap-1">
+                <Calendar className="h-2.5 w-2.5 shrink-0" />
+                {fmtTourScheduleLabel(openTour.scheduledAt)}
+              </div>
+              {tourTimeHint && (
+                <div className="text-[9px] text-muted-foreground">{tourTimeHint}</div>
+              )}
+            </div>
+          )}
           {/* NBA chip — always visible so users see the next move at a glance */}
           <div className={`mt-1.5 inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded border ${pressureColor(nba.pressure)}`}>
             <Sparkles className="h-2.5 w-2.5" /> {nba.label}
