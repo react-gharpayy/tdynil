@@ -79,16 +79,49 @@ export function renderQuotationMessage(d: QuotationDraft): string {
 let mockQuotations: Quotation[] = [];
 const uid = () => `qt-${Math.random().toString(36).slice(2, 9)}`;
 
+function normalizeQuotation(raw: Record<string, unknown>): Quotation {
+  const id = String(raw.id ?? raw._id ?? "");
+  return {
+    id,
+    leadId: String(raw.leadId ?? ""),
+    tcmId: raw.tcmId ? String(raw.tcmId) : undefined,
+    propertyId: raw.propertyId ? String(raw.propertyId) : undefined,
+    propertyName: String(raw.propertyName ?? ""),
+    roomType: String(raw.roomType ?? ""),
+    roomNumber: raw.roomNumber ? String(raw.roomNumber) : undefined,
+    actualRent: Number(raw.actualRent ?? 0),
+    discountedPrice: Number(raw.discountedPrice ?? 0),
+    deposit: Number(raw.deposit ?? 0),
+    prebook: Number(raw.prebook ?? 0),
+    maintenance: Number(raw.maintenance ?? 0),
+    maintenanceType: (raw.maintenanceType as Quotation["maintenanceType"]) ?? "One-Time",
+    lockIn: String(raw.lockIn ?? ""),
+    notice: String(raw.notice ?? ""),
+    validityMinutes: Number(raw.validityMinutes ?? 20),
+    validUntilISO: String(raw.validUntilISO ?? new Date().toISOString()),
+    message: String(raw.message ?? ""),
+    status: (raw.status as QuotationStatus) ?? "sent",
+    sentAt: String(raw.sentAt ?? new Date().toISOString()),
+    paidAt: raw.paidAt ? String(raw.paidAt) : undefined,
+    paymentNote: raw.paymentNote ? String(raw.paymentNote) : undefined,
+  };
+}
+
+function normalizeList(raw: unknown): Quotation[] {
+  const list = Array.isArray(raw) ? raw : [];
+  return list.map((item) => normalizeQuotation(item as Record<string, unknown>)).filter((q) => q.id);
+}
+
 export function useQuotationsQuery(leadId?: string) {
   return useQuery({
     queryKey: ["quotations", leadId ?? "all"],
     queryFn: async () => {
       try {
-        const res = await apiClient.get<Quotation[]>(`/quotations`, leadId ? { params: { leadId } } : undefined);
-        return res;
-      } catch (e) {
-        if (!leadId) return mockQuotations;
-        return mockQuotations.filter(q => q.leadId === leadId);
+        const res = await apiClient.get<unknown>(`/quotations`, leadId ? { params: { leadId } } : undefined);
+        return normalizeList(res);
+      } catch {
+        const local = leadId ? mockQuotations.filter((q) => q.leadId === leadId) : mockQuotations;
+        return local;
       }
     },
   });
@@ -107,8 +140,9 @@ export function useAddQuotation() {
   return useMutation({
     mutationFn: async (q: Omit<Quotation, "id" | "status" | "sentAt">) => {
       try {
-        return await apiClient.post<Quotation>(`/quotations`, q);
-      } catch (e) {
+        const res = await apiClient.post<Record<string, unknown>>(`/quotations`, q);
+        return normalizeQuotation(res);
+      } catch {
         const rec: Quotation = {
           ...q,
           id: uid(),

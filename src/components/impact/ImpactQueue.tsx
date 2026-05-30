@@ -1564,7 +1564,7 @@ function QuotationDialog({ lead, label = "Send quotation", variant = "default" }
       </DialogTrigger>
       <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
         <DialogHeader><DialogTitle className="text-sm">Quotation · {lead.name}</DialogTitle></DialogHeader>
-        <QuotationBuilder lead={lead} />
+        <QuotationBuilder lead={lead} embedded onSent={() => setOpen(false)} />
       </DialogContent>
     </Dialog>
   );
