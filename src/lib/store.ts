@@ -4,9 +4,10 @@ import type {
   PostTourUpdate, ClientDecision, LeadStage, Intent,
   HandoffMessage, ActiveSequence, SequenceKind, Booking,
 } from "./types";
-import { ACTIVITIES, FOLLOWUPS, PROPERTIES, TCMS, TOURS, HANDOFFS, SEQUENCES_INIT } from "./mock-data";
+import { ACTIVITIES, FOLLOWUPS, PROPERTIES, TCMS, HANDOFFS, SEQUENCES_INIT } from "./mock-data";
 import { autoAssign as autoAssignFn } from "./routing";
 import { api } from "@/lib/api/client";
+import { isTodayIST } from "@/lib/crm10x/dates";
 import { pushObjectionToOwner, pushTourViewToOwner } from "@/owner/team-bridge";
 import { emit as emitConnector } from "./connectors";
 import { personName } from "./people";
@@ -69,6 +70,7 @@ interface AppState {
 
   addLead: (input: AddLeadInput) => Lead;
   setLeads: (leads: Lead[]) => void;
+  setTours: (tours: Tour[]) => void;
   setLeadStage: (leadId: string, stage: LeadStage) => Promise<void>;
   setLeadIntent: (leadId: string, intent: Intent) => void;
   setLeadFollowUp: (leadId: string, dueAt: string, priority: FollowUp["priority"], reason?: string) => void;
@@ -117,11 +119,9 @@ export const useApp = create<AppState>((set, get) => ({
 
   tcms: TCMS,
   properties: PROPERTIES,
-  // Leads are now hydrated from the VPS Mongo backend by <LiveLeadsBridge/>.
-  // Other entities (tours, follow-ups, handoffs, sequences, bookings) still
-  // use mock data until their backend modules are wired.
+  // Leads + tours hydrated from Mongo by LiveLeadsBridge / LiveToursAppBridge.
   leads: [],
-  tours: TOURS,
+  tours: [],
   activities: ACTIVITIES,
   followUps: FOLLOWUPS,
   handoffs: HANDOFFS,
@@ -165,6 +165,7 @@ export const useApp = create<AppState>((set, get) => ({
     return lead;
   },
   setLeads: (leads: Lead[]) => set({ leads }),
+  setTours: (tours: Tour[]) => set({ tours }),
 
   setLeadStage: async (leadId, stage) => {
     const prevLead = get().leads.find((l) => l.id === leadId);
@@ -285,7 +286,14 @@ export const useApp = create<AppState>((set, get) => ({
         ? s.tours.map((x) => (x.id === tour.id ? { ...x, ...tour } : x))
         : [tour, ...s.tours],
       leads: s.leads.map((l) =>
-        l.id === leadId ? { ...l, stage: "tour-scheduled", updatedAt: new Date().toISOString() } : l,
+        l.id === leadId
+          ? {
+              ...l,
+              stage: isTodayIST(scheduledAt) ? "on-tour" : "tour-scheduled",
+              tourDate: scheduledAt,
+              updatedAt: new Date().toISOString(),
+            }
+          : l,
       ),
     }));
     pushActivity(set, get, {
@@ -310,6 +318,15 @@ export const useApp = create<AppState>((set, get) => ({
           ? [{ role: "tcm", id: tcmId }]
           : undefined,
     });
+    if (isTodayIST(scheduledAt)) {
+      await api.command({
+        _id: uid("c"),
+        type: "cmd.lead.change_stage",
+        issuedAt: new Date().toISOString(),
+        payload: { leadId, to: "on-tour", tourId: tour.id },
+      });
+      pushActivity(set, get, { kind: "tour_started", actor: tcmId, leadId, tourId: tour.id, text: "Tour day — auto moved to on tour" });
+    }
     return tour;
   },
 
@@ -337,13 +354,30 @@ export const useApp = create<AppState>((set, get) => ({
       issuedAt: new Date().toISOString(),
       payload: { tourId, scheduledAt },
     });
+    const t = get().tours.find((x) => x.id === tourId);
     set((s) => ({
       tours: s.tours.map((x) =>
         x.id === tourId ? { ...x, scheduledAt, updatedAt: new Date().toISOString() } : x,
       ),
+      leads: t
+        ? s.leads.map((l) =>
+            l.id === t.leadId
+              ? {
+                  ...l,
+                  stage: isTodayIST(scheduledAt) ? "on-tour" : l.stage === "on-tour" ? "tour-scheduled" : l.stage,
+                  tourDate: scheduledAt,
+                  updatedAt: new Date().toISOString(),
+                }
+              : l,
+          )
+        : s.leads,
     }));
-    const t = get().tours.find((x) => x.id === tourId);
-    if (t) pushActivity(set, get, { kind: "tour_scheduled", actor: get().role, leadId: t.leadId, tourId, text: "Tour rescheduled" });
+    if (t) {
+      pushActivity(set, get, { kind: "tour_scheduled", actor: get().role, leadId: t.leadId, tourId, text: "Tour rescheduled" });
+      if (isTodayIST(scheduledAt) && t.status === "scheduled") {
+        await get().markTourStarted(tourId);
+      }
+    }
   },
 
   completeTour: async (tourId) => {
