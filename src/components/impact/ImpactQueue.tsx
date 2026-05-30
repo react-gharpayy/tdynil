@@ -3,6 +3,8 @@ import { cn } from "@/lib/utils";
 import { PGS } from "@/property-genius/data/pgs";
 import type { PG } from "@/types/entities";
 import { LeadPropertyDossier } from "@/components/impact/LeadPropertyDossier";
+import { ImpactHardActionsBar } from "@/components/impact/ImpactHardActionsBar";
+import { classifyImpactPriority, IMPACT_PRIORITY_META } from "@/lib/crm10x/impact-hard-actions";
 import { useApp } from "@/lib/store";
 import { api } from "@/lib/api/client";
 import { useQuotationsQuery, useSetQuotationStatus, formatINR, type Quotation } from "@/lib/crm10x/quotations";
@@ -211,6 +213,7 @@ export function ImpactQueue() {
   const [onlyQuotePending, setOnlyQuotePending] = useState(false);
   const [view, setView] = useState<ViewMode>("board");
   const [focusLeadId, setFocusLeadId] = useState<string | null>(null);
+  const [quickAddOpen, setQuickAddOpen] = useState(false);
 
   /* --------- 10x live tick: re-rank every 60s --------- */
   // Start at 0 on SSR + first client render to avoid hydration mismatches.
@@ -365,6 +368,16 @@ export function ImpactQueue() {
 
   return (
     <div className="space-y-3">
+      <ImpactHardActionsBar
+        enriched={stackSorted}
+        tcms={tcms}
+        onPickLead={(leadId, name) => {
+          setQuery(name);
+          setFocusLeadId(leadId);
+        }}
+        onAddLead={() => setQuickAddOpen(true)}
+      />
+
       {/* ---------------- 10x Command Bar ---------------- */}
       <TenXCommandBar
         lastRerank={lastRerank}
@@ -398,7 +411,11 @@ export function ImpactQueue() {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <QuickAddLead defaultTcmId={tcmFilter !== "all" ? tcmFilter : currentTcmId} />
+          <QuickAddLead
+            defaultTcmId={tcmFilter !== "all" ? tcmFilter : currentTcmId}
+            open={quickAddOpen}
+            onOpenChange={setQuickAddOpen}
+          />
           <div className="relative">
             <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
             <Input
@@ -814,8 +831,10 @@ function LeadRow({
   enriched: EnrichedLite; rank?: number; tcms: TCM[]; properties: Property[]; compact?: boolean;
   autoOpen?: boolean; onAutoOpenConsumed?: () => void;
 }) {
-  const { lead, openTour, lastQuote, nba, column, tourTimeHint } = enriched;
+  const { lead, openTour, lastQuote, nba, column, tourTimeHint, tourBand } = enriched;
   const [open, setOpen] = useState(false);
+  const priority = classifyImpactPriority(enriched);
+  const priorityMeta = IMPACT_PRIORITY_META[priority];
   const tcm = tcms.find((t) => t.id === lead.assignedTcmId);
   const catalogProperty = openTour
     ? resolvePropertyById(openTour.propertyId, properties)
@@ -842,6 +861,10 @@ function LeadRow({
         )}
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-1.5 flex-wrap">
+            <span
+              className={`h-2 w-2 rounded-full shrink-0 ${priorityMeta.dot}`}
+              title={priorityMeta.hint}
+            />
             <span className="text-xs font-semibold truncate">{lead.name}</span>
             <Badge variant="outline" className={`text-[9px] uppercase ${intentChip(lead.intent)}`}>{lead.intent}</Badge>
             {!compact && (
@@ -1613,12 +1636,22 @@ function NegotiationPlaybook({
 /*  Quick Add Lead                                                     */
 /* ================================================================== */
 
-function QuickAddLead({ defaultTcmId }: { defaultTcmId: string }) {
+function QuickAddLead({
+  defaultTcmId,
+  open: controlledOpen,
+  onOpenChange: controlledOnOpenChange,
+}: {
+  defaultTcmId: string;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}) {
   const tcms = useApp((s) => s.tcms);
   const addLead = useApp((s) => s.addLead);
   const autoAssignLead = useApp((s) => s.autoAssignLead);
 
-  const [open, setOpen] = useState(false);
+  const [internalOpen, setInternalOpen] = useState(false);
+  const open = controlledOpen ?? internalOpen;
+  const setOpen = controlledOnOpenChange ?? setInternalOpen;
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [area, setArea] = useState("");
