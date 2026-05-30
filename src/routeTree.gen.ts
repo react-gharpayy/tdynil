@@ -18,6 +18,7 @@ import { Route as SequencesRouteImport } from './routes/sequences'
 import { Route as RevivalRouteImport } from './routes/revival'
 import { Route as RevenueRouteImport } from './routes/revenue'
 import { Route as QueueRouteImport } from './routes/queue'
+import { Route as PropertyHubRouteImport } from './routes/property-hub'
 import { Route as MyTasksRouteImport } from './routes/my-tasks'
 import { Route as ManagerRouteImport } from './routes/manager'
 import { Route as LoginRouteImport } from './routes/login'
@@ -120,6 +121,11 @@ const RevenueRoute = RevenueRouteImport.update({
 const QueueRoute = QueueRouteImport.update({
   id: '/queue',
   path: '/queue',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PropertyHubRoute = PropertyHubRouteImport.update({
+  id: '/property-hub',
+  path: '/property-hub',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MyTasksRoute = MyTasksRouteImport.update({
@@ -434,6 +440,7 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/manager': typeof ManagerRoute
   '/my-tasks': typeof MyTasksRoute
+  '/property-hub': typeof PropertyHubRoute
   '/queue': typeof QueueRoute
   '/revenue': typeof RevenueRoute
   '/revival': typeof RevivalRoute
@@ -503,6 +510,7 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/manager': typeof ManagerRoute
   '/my-tasks': typeof MyTasksRoute
+  '/property-hub': typeof PropertyHubRoute
   '/queue': typeof QueueRoute
   '/revenue': typeof RevenueRoute
   '/revival': typeof RevivalRoute
@@ -573,6 +581,7 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/manager': typeof ManagerRoute
   '/my-tasks': typeof MyTasksRoute
+  '/property-hub': typeof PropertyHubRoute
   '/queue': typeof QueueRoute
   '/revenue': typeof RevenueRoute
   '/revival': typeof RevivalRoute
@@ -644,6 +653,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/manager'
     | '/my-tasks'
+    | '/property-hub'
     | '/queue'
     | '/revenue'
     | '/revival'
@@ -713,6 +723,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/manager'
     | '/my-tasks'
+    | '/property-hub'
     | '/queue'
     | '/revenue'
     | '/revival'
@@ -782,6 +793,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/manager'
     | '/my-tasks'
+    | '/property-hub'
     | '/queue'
     | '/revenue'
     | '/revival'
@@ -852,6 +864,7 @@ export interface RootRouteChildren {
   LoginRoute: typeof LoginRoute
   ManagerRoute: typeof ManagerRoute
   MyTasksRoute: typeof MyTasksRoute
+  PropertyHubRoute: typeof PropertyHubRoute
   QueueRoute: typeof QueueRoute
   RevenueRoute: typeof RevenueRoute
   RevivalRoute: typeof RevivalRoute
@@ -960,6 +973,13 @@ declare module '@tanstack/react-router' {
       path: '/queue'
       fullPath: '/queue'
       preLoaderRoute: typeof QueueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/property-hub': {
+      id: '/property-hub'
+      path: '/property-hub'
+      fullPath: '/property-hub'
+      preLoaderRoute: typeof PropertyHubRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/my-tasks': {
@@ -1427,6 +1447,7 @@ const rootRouteChildren: RootRouteChildren = {
   LoginRoute: LoginRoute,
   ManagerRoute: ManagerRoute,
   MyTasksRoute: MyTasksRoute,
+  PropertyHubRoute: PropertyHubRoute,
   QueueRoute: QueueRoute,
   RevenueRoute: RevenueRoute,
   RevivalRoute: RevivalRoute,

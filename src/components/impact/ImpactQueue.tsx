@@ -1,4 +1,8 @@
 import { useEffect, useMemo, useState, type ClipboardEvent } from "react";
+import { cn } from "@/lib/utils";
+import { PGS } from "@/property-genius/data/pgs";
+import type { PG } from "@/types/entities";
+import { LeadPropertyDossier } from "@/components/impact/LeadPropertyDossier";
 import { useApp } from "@/lib/store";
 import { api } from "@/lib/api/client";
 import { useQuotationsQuery, useSetQuotationStatus, formatINR, type Quotation } from "@/lib/crm10x/quotations";
@@ -33,6 +37,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
 } from "@/components/ui/select";
+import { dispatch } from "@/lib/api/command-bus";
 import {
   Calendar, CheckCircle2, ChevronRight, ClipboardCopy,
   ExternalLink, FileText, Flame, LayoutGrid, ListOrdered, Phone, Plus,
@@ -55,6 +60,18 @@ import { waLink } from "@/lib/crm10x/templates";
 function todayISO() {
   const d = new Date(); d.setHours(0,0,0,0); return d.toISOString().slice(0,10);
 }
+function normalizePhone(raw: string): string {
+  const digits = raw.replace(/\D/g, "");
+  if (!digits) return raw.trim();
+  if (digits.startsWith("91") && digits.length >= 12) return `+${digits}`;
+  if (digits.length === 10) return `+91${digits}`;
+  return raw.trim().startsWith("+") ? raw.trim() : `+${digits}`;
+}
+function phonesMatch(a: string, b: string): boolean {
+  const da = a.replace(/\D/g, "").slice(-10);
+  const db = b.replace(/\D/g, "").slice(-10);
+  return da.length >= 10 && da === db;
+}
 function isToday(iso: string) {
   return new Date(iso).toDateString() === new Date().toDateString();
 }
@@ -67,20 +84,34 @@ function isThisMonth(iso: string) {
   const d = new Date(iso); const n = new Date();
   return d.getFullYear() === n.getFullYear() && d.getMonth() === n.getMonth();
 }
+function parseInstant(iso: string | null | undefined): Date | null {
+  if (!iso?.trim()) return null;
+  const d = new Date(iso);
+  return isNaN(d.getTime()) ? null : d;
+}
 function fmtTime(iso: string) {
-  return new Intl.DateTimeFormat("en-IN", { timeZone: "Asia/Kolkata", hour: "numeric", minute: "2-digit" }).format(new Date(iso));
+  const d = parseInstant(iso);
+  if (!d) return "—";
+  return new Intl.DateTimeFormat("en-IN", { timeZone: "Asia/Kolkata", hour: "numeric", minute: "2-digit" }).format(d);
 }
 function fmtWhen(iso: string) {
+  const d = parseInstant(iso);
+  if (!d) return "—";
   return new Intl.DateTimeFormat("en-IN", {
     timeZone: "Asia/Kolkata",
     weekday: "short", day: "numeric", month: "short", hour: "numeric", minute: "2-digit",
-  }).format(new Date(iso));
+  }).format(d);
 }
-function fmtDate(iso: string) {
-  return new Intl.DateTimeFormat("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", year: "numeric" }).format(new Date(iso));
+function fmtDate(iso: string | null | undefined) {
+  if (!iso) return "—";
+  const d = parseInstant(iso);
+  if (!d) return "—";
+  return new Intl.DateTimeFormat("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", year: "numeric" }).format(d);
 }
 function fmtRel(iso: string, nowMs: number) {
-  const ms = +new Date(iso) - nowMs;
+  const d = parseInstant(iso);
+  if (!d) return "—";
+  const ms = +d - nowMs;
   const m = Math.round(ms / 60000);
   if (Math.abs(m) < 60) return `${m > 0 ? "in " : ""}${Math.abs(m)}m${m < 0 ? " ago" : ""}`;
   const h = Math.round(m / 60);
@@ -88,11 +119,13 @@ function fmtRel(iso: string, nowMs: number) {
   return fmtWhen(iso);
 }
 function fmtActivityTime(iso: string) {
+  const d = parseInstant(iso);
+  if (!d) return "—";
   const now = Date.now();
-  const diff = now - +new Date(iso);
+  const diff = now - +d;
   const minutes = Math.max(0, Math.floor(diff / 60000));
   if (minutes < 60) return `${minutes || 1} min ago`;
-  if (new Date(iso).toDateString() === new Date().toDateString()) return `Today ${fmtTime(iso)}`;
+  if (d.toDateString() === new Date().toDateString()) return `Today ${fmtTime(iso)}`;
   return fmtWhen(iso);
 }
 
@@ -731,8 +764,9 @@ function LeadDrawer({
 
         {/* Body — scrollable, all actions in one place */}
         <div className="flex-1 overflow-y-auto px-5 py-4">
-          <div className="mb-3">
+          <div className="mb-3 space-y-3">
             <SmartDossier lead={lead} />
+            <LeadPropertyDossier lead={lead} />
           </div>
           <CommandActions
             lead={lead}
@@ -1105,7 +1139,21 @@ function NegotiationPlaybook({
 }: { lead: Lead; leadPhone: string; ctx: ImpactTplCtx }) {
   const [open, setOpen] = useState(false);
   const setLeadStage = useApp((s) => s.setLeadStage);
+  const currentUser = useApp((s) => s.tcms.find((t) => t.id === s.currentTcmId));
   const [copiedId, setCopiedId] = useState<string | null>(null);
+
+  function resolveTemplate(template: string, lead: Lead, ctx: ImpactTplCtx): string {
+    return template
+      .replace(/\{price\}/g,
+        lead.budget ? `₹${lead.budget.toLocaleString("en-IN")}` : "")
+      .replace(/\{altPrice\}/g,
+        lead.budget ? `₹${(lead.budget * 0.9).toLocaleString("en-IN")}` : "")
+      .replace(/\{propertyName\}/g, ctx.propertyName ?? "the property")
+      .replace(/\{roomType\}/g, "triple")
+      .replace(/\{leadName\}/g, lead.name ?? "")
+      .replace(/\{agentName\}/g, ctx.agentName ?? currentUser?.name ?? "")
+      .replace(/\{[^}]+\}/g, "");
+  }
 
   const send = (msg: string, label: string) => {
     if (!leadPhone.trim()) {
@@ -1143,7 +1191,7 @@ function NegotiationPlaybook({
               </div>
               <div className="space-y-1.5">
                 {IMPACT_TEMPLATES[p.key].map((tpl) => {
-                  const msg = renderImpactTemplate(tpl, ctx);
+                  const msg = resolveTemplate(tpl.body, lead, ctx);
                   return (
                     <div key={tpl.id} className="rounded bg-muted/40 p-2 space-y-1">
                       <div className="flex items-center justify-between">
@@ -1221,21 +1269,92 @@ function QuickAddLead({ defaultTcmId }: { defaultTcmId: string }) {
     setTouched({ name: false, phone: false, area: false });
   };
 
+  const finishSuccess = (message = "Lead added to Impact Queue") => {
+    setOpen(false);
+    reset();
+    toast.success(message);
+  };
+
   const submit = async () => {
     setTouched({ name: true, phone: true, area: true });
     if (!canSubmit) return;
+
+    const phoneE164 = normalizePhone(phone);
+    const nameTrim = name.trim();
+    const areaTrim = area.trim();
+    const moveInIso = new Date(moveIn).toISOString();
+
     setSubmitting(true);
     try {
-      const lead = addLead({
-        name: name.trim(), phone: phone.trim(), preferredArea: area.trim(), budget,
-        moveInDate: new Date(moveIn).toISOString(),
-        intent, assignedTcmId: autoRoute ? undefined : tcmId,
+      const result = await dispatch({
+        type: "cmd.lead.create",
+        payload: {
+          name: nameTrim,
+          phone: phoneE164,
+          source: "manual",
+          budget,
+          moveInDate: moveInIso,
+          preferredArea: areaTrim,
+          zoneId: null,
+          intent,
+          assigneeId: autoRoute ? undefined : tcmId,
+        },
       });
-      if (autoRoute) autoAssignLead(lead.id);
-      toast.success("Lead added to Inbox");
-      reset(); setOpen(false);
-    } catch {
-      toast.error("Failed to add lead. Try again.");
+
+      const data = (result as { data?: { leadId?: string; duplicate?: boolean } }).data;
+
+      if (!result.ok) {
+        const appeared = useApp.getState().leads.some(
+          (l) => phonesMatch(l.phone, phoneE164) && l.name === nameTrim,
+        );
+        if (appeared) {
+          finishSuccess();
+          return;
+        }
+        toast.error(`Failed to add lead: ${result.error ?? "Try again."}`);
+        return;
+      }
+
+      if (data?.duplicate) {
+        finishSuccess("Lead already in queue");
+        return;
+      }
+
+      const newLeadId = data?.leadId;
+      const cur = useApp.getState().leads;
+      const alreadyThere = newLeadId
+        ? cur.some((l) => l.id === newLeadId)
+        : cur.some((l) => phonesMatch(l.phone, phoneE164));
+
+      if (!alreadyThere) {
+        const lead = addLead({
+          id: newLeadId,
+          name: nameTrim,
+          phone: phoneE164,
+          preferredArea: areaTrim,
+          budget,
+          moveInDate: moveInIso,
+          intent,
+          assignedTcmId: autoRoute ? undefined : tcmId,
+        });
+        if (autoRoute && tcms.length > 0) {
+          try {
+            autoAssignLead(lead.id);
+          } catch (err) {
+            console.warn("Auto-route skipped:", err);
+          }
+        }
+      }
+
+      finishSuccess();
+    } catch (error) {
+      console.error("Add lead error:", error);
+      const appeared = useApp.getState().leads.some(
+        (l) => phonesMatch(l.phone, phoneE164) && l.name === nameTrim,
+      );
+      if (appeared) finishSuccess();
+      else toast.error("Failed to add lead. Try again.");
+    } finally {
       setSubmitting(false);
     }
   };
@@ -1315,9 +1434,13 @@ function QuickAddLead({ defaultTcmId }: { defaultTcmId: string }) {
             )}
           </div>
 
-          <Button className={`w-full h-8 text-xs ${actionButtonClass}`} onClick={() => void submit()} disabled={!canSubmit}>
+          <Button
+            className={`w-full h-8 text-xs ${actionButtonClass}`}
+            onClick={() => void submit()}
+            disabled={!canSubmit || submitting}
+          >
             {submitting && <RotateCcw className="h-3 w-3 mr-1 animate-spin" />}
-            Add to queue
+            {submitting ? "Adding..." : "Add to queue"}
           </Button>
         </div>
       </DialogContent>
@@ -1339,62 +1462,59 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
 /* ================================================================== */
 
 function ScheduleTourDialog({ lead }: { lead: Lead }) {
-  const properties = useApp((s) => s.properties);
   const tcms = useApp((s) => s.tcms);
   const scheduleTour = useApp((s) => s.scheduleTour);
-  const addProperty = useApp((s) => s.addProperty);
 
   const [open, setOpen] = useState(false);
-  const [tcmId, setTcmId] = useState(lead.assignedTcmId);
-  const [propQuery, setPropQuery] = useState("");
-  const [propId, setPropId] = useState("");
-  const [newProp, setNewProp] = useState(false);
-  const [newName, setNewName] = useState("");
-  const [newArea, setNewArea] = useState(lead.preferredArea);
-  const [newPrice, setNewPrice] = useState(lead.budget);
+  const [selectedAgent, setSelectedAgent] = useState(lead.assignedTcmId ?? "");
+  const [propertySearch, setPropertySearch] = useState("");
+  const [selectedProperty, setSelectedProperty] = useState<PG | null>(null);
+  const [scheduling, setScheduling] = useState(false);
+
   const today = todayISO();
   const [date, setDate] = useState(today);
   const [time, setTime] = useState("11:00");
   const [submitted, setSubmitted] = useState(false);
-  const [scheduling, setScheduling] = useState(false);
 
-  const filtered = useMemo(() => {
-    const q = propQuery.trim().toLowerCase();
-    if (!q) return properties.slice(0, 6);
-    return properties
-      .filter((p) => p.name.toLowerCase().includes(q) || p.area.toLowerCase().includes(q))
-      .slice(0, 6);
-  }, [properties, propQuery]);
+  const filteredProperties = useMemo(() => {
+    const q = propertySearch.trim().toLowerCase();
+    let list = PGS;
+    if (q) {
+      list = PGS.filter(p => p.name.toLowerCase().includes(q) || p.area?.toLowerCase().includes(q));
+    } else if (lead.preferredArea) {
+      const byArea = PGS.filter(p => p.area.toLowerCase().includes(lead.preferredArea.toLowerCase()));
+      if (byArea.length > 0) list = byArea;
+    }
+    return list.slice(0, 6);
+  }, [propertySearch, lead.preferredArea]);
 
-  const selectedTcm = tcms.find((t) => t.id === tcmId);
   const scheduleErrors = {
-    property: propId ? "" : "Property is required.",
-    agent: tcmId ? "" : "Agent is required.",
+    property: selectedProperty ? "" : "Property is required.",
+    agent: selectedAgent ? "" : "Agent is required.",
     date: date && date >= today ? "" : "Date must be today or future.",
     time: time ? "" : "Time slot is required.",
   };
+  const canSchedule = !scheduleErrors.property && !scheduleErrors.agent && !scheduleErrors.date && !scheduleErrors.time;
 
-  const handleAddProp = () => {
-    const name = newName.trim() || propQuery.trim();
-    if (!name) return toast.error("Property name required");
-    const created = addProperty({ name, area: newArea || "—", pricePerBed: newPrice || 12000, totalBeds: 1, vacantBeds: 1 });
-    setPropId(created.id);
-    setPropQuery(name);
-    setNewProp(false);
-    toast.success(`Added ${name}`);
-  };
-
-  const handleSchedule = async () => {
+  const handleScheduleTour = async () => {
     setSubmitted(true);
-    if (scheduleErrors.property || scheduleErrors.agent || scheduleErrors.date || scheduleErrors.time) return;
+    if (!canSchedule) return;
     const iso = new Date(`${date}T${time}:00`).toISOString();
     setScheduling(true);
     try {
-      await scheduleTour({ leadId: lead.id, propertyId: propId, tcmId, scheduledAt: iso });
-      toast.success("Tour scheduled");
+      await scheduleTour({
+        leadId: lead.id,
+        propertyId: selectedProperty!.id,
+        tcmId: selectedAgent,
+        scheduledAt: iso,
+      });
+      toast.success("Tour scheduled successfully");
       setOpen(false);
+      setPropertySearch("");
+      setSelectedProperty(null);
+      setSubmitted(false);
     } catch (error) {
-      toast.error(error instanceof Error ? error.message : "Tour scheduling failed");
+      toast.error(error instanceof Error ? error.message : "Failed to schedule tour. Try again.");
     } finally {
       setScheduling(false);
     }
@@ -1410,84 +1530,89 @@ function ScheduleTourDialog({ lead }: { lead: Lead }) {
       <DialogContent className="max-w-md">
         <DialogHeader><DialogTitle className="text-sm">Schedule tour · {lead.name}</DialogTitle></DialogHeader>
         <div className="space-y-3">
-          <div>
-            <Label className="text-[10px] uppercase text-muted-foreground">Property</Label>
+          
+          <div className="flex flex-col gap-1">
+            <label className="text-[10px] uppercase text-muted-foreground">PROPERTY</label>
             <div className="relative">
               <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
-              <Input className="h-8 pl-7 text-xs" placeholder="Search or type new name…"
-                value={propQuery}
-                onChange={(e) => { setPropQuery(e.target.value); setPropId(""); }}
+              <input
+                type="text"
+                placeholder="Search or type new name..."
+                value={propertySearch}
+                onChange={e => { setPropertySearch(e.target.value); setSelectedProperty(null); }}
+                className="w-full border border-border rounded-md pl-7 pr-3 py-1.5 text-xs bg-transparent focus:outline-none focus:ring-1 focus:ring-primary h-8"
               />
             </div>
-            {!newProp && (
-              <div className="max-h-40 overflow-y-auto mt-1 space-y-1">
-                {properties.length === 0 && (
-                  <div className="text-[11px] text-muted-foreground text-center py-3">Loading properties...</div>
+            {propertySearch || !selectedProperty ? (
+              <div className="max-h-40 overflow-y-auto mt-1 space-y-1 border border-border rounded-md divide-y divide-border">
+                {filteredProperties.length === 0 && (
+                  <div className="px-3 py-4 text-xs text-muted-foreground text-center">
+                    No properties found
+                  </div>
                 )}
-                {properties.length > 0 && filtered.map((p) => (
-                  <button key={p.id}
-                    onClick={() => { setPropId(p.id); setPropQuery(p.name); }}
-                    className={`w-full text-left text-xs px-2 py-1.5 rounded border ${propId === p.id ? "bg-primary/10 border-primary/40" : "border-border hover:bg-muted/50"}`}>
-                    <div className="font-medium">{p.name}</div>
-                    <div className="text-[10px] text-muted-foreground">{p.area} · {p.vacantBeds} vacant</div>
+                {filteredProperties.map((property) => (
+                  <button
+                    key={property.id}
+                    type="button"
+                    onClick={() => {
+                      setSelectedProperty(property);
+                      setPropertySearch(property.name);
+                    }}
+                    className={cn(
+                      "w-full text-left text-xs px-2 py-1.5 transition-colors",
+                      selectedProperty?.id === property.id ? "bg-primary/10" : "hover:bg-muted/50",
+                    )}
+                  >
+                    <div className="font-medium">{property.name}</div>
+                    <div className="text-[10px] text-muted-foreground">{property.area} · Property Hub</div>
                   </button>
                 ))}
-                {properties.length > 0 && filtered.length === 0 && !propQuery && (
-                  <div className="text-[11px] text-muted-foreground text-center py-3">No properties found</div>
-                )}
-                {filtered.length === 0 && propQuery && (
-                  <Button variant="outline" size="sm" className="w-full h-7 text-xs gap-1"
-                    onClick={() => { setNewName(propQuery); setNewProp(true); }}>
-                    <Plus className="h-3 w-3" /> Add "{propQuery}" as new
-                  </Button>
-                )}
               </div>
-            )}
-            {submitted && scheduleErrors.property && <p className="mt-1 text-[10px] text-danger">{scheduleErrors.property}</p>}
-            {newProp && (
-              <div className="space-y-2 mt-2 border-t border-border pt-2">
-                <Input className="h-8 text-xs" placeholder="Property name" value={newName} onChange={(e) => setNewName(e.target.value)} />
-                <div className="grid grid-cols-2 gap-2">
-                  <Input className="h-8 text-xs" placeholder="Area" value={newArea} onChange={(e) => setNewArea(e.target.value)} />
-                  <Input className="h-8 text-xs" type="number" placeholder="Price/bed" value={newPrice} onChange={(e) => setNewPrice(Number(e.target.value))} />
-                </div>
-                <div className="flex gap-2">
-                  <Button size="sm" className="h-7 text-xs flex-1" onClick={handleAddProp}>Save</Button>
-                  <Button size="sm" variant="ghost" className="h-7 text-xs" onClick={() => setNewProp(false)}>Cancel</Button>
-                </div>
-              </div>
+            ) : null}
+            {submitted && scheduleErrors.property && (
+              <p className="mt-1 text-[10px] text-danger">{scheduleErrors.property}</p>
             )}
           </div>
 
-          <div>
-            <Label className="text-[10px] uppercase text-muted-foreground">Assign to</Label>
-            <Select value={tcmId} onValueChange={setTcmId}>
-              <SelectTrigger className="h-8 text-xs"><SelectValue placeholder="Select agent" /></SelectTrigger>
-              <SelectContent>
-                {tcms.length === 0 && <div className="px-2 py-3 text-center text-xs text-muted-foreground">No agents available</div>}
-                {tcms.map((t) => <SelectItem key={t.id} value={t.id} className="text-xs">{t.name} · {t.zone}</SelectItem>)}
-              </SelectContent>
-            </Select>
-            {selectedTcm && <div className="mt-1 text-[10px] text-muted-foreground">{selectedTcm.name} · TCM</div>}
-            {submitted && scheduleErrors.agent && <p className="mt-1 text-[10px] text-danger">{scheduleErrors.agent}</p>}
+          <div className="flex flex-col gap-1">
+            <label className="text-[10px] uppercase text-muted-foreground">ASSIGN TO</label>
+            <select
+              value={selectedAgent}
+              onChange={(e) => setSelectedAgent(e.target.value)}
+              className="w-full border border-border rounded-md px-2 py-1.5 text-xs bg-transparent focus:outline-none focus:ring-1 focus:ring-primary h-8"
+            >
+              <option value="">Select agent...</option>
+              {tcms.map((agent) => (
+                <option key={agent.id} value={agent.id} className="bg-background">
+                  {agent.name} · {agent.zone ?? ""}
+                </option>
+              ))}
+            </select>
+            {submitted && scheduleErrors.agent && (
+              <p className="mt-1 text-[10px] text-danger">{scheduleErrors.agent}</p>
+            )}
           </div>
 
           <div className="grid grid-cols-2 gap-2">
-            <div>
-              <Label className="text-[10px] uppercase text-muted-foreground">Date</Label>
+            <div className="flex flex-col gap-1">
+              <label className="text-[10px] uppercase text-muted-foreground">Date</label>
               <Input type="date" className="h-8 text-xs" value={date} onChange={(e) => setDate(e.target.value)} min={today} />
               {submitted && scheduleErrors.date && <p className="mt-1 text-[10px] text-danger">{scheduleErrors.date}</p>}
             </div>
-            <div>
-              <Label className="text-[10px] uppercase text-muted-foreground">Time</Label>
+            <div className="flex flex-col gap-1">
+              <label className="text-[10px] uppercase text-muted-foreground">Time</label>
               <Input type="time" className="h-8 text-xs" value={time} onChange={(e) => setTime(e.target.value)} />
               {submitted && scheduleErrors.time && <p className="mt-1 text-[10px] text-danger">{scheduleErrors.time}</p>}
             </div>
           </div>
 
-          <Button className={`w-full h-8 text-xs ${actionButtonClass}`} onClick={() => void handleSchedule()} disabled={scheduling}>
+          <Button
+            className={`w-full h-8 text-xs ${actionButtonClass}`}
+            onClick={() => void handleScheduleTour()}
+            disabled={scheduling || (submitted && !canSchedule)}
+          >
             {scheduling && <RotateCcw className="h-3 w-3 mr-1 animate-spin" />}
-            Schedule tour
+            {scheduling ? "Scheduling..." : "Schedule tour"}
           </Button>
         </div>
       </DialogContent>
@@ -1600,7 +1725,7 @@ function QuotationDialog({ lead, label = "Send quotation", variant = "default" }
       </DialogTrigger>
       <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
         <DialogHeader><DialogTitle className="text-sm">Quotation · {lead.name}</DialogTitle></DialogHeader>
-        <QuotationBuilder lead={lead} />
+        <QuotationBuilder lead={lead} embedded onSent={() => setOpen(false)} />
       </DialogContent>
     </Dialog>
   );

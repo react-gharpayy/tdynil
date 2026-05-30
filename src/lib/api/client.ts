@@ -26,8 +26,9 @@ const inFlightGetRequests = new Map<string, Promise<unknown>>();
 
 async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
   if (!API_URL) throw new ApiError("NO_API_URL", "VITE_API_URL not configured", 0);
-  const headers = new Headers(init.headers);
+  const headers = new Headers(init.headers ?? {});
   if (init.body != null && !headers.has("Content-Type")) headers.set("Content-Type", "application/json");
+  if (!headers.has("Accept")) headers.set("Accept", "application/json");
   const t = tokenStore.get();
   if (t) headers.set("Authorization", `Bearer ${t}`);
 
@@ -39,12 +40,27 @@ async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
   }
 
   const runRequest = async (): Promise<T> => {
+    if (import.meta.env.DEV) {
+      console.debug("[api.request]", method, `${API_URL}${path}`, {
+        headers: Array.from(headers.entries()),
+        credentials: "include",
+        body: init.body,
+      });
+    }
     let lastError: Error = new Error("Request failed after retries");
     for (let attempt = 1; attempt <= 3; attempt++) {
       try {
-        const res = await fetch(`${API_URL}${path}`, { ...init, headers, credentials: "include" });
+        const res = await fetch(`${API_URL}${path}`, {
+          ...init,
+          headers,
+          credentials: "include",
+          mode: "cors",
+        });
         const text = await res.text();
         const body = text ? safeJson(text) : null;
+        if (import.meta.env.DEV) {
+          console.debug("[api.response]", method, `${API_URL}${path}`, res.status, body);
+        }
         if (!res.ok) {
           if (res.status === 429) {
             const retryAfterValue = Number(body?.retryAfter ?? res.headers.get("Retry-After") ?? 2);

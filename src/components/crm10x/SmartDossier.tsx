@@ -5,7 +5,32 @@ import { formatINR, useQuotationsQuery } from "@/lib/crm10x/quotations";
 import { useLeadInterests } from "@/lib/crm10x/lead-interests";
 import { Badge } from "@/components/ui/badge";
 import { Brain, Target, AlertTriangle, Heart } from "lucide-react";
-import { differenceInHours, format, parseISO } from "date-fns";
+import { differenceInHours, format, isValid, parseISO } from "date-fns";
+
+function parseLeadDate(raw: string | null | undefined): Date | null {
+  if (!raw?.trim()) return null;
+  const trimmed = raw.trim();
+  const iso = parseISO(trimmed);
+  if (isValid(iso)) return iso;
+  const fallback = new Date(trimmed);
+  return isValid(fallback) ? fallback : null;
+}
+
+function formatMonthYear(raw: string | null | undefined): string {
+  const d = parseLeadDate(raw);
+  if (!d) return "Not specified";
+  return format(d, "MMM yyyy");
+}
+
+function formatShortDate(raw: string | null | undefined): string {
+  const d = parseLeadDate(raw);
+  if (!d) return "—";
+  return new Intl.DateTimeFormat("en-IN", {
+    timeZone: "Asia/Kolkata",
+    day: "numeric",
+    month: "short",
+  }).format(d);
+}
 
 /**
  * Smart Dossier — 3-line auto-summary of a lead, derived from store data.
@@ -37,11 +62,12 @@ export function SmartDossier({ lead }: { lead: Lead }) {
     const intentRaw = String(lead.interestLevel ?? lead.priority ?? lead.intent);
     const intentLabel = intentRaw === "hot" ? "HOT" : intentRaw === "medium" || intentRaw === "warm" ? "WARM" : "COLD";
     const moveInSource = lead.moveInDate || lead.earliestCheckIn;
-    const moveInLabel = moveInSource ? format(parseISO(moveInSource), "MMM yyyy") : "Not specified";
+    const moveInLabel = formatMonthYear(moveInSource);
     const budgetLabel = lead.budget > 0 ? formatINR(lead.budget) : "Not specified";
     const blocker = lead.primaryObjection ?? lastTour?.postTour?.objection ?? lastTour?.postTour?.objectionNote;
-    const freshness = lead.lastContactAt
-      ? `Untouched ${differenceInHours(new Date(), parseISO(lead.lastContactAt))}h`
+    const lastContact = parseLeadDate(lead.lastContactAt);
+    const freshness = lastContact
+      ? `Untouched ${differenceInHours(new Date(), lastContact)}h`
       : "Never contacted";
 
     // Line 1 — budget + area + move-in
@@ -63,7 +89,7 @@ export function SmartDossier({ lead }: { lead: Lead }) {
     const blockerLine = blocker
       ? `Last blocker: ${blocker}`
       : lastQuote
-        ? `Quote sent ${new Intl.DateTimeFormat("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short" }).format(new Date(lastQuote.sentAt))} · awaiting reply.`
+        ? `Quote sent ${formatShortDate(lastQuote.sentAt)} · awaiting reply.`
         : lastNote
           ? `Latest note: ${lastNote.text.slice(0, 90)}${lastNote.text.length > 90 ? "..." : ""}`
           : "No blockers logged";
