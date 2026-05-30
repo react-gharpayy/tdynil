@@ -22,6 +22,7 @@ import {
 } from "@/lib/crm10x/impact-queue-prefs";
 import { isQuoteStale } from "@/lib/crm10x/impact-quote-stale";
 import { useLeadsSync } from "@/lib/leads-sync";
+import { leadHasValidProperty, pickBestPropertyForLead } from "@/lib/crm10x/fix-lead-properties";
 import { useImpactQueueKeyboard } from "@/hooks/useImpactQueueKeyboard";
 import { useImpactMorningDigest } from "@/hooks/useImpactMorningDigest";
 import {
@@ -43,6 +44,7 @@ import {
   allCatalogProperties,
   type CatalogProperty,
 } from "@/lib/crm10x/property-catalog";
+import { searchPGs } from "@/property-genius/lib/search";
 import { fmtTourScheduleLabel, isTodayIST } from "@/lib/crm10x/dates";
 import {
   classifyTourBand,
@@ -83,7 +85,7 @@ import {
   ExternalLink, FileText, Flame, LayoutGrid, ListOrdered, Phone, Plus,
   Search, Send, Sparkles, Target, Timer, UserCheck, Wallet, Zap,
   Beaker, Home, Pin, X, Heart, Star, Activity, TrendingUp, Bell, Sunrise,
-  RotateCcw, KeyRound, ScrollText,
+  RotateCcw, KeyRound, ScrollText, Building2,
 } from "lucide-react";
 import { toast } from "sonner";
 import { useMountedNow } from "@/hooks/use-now";
@@ -175,24 +177,20 @@ function sanitizeLead(lead: any) {
   const isGibberish = /test|dummy|dgdg|dfgb|fhff|bfd|ffhg|asdf|qwer/.test(n) || n === "gorav" || n.length < 3;
   
   const hash = String(l.id || l.name || "").split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const pg = PGS[hash % PGS.length];
   
   if (isGibberish) {
     const genuineNames = ["Aarav Sharma", "Priya Patel", "Aditya Singh", "Neha Gupta", "Arjun Reddy", "Rohan Mehta", "Sneha Desai"];
     l.name = genuineNames[hash % genuineNames.length];
-    
-    // Unconditionally set a date after today for dummy leads
-    const daysToAdd = (hash % 14) + 1;
-    l.moveInDate = new Date(Date.now() + 86400000 * daysToAdd).toISOString();
-    
-    // Set a correct property from the Property Hub
-    const properties = ["FORUM PRO BOYS", "FORUM 1 BOYS", "KNOX COED", "IVA COLIVING"];
-    l.propertyName = properties[hash % properties.length];
-  } else {
-    // Only fix dates for genuine leads if missing or invalid
-    if (!l.moveInDate || isNaN(new Date(l.moveInDate).getTime())) {
-      const daysToAdd = (hash % 14) + 1;
-      l.moveInDate = new Date(Date.now() + 86400000 * daysToAdd).toISOString();
-    }
+  }
+  
+  if (isGibberish || !l.preferredArea || !leadHasValidProperty(l)) {
+    l.preferredArea = pg.area;
+    l.moveInDate = new Date(Date.now() + 86400000 * ((hash % 14) + 1)).toISOString();
+  }
+  
+  if (!isGibberish && (!l.moveInDate || isNaN(new Date(l.moveInDate).getTime()))) {
+    l.moveInDate = new Date(Date.now() + 86400000 * ((hash % 14) + 1)).toISOString();
   }
   
   return l;
@@ -273,6 +271,31 @@ export function ImpactQueue() {
   }, [view]);
 
   useImpactMorningDigest(() => setDigestOpen(true));
+
+  const [fixing, setFixing] = useState(false);
+  const handleFixProperties = async () => {
+    setFixing(true);
+    const allLeads = useApp.getState().leads;
+    const invalid = allLeads.filter((l) => !leadHasValidProperty(l));
+    if (invalid.length === 0) {
+      toast.success("All leads already have valid properties");
+      setFixing(false);
+      return;
+    }
+    let fixed = 0;
+    for (const lead of invalid) {
+      const { area } = pickBestPropertyForLead(lead);
+      const result = await dispatch({
+        _id: `c-${Math.random().toString(36).slice(2, 14)}`,
+        type: "cmd.lead.update",
+        issuedAt: new Date().toISOString(),
+        payload: { leadId: lead.id, patch: { preferredArea: area } },
+      });
+      if (result.ok) fixed++;
+    }
+    toast.success(`Fixed ${fixed}/${invalid.length} leads — properties match Property Hub`);
+    setFixing(false);
+  };
 
   useEffect(() => {
     if (leads.length > 0 || leadsSyncStatus === "ready") setBooting(false);
@@ -575,6 +598,16 @@ export function ImpactQueue() {
               </button>
             )}
           </div>
+          <button
+            type="button"
+            onClick={handleFixProperties}
+            disabled={fixing}
+            className="h-8 px-2 text-[10px] font-semibold rounded-md border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-accent/10 transition-colors disabled:opacity-50 flex items-center gap-1"
+            title="Fix leads with invalid properties"
+          >
+            <Building2 className="h-3 w-3" />
+            {fixing ? "Fixing…" : "Fix props"}
+          </button>
           <Select value={tcmFilter} onValueChange={setTcmFilter}>
             <SelectTrigger className="h-8 text-xs w-40"><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -1178,17 +1211,23 @@ function LeadRow({
             {!compact && <><span>·</span><span>{formatINR(lead.budget)}</span></>}
             {tcm && !compact && <><span>·</span><span>{tcm.name.split(" ")[0]}</span></>}
           </div>
-          {openTour && (
-            <div className="mt-1 space-y-0.5">
-              <div className="text-[10px] font-semibold text-accent flex items-center gap-1">
-                <Calendar className="h-2.5 w-2.5 shrink-0" />
-                {fmtTourScheduleLabel(openTour.scheduledAt)}
-              </div>
-              {tourTimeHint && (
-                <div className="text-[9px] text-muted-foreground">{tourTimeHint}</div>
-              )}
+          <div className="mt-1 space-y-0.5">
+            <div className="text-[10px] text-muted-foreground flex items-center gap-1">
+              <Calendar className="h-2.5 w-2.5 shrink-0" />
+              Move-in: {fmtDate(lead.moveInDate)}
             </div>
-          )}
+            {openTour && (
+              <>
+                <div className="text-[10px] font-semibold text-accent flex items-center gap-1">
+                  <Calendar className="h-2.5 w-2.5 shrink-0" />
+                  Tour: {fmtTourScheduleLabel(openTour.scheduledAt)}
+                </div>
+                {tourTimeHint && (
+                  <div className="text-[9px] text-muted-foreground">{tourTimeHint}</div>
+                )}
+              </>
+            )}
+          </div>
           {/* NBA chip — always visible so users see the next move at a glance */}
           <div className={`mt-1.5 inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded border ${pressureColor(nba.pressure)}`}>
             <Sparkles className="h-2.5 w-2.5" /> {nba.label}
@@ -2059,6 +2098,9 @@ function QuickAddLead({
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [area, setArea] = useState("");
+  const [selectedPG, setSelectedPG] = useState<PG | null>(null);
+  const [hubQuery, setHubQuery] = useState("");
+  const [showHubResults, setShowHubResults] = useState(false);
   const [budget, setBudget] = useState(12000);
   const [moveIn, setMoveIn] = useState(todayISO());
   const [intent, setIntent] = useState<Lead["intent"]>("warm");
@@ -2066,6 +2108,20 @@ function QuickAddLead({
   const [autoRoute, setAutoRoute] = useState(true);
   const [touched, setTouched] = useState({ name: false, phone: false, area: false });
   const [submitting, setSubmitting] = useState(false);
+
+  const hubResults = useMemo(() => {
+    const q = hubQuery.trim();
+    if (!q && selectedPG) return [];
+    if (q) return searchPGs(q, 10);
+    if (area) {
+      const byArea = PGS.filter((p) =>
+        p.area.toLowerCase().includes(area.toLowerCase()) ||
+        area.toLowerCase().includes(p.area.toLowerCase()),
+      );
+      return byArea.slice(0, 10).map((pg) => ({ pg, score: 1, matched: [] }));
+    }
+    return [...PGS].sort((a, b) => b.iq - a.iq).slice(0, 10).map((pg) => ({ pg, score: 1, matched: [] }));
+  }, [hubQuery, selectedPG, area]);
 
   const errors = {
     name: name.trim().length >= 2 ? "" : "Name must be at least 2 characters.",
@@ -2075,7 +2131,8 @@ function QuickAddLead({
   const canSubmit = !errors.name && !errors.phone && !errors.area && !submitting;
 
   const reset = () => {
-    setName(""); setPhone(""); setArea(""); setBudget(12000);
+    setName(""); setPhone(""); setArea(""); setSelectedPG(null); setHubQuery("");
+    setBudget(12000);
     setMoveIn(todayISO()); setIntent("warm"); setTcmId(defaultTcmId); setAutoRoute(true);
     setTouched({ name: false, phone: false, area: false });
     setSubmitting(false);
@@ -2085,6 +2142,7 @@ function QuickAddLead({
     const parsed = parsePastedText(event.clipboardData.getData("text"));
     if (!parsed.name && !parsed.phone && !parsed.location) return;
     event.preventDefault();
+    setSelectedPG(null);
     setName(parsed.name ?? "");
     setPhone(parsed.phone ?? "");
     setArea(parsed.location ?? "");
@@ -2204,8 +2262,52 @@ function QuickAddLead({
             </Field>
           </div>
           <div className="grid grid-cols-2 gap-2">
-            <Field label="Preferred area">
-              <Input className="h-8 text-xs" value={area} onPaste={handlePaste} onBlur={() => setTouched((t) => ({ ...t, area: true }))} onChange={(e) => setArea(e.target.value)} />
+            <Field label="Preferred property">
+              <div className="relative" onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setTimeout(() => setShowHubResults(false), 200); }}>
+                <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-3 w-3 text-muted-foreground pointer-events-none z-10" />
+                <Input
+                  className="h-8 text-xs pl-7"
+                  value={selectedPG ? selectedPG.name : hubQuery}
+                  onChange={(e) => {
+                    setHubQuery(e.target.value);
+                    setShowHubResults(true);
+                    if (selectedPG) { setSelectedPG(null); setArea(""); }
+                  }}
+                  onFocus={() => setShowHubResults(true)}
+                  onBlur={() => setTouched((t) => ({ ...t, area: true }))}
+                  onPaste={handlePaste}
+                  placeholder="Search hub…"
+                />
+                {selectedPG && (
+                  <div className="mt-1 text-[10px] text-muted-foreground leading-tight">
+                    {selectedPG.area} · {selectedPG.gender}
+                  </div>
+                )}
+                {showHubResults && hubResults.length > 0 && !selectedPG && (
+                  <div className="absolute z-50 mt-1 w-full rounded-md border border-border bg-background shadow-lg max-h-36 overflow-y-auto">
+                    {hubResults.map(({ pg }) => (
+                      <button
+                        key={pg.id}
+                        type="button"
+                        onMouseDown={(e) => {
+                          e.preventDefault();
+                          setSelectedPG(pg);
+                          setArea(pg.area);
+                          setHubQuery("");
+                          setShowHubResults(false);
+                        }}
+                        className="w-full text-left px-2 py-1.5 text-[11px] hover:bg-muted/50 transition-colors flex items-center gap-1.5 border-b border-border last:border-0"
+                      >
+                        <Building2 className="h-3 w-3 shrink-0 text-primary" />
+                        <div className="min-w-0 flex-1">
+                          <span className="font-medium truncate">{pg.name}</span>
+                          <span className="text-muted-foreground"> · {pg.area}</span>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
               {touched.area && errors.area && <p className="mt-1 text-[10px] text-danger">{errors.area}</p>}
             </Field>
             <Field label="Budget (₹/mo)">
