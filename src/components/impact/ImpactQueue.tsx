@@ -84,23 +84,34 @@ function isThisMonth(iso: string) {
   const d = new Date(iso); const n = new Date();
   return d.getFullYear() === n.getFullYear() && d.getMonth() === n.getMonth();
 }
+function parseInstant(iso: string | null | undefined): Date | null {
+  if (!iso?.trim()) return null;
+  const d = new Date(iso);
+  return isNaN(d.getTime()) ? null : d;
+}
 function fmtTime(iso: string) {
-  return new Intl.DateTimeFormat("en-IN", { timeZone: "Asia/Kolkata", hour: "numeric", minute: "2-digit" }).format(new Date(iso));
+  const d = parseInstant(iso);
+  if (!d) return "—";
+  return new Intl.DateTimeFormat("en-IN", { timeZone: "Asia/Kolkata", hour: "numeric", minute: "2-digit" }).format(d);
 }
 function fmtWhen(iso: string) {
+  const d = parseInstant(iso);
+  if (!d) return "—";
   return new Intl.DateTimeFormat("en-IN", {
     timeZone: "Asia/Kolkata",
     weekday: "short", day: "numeric", month: "short", hour: "numeric", minute: "2-digit",
-  }).format(new Date(iso));
+  }).format(d);
 }
 function fmtDate(iso: string | null | undefined) {
   if (!iso) return "—";
-  const d = new Date(iso);
-  if (isNaN(d.getTime())) return "—";
+  const d = parseInstant(iso);
+  if (!d) return "—";
   return new Intl.DateTimeFormat("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", year: "numeric" }).format(d);
 }
 function fmtRel(iso: string, nowMs: number) {
-  const ms = +new Date(iso) - nowMs;
+  const d = parseInstant(iso);
+  if (!d) return "—";
+  const ms = +d - nowMs;
   const m = Math.round(ms / 60000);
   if (Math.abs(m) < 60) return `${m > 0 ? "in " : ""}${Math.abs(m)}m${m < 0 ? " ago" : ""}`;
   const h = Math.round(m / 60);
@@ -108,11 +119,13 @@ function fmtRel(iso: string, nowMs: number) {
   return fmtWhen(iso);
 }
 function fmtActivityTime(iso: string) {
+  const d = parseInstant(iso);
+  if (!d) return "—";
   const now = Date.now();
-  const diff = now - +new Date(iso);
+  const diff = now - +d;
   const minutes = Math.max(0, Math.floor(diff / 60000));
   if (minutes < 60) return `${minutes || 1} min ago`;
-  if (new Date(iso).toDateString() === new Date().toDateString()) return `Today ${fmtTime(iso)}`;
+  if (d.toDateString() === new Date().toDateString()) return `Today ${fmtTime(iso)}`;
   return fmtWhen(iso);
 }
 
