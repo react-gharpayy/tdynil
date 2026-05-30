@@ -290,6 +290,13 @@ export function ImpactQueue() {
     return { toursToday, quotesWeek, bookingsMonth };
   }, [tours, quotes, bookings, tcmFilter]);
 
+  const quotesThisWeek = useMemo(() => {
+    const scoped = tcmFilter === "all" ? quotes : quotes.filter((q) => q.tcmId === tcmFilter);
+    return scoped
+      .filter((q) => isThisWeek(q.sentAt))
+      .sort((a, b) => +new Date(b.sentAt) - +new Date(a.sentAt));
+  }, [quotes, tcmFilter]);
+
   // Visible targets — tweak as the BBD target evolves.
   const targets = { toursToday: 4, quotesWeek: 10, bookingsMonth: 6 };
   const tone = (got: number, target: number) =>
@@ -367,7 +374,14 @@ export function ImpactQueue() {
       {/* ---------------- Live counters ---------------- */}
       <div className="grid grid-cols-3 gap-2">
         <Counter label="Tours today" got={counters.toursToday} target={targets.toursToday} tone={tone(counters.toursToday, targets.toursToday)} icon={Calendar} />
-        <Counter label="Quotes this week" got={counters.quotesWeek} target={targets.quotesWeek} tone={tone(counters.quotesWeek, targets.quotesWeek)} icon={FileText} />
+        <QuotesWeekCounter
+          quotes={quotesThisWeek}
+          leads={leads}
+          got={counters.quotesWeek}
+          target={targets.quotesWeek}
+          tone={tone(counters.quotesWeek, targets.quotesWeek)}
+          onFocusLead={(name) => setQuery(name)}
+        />
         <Counter label="Bookings this month" got={counters.bookingsMonth} target={targets.bookingsMonth} tone={tone(counters.bookingsMonth, targets.bookingsMonth)} icon={Target} />
       </div>
 
@@ -464,6 +478,134 @@ function Counter({
         <div className="h-full bg-current opacity-70" style={{ width: `${pct}%` }} />
       </div>
     </div>
+  );
+}
+
+const QUOTE_STATUS_TONE: Record<Quotation["status"], string> = {
+  sent: "bg-accent/15 text-accent border-accent/30",
+  paid: "bg-success/15 text-success border-success/30",
+  "not-paid": "bg-destructive/15 text-destructive border-destructive/30",
+  expired: "bg-muted text-muted-foreground border-border",
+  cancelled: "bg-muted text-muted-foreground border-border",
+};
+
+function QuotesWeekCounter({
+  quotes,
+  leads,
+  got,
+  target,
+  tone,
+  onFocusLead,
+}: {
+  quotes: Quotation[];
+  leads: Lead[];
+  got: number;
+  target: number;
+  tone: string;
+  onFocusLead: (leadName: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const pct = Math.min(100, Math.round((got / Math.max(target, 1)) * 100));
+  const leadById = useMemo(() => new Map(leads.map((l) => [l.id, l])), [leads]);
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className={`w-full rounded-lg border ${tone} p-3 text-left transition hover:ring-2 hover:ring-accent/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent`}
+      >
+        <div className="flex items-center justify-between">
+          <div className="text-[10px] uppercase tracking-wider font-semibold flex items-center gap-1.5">
+            <FileText className="h-3 w-3" /> Quotes this week
+          </div>
+          <span className="text-[10px] font-mono opacity-80">{got}/{target}</span>
+        </div>
+        <div className="text-2xl font-display font-semibold mt-1">{got}</div>
+        <div className="h-1 rounded-full bg-background/40 mt-1 overflow-hidden">
+          <div className="h-full bg-current opacity-70" style={{ width: `${pct}%` }} />
+        </div>
+        <div className="text-[10px] text-muted-foreground mt-1.5">Tap to view all quotes →</div>
+      </button>
+
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SheetContent side="right" className="w-full sm:max-w-md overflow-y-auto">
+          <SheetHeader>
+            <SheetTitle className="text-sm">Quotes this week</SheetTitle>
+            <SheetDescription className="text-xs">
+              {got} quotation{got !== 1 ? "s" : ""} sent in the last 7 days
+            </SheetDescription>
+          </SheetHeader>
+          <div className="mt-4 space-y-2">
+            {quotes.length === 0 ? (
+              <p className="text-xs text-muted-foreground italic py-6 text-center">No quotes sent this week yet.</p>
+            ) : (
+              quotes.map((q) => {
+                const lead = leadById.get(q.leadId);
+                const expired = q.status === "sent" && (parseInstant(q.validUntilISO)?.getTime() ?? Infinity) < Date.now();
+                const status = expired ? "expired" : q.status;
+                return (
+                  <div key={q.id} className="rounded-lg border border-border p-3 space-y-2 text-xs">
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="min-w-0">
+                        <div className="font-semibold truncate">{lead?.name ?? "Unknown lead"}</div>
+                        <div className="text-[10px] text-muted-foreground truncate">{q.propertyName} · {q.roomType}</div>
+                      </div>
+                      <Badge variant="outline" className={`text-[9px] shrink-0 ${QUOTE_STATUS_TONE[status]}`}>
+                        {status}
+                      </Badge>
+                    </div>
+                    <div className="text-[11px] text-muted-foreground">
+                      {formatINR(q.discountedPrice)}
+                      <span className="line-through ml-1">{formatINR(q.actualRent)}</span>
+                      {" · "}
+                      {fmtDate(q.sentAt)}
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {lead && (
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="h-7 text-[10px]"
+                          onClick={() => {
+                            onFocusLead(lead.name);
+                            setOpen(false);
+                            toast.success(`Filtered to ${lead.name}`);
+                          }}
+                        >
+                          Find lead
+                        </Button>
+                      )}
+                      {lead?.phone && (
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="h-7 text-[10px] gap-1"
+                          onClick={() => {
+                            window.open(waLink(lead.phone, q.message), "_blank", "noopener,noreferrer");
+                            toast.success("Opened WhatsApp");
+                          }}
+                        >
+                          <ExternalLink className="h-3 w-3" /> Resend
+                        </Button>
+                      )}
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        className="h-7 text-[10px] gap-1"
+                        onClick={() => void navigator.clipboard.writeText(q.message).then(() => toast.success("Copied"))}
+                      >
+                        <ClipboardCopy className="h-3 w-3" /> Copy
+                      </Button>
+                    </div>
+                  </div>
+                );
+              })
+            )}
+          </div>
+        </SheetContent>
+      </Sheet>
+    </>
   );
 }
 
