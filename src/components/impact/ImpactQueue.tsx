@@ -409,9 +409,13 @@ export function ImpactQueue() {
           ))}
         </div>
       ) : (
-        <div className="flex h-[calc(100vh-360px)] min-h-[360px] gap-3 overflow-hidden">
-          {COLUMNS.map((c) => (
-            <div key={c.key} className={`flex-none w-72 h-full overflow-y-auto overflow-x-hidden rounded-lg border-l-2 ${c.tint} border-t border-r border-b border-border bg-muted/20 p-2`}>
+        <div className="w-full min-w-0 overflow-x-auto pb-1">
+          <div className="grid grid-cols-5 gap-2 h-[calc(100vh-360px)] min-h-[360px] min-w-[720px]">
+            {COLUMNS.map((c) => (
+              <div
+                key={c.key}
+                className={`min-w-0 h-full overflow-y-auto overflow-x-hidden rounded-lg border-l-2 ${c.tint} border-t border-r border-b border-border bg-muted/20 p-2`}
+              >
               <div className="sticky top-0 z-10 flex items-center justify-between px-1 pb-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
                 <div className="text-[11px] font-semibold flex items-center gap-1.5">
                   <c.icon className="h-3 w-3" /> {c.label}
@@ -430,8 +434,9 @@ export function ImpactQueue() {
                   <LeadRow key={e.lead.id} enriched={e} tcms={tcms} properties={properties} compact />
                 ))}
               </div>
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
