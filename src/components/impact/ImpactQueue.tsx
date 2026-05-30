@@ -4,6 +4,26 @@ import { PGS } from "@/property-genius/data/pgs";
 import type { PG } from "@/types/entities";
 import { LeadPropertyDossier } from "@/components/impact/LeadPropertyDossier";
 import { ImpactHardActionsBar } from "@/components/impact/ImpactHardActionsBar";
+import { ImpactQueueQuickHelp } from "@/components/impact/ImpactQueueQuickHelp";
+import { ImpactApiHealthBanner } from "@/components/impact/ImpactApiHealthBanner";
+import { ImpactManagerEscalations } from "@/components/impact/ImpactManagerEscalations";
+import { ImpactStageMoveDialog } from "@/components/impact/ImpactStageMoveDialog";
+import { COLUMNS, type ColumnKey, COLUMN_STAGE_TARGET } from "@/components/impact/impact-queue-types";
+import {
+  type QueueChipFilter,
+  type ViewMode,
+  CHIP_LABELS,
+  readStoredView,
+  writeStoredView,
+  initialChipFilter,
+  readOverdueHomeEnabled,
+  writeOverdueHomeEnabled,
+  markDigestSentToday,
+} from "@/lib/crm10x/impact-queue-prefs";
+import { isQuoteStale } from "@/lib/crm10x/impact-quote-stale";
+import { useLeadsSync } from "@/lib/leads-sync";
+import { useImpactQueueKeyboard } from "@/hooks/useImpactQueueKeyboard";
+import { useImpactMorningDigest } from "@/hooks/useImpactMorningDigest";
 import {
   classifyImpactPriority,
   IMPACT_PRIORITY_META,
@@ -192,38 +212,68 @@ function parsePastedText(text: string): { name?: string; phone?: string; locatio
   };
 }
 
-type QueueChipFilter =
-  | "all"
-  | "hot"
-  | "warm"
-  | "cold"
-  | "overdue"
-  | "tour-today"
-  | "quote-pending";
-type ViewMode = "stack" | "board";
-type ColumnKey = "inbox" | "scheduled" | "onTour" | "quoted" | "booked";
-const COLUMNS: { key: ColumnKey; label: string; tint: string; icon: typeof Sparkles }[] = [
-  { key: "inbox",     label: "Inbox",          tint: "border-l-info",    icon: Sparkles },
-  { key: "scheduled", label: "Tour scheduled", tint: "border-l-accent",  icon: Calendar },
-  { key: "onTour",    label: "On tour today",  tint: "border-l-warning", icon: UserCheck },
-  { key: "quoted",    label: "Quote sent",     tint: "border-l-primary", icon: FileText },
-  { key: "booked",    label: "Booked",         tint: "border-l-success", icon: CheckCircle2 },
-];
-
 /* ------------------------------------------------------------------ */
 
 export function ImpactQueue() {
   const { role, currentTcmId, tcms, leads, tours, properties, bookings } = useApp();
+  const setLeadStage = useApp((s) => s.setLeadStage);
   const markTourStarted = useApp((s) => s.markTourStarted);
+  const leadsSyncStatus = useLeadsSync((s) => s.status);
   const { data: quotes = [] } = useQuotationsQuery();
 
   const [tcmFilter, setTcmFilter] = useState<string>(role === "tcm" ? currentTcmId : "all");
   const [query, setQuery] = useState("");
-  const [chipFilter, setChipFilter] = useState<QueueChipFilter>("all");
-  const [view, setView] = useState<ViewMode>("board");
+  const [chipFilter, setChipFilter] = useState<QueueChipFilter>(() => initialChipFilter(role));
+  const [view, setView] = useState<ViewMode>(readStoredView);
   const [focusLeadId, setFocusLeadId] = useState<string | null>(null);
   const [focusAction, setFocusAction] = useState<LeadFocusAction | null>(null);
   const [quickAddOpen, setQuickAddOpen] = useState(false);
+  const [booting, setBooting] = useState(true);
+  const [digestOpen, setDigestOpen] = useState(false);
+  const [overdueHome, setOverdueHome] = useState(readOverdueHomeEnabled);
+  const [stageMove, setStageMove] = useState<{
+    leadId: string;
+    leadName: string;
+    from: ColumnKey;
+    to: ColumnKey;
+  } | null>(null);
+  const [dragOverColumn, setDragOverColumn] = useState<ColumnKey | null>(null);
+
+  useEffect(() => {
+    writeStoredView(view);
+  }, [view]);
+
+  useImpactMorningDigest(() => setDigestOpen(true));
+
+  useEffect(() => {
+    if (leads.length > 0 || leadsSyncStatus === "ready") setBooting(false);
+  }, [leads.length, leadsSyncStatus]);
+
+  useEffect(() => {
+    if (leadsSyncStatus === "error") setBooting(false);
+  }, [leadsSyncStatus]);
+
+  useEffect(() => {
+    const id = window.setTimeout(() => setBooting(false), 3000);
+    return () => window.clearTimeout(id);
+  }, []);
+
+  const confirmStageMove = async () => {
+    if (!stageMove) return;
+    const targetStage = COLUMN_STAGE_TARGET[stageMove.to];
+    if (!targetStage) {
+      toast.error("Cannot move to this column");
+      setStageMove(null);
+      return;
+    }
+    try {
+      await setLeadStage(stageMove.leadId, targetStage);
+      toast.success(`Moved to ${COLUMNS.find((c) => c.key === stageMove.to)?.label}`);
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Move failed");
+    }
+    setStageMove(null);
+  };
 
   const selectChip = (next: QueueChipFilter) => {
     if (next === "all") {
@@ -385,8 +435,43 @@ export function ImpactQueue() {
 
   const escalations = stackSorted.filter((e) => e.nba.pressure === "escalate").length;
 
+  const leadIdsOrdered = useMemo(() => stackSorted.map((e) => e.lead.id), [stackSorted]);
+
+  const { focusLeadId: keyboardLeadId } = useImpactQueueKeyboard({
+    leadIds: leadIdsOrdered,
+    enabled: view === "stack" && !focusLeadId,
+    onOpenLead: (id) => {
+      setFocusLeadId(id);
+      setFocusAction("auto");
+    },
+  });
+
+  const unassignedLeads = useMemo(
+    () => leads.filter((l) => !l.assignedTcmId?.trim()).length,
+    [leads],
+  );
+
+  const requestStageMove = (leadId: string, from: ColumnKey, to: ColumnKey) => {
+    if (from === to) return;
+    const lead = leads.find((l) => l.id === leadId);
+    if (!lead) return;
+    if (!COLUMN_STAGE_TARGET[to]) {
+      toast.error("This column cannot accept drops yet");
+      return;
+    }
+    setStageMove({ leadId, leadName: lead.name, from, to });
+  };
+
   return (
     <div className="space-y-3">
+      <ImpactApiHealthBanner />
+
+      {unassignedLeads > 0 && role !== "tcm" && (
+        <div className="text-[11px] rounded-md border border-warning/40 bg-warning/10 px-3 py-2 text-warning">
+          {unassignedLeads} lead{unassignedLeads === 1 ? "" : "s"} without an assigned TCM — assign in lead panel so Hard Actions route correctly.
+        </div>
+      )}
+
       <ImpactHardActionsBar
         enriched={stackSorted}
         tcms={tcms}
@@ -397,7 +482,11 @@ export function ImpactQueue() {
         onAddLead={() => setQuickAddOpen(true)}
       />
 
+      <ImpactQueueQuickHelp />
+
       {/* ---------------- 10x Command Bar ---------------- */}
+      <ImpactManagerEscalations stackSorted={stackSorted} tcms={tcms} role={role} />
+
       <TenXCommandBar
         lastRerank={lastRerank}
         escalations={escalations}
@@ -405,6 +494,8 @@ export function ImpactQueue() {
         targets={targets}
         stackSorted={stackSorted}
         tick={tick}
+        digestOpen={digestOpen}
+        onDigestOpenChange={setDigestOpen}
         onFocusLead={(leadId) => {
           setFocusLeadId(leadId);
           setFocusAction("auto");
@@ -438,11 +529,21 @@ export function ImpactQueue() {
           <div className="relative">
             <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
             <Input
-              className="h-8 pl-7 text-xs w-52"
+              className={`h-8 pl-7 text-xs w-52 ${query.trim() ? "pr-7" : ""}`}
               placeholder="Search lead or phone"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
+            {query.trim() && (
+              <button
+                type="button"
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                aria-label="Clear search"
+                onClick={() => setQuery("")}
+              >
+                <X className="h-3.5 w-3.5" />
+              </button>
+            )}
           </div>
           <Select value={tcmFilter} onValueChange={setTcmFilter}>
             <SelectTrigger className="h-8 text-xs w-40"><SelectValue /></SelectTrigger>
@@ -465,6 +566,24 @@ export function ImpactQueue() {
               <LayoutGrid className="h-3 w-3" /> Board
             </button>
           </div>
+          {role === "tcm" && (
+            <label className="flex items-center gap-1.5 text-[10px] text-muted-foreground cursor-pointer select-none">
+              <input
+                type="checkbox"
+                className="rounded border-border"
+                checked={overdueHome}
+                onChange={(e) => {
+                  setOverdueHome(e.target.checked);
+                  writeOverdueHomeEnabled(e.target.checked);
+                  setChipFilter(e.target.checked ? "overdue" : "all");
+                }}
+              />
+              Start on overdue
+            </label>
+          )}
+          <span className="text-[9px] text-muted-foreground hidden lg:inline" title="Keyboard shortcuts">
+            J/K · Enter
+          </span>
         </div>
       </div>
 
@@ -510,12 +629,73 @@ export function ImpactQueue() {
         </span>
       </div>
 
+      {view === "board" && (
+        <p className="text-[10px] text-muted-foreground -mt-1">
+          Drag a card to another column to move stage (confirm in dialog).
+        </p>
+      )}
+
+      {(chipFilter !== "all" || query.trim()) && (
+        <div className="flex flex-wrap items-center gap-2 text-[11px] rounded-md border border-border bg-muted/30 px-2.5 py-1.5">
+          <span className="text-muted-foreground">Showing:</span>
+          {chipFilter !== "all" && (
+            <Badge variant="outline" className="text-[10px]">{CHIP_LABELS[chipFilter]}</Badge>
+          )}
+          {query.trim() && (
+            <Badge variant="outline" className="text-[10px]">“{query.trim()}”</Badge>
+          )}
+          <button
+            type="button"
+            className="text-accent font-semibold hover:underline"
+            onClick={() => {
+              setChipFilter("all");
+              setQuery("");
+            }}
+          >
+            Reset filters
+          </button>
+        </div>
+      )}
+
+      <ImpactStageMoveDialog
+        open={Boolean(stageMove)}
+        leadName={stageMove?.leadName ?? ""}
+        from={stageMove?.from ?? "inbox"}
+        to={stageMove?.to ?? "inbox"}
+        onConfirm={() => void confirmStageMove()}
+        onCancel={() => setStageMove(null)}
+      />
+
+      {booting && leads.length === 0 && leadsSyncStatus !== "error" && (
+        <div className="rounded-lg border border-border bg-card p-8 text-center space-y-2 animate-pulse">
+          <div className="text-xs font-medium text-muted-foreground">Loading your queue…</div>
+          <div className="text-[10px] text-muted-foreground">Fetching leads and tours from server</div>
+        </div>
+      )}
+
       {/* ---------------- View ---------------- */}
-      {view === "stack" ? (
+      {!booting || leads.length > 0 ? (view === "stack" ? (
         <div className="space-y-2">
           {stackSorted.length === 0 && (
-            <div className="rounded-lg border border-border bg-card p-10 text-center text-xs text-muted-foreground">
-              Queue clear. Add a lead or relax 🌱
+            <div className="rounded-lg border border-border bg-card p-10 text-center text-xs text-muted-foreground space-y-2">
+              <p>
+                {chipFilter !== "all" || query.trim()
+                  ? "No leads match your filters."
+                  : "Queue clear. Add a lead or relax 🌱"}
+              </p>
+              {(chipFilter !== "all" || query.trim()) && (
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="h-7 text-[10px]"
+                  onClick={() => {
+                    setChipFilter("all");
+                    setQuery("");
+                  }}
+                >
+                  Show all leads
+                </Button>
+              )}
             </div>
           )}
           {stackSorted.map((e, i) => (
@@ -527,6 +707,7 @@ export function ImpactQueue() {
               properties={properties}
               autoOpen={focusLeadId === e.lead.id}
               focusAction={focusLeadId === e.lead.id ? focusAction : null}
+              keyboardHighlight={keyboardLeadId === e.lead.id}
               onAutoOpenConsumed={() => {
                 setFocusLeadId(null);
                 setFocusAction(null);
@@ -540,7 +721,21 @@ export function ImpactQueue() {
             {COLUMNS.map((c) => (
               <div
                 key={c.key}
-                className={`min-w-0 h-full overflow-y-auto overflow-x-hidden rounded-lg border-l-2 ${c.tint} border-t border-r border-b border-border bg-muted/20 p-2`}
+                className={`min-w-0 h-full overflow-y-auto overflow-x-hidden rounded-lg border-l-2 ${c.tint} border-t border-r border-b border-border bg-muted/20 p-2 transition-colors ${
+                  dragOverColumn === c.key ? "ring-2 ring-accent/50 bg-accent/5" : ""
+                }`}
+                onDragOver={(ev) => {
+                  ev.preventDefault();
+                  setDragOverColumn(c.key);
+                }}
+                onDragLeave={() => setDragOverColumn((col) => (col === c.key ? null : col))}
+                onDrop={(ev) => {
+                  ev.preventDefault();
+                  setDragOverColumn(null);
+                  const leadId = ev.dataTransfer.getData("text/lead-id");
+                  const from = ev.dataTransfer.getData("text/from-column") as ColumnKey;
+                  if (leadId && from) requestStageMove(leadId, from, c.key);
+                }}
               >
               <div className="sticky top-0 z-10 flex items-center justify-between px-1 pb-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
                 <div className="text-[11px] font-semibold flex items-center gap-1.5">
@@ -562,12 +757,13 @@ export function ImpactQueue() {
                   setFocusLeadId(null);
                   setFocusAction(null);
                 }}
+                onRequestStageMove={requestStageMove}
               />
               </div>
             ))}
           </div>
         </div>
-      )}
+      )) : null}
     </div>
   );
 }
@@ -758,6 +954,7 @@ function BoardColumnBody({
   focusLeadId,
   focusAction,
   onFocusConsumed,
+  onRequestStageMove,
 }: {
   columnKey: ColumnKey;
   items: Enriched[];
@@ -767,6 +964,7 @@ function BoardColumnBody({
   focusLeadId: string | null;
   focusAction: LeadFocusAction | null;
   onFocusConsumed: () => void;
+  onRequestStageMove: (leadId: string, from: ColumnKey, to: ColumnKey) => void;
 }) {
   const useBands = columnKey === "scheduled" || columnKey === "onTour";
 
@@ -810,6 +1008,9 @@ function BoardColumnBody({
             tcms={tcms}
             properties={properties}
             compact
+            draggable
+            dragColumn={columnKey}
+            onRequestStageMove={onRequestStageMove}
             autoOpen={focusLeadId === e.lead.id}
             focusAction={focusLeadId === e.lead.id ? focusAction : null}
             onAutoOpenConsumed={onFocusConsumed}
@@ -843,6 +1044,9 @@ function BoardColumnBody({
                   tcms={tcms}
                   properties={properties}
                   compact
+                  draggable
+                  dragColumn={columnKey}
+                  onRequestStageMove={onRequestStageMove}
                   autoOpen={focusLeadId === e.lead.id}
                   focusAction={focusLeadId === e.lead.id ? focusAction : null}
                   onAutoOpenConsumed={onFocusConsumed}
@@ -869,11 +1073,16 @@ type EnrichedLite = {
 
 function LeadRow({
   enriched, rank, tcms, properties, compact, autoOpen, focusAction, onAutoOpenConsumed,
+  draggable, dragColumn, onRequestStageMove, keyboardHighlight,
 }: {
   enriched: EnrichedLite; rank?: number; tcms: TCM[]; properties: Property[]; compact?: boolean;
   autoOpen?: boolean;
   focusAction?: LeadFocusAction | null;
   onAutoOpenConsumed?: () => void;
+  draggable?: boolean;
+  dragColumn?: ColumnKey;
+  onRequestStageMove?: (leadId: string, from: ColumnKey, to: ColumnKey) => void;
+  keyboardHighlight?: boolean;
 }) {
   const { lead, openTour, lastQuote, nba, column, tourTimeHint, tourBand } = enriched;
   const [open, setOpen] = useState(false);
@@ -894,12 +1103,26 @@ function LeadRow({
     }
   }, [autoOpen, focusAction, onAutoOpenConsumed]);
 
+  const staleQuote = isQuoteStale(lastQuote);
+
   return (
     <>
       <button
         type="button"
+        draggable={draggable}
+        onDragStart={(ev) => {
+          if (!draggable || !dragColumn) return;
+          ev.dataTransfer.setData("text/lead-id", lead.id);
+          ev.dataTransfer.setData("text/from-column", dragColumn);
+          ev.dataTransfer.effectAllowed = "move";
+        }}
         onClick={() => setOpen(true)}
-        className={`w-full text-left rounded-md border bg-card hover:border-accent/60 hover:bg-muted/30 transition-colors px-3 py-2 flex items-center gap-3 group ${compact ? "" : ""}`}>
+        className={cn(
+          "w-full text-left rounded-md border bg-card hover:border-accent/60 hover:bg-muted/30 transition-colors px-3 py-2 flex items-center gap-3 group",
+          keyboardHighlight && "ring-2 ring-accent border-accent",
+          staleQuote && "border-danger/40",
+        )}
+      >
         {rank !== undefined && (
           <div className="w-7 h-7 rounded-md bg-muted text-[11px] font-mono font-semibold flex items-center justify-center shrink-0 group-hover:bg-accent/20">
             #{rank}
@@ -940,6 +1163,11 @@ function LeadRow({
           <div className={`mt-1.5 inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded border ${pressureColor(nba.pressure)}`}>
             <Sparkles className="h-2.5 w-2.5" /> {nba.label}
           </div>
+          {staleQuote && (
+            <Badge variant="outline" className="mt-1 text-[9px] border-danger/50 text-danger bg-danger/10">
+              Quote 24h+ · follow up
+            </Badge>
+          )}
         </div>
         <ChevronRight className="h-4 w-4 text-muted-foreground shrink-0 group-hover:text-accent" />
       </button>
@@ -2993,6 +3221,7 @@ function MessageLabSheet({ open, onOpenChange, tcms }: { open: boolean; onOpenCh
 
 function TenXCommandBar({
   lastRerank, escalations, counters, targets, stackSorted, tick, onFocusLead,
+  digestOpen, onDigestOpenChange,
 }: {
   lastRerank: number;
   escalations: number;
@@ -3001,6 +3230,8 @@ function TenXCommandBar({
   stackSorted: Array<{ lead: { id: string; name: string }; score: number; nba: { label: string; pressure: string }; column: string }>;
   tick: number;
   onFocusLead?: (leadId: string) => void;
+  digestOpen?: boolean;
+  onDigestOpenChange?: (open: boolean) => void;
 }) {
   const streak = counters.toursToday + counters.quotesWeek + counters.bookingsMonth;
   const breach = escalations;
@@ -3071,7 +3302,7 @@ function TenXCommandBar({
           </div>
         </div>
 
-        <Dialog>
+        <Dialog open={digestOpen} onOpenChange={onDigestOpenChange}>
           <DialogTrigger asChild>
             <Button size="sm" variant="outline" className="ml-auto gap-1.5 text-xs">
               <Sunrise className="h-3.5 w-3.5" /> Daily digest
@@ -3144,6 +3375,7 @@ function TenXCommandBar({
                 onClick={() => {
                   const txt = `*Daily digest*\nMoved: ${moved}  ·  Stalled: ${stalled.length}  ·  Booked: ${counters.bookingsMonth}\n\nTomorrow's top 5:\n${top5.map((e, i) => `${i + 1}. ${e.lead.name} — ${e.nba.label}`).join("\n")}`;
                   navigator.clipboard?.writeText(txt);
+                  markDigestSentToday();
                   toast.success("Digest copied — paste into WhatsApp");
                 }}
               >
