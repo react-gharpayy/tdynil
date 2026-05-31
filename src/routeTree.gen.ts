@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ZonesRouteImport } from './routes/zones'
 import { Route as ZoneBrainRouteImport } from './routes/zone-brain'
+import { Route as VisitWarRouteImport } from './routes/visit-war'
 import { Route as ToursRouteImport } from './routes/tours'
 import { Route as TodayRouteImport } from './routes/today'
 import { Route as SettingsRouteImport } from './routes/settings'
@@ -86,6 +87,11 @@ const ZonesRoute = ZonesRouteImport.update({
 const ZoneBrainRoute = ZoneBrainRouteImport.update({
   id: '/zone-brain',
   path: '/zone-brain',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisitWarRoute = VisitWarRouteImport.update({
+  id: '/visit-war',
+  path: '/visit-war',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ToursRoute = ToursRouteImport.update({
@@ -448,6 +454,7 @@ export interface FileRoutesByFullPath {
   '/settings': typeof SettingsRoute
   '/today': typeof TodayRoute
   '/tours': typeof ToursRoute
+  '/visit-war': typeof VisitWarRoute
   '/zone-brain': typeof ZoneBrainRoute
   '/zones': typeof ZonesRoute
   '/leads/add': typeof LeadsAddRoute
@@ -518,6 +525,7 @@ export interface FileRoutesByTo {
   '/settings': typeof SettingsRoute
   '/today': typeof TodayRoute
   '/tours': typeof ToursRoute
+  '/visit-war': typeof VisitWarRoute
   '/zone-brain': typeof ZoneBrainRoute
   '/zones': typeof ZonesRoute
   '/leads/add': typeof LeadsAddRoute
@@ -589,6 +597,7 @@ export interface FileRoutesById {
   '/settings': typeof SettingsRoute
   '/today': typeof TodayRoute
   '/tours': typeof ToursRoute
+  '/visit-war': typeof VisitWarRoute
   '/zone-brain': typeof ZoneBrainRoute
   '/zones': typeof ZonesRoute
   '/leads/add': typeof LeadsAddRoute
@@ -661,6 +670,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/today'
     | '/tours'
+    | '/visit-war'
     | '/zone-brain'
     | '/zones'
     | '/leads/add'
@@ -731,6 +741,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/today'
     | '/tours'
+    | '/visit-war'
     | '/zone-brain'
     | '/zones'
     | '/leads/add'
@@ -801,6 +812,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/today'
     | '/tours'
+    | '/visit-war'
     | '/zone-brain'
     | '/zones'
     | '/leads/add'
@@ -872,6 +884,7 @@ export interface RootRouteChildren {
   SettingsRoute: typeof SettingsRoute
   TodayRoute: typeof TodayRoute
   ToursRoute: typeof ToursRoute
+  VisitWarRoute: typeof VisitWarRoute
   ZoneBrainRoute: typeof ZoneBrainRoute
   ZonesRoute: typeof ZonesRoute
   MytBookingsRoute: typeof MytBookingsRoute
@@ -924,6 +937,13 @@ declare module '@tanstack/react-router' {
       path: '/zone-brain'
       fullPath: '/zone-brain'
       preLoaderRoute: typeof ZoneBrainRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/visit-war': {
+      id: '/visit-war'
+      path: '/visit-war'
+      fullPath: '/visit-war'
+      preLoaderRoute: typeof VisitWarRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tours': {
@@ -1455,6 +1475,7 @@ const rootRouteChildren: RootRouteChildren = {
   SettingsRoute: SettingsRoute,
   TodayRoute: TodayRoute,
   ToursRoute: ToursRoute,
+  VisitWarRoute: VisitWarRoute,
   ZoneBrainRoute: ZoneBrainRoute,
   ZonesRoute: ZonesRoute,
   MytBookingsRoute: MytBookingsRoute,
