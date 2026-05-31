@@ -50,9 +50,12 @@ function PodiumCard({ item, index }: { item: CreatorLeaderboardEntry; index: num
       <p className="mt-1 text-sm font-semibold text-foreground">{item.name}</p>
       <p className="text-[11px] text-muted-foreground">{roleLabel}</p>
       <div className={`mt-4 rounded-xl bg-background/70 px-3 py-2 ${heights[index] || "h-20"}`}>
-        <p className="text-[10px] uppercase tracking-wide text-muted-foreground">Tours</p>
+        <p className="text-[10px] uppercase tracking-wide text-muted-foreground">Total</p>
         <p className="mt-1 text-2xl font-bold text-foreground">{item.toursCount}</p>
-        <p className="text-[9px] uppercase tracking-wide text-muted-foreground">scheduled</p>
+        <div className="mt-2 flex items-center gap-3">
+          <div className="text-[11px] text-muted-foreground">Scheduled: <span className="font-semibold text-foreground">{item.scheduledCount}</span></div>
+          <div className="text-[11px] text-muted-foreground">Completed: <span className="font-semibold text-foreground">{item.completedCount}</span></div>
+        </div>
         {item.zones.length > 0 && (
           <div className="mt-2 flex flex-wrap gap-1">
             {item.zones.map((z) => (
@@ -129,7 +132,7 @@ export function CreatorLeaderboardPanel({ compact = false }: { compact?: boolean
               <Sparkles className="h-3.5 w-3.5 text-primary" />
               <span className="text-[11px] font-semibold uppercase tracking-wide text-primary">Tour Leaders</span>
             </div>
-            <p className="mt-2 text-sm text-muted-foreground">Members ranked by tours scheduled.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Members ranked by tours scheduled + tours completed.</p>
           </div>
           <div className="flex flex-wrap items-center gap-1.5">
             <Select value={selectedZone} onValueChange={setSelectedZone}>
@@ -270,8 +273,11 @@ export function CreatorLeaderboardPanel({ compact = false }: { compact?: boolean
                       )}
                     </div>
                     <div className="text-right">
-                      <p className="text-sm font-semibold text-foreground">{entry.toursCount}</p>
-                      <p className="text-[10px] uppercase tracking-wide text-muted-foreground">tours</p>
+                      <p className="text-sm font-semibold text-foreground">Total: {entry.toursCount}</p>
+                      <div className="mt-1 flex items-center justify-end gap-2 text-[10px] text-muted-foreground">
+                        <span className="rounded-full bg-secondary/70 px-2 py-0.5">Sched: <span className="font-semibold text-foreground">{entry.scheduledCount}</span></span>
+                        <span className="rounded-full bg-secondary/70 px-2 py-0.5">Comp: <span className="font-semibold text-foreground">{entry.completedCount}</span></span>
+                      </div>
                     </div>
                   </motion.div>
                 );

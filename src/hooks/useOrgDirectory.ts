@@ -151,3 +151,44 @@ export function useOrgProperties() {
   
   return { properties, loading, error };
 }
+
+export function useActiveTcMs() {
+  const [tcms, setTcMs] = useState<ManagedUser[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    let retryCount = 0;
+    const maxRetries = 3;
+
+    const fetchTcMs = async () => {
+      try {
+        const list = await api.tcms.list();
+        if (cancelled) return;
+        setTcMs(list || []);
+        setError(null);
+      } catch (err) {
+        if (cancelled) return;
+        const error = err as Error;
+        console.warn(`[useActiveTcMs] Failed to fetch tcms (attempt ${retryCount + 1}/${maxRetries}):`, error.message);
+
+        if (retryCount < maxRetries - 1) {
+          retryCount++;
+          setTimeout(fetchTcMs, Math.pow(2, retryCount) * 1000);
+          return;
+        }
+
+        setError(error.message);
+        setTcMs([]);
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    };
+
+    fetchTcMs();
+    return () => { cancelled = true; };
+  }, []);
+
+  return { tcms, loading, error };
+}

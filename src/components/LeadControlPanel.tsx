@@ -6,7 +6,7 @@ import { useApp, getProperty, getTcm } from "@/lib/store";
 import type { Tour as CrmTour } from "@/lib/types";
 import { useAppState } from "@/myt/lib/app-context";
 import { Tour } from "@/myt/lib/types";
-import { useOrgMembers } from "@/hooks/useOrgDirectory";
+import { useOrgMembers, useActiveTcMs } from "@/hooks/useOrgDirectory";
 import { notifyTourScheduled } from "@/lib/notifications";
 import {
   Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription,
@@ -47,6 +47,7 @@ import { ActivityTimeline } from "@/components/activities/ActivityTimeline";
 import { ActivityComposer } from "@/components/activities/ActivityComposer";
 import { TodoPanel } from "@/components/todos/TodoPanel";
 import { useActivities } from "@/hooks/useActivities";
+import { allCatalogProperties } from "@/lib/crm10x/property-catalog";
 
 const TAG_OPTIONS = ["price-issue", "location-mismatch", "parents-involved", "urgent", "budget-low"];
 const OBJECTIONS = ["Budget", "Location", "Amenities", "Timing", "Parents", "Comparing options", "Other"];
@@ -111,6 +112,7 @@ export function LeadControlPanel() {
   const { settings } = useSettings();
 
   const lead = useMemo(() => leads.find((l) => l.id === selectedLeadId) ?? null, [leads, selectedLeadId]);
+  const tourPropertyOptions = useMemo(() => allCatalogProperties(properties), [properties]);
 
   // Mark handoffs read when this lead opens
   useEffect(() => {
@@ -134,10 +136,16 @@ export function LeadControlPanel() {
     [activities, lead],
   );
 
-  const tcmUsers = useMemo(
-    () => orgMembers.filter((m) => m.role === "tcm").sort((a, b) => a.name.localeCompare(b.name)),
-    [orgMembers],
-  );
+  const { tcms: activeTcms } = useActiveTcMs();
+  const tcmUsers = useMemo(() => {
+    if (activeTcms && activeTcms.length > 0) {
+      return activeTcms.map((a: any) => ({ id: a.id, name: a.fullName ?? a.name, role: a.role ?? "tcm", zones: a.zones ?? [] }))
+        .sort((a, b) => a.name.localeCompare(b.name));
+    }
+    return orgMembers
+      .filter((m) => m.role === "tcm" || m.isTcm !== false)
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }, [orgMembers, activeTcms]);
   const scheduleAssignees = useMemo(() => {
     if (authUser?.role !== "member") return tcmUsers;
 
@@ -153,7 +161,8 @@ export function LeadControlPanel() {
 
     const unique = new Map<string, typeof selfOption>();
     for (const tcm of tcmUsers) unique.set(tcm.id, tcm);
-    unique.set(selfOption.id, selfOption);
+    // Include the current user as an option only if they have TCM capability
+    if (authUser?.isTcm) unique.set(selfOption.id, selfOption);
     return Array.from(unique.values()).sort((a, b) => a.name.localeCompare(b.name));
   }, [authUser, orgMembers, tcmUsers]);
   const defaultSelfAssigneeId = useMemo(() => {
@@ -750,7 +759,7 @@ export function LeadControlPanel() {
               {!hasScheduledTour ? (
                 <InlineScheduleTour
                   lead={lead}
-                  properties={properties}
+                  properties={tourPropertyOptions}
                   tcms={scheduleAssignees}
                   propertyId={propertyId}
                   tcmId={tcmId}

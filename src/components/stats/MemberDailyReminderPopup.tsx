@@ -55,7 +55,7 @@ export function MemberDailyReminderPopup() {
 
   const { data, isLoading } = useLeadsDailyProgress(today);
 
-  const goals = data?.goals || { leadsAdded: 40, toursScheduled: 10 };
+  const goals = data?.goals || { leadsAdded: 40, toursScheduled: 10, quotesSent: 10 };
   const memberRow = useMemo(() => {
     const members = data?.members || [];
     return members.find((member) => member.id === authUser?.id) || members[0] || null;
@@ -81,6 +81,7 @@ export function MemberDailyReminderPopup() {
 
   const leadsAdded = memberRow?.leadsAdded ?? 0;
   const toursScheduled = memberRow?.toursScheduled ?? 0;
+  const quotesSent = memberRow?.quotesSent ?? 0;
   const allDone = memberRow?.allDone ?? false;
 
   return (
@@ -99,7 +100,7 @@ export function MemberDailyReminderPopup() {
                   </div>
                   <DialogTitle className="text-base font-semibold">Today&apos;s Focus</DialogTitle>
                   <DialogDescription className="text-xs mt-0.5">
-                    Your daily targets: {goals.leadsAdded} leads and {goals.toursScheduled} tours.
+                    Your daily targets: {goals.leadsAdded} leads, {goals.toursScheduled} tours, and {goals.quotesSent ?? 10} quotes.
                   </DialogDescription>
                 </div>
                 {allDone && (
@@ -132,17 +133,23 @@ export function MemberDailyReminderPopup() {
                     colorClass="bg-gradient-to-r from-indigo-500 to-violet-500"
                   />
                   <ProgressStrip
-                    label="Tours Scheduled"
+                    label="Tours Scheduled + Completed"
                     value={toursScheduled}
                     max={goals.toursScheduled}
                     colorClass="bg-gradient-to-r from-emerald-500 to-teal-500"
+                  />
+                  <ProgressStrip
+                    label="Quotes Sent"
+                    value={quotesSent}
+                    max={goals.quotesSent ?? 10}
+                    colorClass="bg-gradient-to-r from-fuchsia-500 to-pink-500"
                   />
 
                   <div className={`rounded-xl border p-3 ${allDone ? "bg-emerald-500/10 border-emerald-500/30" : "bg-secondary/20"}`}>
                     <p className={`text-xs ${allDone ? "text-emerald-700 dark:text-emerald-300 font-medium" : "text-muted-foreground"}`}>
                       {allDone
-                        ? "Excellent work. You completed both milestones for today."
-                        : "Stay consistent. Finish both milestones and make today count."}
+                        ? "Excellent work. You completed all three milestones for today."
+                        : "Stay consistent. Finish all three milestones and make today count."}
                     </p>
                   </div>
                 </>

@@ -23,8 +23,10 @@ import {
 import { isQuoteStale } from "@/lib/crm10x/impact-quote-stale";
 import { useLeadsSync } from "@/lib/leads-sync";
 import { leadHasValidProperty, pickBestPropertyForLead } from "@/lib/crm10x/fix-lead-properties";
+import { useAuthUser } from "@/lib/auth-store";
 import { useImpactQueueKeyboard } from "@/hooks/useImpactQueueKeyboard";
 import { useImpactMorningDigest } from "@/hooks/useImpactMorningDigest";
+import { useActiveTcMs, useOrgMembers } from "@/hooks/useOrgDirectory";
 import {
   classifyImpactPriority,
   IMPACT_PRIORITY_META,
@@ -92,6 +94,7 @@ import { useMountedNow } from "@/hooks/use-now";
 import { useAuditLog } from "@/lib/crm10x/audit-log";
 import { useIdentityStore } from "@/lib/lead-identity/store";
 import { waLink } from "@/lib/crm10x/templates";
+import { LeadPasteParser } from "@/components/leads/LeadPasteParser";
 
 /* ================================================================== */
 /*  Impact Queue — 10x                                                 */
@@ -243,6 +246,43 @@ function parsePastedText(text: string): { name?: string; phone?: string; locatio
 
 export function ImpactQueue() {
   const { role, currentTcmId, tcms, leads, tours, properties, bookings } = useApp();
+  const authUser = useAuthUser((s) => s.user);
+  const canSelectTcmScope =
+    authUser?.role === "super_admin" || authUser?.role === "manager" || authUser?.role === "admin";
+  const selfScopeId = authUser?.id || currentTcmId;
+  const { tcms: activeTcms } = useActiveTcMs();
+  const { members: orgMembers } = useOrgMembers();
+  const tcmOptions = activeTcms.length > 0 ? activeTcms : tcms;
+  const memberScopeOptions = useMemo(() => {
+    const normalize = (zones?: string[]) =>
+      (zones ?? []).map((z) => String(z).trim().toLowerCase()).filter(Boolean);
+
+    const myZones = new Set(normalize(authUser?.zones));
+    const isAdminScoped = authUser?.role === "admin";
+
+    const fromDirectory = orgMembers
+      .filter((m) => m.role === "member" || m.role === "tcm")
+      .filter((m) => {
+        if (!isAdminScoped) return true;
+        const memberZones = normalize(m.zones);
+        const sameZone = memberZones.some((z) => myZones.has(z));
+        const reportsToMe = Boolean(authUser?.id) && m.adminId === authUser.id;
+        return sameZone || reportsToMe;
+      })
+      .map((m) => ({ id: m.id, name: m.name }));
+    if (fromDirectory.length > 0) {
+      return Array.from(new Map(fromDirectory.map((m) => [m.id, m])).values())
+        .sort((a, b) => a.name.localeCompare(b.name));
+    }
+    return tcmOptions
+      .filter((t: any) => {
+        if (!isAdminScoped) return true;
+        const zones = normalize(Array.isArray(t.zones) ? t.zones : (t.zone ? [t.zone] : []));
+        return zones.some((z) => myZones.has(z));
+      })
+      .map((t: any) => ({ id: t.id, name: t.fullName ?? t.name }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }, [orgMembers, tcmOptions, authUser?.role, authUser?.zones, authUser?.id]);
   const setLeadStage = useApp((s) => s.setLeadStage);
   const markTourStarted = useApp((s) => s.markTourStarted);
   const leadsSyncStatus = useLeadsSync((s) => s.status);
@@ -271,6 +311,20 @@ export function ImpactQueue() {
   }, [view]);
 
   useImpactMorningDigest(() => setDigestOpen(true));
+
+  useEffect(() => {
+    if (!canSelectTcmScope && selfScopeId && tcmFilter !== selfScopeId) {
+      setTcmFilter(selfScopeId);
+    }
+  }, [canSelectTcmScope, selfScopeId, tcmFilter]);
+
+  useEffect(() => {
+    if (!canSelectTcmScope) return;
+    if (tcmFilter === "all") return;
+    if (!memberScopeOptions.some((m) => m.id === tcmFilter)) {
+      setTcmFilter("all");
+    }
+  }, [canSelectTcmScope, memberScopeOptions, tcmFilter]);
 
   const [fixing, setFixing] = useState(false);
   const handleFixProperties = async () => {
@@ -466,21 +520,25 @@ export function ImpactQueue() {
     const scopedTours = tcmFilter === "all" ? tours : tours.filter((t) => t.tcmId === tcmFilter);
     const scopedQuotes = tcmFilter === "all" ? quotes : quotes.filter((q) => q.tcmId === tcmFilter);
     const scopedBookings = tcmFilter === "all" ? bookings : bookings.filter((b) => b.tcmId === tcmFilter);
-    const toursToday = scopedTours.filter((t) => isToday(t.scheduledAt) && t.status === "scheduled").length;
-    const quotesWeek = scopedQuotes.filter((q) => isThisWeek(q.sentAt)).length;
+    const scopedLeads = tcmFilter === "all" ? leads : leads.filter((l) => l.assignedTcmId === tcmFilter);
+    const toursScheduledToday = scopedTours.filter((t) => isToday(t.scheduledAt)).length;
+    const toursCompletedToday = scopedTours.filter((t) => t.status === "completed" && isToday(t.updatedAt)).length;
+    const toursToday = toursScheduledToday + toursCompletedToday;
+    const quotesToday = scopedQuotes.filter((q) => isToday(q.sentAt)).length;
     const bookingsMonth = scopedBookings.filter((b) => isThisMonth(b.ts)).length;
-    return { toursToday, quotesWeek, bookingsMonth };
+    const leadsToday = scopedLeads.filter((l) => isToday(l.createdAt)).length;
+    return { toursToday, quotesToday, bookingsMonth, leadsToday };
   }, [tours, quotes, bookings, tcmFilter]);
 
-  const quotesThisWeek = useMemo(() => {
+  const quotesToday = useMemo(() => {
     const scoped = tcmFilter === "all" ? quotes : quotes.filter((q) => q.tcmId === tcmFilter);
     return scoped
-      .filter((q) => isThisWeek(q.sentAt))
+      .filter((q) => isToday(q.sentAt))
       .sort((a, b) => +new Date(b.sentAt) - +new Date(a.sentAt));
   }, [quotes, tcmFilter]);
 
   // Visible targets — tweak as the BBD target evolves.
-  const targets = { toursToday: 4, quotesWeek: 10, bookingsMonth: 6 };
+  const targets = { leadsToday: 40, toursToday: 10, quotesToday: 10, bookingsMonth: 45 };
   const tone = (got: number, target: number) =>
     got >= target ? "text-success border-success/30 bg-success/10"
     : got >= target * 0.5 ? "text-warning border-warning/30 bg-warning/10"
@@ -561,15 +619,15 @@ export function ImpactQueue() {
           <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-semibold">
             Conversion engine · one screen
           </div>
-          <h1 className="text-2xl font-display font-semibold flex items-center gap-2">
+          <h1 className="text-xl font-display font-semibold flex items-center gap-2">
             Impact Queue
             {escalations > 0 && (
-              <Badge variant="outline" className="text-[10px] bg-danger/10 text-danger border-danger/40 gap-1">
+              <Badge variant="outline" className="text-[9px] bg-danger/10 text-danger border-danger/40 gap-1">
                 <Zap className="h-3 w-3" /> {escalations} escalating
               </Badge>
             )}
           </h1>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-[11px] text-muted-foreground">
             Work top-down. Every lead has a Next Best Action. Nothing falls through.
           </p>
         </div>
@@ -578,11 +636,12 @@ export function ImpactQueue() {
             defaultTcmId={tcmFilter !== "all" ? tcmFilter : currentTcmId}
             open={quickAddOpen}
             onOpenChange={setQuickAddOpen}
+            tcmOptions={tcmOptions}
           />
           <div className="relative">
             <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
             <Input
-              className={`h-8 pl-7 text-xs w-52 ${query.trim() ? "pr-7" : ""}`}
+              className={`h-8 pl-7 text-[11px] w-52 ${query.trim() ? "pr-7" : ""}`}
               placeholder="Search lead or phone"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
@@ -602,29 +661,35 @@ export function ImpactQueue() {
             type="button"
             onClick={handleFixProperties}
             disabled={fixing}
-            className="h-8 px-2 text-[10px] font-semibold rounded-md border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-accent/10 transition-colors disabled:opacity-50 flex items-center gap-1"
+            className="h-8 px-2 text-[9px] font-semibold rounded-md border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-accent/10 transition-colors disabled:opacity-50 flex items-center gap-1"
             title="Fix leads with invalid properties"
           >
             <Building2 className="h-3 w-3" />
             {fixing ? "Fixing…" : "Fix props"}
           </button>
-          <Select value={tcmFilter} onValueChange={setTcmFilter}>
-            <SelectTrigger className="h-8 text-xs w-40"><SelectValue /></SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all" className="text-xs">All TCMs</SelectItem>
-              {tcms.map((t) => (
-                <SelectItem key={t.id} value={t.id} className="text-xs">{t.name}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          {!canSelectTcmScope ? (
+            <div className="h-8 min-w-[10rem] rounded-md border border-border bg-card px-3 py-2 text-[11px] font-semibold text-foreground flex items-center">
+              {authUser?.fullName ?? "My queue"}
+            </div>
+          ) : (
+            <Select value={tcmFilter} onValueChange={setTcmFilter}>
+              <SelectTrigger className="h-8 text-[11px] w-40"><SelectValue /></SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all" className="text-[11px]">All Members</SelectItem>
+                {memberScopeOptions.map((m) => (
+                  <SelectItem key={m.id} value={m.id} className="text-[11px]">{m.name}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          )}
           <div className="flex rounded-md border border-border overflow-hidden">
             <button
-              className={`h-8 px-2 text-[10px] uppercase tracking-wider font-semibold flex items-center gap-1 ${view === "stack" ? "bg-accent text-accent-foreground" : "bg-card text-muted-foreground"}`}
+              className={`h-8 px-2 text-[9px] uppercase tracking-wider font-semibold flex items-center gap-1 ${view === "stack" ? "bg-accent text-accent-foreground" : "bg-card text-muted-foreground"}`}
               onClick={() => setView("stack")}>
               <ListOrdered className="h-3 w-3" /> Stack
             </button>
             <button
-              className={`h-8 px-2 text-[10px] uppercase tracking-wider font-semibold flex items-center gap-1 ${view === "board" ? "bg-accent text-accent-foreground" : "bg-card text-muted-foreground"}`}
+              className={`h-8 px-2 text-[9px] uppercase tracking-wider font-semibold flex items-center gap-1 ${view === "board" ? "bg-accent text-accent-foreground" : "bg-card text-muted-foreground"}`}
               onClick={() => setView("board")}>
               <LayoutGrid className="h-3 w-3" /> Board
             </button>
@@ -644,21 +709,22 @@ export function ImpactQueue() {
               Start on overdue
             </label>
           )}
-          <span className="text-[9px] text-muted-foreground hidden lg:inline" title="Keyboard shortcuts">
+          <span className="text-[8px] text-muted-foreground hidden lg:inline" title="Keyboard shortcuts">
             J/K · Enter
           </span>
         </div>
       </div>
 
       {/* ---------------- Live counters ---------------- */}
-      <div className="grid grid-cols-3 gap-2">
-        <Counter label="Tours today" got={counters.toursToday} target={targets.toursToday} tone={tone(counters.toursToday, targets.toursToday)} icon={Calendar} />
+      <div className="grid grid-cols-4 gap-2">
+        <Counter label="Leads Added Today" got={counters.leadsToday} target={targets.leadsToday} tone={tone(counters.leadsToday, targets.leadsToday)} icon={ListOrdered} />
+        <Counter label="Tours scheduled + completed today" got={counters.toursToday} target={targets.toursToday} tone={tone(counters.toursToday, targets.toursToday)} icon={Calendar} />
         <QuotesWeekCounter
-          quotes={quotesThisWeek}
+          quotes={quotesToday}
           leads={leads}
-          got={counters.quotesWeek}
-          target={targets.quotesWeek}
-          tone={tone(counters.quotesWeek, targets.quotesWeek)}
+          got={counters.quotesToday}
+          target={targets.quotesToday}
+          tone={tone(counters.quotesToday, targets.quotesToday)}
           onFocusLead={(leadId) => {
             setFocusLeadId(leadId);
             setFocusAction("auto");
@@ -668,7 +734,7 @@ export function ImpactQueue() {
       </div>
 
       {/* ---------------- Today's Focus Inventory + Message Lab ---------------- */}
-      <FocusInventoryStrip tcmFilter={tcmFilter} />
+      <FocusInventoryStrip tcmFilter={tcmFilter} tcmOptions={tcmOptions} />
 
       {/* ---------------- Filter chips ---------------- */}
       <div className="flex flex-wrap gap-1.5 items-center">
@@ -686,7 +752,7 @@ export function ImpactQueue() {
         <Chip active={chipFilter === "quote-pending"} onClick={() => selectChip("quote-pending")}>
           Quote pending
         </Chip>
-        <MessageLabButton tcms={tcms} />
+        <MessageLabButton tcmOptions={tcmOptions} />
         <span className="ml-auto text-[10px] text-muted-foreground">
           {filtered.length} lead{filtered.length !== 1 ? "s" : ""} in queue
         </span>
@@ -767,6 +833,7 @@ export function ImpactQueue() {
               rank={i + 1}
               enriched={e}
               tcms={tcms}
+              tcmOptions={tcmOptions}
               properties={properties}
               autoOpen={focusLeadId === e.lead.id}
               focusAction={focusLeadId === e.lead.id ? focusAction : null}
@@ -812,6 +879,7 @@ export function ImpactQueue() {
                 columnKey={c.key}
                 items={boardBuckets[c.key]}
                 tcms={tcms}
+                tcmOptions={tcmOptions}
                 properties={properties}
                 nowMs={tick ? Date.now() : 0}
                 focusLeadId={focusLeadId}
@@ -891,7 +959,7 @@ function QuotesWeekCounter({
       >
         <div className="flex items-center justify-between">
           <div className="text-[10px] uppercase tracking-wider font-semibold flex items-center gap-1.5">
-            <FileText className="h-3 w-3" /> Quotes this week
+            <FileText className="h-3 w-3" /> Quotes today
           </div>
           <span className="text-[10px] font-mono opacity-80">{got}/{target}</span>
         </div>
@@ -905,14 +973,14 @@ function QuotesWeekCounter({
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent side="right" className="w-full sm:max-w-md overflow-y-auto">
           <SheetHeader>
-            <SheetTitle className="text-sm">Quotes this week</SheetTitle>
+            <SheetTitle className="text-sm">Quotes today</SheetTitle>
             <SheetDescription className="text-xs">
-              {got} quotation{got !== 1 ? "s" : ""} sent in the last 7 days
+              {got} quotation{got !== 1 ? "s" : ""} sent today
             </SheetDescription>
           </SheetHeader>
           <div className="mt-4 space-y-2">
             {quotes.length === 0 ? (
-              <p className="text-xs text-muted-foreground italic py-6 text-center">No quotes sent this week yet.</p>
+              <p className="text-xs text-muted-foreground italic py-6 text-center">No quotes sent today yet.</p>
             ) : (
               quotes.map((q) => {
                 const lead = leadById.get(q.leadId);
@@ -1012,6 +1080,7 @@ function BoardColumnBody({
   columnKey,
   items,
   tcms,
+  tcmOptions,
   properties,
   nowMs,
   focusLeadId,
@@ -1022,6 +1091,7 @@ function BoardColumnBody({
   columnKey: ColumnKey;
   items: Enriched[];
   tcms: TCM[];
+  tcmOptions: TCM[];
   properties: Property[];
   nowMs: number;
   focusLeadId: string | null;
@@ -1069,6 +1139,7 @@ function BoardColumnBody({
             key={e.lead.id}
             enriched={e}
             tcms={tcms}
+            tcmOptions={tcmOptions}
             properties={properties}
             compact
             draggable
@@ -1105,6 +1176,7 @@ function BoardColumnBody({
                   key={e.lead.id}
                   enriched={e}
                   tcms={tcms}
+                  tcmOptions={tcmOptions}
                   properties={properties}
                   compact
                   draggable
@@ -1135,10 +1207,10 @@ type EnrichedLite = {
 };
 
 function LeadRow({
-  enriched, rank, tcms, properties, compact, autoOpen, focusAction, onAutoOpenConsumed,
+  enriched, rank, tcms, tcmOptions, properties, compact, autoOpen, focusAction, onAutoOpenConsumed,
   draggable, dragColumn, onRequestStageMove, keyboardHighlight,
 }: {
-  enriched: EnrichedLite; rank?: number; tcms: TCM[]; properties: Property[]; compact?: boolean;
+  enriched: EnrichedLite; rank?: number; tcms: TCM[]; tcmOptions: TCM[]; properties: Property[]; compact?: boolean;
   autoOpen?: boolean;
   focusAction?: LeadFocusAction | null;
   onAutoOpenConsumed?: () => void;
@@ -1245,6 +1317,7 @@ function LeadRow({
         onOpenChange={setOpen}
         enriched={enriched}
         tcm={tcm}
+        tcmOptions={tcmOptions}
         catalogProperty={catalogProperty}
         opsProperties={properties}
         pendingAction={drawerAction}
@@ -1420,13 +1493,14 @@ function LeadInterestedPropertiesPicker({ lead }: { lead: Lead }) {
 }
 
 function LeadDrawer({
-  open, onOpenChange, enriched, tcm, catalogProperty, opsProperties,
+  open, onOpenChange, enriched, tcm, tcmOptions, catalogProperty, opsProperties,
   pendingAction, onPendingActionConsumed,
 }: {
   open: boolean;
   onOpenChange: (v: boolean) => void;
   enriched: EnrichedLite;
   tcm?: TCM;
+  tcmOptions: TCM[];
   catalogProperty?: CatalogProperty;
   opsProperties: Property[];
   pendingAction?: LeadFocusAction | null;
@@ -1501,6 +1575,7 @@ function LeadDrawer({
           <CommandActions
             lead={lead}
             tcm={tcm}
+            tcmOptions={tcmOptions}
             openTour={openTour}
             lastQuote={lastQuote}
             nba={nba}
@@ -1525,11 +1600,12 @@ function LeadDrawer({
 /* ================================================================== */
 
 function CommandActions({
-  lead, tcm, openTour, lastQuote, nba, catalogProperty, opsProperties, column,
+  lead, tcm, tcmOptions, openTour, lastQuote, nba, catalogProperty, opsProperties, column,
   scheduleOpen, schedulePrefill, onScheduleOpenChange, onSchedulePrefillClear,
   pendingAction, onPendingActionConsumed,
 }: {
   lead: Lead; tcm?: TCM; openTour?: Tour; lastQuote?: Quotation; nba: NextBestAction;
+  tcmOptions: TCM[];
   catalogProperty?: CatalogProperty; opsProperties: Property[];
   column: ColumnKey;
   scheduleOpen?: boolean;
@@ -1709,6 +1785,7 @@ function CommandActions({
             }}
             prefillPg={schedulePrefill}
             showTrigger={column === "inbox"}
+            tcmOptions={tcmOptions}
           />
         )}
 
@@ -2080,293 +2157,30 @@ function NegotiationPlaybook({
 /* ================================================================== */
 
 function QuickAddLead({
-  defaultTcmId,
   open: controlledOpen,
   onOpenChange: controlledOnOpenChange,
 }: {
-  defaultTcmId: string;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
+  defaultTcmId: string;
+  tcmOptions: TCM[];
 }) {
-  const tcms = useApp((s) => s.tcms);
-  const addLead = useApp((s) => s.addLead);
-  const autoAssignLead = useApp((s) => s.autoAssignLead);
-
   const [internalOpen, setInternalOpen] = useState(false);
   const open = controlledOpen ?? internalOpen;
   const setOpen = controlledOnOpenChange ?? setInternalOpen;
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [area, setArea] = useState("");
-  const [selectedPG, setSelectedPG] = useState<PG | null>(null);
-  const [hubQuery, setHubQuery] = useState("");
-  const [showHubResults, setShowHubResults] = useState(false);
-  const [budget, setBudget] = useState(12000);
-  const [moveIn, setMoveIn] = useState(todayISO());
-  const [intent, setIntent] = useState<Lead["intent"]>("warm");
-  const [tcmId, setTcmId] = useState<string>(defaultTcmId);
-  const [autoRoute, setAutoRoute] = useState(true);
-  const [touched, setTouched] = useState({ name: false, phone: false, area: false });
-  const [submitting, setSubmitting] = useState(false);
-
-  const hubResults = useMemo(() => {
-    const q = hubQuery.trim();
-    if (!q && selectedPG) return [];
-    if (q) return searchPGs(q, 10);
-    if (area) {
-      const byArea = PGS.filter((p) =>
-        p.area.toLowerCase().includes(area.toLowerCase()) ||
-        area.toLowerCase().includes(p.area.toLowerCase()),
-      );
-      return byArea.slice(0, 10).map((pg) => ({ pg, score: 1, matched: [] }));
-    }
-    return [...PGS].sort((a, b) => b.iq - a.iq).slice(0, 10).map((pg) => ({ pg, score: 1, matched: [] }));
-  }, [hubQuery, selectedPG, area]);
-
-  const errors = {
-    name: name.trim().length >= 2 ? "" : "Name must be at least 2 characters.",
-    phone: isValidPhone(phone) ? "" : "Phone must be exactly 10 digits.",
-    area: area.trim() ? "" : "Preferred location is required.",
-  };
-  const canSubmit = !errors.name && !errors.phone && !errors.area && !submitting;
-
-  const reset = () => {
-    setName(""); setPhone(""); setArea(""); setSelectedPG(null); setHubQuery("");
-    setBudget(12000);
-    setMoveIn(todayISO()); setIntent("warm"); setTcmId(defaultTcmId); setAutoRoute(true);
-    setTouched({ name: false, phone: false, area: false });
-    setSubmitting(false);
-  };
-
-  const handlePaste = (event: ClipboardEvent<HTMLInputElement>) => {
-    const parsed = parsePastedText(event.clipboardData.getData("text"));
-    if (!parsed.name && !parsed.phone && !parsed.location) return;
-    event.preventDefault();
-    setSelectedPG(null);
-    setName(parsed.name ?? "");
-    setPhone(parsed.phone ?? "");
-    setArea(parsed.location ?? "");
-    setTouched({ name: false, phone: false, area: false });
-  };
-
-  const finishSuccess = (message = "Lead added to Impact Queue") => {
-    setOpen(false);
-    reset();
-    toast.success(message);
-  };
-
-  const submit = async () => {
-    setTouched({ name: true, phone: true, area: true });
-    if (!canSubmit) return;
-
-    const phoneE164 = normalizePhone(phone);
-    const nameTrim = name.trim();
-    const areaTrim = area.trim();
-    const moveInIso = new Date(moveIn).toISOString();
-
-    setSubmitting(true);
-    try {
-      const result = await dispatch({
-        type: "cmd.lead.create",
-        payload: {
-          name: nameTrim,
-          phone: phoneE164,
-          source: "manual",
-          budget,
-          moveInDate: moveInIso,
-          preferredArea: areaTrim,
-          zoneId: null,
-          intent,
-          assigneeId: autoRoute ? undefined : tcmId,
-        },
-      });
-
-      const data = (result as { data?: { leadId?: string; duplicate?: boolean } }).data;
-
-      if (!result.ok) {
-        const appeared = useApp.getState().leads.some(
-          (l) => phonesMatch(l.phone, phoneE164) && l.name === nameTrim,
-        );
-        if (appeared) {
-          finishSuccess();
-          return;
-        }
-        toast.error(`Failed to add lead: ${result.error ?? "Try again."}`);
-        return;
-      }
-
-      if (data?.duplicate) {
-        finishSuccess("Lead already in queue");
-        return;
-      }
-
-      const newLeadId = data?.leadId;
-      const cur = useApp.getState().leads;
-      const alreadyThere = newLeadId
-        ? cur.some((l) => l.id === newLeadId)
-        : cur.some((l) => phonesMatch(l.phone, phoneE164));
-
-      if (!alreadyThere) {
-        const lead = addLead({
-          id: newLeadId,
-          name: nameTrim,
-          phone: phoneE164,
-          preferredArea: areaTrim,
-          budget,
-          moveInDate: moveInIso,
-          intent,
-          assignedTcmId: autoRoute ? undefined : tcmId,
-        });
-        if (autoRoute && tcms.length > 0) {
-          try {
-            autoAssignLead(lead.id);
-          } catch (err) {
-            console.warn("Auto-route skipped:", err);
-          }
-        }
-      }
-
-      finishSuccess();
-    } catch (error) {
-      console.error("Add lead error:", error);
-      const appeared = useApp.getState().leads.some(
-        (l) => phonesMatch(l.phone, phoneE164) && l.name === nameTrim,
-      );
-      if (appeared) finishSuccess();
-      else toast.error("Failed to add lead. Try again.");
-    } finally {
-      setSubmitting(false);
-    }
-  };
 
   return (
-    <Dialog open={open} onOpenChange={(v) => { setOpen(v); if (!v) reset(); }}>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button size="sm" className="h-8 text-xs gap-1">
+        <Button size="sm" className="h-8 text-[11px] gap-1">
           <Plus className="h-3 w-3" /> Add lead
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-md">
+      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-sm">Add lead → Impact Queue</DialogTitle>
+          <DialogTitle>Paste a lead - auto-extract every field</DialogTitle>
         </DialogHeader>
-        <div className="space-y-3">
-          <div className="grid grid-cols-2 gap-2">
-            <Field label="Name">
-              <Input className="h-8 text-xs" value={name} onPaste={handlePaste} onBlur={() => setTouched((t) => ({ ...t, name: true }))} onChange={(e) => setName(e.target.value)} />
-              {touched.name && errors.name && <p className="mt-1 text-[10px] text-danger">{errors.name}</p>}
-            </Field>
-            <Field label="Phone">
-              <Input className="h-8 text-xs" value={phone} onPaste={handlePaste} onBlur={() => setTouched((t) => ({ ...t, phone: true }))} onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))} placeholder="9xxxxxxxxx" />
-              {touched.phone && errors.phone && <p className="mt-1 text-[10px] text-danger">{errors.phone}</p>}
-            </Field>
-          </div>
-          <div className="grid grid-cols-2 gap-2">
-            <Field label="Preferred property">
-              <div className="relative" onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setTimeout(() => setShowHubResults(false), 200); }}>
-                <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-3 w-3 text-muted-foreground pointer-events-none z-10" />
-                <Input
-                  className="h-8 text-xs pl-7"
-                  value={selectedPG ? selectedPG.name : hubQuery}
-                  onChange={(e) => {
-                    setHubQuery(e.target.value);
-                    setShowHubResults(true);
-                    if (selectedPG) { setSelectedPG(null); setArea(""); }
-                  }}
-                  onFocus={() => setShowHubResults(true)}
-                  onBlur={() => setTouched((t) => ({ ...t, area: true }))}
-                  onPaste={handlePaste}
-                  placeholder="Search hub…"
-                />
-                {selectedPG && (
-                  <div className="mt-1 text-[10px] text-muted-foreground leading-tight">
-                    {selectedPG.area} · {selectedPG.gender}
-                  </div>
-                )}
-                {showHubResults && hubResults.length > 0 && !selectedPG && (
-                  <div className="absolute z-50 mt-1 w-full rounded-md border border-border bg-background shadow-lg max-h-36 overflow-y-auto">
-                    {hubResults.map(({ pg }) => (
-                      <button
-                        key={pg.id}
-                        type="button"
-                        onMouseDown={(e) => {
-                          e.preventDefault();
-                          setSelectedPG(pg);
-                          setArea(pg.area);
-                          setHubQuery("");
-                          setShowHubResults(false);
-                        }}
-                        className="w-full text-left px-2 py-1.5 text-[11px] hover:bg-muted/50 transition-colors flex items-center gap-1.5 border-b border-border last:border-0"
-                      >
-                        <Building2 className="h-3 w-3 shrink-0 text-primary" />
-                        <div className="min-w-0 flex-1">
-                          <span className="font-medium truncate">{pg.name}</span>
-                          <span className="text-muted-foreground"> · {pg.area}</span>
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-              {touched.area && errors.area && <p className="mt-1 text-[10px] text-danger">{errors.area}</p>}
-            </Field>
-            <Field label="Budget (₹/mo)">
-              <Input className="h-8 text-xs" type="number" value={budget} onPaste={handlePaste} onChange={(e) => setBudget(Number(e.target.value))} />
-            </Field>
-          </div>
-          <div className="grid grid-cols-2 gap-2">
-            <Field label="Move-in by">
-              <Input className="h-8 text-xs" type="date" value={moveIn} onPaste={handlePaste} onChange={(e) => setMoveIn(e.target.value)} />
-            </Field>
-            <Field label="Intent">
-              <Select value={intent} onValueChange={(v) => setIntent(v as Lead["intent"]) }>
-                <SelectTrigger className="h-8 text-xs"><SelectValue /></SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="hot" className="text-xs">Hot</SelectItem>
-                  <SelectItem value="warm" className="text-xs">Warm</SelectItem>
-                  <SelectItem value="cold" className="text-xs">Cold</SelectItem>
-                </SelectContent>
-              </Select>
-            </Field>
-          </div>
-
-          <div className="space-y-1">
-            <div className="flex items-center justify-between">
-              <Label className="text-[10px] uppercase text-muted-foreground">Assign</Label>
-              <button
-                onClick={() => setAutoRoute((v) => !v)}
-                className={`text-[10px] px-2 py-0.5 rounded-full border ${autoRoute ? "bg-accent text-accent-foreground border-accent" : "border-border text-muted-foreground"}`}>
-                {autoRoute ? "Auto-route ON" : "Auto-route OFF"}
-              </button>
-            </div>
-            {!autoRoute && (
-              <Select value={tcmId} onValueChange={setTcmId}>
-                <SelectTrigger className="h-8 text-xs"><SelectValue /></SelectTrigger>
-                <SelectContent>
-                  {tcms.map((t) => (
-                    <SelectItem key={t.id} value={t.id} className="text-xs">
-                      {t.name} · {t.zone} · {Math.round(t.conversionRate * 100)}%
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            )}
-            {autoRoute && (
-              <p className="text-[10px] text-muted-foreground">
-                System will pick the best TCM by zone, load, conversion rate & response speed.
-              </p>
-            )}
-          </div>
-
-          <Button
-            className={`w-full h-8 text-xs ${actionButtonClass}`}
-            onClick={() => void submit()}
-            disabled={!canSubmit || submitting}
-          >
-            {submitting && <RotateCcw className="h-3 w-3 mr-1 animate-spin" />}
-            {submitting ? "Adding..." : "Add to queue"}
-          </Button>
-        </div>
+        {open ? <LeadPasteParser onDone={() => setOpen(false)} /> : null}
       </DialogContent>
     </Dialog>
   );
@@ -2391,14 +2205,15 @@ function ScheduleTourDialog({
   onOpenChange: controlledOnOpenChange,
   prefillPg,
   showTrigger = true,
+  tcmOptions,
 }: {
   lead: Lead;
   open?: boolean;
   onOpenChange?: (v: boolean) => void;
   prefillPg?: PG | null;
   showTrigger?: boolean;
+  tcmOptions: TCM[];
 }) {
-  const tcms = useApp((s) => s.tcms);
   const scheduleTour = useApp((s) => s.scheduleTour);
 
   const [internalOpen, setInternalOpen] = useState(false);
@@ -2530,9 +2345,9 @@ function ScheduleTourDialog({
               className="w-full border border-border rounded-md px-2 py-1.5 text-xs bg-transparent focus:outline-none focus:ring-1 focus:ring-primary h-8"
             >
               <option value="">Select agent...</option>
-              {tcms.map((agent) => (
+              {tcmOptions.map((agent: any) => (
                 <option key={agent.id} value={agent.id} className="bg-background">
-                  {agent.name} · {agent.zone ?? ""}
+                  {agent.fullName ?? agent.name}{agent.zone ? ` · ${agent.zone}` : ""}
                 </option>
               ))}
             </select>
@@ -2964,17 +2779,16 @@ function AuditMetric({ label, value, danger }: { label: string; value: string; d
 /*  Focus Inventory Strip — what each TCM is pushing TODAY             */
 /* ================================================================== */
 
-function FocusInventoryStrip({ tcmFilter }: { tcmFilter: string }) {
-  const tcms = useApp((s) => s.tcms);
+function FocusInventoryStrip({ tcmFilter, tcmOptions }: { tcmFilter: string; tcmOptions: TCM[] }) {
   const properties = useApp((s) => s.properties);
   const focusProps = useTcmContacts((s) => s.focusProps);
   const [manageOpen, setManageOpen] = useState(false);
 
   const activeTcm =
-    tcmFilter !== "all" ? tcms.find((t) => t.id === tcmFilter) : undefined;
+    tcmFilter !== "all" ? tcmOptions.find((t) => t.id === tcmFilter) : undefined;
 
   const rows = useMemo(() => {
-    const list = activeTcm ? [activeTcm] : tcms;
+    const list = activeTcm ? [activeTcm] : tcmOptions;
     return list.map((t) => {
       const ids = focusProps[t.id] ?? [];
       const props = ids
@@ -2983,7 +2797,7 @@ function FocusInventoryStrip({ tcmFilter }: { tcmFilter: string }) {
       const vacant = props.reduce((a, p) => a + (p.vacantBeds ?? 0), 0);
       return { tcm: t, props, vacant };
     });
-  }, [activeTcm, tcms, focusProps, properties]);
+  }, [activeTcm, tcmOptions, focusProps, properties]);
 
   const allEmpty = rows.every((r) => r.props.length === 0);
 
@@ -3069,20 +2883,21 @@ function FocusInventoryStrip({ tcmFilter }: { tcmFilter: string }) {
       <ManageFocusDialog
         open={manageOpen}
         onOpenChange={setManageOpen}
-        defaultTcmId={activeTcm?.id ?? tcms[0]?.id ?? ""}
+        defaultTcmId={activeTcm?.id ?? tcmOptions[0]?.id ?? ""}
+        tcmOptions={tcmOptions}
       />
     </div>
   );
 }
 
 function ManageFocusDialog({
-  open, onOpenChange, defaultTcmId,
+  open, onOpenChange, defaultTcmId, tcmOptions,
 }: {
   open: boolean;
   onOpenChange: (v: boolean) => void;
   defaultTcmId: string;
+  tcmOptions: TCM[];
 }) {
-  const tcms = useApp((s) => s.tcms);
   const properties = useApp((s) => s.properties);
   const focusProps = useTcmContacts((s) => s.focusProps);
   const toggleFocusProp = useTcmContacts((s) => s.toggleFocusProp);
@@ -3126,9 +2941,9 @@ function ManageFocusDialog({
               <Select value={tcmId} onValueChange={setTcmId}>
                 <SelectTrigger className="h-8 text-xs"><SelectValue /></SelectTrigger>
                 <SelectContent>
-                  {tcms.map((t) => (
+                  {tcmOptions.map((t: any) => (
                     <SelectItem key={t.id} value={t.id} className="text-xs">
-                      {t.name} · {t.zone}
+                      {t.fullName ?? t.name}{t.zone ? <> · {t.zone}</> : null}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -3224,7 +3039,7 @@ function ManageFocusDialog({
 /*  Message Lab — preview every template variant, copy/send each       */
 /* ================================================================== */
 
-function MessageLabButton({ tcms }: { tcms: TCM[] }) {
+function MessageLabButton({ tcmOptions }: { tcmOptions: TCM[] }) {
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -3234,16 +3049,16 @@ function MessageLabButton({ tcms }: { tcms: TCM[] }) {
       >
         <Beaker className="h-3 w-3" /> Message Lab
       </button>
-      <MessageLabSheet open={open} onOpenChange={setOpen} tcms={tcms} />
+      <MessageLabSheet open={open} onOpenChange={setOpen} tcmOptions={tcmOptions} />
     </>
   );
 }
 
-function MessageLabSheet({ open, onOpenChange, tcms }: { open: boolean; onOpenChange: (v: boolean) => void; tcms: TCM[] }) {
+function MessageLabSheet({ open, onOpenChange, tcmOptions }: { open: boolean; onOpenChange: (v: boolean) => void; tcmOptions: TCM[] }) {
   const opsProperties = useApp((s) => s.properties);
   const catalog = useMemo(() => allCatalogProperties(opsProperties), [opsProperties]);
   const phones = useTcmContacts((s) => s.phones);
-  const [tcmId, setTcmId] = useState(tcms[0]?.id ?? "");
+  const [tcmId, setTcmId] = useState(tcmOptions[0]?.id ?? "");
   const [propId, setPropId] = useState(catalog[0]?.id ?? "");
   const [leadName, setLeadName] = useState("Aakash");
   const [leadPhone, setLeadPhone] = useState("");
@@ -3251,7 +3066,7 @@ function MessageLabSheet({ open, onOpenChange, tcms }: { open: boolean; onOpenCh
   const [price, setPrice] = useState<number>(12000);
   const [altPrice, setAltPrice] = useState<number>(10500);
   const [budget, setBudget] = useState<number>(13000);
-  const tcm = tcms.find((item) => item.id === tcmId);
+  const tcm = tcmOptions.find((item) => item.id === tcmId);
   const property = catalog.find((item) => item.id === propId);
 
   const ctx: ImpactTplCtx = useMemo(() => ({
@@ -3295,7 +3110,11 @@ function MessageLabSheet({ open, onOpenChange, tcms }: { open: boolean; onOpenCh
             <Field label="TCM">
               <Select value={tcmId} onValueChange={setTcmId}>
                 <SelectTrigger className="h-8 text-xs"><SelectValue /></SelectTrigger>
-                <SelectContent>{tcms.map((item) => <SelectItem key={item.id} value={item.id} className="text-xs">{item.name}</SelectItem>)}</SelectContent>
+                <SelectContent>
+                  {tcmOptions.map((item: any) => (
+                    <SelectItem key={item.id} value={item.id} className="text-xs">{item.fullName ?? item.name}</SelectItem>
+                  ))}
+                </SelectContent>
               </Select>
             </Field>
             <Field label="Property">
@@ -3357,15 +3176,15 @@ function TenXCommandBar({
 }: {
   lastRerank: number;
   escalations: number;
-  counters: { toursToday: number; quotesWeek: number; bookingsMonth: number };
-  targets: { toursToday: number; quotesWeek: number; bookingsMonth: number };
+  counters: { toursToday: number; quotesToday: number; bookingsMonth: number };
+  targets: { toursToday: number; quotesToday: number; bookingsMonth: number };
   stackSorted: Array<{ lead: { id: string; name: string }; score: number; nba: { label: string; pressure: string }; column: string }>;
   tick: number;
   onFocusLead?: (leadId: string) => void;
   digestOpen?: boolean;
   onDigestOpenChange?: (open: boolean) => void;
 }) {
-  const streak = counters.toursToday + counters.quotesWeek + counters.bookingsMonth;
+  const streak = counters.toursToday + counters.quotesToday + counters.bookingsMonth;
   const breach = escalations;
   const top5 = stackSorted.slice(0, 5);
   const stalled = stackSorted.filter((e) => e.nba.pressure === "escalate").slice(0, 5);

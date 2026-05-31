@@ -14,7 +14,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { AlertCircle, CheckCircle2, MapPin, Sparkles, Wand2 } from "lucide-react";
 import { parseLead, detectZone } from "@/lib/lead-identity/parser";
 import { useIdentityStore } from "@/lib/lead-identity/store";
-import { useOrgMembers, useOrgZones } from "@/hooks/useOrgDirectory";
+import { useOrgMembers, useOrgZones, useActiveTcMs } from "@/hooks/useOrgDirectory";
 import { useAuthUser } from "@/lib/auth-store";
 import { dispatch } from "@/lib/api/command-bus";
 import { QUICKAD_NEED_OPTIONS, QUICKAD_ROOM_OPTIONS, QUICKAD_TYPE_OPTIONS, parseBudgetAmount } from "@/lib/quickad-shared";
@@ -71,13 +71,20 @@ export function LeadPasteParser({ onDone }: Props) {
   const checkDup = useIdentityStore((s) => s.checkDuplicates);
   const create = useIdentityStore((s) => s.createLead);
   const { members: orgMembers } = useOrgMembers();
+  const { tcms: activeTcms } = useActiveTcMs();
   const { zones: orgZones } = useOrgZones();
 
+  const authUser = useAuthUser((s) => s.user);
   const sortedZones = useMemo(() => orgZones.slice().sort((a, b) => a.name.localeCompare(b.name)), [orgZones]);
-  const sortedMembers = useMemo(() => orgMembers
-    .filter(m => m.role === 'member' || m.role === 'tcm')
-    .slice()
-    .sort((a, b) => a.name.localeCompare(b.name)), [orgMembers]);
+  const sortedMembers = useMemo(() => {
+    const base = (activeTcms && activeTcms.length > 0)
+      ? activeTcms.map((a: any) => ({ id: a.id, name: a.fullName ?? a.name, role: a.role ?? 'tcm', zones: a.zones ?? [] }))
+      : orgMembers.filter((m) => m.role === 'member' || m.role === 'tcm').map((m) => ({ id: m.id, name: m.fullName ?? m.name, role: m.role, zones: (m as any).zones ?? [] }));
+    if (authUser && !base.find((b: any) => b.id === authUser.id)) {
+      base.unshift({ id: authUser.id, name: authUser.fullName ?? authUser.name, role: authUser.role ?? 'member', zones: (authUser as any).zones ?? [] });
+    }
+    return base.slice().sort((a, b) => a.name.localeCompare(b.name));
+  }, [orgMembers, activeTcms, authUser]);
   const sortedStages = useMemo(() => Array.from(STAGES).slice().sort((a, b) => a.localeCompare(b)), []);
   const addLead = useApp((s) => s.addLead);
 
@@ -100,12 +107,18 @@ export function LeadPasteParser({ onDone }: Props) {
   const [inBLR, setInBLR] = useState<boolean | null | undefined>(undefined);
   const [quality, setQuality] = useState<"hot" | "good" | "bad" | null>(null);
   const [zoneBucket, setZoneBucket] = useState<string>("");
-  const authUser = useAuthUser((s) => s.user);
-  const defaultAssigneeId = (authUser?.role === "member") ? authUser.id : "";
+  // Default to the current member when a regular member is adding a lead
+  const defaultAssigneeId = authUser?.role === "member" ? authUser.id : "";
   const [assigneeId, setAssigneeId] = useState<string>(defaultAssigneeId);
   const [stage, setStage] = useState<string>(STAGES[0]);
   const [notes, setNotes] = useState("");
   const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    if (!assigneeId && defaultAssigneeId) {
+      setAssigneeId(defaultAssigneeId);
+    }
+  }, [assigneeId, defaultAssigneeId]);
 
   const textRef = useRef<HTMLTextAreaElement>(null);
 
@@ -189,7 +202,7 @@ export function LeadPasteParser({ onDone }: Props) {
       toast.warning(`Possible duplicate: ${existing?.name ?? "existing lead"}. Verifying with server...`);
     }
     const areasArr = areasText.split(",").map((a) => a.trim()).filter(Boolean);
-    const assignee = orgMembers.find((m) => m.id === assigneeId);
+    const assignee = orgMembers.find((m) => m.id === assigneeId) ?? (activeTcms || []).find((a: any) => a.id === assigneeId);
     const zoneObj = orgZones.find((z) => z.name === zoneBucket);
     const budgetNum = parseBudgetAmount(budget);
 

@@ -6,6 +6,8 @@ export type CreatorLeaderboardEntry = {
   name: string;
   role: "member" | "tcm";
   toursCount: number;
+  scheduledCount: number;
+  completedCount: number;
   zones: { zone: string; count: number }[];
 };
 
@@ -24,8 +26,10 @@ export type LeadsDailyProgressMember = {
   zones: string[];
   leadsAdded: number;
   toursScheduled: number;
+  quotesSent: number;
   leadsDone: boolean;
   toursDone: boolean;
+  quotesDone: boolean;
   allDone: boolean;
 };
 
@@ -35,11 +39,13 @@ export type LeadsDailyProgressResponse = {
   goals: {
     leadsAdded: number;
     toursScheduled: number;
+    quotesSent: number;
   };
   thresholds?: {
     leadsAdded: number;
     toursScheduled: number;
+    quotesSent: number;
   };
 };
 
-export const DAILY_GOALS = { leadsAdded: 40, toursScheduled: 10 } as const;
+export const DAILY_GOALS = { leadsAdded: 40, toursScheduled: 10, quotesSent: 10 } as const;

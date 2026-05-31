@@ -142,6 +142,37 @@ export async function applyTourCommand(cmd: Command, user: JwtClaims) {
         { returnDocument: "after" },
       );
       if (!tour) return { ok: false, error: "NOT_FOUND: Tour not found" };
+      // When a tour is completed, mark the lead's stage as `tour-done`.
+      try {
+        let leadId: string | null = null;
+        if ((tour as any).leadId) {
+          leadId = (tour as any).leadId;
+        } else if ((tour as any).value && (tour as any).value.leadId) {
+          leadId = (tour as any).value.leadId;
+        }
+        if (leadId) {
+          // update lead stage to tour-done
+          await col<Lead>("leads").updateOne(
+            { _id: leadId, tenantId: user.tenantId },
+            { $set: { stage: "tour-done", updatedAt: now } },
+          );
+
+          // auto-log an activity on the lead timeline
+          await autoLogActivity({
+            entityType: "lead",
+            entityId: leadId,
+            kind: "stage_changed",
+            subject: `Tour completed`,
+            body: `Tour ${p.tourId} completed by ${user.sub}`,
+            meta: { tourId: p.tourId, completedBy: user.sub },
+            user,
+            correlationId,
+          });
+        }
+      } catch (err) {
+        // Non-fatal: continue even if lead update/logging fails
+        console.warn("Failed to update lead stage or log activity on tour complete:", err);
+      }
 
       const evtId = newEventId();
       await emit({

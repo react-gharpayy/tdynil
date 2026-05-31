@@ -20,7 +20,7 @@ import {
 import { toast } from "sonner";
 import { DuplicateModal } from "./DuplicateModal";
 import { QUICKAD_NEED_OPTIONS, QUICKAD_ROOM_OPTIONS, QUICKAD_TYPE_OPTIONS, parseBudgetAmount } from "@/lib/quickad-shared";
-import { useOrgMembers, useOrgZones } from "@/hooks/useOrgDirectory";
+import { useOrgMembers, useOrgZones, useActiveTcMs } from "@/hooks/useOrgDirectory";
 import { useAuthUser } from "@/lib/auth-store";
 import { dispatch } from "@/lib/api/command-bus";
 import { useApp } from "@/lib/store";
@@ -78,14 +78,22 @@ export function DirectLeadForm({ onCreated }: Props) {
   const checkDuplicates = useIdentityStore((s) => s.checkDuplicates);
   const createLead = useIdentityStore((s) => s.createLead);
   const { members: orgMembers } = useOrgMembers();
+  const { tcms: activeTcms } = useActiveTcMs();
   const { zones: orgZones } = useOrgZones();
   const authUser = useAuthUser((s) => s.user);
   const addLead = useApp((s) => s.addLead);
 
-  const defaultAssigneeId = (authUser?.role === "member") ? authUser.id : "";
+  // Default to the current member when a regular member is adding a lead
+  const defaultAssigneeId = authUser?.role === "member" ? authUser.id : "";
 
   const [draft, setDraft] = useState<Draft>(() => ({ ...emptyDraft(), assigneeId: defaultAssigneeId }));
   const [touched, setTouched] = useState<Record<string, boolean>>({});
+
+  useEffect(() => {
+    if (!draft.assigneeId && defaultAssigneeId) {
+      setDraft((d) => ({ ...d, assigneeId: defaultAssigneeId }));
+    }
+  }, [defaultAssigneeId, draft.assigneeId]);
   const [match, setMatch] = useState<MatchResult | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -106,6 +114,16 @@ export function DirectLeadForm({ onCreated }: Props) {
     }
     return [...PGS].sort((a, b) => b.iq - a.iq).slice(0, 10).map((pg) => ({ pg, score: 1, matched: [] }));
   }, [hubQuery, selectedPG, draft.location]);
+
+  const sortedMembers = useMemo(() => {
+    const base = (activeTcms && activeTcms.length > 0)
+      ? activeTcms.map((a: any) => ({ id: a.id, name: a.fullName ?? a.name, role: a.role ?? 'tcm' }))
+      : orgMembers.filter((m) => m.role === 'member' || m.role === 'tcm').map((m) => ({ id: m.id, name: m.fullName ?? m.name, role: m.role }));
+    if (authUser && !base.some((b: any) => b.id === authUser.id)) {
+      base.unshift({ id: authUser.id, name: authUser.fullName ?? authUser.name, role: authUser.role ?? 'member' });
+    }
+    return base.slice().sort((a, b) => a.name.localeCompare(b.name));
+  }, [orgMembers, activeTcms, authUser]);
 
   // Auto-detect zone (informational) when location changes
   useEffect(() => {
@@ -437,7 +455,9 @@ export function DirectLeadForm({ onCreated }: Props) {
             <Select value={draft.assigneeId} onValueChange={(v) => update("assigneeId", v)}>
               <SelectTrigger className="h-10 text-sm"><SelectValue placeholder="Select member" /></SelectTrigger>
               <SelectContent>
-                {orgMembers.filter(m => m.role === 'member' || m.role === 'tcm').map((m) => <SelectItem key={m.id} value={m.id}>{m.name}</SelectItem>)}
+                {sortedMembers.map((o: any) => (
+                  <SelectItem key={o.id} value={o.id}>{o.name}</SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </FormField>
