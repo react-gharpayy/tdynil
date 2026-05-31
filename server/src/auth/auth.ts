@@ -12,6 +12,7 @@ export interface UserDoc {
   username: string;       // lowercase, unique
   email: string;          // lowercase, unique
   phone?: string;
+  isTcm?: boolean;
   passwordHash: string;
   fullName: string;
   role: TopRole;
