@@ -7,7 +7,7 @@ export const Route = createFileRoute("/leaderboard")({
   head: () => ({
     meta: [
       { title: "Leaderboard - Gharpayy" },
-      { name: "description", content: "Members ranked by tours scheduled." },
+      { name: "description", content: "Members ranked by tours scheduled + tours completed." },
     ],
   }),
   component: LeaderboardPage,
@@ -22,7 +22,7 @@ function LeaderboardPage() {
             <Trophy className="h-6 w-6 text-accent" /> Leaderboard
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
-            Members ranked purely by tours scheduled - the metric that drives Gharpayy.
+            Members ranked by tours scheduled + tours completed — both contribute equally.
           </p>
         </header>
         <CreatorLeaderboardPanel />

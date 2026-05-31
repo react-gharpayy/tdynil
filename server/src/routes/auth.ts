@@ -56,6 +56,7 @@ const UpdateMeBody = z.object({
   password: z.string().min(8).max(72).optional(),
   phone: z.string().max(40).optional(),
   fullName: z.string().min(1).max(120).optional(),
+  isTcm: z.boolean().optional(),
 });
 
 export function registerAuthRoutes(app: FastifyInstance) {
@@ -168,6 +169,7 @@ export function registerAuthRoutes(app: FastifyInstance) {
         fullName: u.fullName,
         phone: u.phone ?? "",
         role: u.role,
+        isTcm: u.isTcm ?? (u.role === "member" || u.role === "tcm"),
         status: u.status,
         zones: u.zones ?? [],
         scopes: req.user!.scopes,
@@ -181,6 +183,14 @@ export function registerAuthRoutes(app: FastifyInstance) {
     const patch: Partial<UserDoc> = { updatedAt: new Date().toISOString() };
     if (body.phone !== undefined) patch.phone = body.phone.trim();
     if (body.fullName !== undefined) patch.fullName = body.fullName.trim();
+    if (body.isTcm !== undefined) {
+      const current = await col<UserDoc>("users").findOne({ _id: req.user!.sub });
+      if (!current) return reply.code(404).send({ code: "NOT_FOUND", message: "User not found" });
+      if (current.role !== "member") {
+        return reply.code(403).send({ code: "FORBIDDEN", message: "TCM toggle is available for member accounts only" });
+      }
+      patch.isTcm = body.isTcm;
+    }
     if (body.password) patch.passwordHash = await argon2.hash(body.password);
     await col<UserDoc>("users").updateOne({ _id: req.user!.sub }, { $set: patch });
     return reply.send({ ok: true });

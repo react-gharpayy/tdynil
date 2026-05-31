@@ -80,7 +80,7 @@ export function DailyProgressView() {
   const [selectedDate, setSelectedDate] = useState(getTodayIstDate());
   const { data, isLoading, isError } = useLeadsDailyProgress(selectedDate);
 
-  const goals = data?.goals || { leadsAdded: 40, toursScheduled: 10 };
+  const goals = data?.goals || { leadsAdded: 40, toursScheduled: 10, quotesSent: 10 };
   const members = data?.members || [];
   const isMemberView = role === "member" || role === "tcm";
 
@@ -115,7 +115,7 @@ export function DailyProgressView() {
             Daily Progress
           </h2>
           <p className="text-xs text-muted-foreground mt-0.5">
-            Leads added and tours scheduled for the selected date (IST).
+            Leads added, tours scheduled, and quotes sent for the selected date (IST).
           </p>
         </div>
         <div className="flex items-center gap-2 rounded-xl border bg-background/90 px-2.5 py-1.5">
@@ -162,14 +162,14 @@ export function DailyProgressView() {
                 </Badge>
               )}
             </div>
-            <div className="mt-3 grid gap-3 md:grid-cols-2">
+            <div className="mt-3 grid gap-3 md:grid-cols-3">
               <MetricTile label="Leads Added" value={memberRow.leadsAdded} max={goals.leadsAdded} accent="violet" />
               <MetricTile label="Tours Scheduled" value={memberRow.toursScheduled} max={goals.toursScheduled} accent="emerald" />
+              <MetricTile label="Quotes Sent" value={memberRow.quotesSent ?? 0} max={goals.quotesSent ?? 10} accent="emerald" />
             </div>
             <div className="mt-3 rounded-xl border border-dashed border-border/80 bg-secondary/20 px-3 py-2">
               <p className="text-[11px] text-muted-foreground">
-                Daily target: <span className="font-medium text-foreground">{goals.leadsAdded}</span> leads and{" "}
-                <span className="font-medium text-foreground">{goals.toursScheduled}</span> tours.
+                Daily target: <span className="font-medium text-foreground">{goals.leadsAdded}</span> leads, <span className="font-medium text-foreground">{goals.toursScheduled}</span> tours, and <span className="font-medium text-foreground">{goals.quotesSent ?? 10}</span> quotes.
               </p>
             </div>
           </div>
@@ -177,7 +177,7 @@ export function DailyProgressView() {
           <div className={`rounded-xl border p-3 ${memberRow.allDone ? "bg-emerald-500/10 border-emerald-500/25" : "bg-secondary/20"}`}>
             <p className={`text-xs ${memberRow.allDone ? "text-emerald-700 dark:text-emerald-300 font-medium" : "text-muted-foreground"}`}>
               {memberRow.allDone
-                ? "Great work! You completed both goals for this day."
+                ? "Great work! You completed all three goals for this day."
                 : "Keep going. You are making progress."}
             </p>
           </div>
@@ -202,7 +202,7 @@ export function DailyProgressView() {
             <div className="rounded-xl border bg-card p-3">
               <p className="text-[10px] uppercase tracking-wide text-muted-foreground">Goals</p>
               <p className="text-xs mt-1 font-medium text-foreground">
-                {goals.leadsAdded} leads · {goals.toursScheduled} tours
+                {goals.leadsAdded} leads · {goals.toursScheduled} tours · {goals.quotesSent ?? 10} quotes
               </p>
             </div>
           </div>
@@ -244,12 +244,15 @@ export function DailyProgressView() {
                     )}
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-3">
+                  <div className="grid md:grid-cols-3 gap-3">
                     <div className="rounded-lg bg-secondary/20 p-2.5">
                       <ProgressLine label="Leads Added" value={member.leadsAdded} max={goals.leadsAdded} />
                     </div>
                     <div className="rounded-lg bg-secondary/20 p-2.5">
                       <ProgressLine label="Tours Scheduled" value={member.toursScheduled} max={goals.toursScheduled} />
+                    </div>
+                    <div className="rounded-lg bg-secondary/20 p-2.5">
+                      <ProgressLine label="Quotes Sent" value={member.quotesSent ?? 0} max={goals.quotesSent ?? 10} />
                     </div>
                   </div>
                 </div>

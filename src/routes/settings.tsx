@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 import { SuperAdminSettingsPanel } from "@/components/settings/SuperAdminSettingsPanel";
+import { MemberSettingsPanel } from "@/components/settings/MemberSettingsPanel";
 import { ProfileTab } from "@/components/settings/ProfileTab";
 import { useAuthUser } from "@/lib/auth-store";
 import { useEffect } from "react";
@@ -16,6 +17,7 @@ function SettingsRoute() {
   useEffect(() => { if (!user) hydrate(); }, [user, hydrate]);
 
   const isSuperAdmin = user?.role === "super_admin";
+  const isMember = user?.role === "member";
 
   return (
     <AppShell>
@@ -23,10 +25,10 @@ function SettingsRoute() {
         <div>
           <h1 className="text-2xl font-display font-bold">Settings</h1>
           <p className="text-xs text-muted-foreground">
-            {isSuperAdmin ? "Super Admin control panel" : "Your account"}
+            {isSuperAdmin ? "Super Admin control panel" : isMember ? "Your account and TCM capability" : "Your account"}
           </p>
         </div>
-        {isSuperAdmin ? <SuperAdminSettingsPanel /> : <ProfileTab />}
+        {isSuperAdmin ? <SuperAdminSettingsPanel /> : isMember ? <MemberSettingsPanel /> : <ProfileTab />}
       </div>
     </AppShell>
   );

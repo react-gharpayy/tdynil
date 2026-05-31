@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
 } from "@/components/ui/select";
@@ -48,10 +49,7 @@ export function RolesTab() {
     () => [...owners].sort((a, b) => (a.fullName || "").localeCompare(b.fullName || "", undefined, { sensitivity: "base" })),
     [owners],
   );
-  const sortedTcms = useMemo(
-    () => [...tcms].sort((a, b) => (a.fullName || "").localeCompare(b.fullName || "", undefined, { sensitivity: "base" })),
-    [tcms],
-  );
+  // kept tcms state for compatibility but TCMs are now a per-member capability
 
   const loadData = async () => {
     setLoading(true);
@@ -326,49 +324,43 @@ export function RolesTab() {
             </div>
           ))}
 
-          {/* TCMs */}
-          {roleTab === "tcms" && sortedTcms.map((mem) => (
-            <div key={mem.id} className="border rounded-xl bg-card overflow-hidden">
-              <button
-                onClick={() => setExpandedId(expandedId === mem.id ? null : mem.id)}
-                className="w-full flex items-center justify-between p-4 hover:bg-secondary/30 transition-colors"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-pink-500/10 flex items-center justify-center">
-                    <span className="text-pink-500 font-semibold text-sm">{mem.fullName?.charAt(0)?.toUpperCase()}</span>
-                  </div>
-                  <div className="text-left">
-                    <p className="text-sm font-medium">{mem.fullName}</p>
-                    <p className="text-xs text-muted-foreground">{mem.email}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  {mem.zones?.length > 0 && <Badge variant="outline" className="text-[10px]">{mem.zones.join(", ")}</Badge>}
-                  <ChevronRight size={16} className={"transition-transform " + (expandedId === mem.id ? "rotate-90" : "")} />
-                </div>
-              </button>
-
-              {expandedId === mem.id && (
-                <div className="border-t p-4 space-y-4 bg-secondary/10">
-                  {editingId === mem.id ? (
-                    <EditForm form={editForm} setForm={setEditForm} zones={zones} onSave={saveEdit} onCancel={() => setEditingId(null)} saving={updating} />
-                  ) : (
-                    <div className="flex items-start justify-between">
-                      <div className="space-y-1">
-                        <p className="text-xs text-muted-foreground">Phone: <span className="text-foreground">{mem.phone || "N/A"}</span></p>
-                        <p className="text-xs text-muted-foreground">Username: <span className="text-foreground">{mem.username}</span></p>
-                        <p className="text-xs text-muted-foreground">Zones: <span className="text-foreground">{mem.zones?.join(", ") || "None"}</span></p>
-                      </div>
-                      <div className="flex gap-1">
-                        <Button size="sm" variant="ghost" onClick={() => startEdit(mem, "tcm")}><Pencil size={12} /></Button>
-                        <Button size="sm" variant="ghost" onClick={() => resetPassword(mem.id, mem.fullName)}><KeyRound size={12} /></Button>
-                      </div>
+          {/* TCMs (now a per-member capability) */}
+          {roleTab === "tcms" && sortedMembers.map((mem) => {
+            const isTcm = mem.isTcm !== false;
+            return (
+              <div key={mem.id} className="border rounded-xl bg-card overflow-hidden">
+                <div className="w-full flex items-center justify-between p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-pink-500/10 flex items-center justify-center">
+                      <span className="text-pink-500 font-semibold text-sm">{mem.fullName?.charAt(0)?.toUpperCase()}</span>
                     </div>
-                  )}
+                    <div className="text-left">
+                      <p className="text-sm font-medium">{mem.fullName}</p>
+                      <p className="text-xs text-muted-foreground">{mem.email}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    {mem.zones?.length > 0 && <Badge variant="outline" className="text-[10px]">{mem.zones.join(", ")}</Badge>}
+                    <div className="flex items-center gap-2">
+                      <p className="text-xs text-muted-foreground">TCM</p>
+                      <Switch checked={isTcm} onCheckedChange={async (v) => {
+                        try {
+                          setUpdating(true);
+                          await api.users.update(mem.id, { isTcm: !!v });
+                          toast.success("Updated");
+                          loadData();
+                        } catch (e) {
+                          toast.error((e as Error).message);
+                        } finally {
+                          setUpdating(false);
+                        }
+                      }} />
+                    </div>
+                  </div>
                 </div>
-              )}
-            </div>
-          ))}
+              </div>
+            );
+          })}
 
           {/* Owners */}
           {roleTab === "owners" && sortedOwners.map((own) => (

@@ -114,15 +114,31 @@ export function registerStatsRoutes(app: FastifyInstance) {
       ])
       .toArray();
 
+    const quotesAgg = await col("quotations")
+      .aggregate<{ _id: string; count: number }>([
+        {
+          $match: {
+            tenantId,
+            tcmId: { $in: memberIds },
+            sentAt: { $gte: dayStart, $lte: dayEnd },
+          },
+        },
+        { $group: { _id: "$tcmId", count: { $sum: 1 } } },
+      ])
+      .toArray();
+
     const leadsMap = new Map(leadsAgg.map((x) => [x._id, x.count]));
     const toursMap = new Map(toursAgg.map((x) => [x._id, x.count]));
+    const quotesMap = new Map(quotesAgg.map((x) => [x._id, x.count]));
 
     const result = members.map((member) => {
       const id = member._id;
       const leadsAdded = leadsMap.get(id) ?? 0;
       const toursScheduled = toursMap.get(id) ?? 0;
+      const quotesSent = quotesMap.get(id) ?? 0;
       const leadsDone = leadsAdded >= GOALS.leadsAdded;
       const toursDone = toursScheduled >= GOALS.toursScheduled;
+      const quotesDone = quotesSent >= GOALS.quotesSent;
 
       return {
         id,
@@ -131,9 +147,11 @@ export function registerStatsRoutes(app: FastifyInstance) {
         role: member.role === "tcm" ? "tcm" : "member",
         leadsAdded,
         toursScheduled,
+        quotesSent,
         leadsDone,
         toursDone,
-        allDone: leadsDone && toursDone,
+        quotesDone,
+        allDone: leadsDone && toursDone && quotesDone,
         newLeads: leadsAdded,
         visitConfirmed: toursScheduled,
       };
@@ -195,23 +213,31 @@ export function registerStatsRoutes(app: FastifyInstance) {
       to = bounds.to;
     }
 
-    const tourMatch: Record<string, unknown> = {
-      tenantId,
-      scheduledBy: { $exists: true, $ne: "" },
-    };
+    // We want to count both: who scheduled the tour AND who completed it.
+    // For scheduling we use `scheduledAt`, for completions we use `updatedAt` when status === 'completed'.
+    // Match any tour that was either scheduled in-range or completed in-range (when period bounds provided).
+    const tourMatch: Record<string, unknown> = { tenantId };
 
     if (from && to) {
-      tourMatch.scheduledAt = { $gte: from, $lte: to };
+      tourMatch.$or = [
+        { scheduledAt: { $gte: from, $lte: to } },
+        { status: "completed", updatedAt: { $gte: from, $lte: to } },
+      ];
     }
 
     type LeaderboardRow = {
       userId: string;
       name: string;
       role: string;
+      scheduledCount: number;
+      completedCount: number;
       toursCount: number;
       zones: { zone: string; count: number }[];
     };
 
+    // Build contributors per tour: include `scheduledBy` when the tour was scheduled in-range,
+    // and include `assignedTo` when the tour was completed in-range. Then unwind contributors
+    // and aggregate counts per user (and per zone).
     const rows = (await col<Tour>("tours")
       .aggregate([
         { $match: tourMatch },
@@ -223,91 +249,99 @@ export function registerStatsRoutes(app: FastifyInstance) {
             as: "lead",
           },
         },
-        {
-          $unwind: {
-            path: "$lead",
-            preserveNullAndEmptyArrays: true,
-          },
-        },
+        { $unwind: { path: "$lead", preserveNullAndEmptyArrays: true } },
         ...(zoneQuery
           ? [
-              {
-                $match: {
-                  $or: [
-                    { "lead.zoneCategory": zoneQuery },
-                    { "lead.zoneId": zoneQuery },
-                  ],
-                },
-              },
+              { $match: { $or: [{ "lead.zoneCategory": zoneQuery }, { "lead.zoneId": zoneQuery }] } },
             ]
           : []),
+        // Build an array of contributors for this tour depending on whether the
+        // schedule/completion falls within the requested period.
         {
-          $group: {
-            _id: {
-              memberId: "$scheduledBy",
-              zone: {
-                $cond: [
-                  {
-                    $gt: [
-                      {
-                        $strLenCP: {
-                          $trim: {
-                            input: { $ifNull: ["$lead.zoneCategory", ""] },
-                          },
-                        },
-                      },
-                      0,
-                    ],
-                  },
-                  "$lead.zoneCategory",
-                  null,
-                ],
-              },
+          $project: {
+            scheduledBy: 1,
+            assignedTo: 1,
+            lead: 1,
+            // include scheduledBy only if scheduledAt in range (or no range provided)
+            schedInRange: {
+              $cond: [
+                { $and: [
+                  { $ifNull: [from, false] },
+                  { $ifNull: [to, false] },
+                ] },
+                { $and: [{ $gte: ["$scheduledAt", from] }, { $lte: ["$scheduledAt", to] }] },
+                true,
+              ],
             },
-            toursCount: { $sum: 1 },
-          },
-        },
-        {
-          $group: {
-            _id: "$_id.memberId",
-            toursCount: { $sum: "$toursCount" },
-            zones: {
-              $push: {
-                zone: "$_id.zone",
-                count: "$toursCount",
-              },
+            // include completedBy (assignedTo) only if status is completed and updatedAt in range
+            compInRange: {
+              $cond: [
+                { $and: [ { $eq: ["$status", "completed"] }, { $ifNull: [from, false] }, { $ifNull: [to, false] } ] },
+                { $and: [{ $gte: ["$updatedAt", from] }, { $lte: ["$updatedAt", to] }] },
+                { $eq: ["$status", "completed"] },
+              ],
             },
           },
         },
+        // Create contributions array with kind labels so we can count scheduled vs completed separately
         {
-          $lookup: {
-            from: "users",
-            localField: "_id",
-            foreignField: "_id",
-            as: "user",
+          $project: {
+            contributions: {
+              $concatArrays: [
+                {
+                  $cond: ["$schedInRange", [{ userId: "$scheduledBy", kind: "scheduled" }], []],
+                },
+                {
+                  $cond: ["$compInRange", [{ userId: "$assignedTo", kind: "completed" }], []],
+                },
+              ],
+            },
+            zone: {
+              $cond: [
+                { $gt: [{ $strLenCP: { $trim: { input: { $ifNull: ["$lead.zoneCategory", ""] } } } }, 0] },
+                "$lead.zoneCategory",
+                null,
+              ],
+            },
           },
         },
+        { $unwind: { path: "$contributions", preserveNullAndEmptyArrays: false } },
+        {
+          $group: {
+            _id: { userId: "$contributions.userId", kind: "$contributions.kind", zone: "$zone" },
+            count: { $sum: 1 },
+          },
+        },
+        {
+          $group: {
+            _id: { userId: "$_id.userId", zone: "$_id.zone" },
+            scheduledCount: { $sum: { $cond: [{ $eq: ["$_id.kind", "scheduled"] }, "$count", 0] } },
+            completedCount: { $sum: { $cond: [{ $eq: ["$_id.kind", "completed"] }, "$count", 0] } },
+            totalCount: { $sum: "$count" },
+          },
+        },
+        {
+          $group: {
+            _id: "$_id.userId",
+            scheduledCount: { $sum: "$scheduledCount" },
+            completedCount: { $sum: "$completedCount" },
+            zones: { $push: { zone: "$_id.zone", count: "$totalCount" } },
+          },
+        },
+        { $lookup: { from: "users", localField: "_id", foreignField: "_id", as: "user" } },
         { $unwind: "$user" },
-        {
-          $match: {
-            "user.role": { $in: ["member", "tcm"] },
-            "user.status": { $ne: "deleted" },
-            "user.tenantId": tenantId,
-          },
-        },
+        { $match: { "user.role": { $in: ["member", "tcm"] }, "user.status": { $ne: "deleted" }, "user.tenantId": tenantId } },
         {
           $project: {
             _id: 0,
             userId: "$_id",
             name: { $ifNull: ["$user.fullName", "$user.username"] },
             role: "$user.role",
-            toursCount: 1,
+            scheduledCount: 1,
+            completedCount: 1,
+            toursCount: { $add: ["$scheduledCount", "$completedCount"] },
             zones: {
-              $filter: {
-                input: "$zones",
-                as: "z",
-                cond: { $ne: ["$$z.zone", null] },
-              },
+              $filter: { input: "$zones", as: "z", cond: { $ne: ["$$z.zone", null] } },
             },
           },
         },
@@ -320,7 +354,9 @@ export function registerStatsRoutes(app: FastifyInstance) {
       userId: row.userId,
       name: row.name || "Unknown User",
       role: (row.role === "tcm" ? "tcm" : "member") as "tcm" | "member",
-      toursCount: row.toursCount || 0,
+      scheduledCount: row.scheduledCount || 0,
+      completedCount: row.completedCount || 0,
+      toursCount: row.toursCount || ((row.scheduledCount || 0) + (row.completedCount || 0)),
       zones: (row.zones || []).sort((a, b) => {
         if (b.count !== a.count) return b.count - a.count;
         return String(a.zone).localeCompare(String(b.zone));

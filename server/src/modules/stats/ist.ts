@@ -1,6 +1,7 @@
 export const GOALS = {
   leadsAdded: 40,
   toursScheduled: 10,
+  quotesSent: 10,
 } as const;
 
 export function buildIstDayRange(dateInput?: string | null) {

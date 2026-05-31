@@ -24,6 +24,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useApp } from "@/lib/store";
+import { useActiveTcMs } from "@/hooks/useOrgDirectory";
 import { useAuthUser } from "@/lib/auth-store";
 import { cn } from "@/lib/utils";
 import {
@@ -50,9 +51,11 @@ const ROLE_META = {
 
 export function ProfileMenu() {
   const { role, setRole, currentTcmId, setCurrentTcmId, tcms } = useApp();
+  const { tcms: activeTcms } = useActiveTcMs();
+  const availableTcns = (activeTcms && activeTcms.length > 0) ? activeTcms : tcms;
   const navigate = useNavigate();
   const meta = ROLE_META[role];
-  const tcm = role === "tcm" ? tcms.find((t) => t.id === currentTcmId) : null;
+  const tcm = role === "tcm" ? availableTcns.find((t) => t.id === currentTcmId) : null;
   const authUser = useAuthUser((s) => s.user);
   const personName = tcm?.name ?? authUser?.fullName ?? authUser?.username ?? authUser?.email ?? "Account";
   const computeInitials = (n: string) =>
@@ -90,16 +93,16 @@ export function ProfileMenu() {
           </div>
         </DropdownMenuLabel>
 
-        {role === "tcm" && tcms.length > 0 && (
+        {role === "tcm" && availableTcns.length > 0 && (
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <Users className="mr-2 h-4 w-4" /> Switch TCM
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent className="w-56">
               <DropdownMenuRadioGroup value={currentTcmId} onValueChange={setCurrentTcmId}>
-                {tcms.map((t) => (
+                {availableTcns.map((t: any) => (
                   <DropdownMenuRadioItem key={t.id} value={t.id}>
-                    {t.name} <span className="ml-auto text-[10px] text-muted-foreground">{t.zone}</span>
+                    {t.fullName ?? t.name} <span className="ml-auto text-[10px] text-muted-foreground">{t.zone}</span>
                   </DropdownMenuRadioItem>
                 ))}
               </DropdownMenuRadioGroup>

@@ -149,6 +149,7 @@ export interface AuthUser {
   status: UserStatus;
   zones: string[];
   scopes: string[];
+  isTcm?: boolean;
 }
 
 export const api = {

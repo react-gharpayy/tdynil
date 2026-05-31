@@ -23,7 +23,7 @@ export function AddUserForm({ onSuccess }: { onSuccess: () => void }) {
     api.zones.list().then(setZones).catch(() => undefined);
   }, []);
 
-  const needsZone = form.role === "admin" || form.role === "member" || form.role === "tcm";
+  const needsZone = form.role === "admin" || form.role === "member";
 
   const submit = async () => {
     if (!form.fullName || !form.email || !form.password || !form.role) {
@@ -98,7 +98,6 @@ export function AddUserForm({ onSuccess }: { onSuccess: () => void }) {
             <SelectItem value="manager">Manager</SelectItem>
             <SelectItem value="admin">Admin</SelectItem>
             <SelectItem value="member">Member</SelectItem>
-            <SelectItem value="tcm">TCM</SelectItem>
             <SelectItem value="owner">Property Owner</SelectItem>
           </SelectContent>
         </Select>
