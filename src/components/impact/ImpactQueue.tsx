@@ -26,7 +26,7 @@ import { leadHasValidProperty, pickBestPropertyForLead } from "@/lib/crm10x/fix-
 import { useAuthUser } from "@/lib/auth-store";
 import { useImpactQueueKeyboard } from "@/hooks/useImpactQueueKeyboard";
 import { useImpactMorningDigest } from "@/hooks/useImpactMorningDigest";
-import { useActiveTcMs } from "@/hooks/useOrgDirectory";
+import { useActiveTcMs, useOrgMembers } from "@/hooks/useOrgDirectory";
 import {
   classifyImpactPriority,
   IMPACT_PRIORITY_META,
@@ -249,8 +249,40 @@ export function ImpactQueue() {
   const authUser = useAuthUser((s) => s.user);
   const canSelectTcmScope =
     authUser?.role === "super_admin" || authUser?.role === "manager" || authUser?.role === "admin";
+  const selfScopeId = authUser?.id || currentTcmId;
   const { tcms: activeTcms } = useActiveTcMs();
+  const { members: orgMembers } = useOrgMembers();
   const tcmOptions = activeTcms.length > 0 ? activeTcms : tcms;
+  const memberScopeOptions = useMemo(() => {
+    const normalize = (zones?: string[]) =>
+      (zones ?? []).map((z) => String(z).trim().toLowerCase()).filter(Boolean);
+
+    const myZones = new Set(normalize(authUser?.zones));
+    const isAdminScoped = authUser?.role === "admin";
+
+    const fromDirectory = orgMembers
+      .filter((m) => m.role === "member" || m.role === "tcm")
+      .filter((m) => {
+        if (!isAdminScoped) return true;
+        const memberZones = normalize(m.zones);
+        const sameZone = memberZones.some((z) => myZones.has(z));
+        const reportsToMe = Boolean(authUser?.id) && m.adminId === authUser.id;
+        return sameZone || reportsToMe;
+      })
+      .map((m) => ({ id: m.id, name: m.name }));
+    if (fromDirectory.length > 0) {
+      return Array.from(new Map(fromDirectory.map((m) => [m.id, m])).values())
+        .sort((a, b) => a.name.localeCompare(b.name));
+    }
+    return tcmOptions
+      .filter((t: any) => {
+        if (!isAdminScoped) return true;
+        const zones = normalize(Array.isArray(t.zones) ? t.zones : (t.zone ? [t.zone] : []));
+        return zones.some((z) => myZones.has(z));
+      })
+      .map((t: any) => ({ id: t.id, name: t.fullName ?? t.name }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }, [orgMembers, tcmOptions, authUser?.role, authUser?.zones, authUser?.id]);
   const setLeadStage = useApp((s) => s.setLeadStage);
   const markTourStarted = useApp((s) => s.markTourStarted);
   const leadsSyncStatus = useLeadsSync((s) => s.status);
@@ -281,10 +313,18 @@ export function ImpactQueue() {
   useImpactMorningDigest(() => setDigestOpen(true));
 
   useEffect(() => {
-    if (!canSelectTcmScope && tcmFilter === "all") {
-      setTcmFilter(currentTcmId);
+    if (!canSelectTcmScope && selfScopeId && tcmFilter !== selfScopeId) {
+      setTcmFilter(selfScopeId);
     }
-  }, [canSelectTcmScope, tcmFilter, currentTcmId]);
+  }, [canSelectTcmScope, selfScopeId, tcmFilter]);
+
+  useEffect(() => {
+    if (!canSelectTcmScope) return;
+    if (tcmFilter === "all") return;
+    if (!memberScopeOptions.some((m) => m.id === tcmFilter)) {
+      setTcmFilter("all");
+    }
+  }, [canSelectTcmScope, memberScopeOptions, tcmFilter]);
 
   const [fixing, setFixing] = useState(false);
   const handleFixProperties = async () => {
@@ -579,15 +619,15 @@ export function ImpactQueue() {
           <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-semibold">
             Conversion engine · one screen
           </div>
-          <h1 className="text-2xl font-display font-semibold flex items-center gap-2">
+          <h1 className="text-xl font-display font-semibold flex items-center gap-2">
             Impact Queue
             {escalations > 0 && (
-              <Badge variant="outline" className="text-[10px] bg-danger/10 text-danger border-danger/40 gap-1">
+              <Badge variant="outline" className="text-[9px] bg-danger/10 text-danger border-danger/40 gap-1">
                 <Zap className="h-3 w-3" /> {escalations} escalating
               </Badge>
             )}
           </h1>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-[11px] text-muted-foreground">
             Work top-down. Every lead has a Next Best Action. Nothing falls through.
           </p>
         </div>
@@ -601,7 +641,7 @@ export function ImpactQueue() {
           <div className="relative">
             <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
             <Input
-              className={`h-8 pl-7 text-xs w-52 ${query.trim() ? "pr-7" : ""}`}
+              className={`h-8 pl-7 text-[11px] w-52 ${query.trim() ? "pr-7" : ""}`}
               placeholder="Search lead or phone"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
@@ -621,35 +661,35 @@ export function ImpactQueue() {
             type="button"
             onClick={handleFixProperties}
             disabled={fixing}
-            className="h-8 px-2 text-[10px] font-semibold rounded-md border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-accent/10 transition-colors disabled:opacity-50 flex items-center gap-1"
+            className="h-8 px-2 text-[9px] font-semibold rounded-md border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-accent/10 transition-colors disabled:opacity-50 flex items-center gap-1"
             title="Fix leads with invalid properties"
           >
             <Building2 className="h-3 w-3" />
             {fixing ? "Fixing…" : "Fix props"}
           </button>
           {!canSelectTcmScope ? (
-            <div className="h-8 min-w-[10rem] rounded-md border border-border bg-card px-3 py-2 text-xs font-semibold text-foreground flex items-center">
+            <div className="h-8 min-w-[10rem] rounded-md border border-border bg-card px-3 py-2 text-[11px] font-semibold text-foreground flex items-center">
               {authUser?.fullName ?? "My queue"}
             </div>
           ) : (
             <Select value={tcmFilter} onValueChange={setTcmFilter}>
-              <SelectTrigger className="h-8 text-xs w-40"><SelectValue /></SelectTrigger>
+              <SelectTrigger className="h-8 text-[11px] w-40"><SelectValue /></SelectTrigger>
               <SelectContent>
-                <SelectItem value="all" className="text-xs">All TCMs</SelectItem>
-                {tcmOptions.map((t: any) => (
-                  <SelectItem key={t.id} value={t.id} className="text-xs">{t.fullName ?? t.name}</SelectItem>
+                <SelectItem value="all" className="text-[11px]">All Members</SelectItem>
+                {memberScopeOptions.map((m) => (
+                  <SelectItem key={m.id} value={m.id} className="text-[11px]">{m.name}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
           )}
           <div className="flex rounded-md border border-border overflow-hidden">
             <button
-              className={`h-8 px-2 text-[10px] uppercase tracking-wider font-semibold flex items-center gap-1 ${view === "stack" ? "bg-accent text-accent-foreground" : "bg-card text-muted-foreground"}`}
+              className={`h-8 px-2 text-[9px] uppercase tracking-wider font-semibold flex items-center gap-1 ${view === "stack" ? "bg-accent text-accent-foreground" : "bg-card text-muted-foreground"}`}
               onClick={() => setView("stack")}>
               <ListOrdered className="h-3 w-3" /> Stack
             </button>
             <button
-              className={`h-8 px-2 text-[10px] uppercase tracking-wider font-semibold flex items-center gap-1 ${view === "board" ? "bg-accent text-accent-foreground" : "bg-card text-muted-foreground"}`}
+              className={`h-8 px-2 text-[9px] uppercase tracking-wider font-semibold flex items-center gap-1 ${view === "board" ? "bg-accent text-accent-foreground" : "bg-card text-muted-foreground"}`}
               onClick={() => setView("board")}>
               <LayoutGrid className="h-3 w-3" /> Board
             </button>
@@ -669,7 +709,7 @@ export function ImpactQueue() {
               Start on overdue
             </label>
           )}
-          <span className="text-[9px] text-muted-foreground hidden lg:inline" title="Keyboard shortcuts">
+          <span className="text-[8px] text-muted-foreground hidden lg:inline" title="Keyboard shortcuts">
             J/K · Enter
           </span>
         </div>
@@ -2132,7 +2172,7 @@ function QuickAddLead({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button size="sm" className="h-8 text-xs gap-1">
+        <Button size="sm" className="h-8 text-[11px] gap-1">
           <Plus className="h-3 w-3" /> Add lead
         </Button>
       </DialogTrigger>
