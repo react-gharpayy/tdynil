@@ -188,21 +188,26 @@ export function AppShell({ children }: { children: ReactNode }) {
       { to: "/owner/insights", label: "Insights", icon: IndianRupee },
       { to: "/my-tasks", label: "My Tasks", icon: ListTodo },
     ],
-    "super-admin": withTailNav([
-      { to: "/today", label: "Today", icon: Sun, badge: queue.length },
-      { to: "/leads", label: "Leads", icon: Target },
-      { to: "/myt/tours", label: "Tours", icon: CalendarPlus },
-      { to: "/impact", label: "Impact Queue", icon: HeartPulse },
-      { to: "/property-hub", label: "Property Hub", icon: Building2 },
-      { to: "/myt/war-room", label: "War Room", icon: Swords },
-      { to: "/visit-war", label: "Visit War Room", icon: Radio },
-      { to: "/myt/team", label: "Team", icon: Users },
-      { to: "/revenue", label: "Revenue", icon: IndianRupee },
-      { to: "/zones", label: "Zones", icon: MapPin },
-    ]),
+    "super-admin": [
+      { to: "/admin", label: "Cockpit", icon: Gauge },
+      { to: "/admin/supreme", label: "Supreme \u00B7 God Mode", icon: Zap },
+      { to: "/admin/command", label: "Command Bridge", icon: Swords },
+      { to: "/admin/war-room", label: "War-Room TV", icon: Radio },
+      { to: "/admin/leads", label: "Master Leads", icon: Target },
+      { to: "/admin/visits", label: "Master Visits", icon: CalendarPlus },
+      { to: "/admin/calendar", label: "Master Calendar", icon: Calendar },
+      { to: "/admin/owners", label: "Master Owners", icon: ShieldCheck },
+      { to: "/admin/people", label: "People 360", icon: Users },
+      { to: "/admin/intelligence", label: "Intelligence", icon: Activity },
+      { to: "/admin/property", label: "Property Pulse", icon: Building2 },
+      { to: "/admin/impact", label: "Impact Analytics", icon: HeartPulse },
+      { to: "/admin/audit", label: "Audit Log", icon: ClipboardList },
+      { to: "/admin/exports", label: "Export Center", icon: ListTodo },
+      { to: "/admin/settings", label: "Admin Settings", icon: Settings },
+    ],
   };
 
-  const items = navByRole[role];
+  const items = [...navByRole[role]];
   
 
   const isActive = (to: string) => (to === "/" ? path === "/" : path === to || path.startsWith(to + "/"));
@@ -217,7 +222,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       <div className="min-h-screen flex w-full bg-background text-foreground">
       {/* Sidebar */}
       <aside className="hidden md:flex w-60 flex-col bg-sidebar text-sidebar-foreground border-r border-sidebar-border sticky top-0 h-screen">
-        <div className="px-5 py-5 flex items-center gap-2 border-b border-sidebar-border">
+        <Link to={role === "super-admin" ? "/admin" : "/"} className="px-5 py-5 flex items-center gap-2 border-b border-sidebar-border hover:opacity-80 transition-opacity">
           <div className="h-9 w-9 rounded-lg bg-accent flex items-center justify-center">
             <Building2 className="h-4 w-4 text-accent-foreground" />
           </div>
@@ -225,7 +230,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             <div className="text-sidebar-accent-foreground font-display font-semibold text-sm">Gharpayy</div>
             <div className="text-[10px] uppercase tracking-wider text-sidebar-foreground">Arena Infrastructure</div>
           </div>
-        </div>
+        </Link>
 
         {(() => {
           const roleMeta = {
