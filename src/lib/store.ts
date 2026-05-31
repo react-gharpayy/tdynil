@@ -77,7 +77,6 @@ interface AppState {
   addLeadTag: (leadId: string, tag: string) => void;
   removeLeadTag: (leadId: string, tag: string) => void;
   reassignLead: (leadId: string, tcmId: string, reason: string) => void;
-  setProperties: (properties: Property[]) => void;
   autoAssignLead: (leadId: string) => { tcmId: string; reasons: string[] };
 
   scheduleTour: (input: { leadId: string; propertyId?: string; tcmId: string; scheduledAt: string }) => Promise<Tour>;
@@ -696,8 +695,6 @@ export const useApp = create<AppState>((set, get) => ({
         : undefined,
     });
   },
-
-  setProperties: (properties) => set({ properties }),
 
   addProperty: (input) => {
     const prop: Property = {
