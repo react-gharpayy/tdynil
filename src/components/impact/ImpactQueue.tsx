@@ -23,6 +23,7 @@ import {
 import { isQuoteStale } from "@/lib/crm10x/impact-quote-stale";
 import { useLeadsSync } from "@/lib/leads-sync";
 import { leadHasValidProperty, pickBestPropertyForLead } from "@/lib/crm10x/fix-lead-properties";
+import { useAuthUser } from "@/lib/auth-store";
 import { useImpactQueueKeyboard } from "@/hooks/useImpactQueueKeyboard";
 import { useImpactMorningDigest } from "@/hooks/useImpactMorningDigest";
 import { useActiveTcMs } from "@/hooks/useOrgDirectory";
@@ -245,6 +246,9 @@ function parsePastedText(text: string): { name?: string; phone?: string; locatio
 
 export function ImpactQueue() {
   const { role, currentTcmId, tcms, leads, tours, properties, bookings } = useApp();
+  const authUser = useAuthUser((s) => s.user);
+  const canSelectTcmScope =
+    authUser?.role === "super_admin" || authUser?.role === "manager" || authUser?.role === "admin";
   const { tcms: activeTcms } = useActiveTcMs();
   const tcmOptions = activeTcms.length > 0 ? activeTcms : tcms;
   const setLeadStage = useApp((s) => s.setLeadStage);
@@ -275,6 +279,12 @@ export function ImpactQueue() {
   }, [view]);
 
   useImpactMorningDigest(() => setDigestOpen(true));
+
+  useEffect(() => {
+    if (!canSelectTcmScope && tcmFilter === "all") {
+      setTcmFilter(currentTcmId);
+    }
+  }, [canSelectTcmScope, tcmFilter, currentTcmId]);
 
   const [fixing, setFixing] = useState(false);
   const handleFixProperties = async () => {
@@ -617,15 +627,21 @@ export function ImpactQueue() {
             <Building2 className="h-3 w-3" />
             {fixing ? "Fixing…" : "Fix props"}
           </button>
-          <Select value={tcmFilter} onValueChange={setTcmFilter}>
-            <SelectTrigger className="h-8 text-xs w-40"><SelectValue /></SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all" className="text-xs">All TCMs</SelectItem>
-              {tcmOptions.map((t: any) => (
-                <SelectItem key={t.id} value={t.id} className="text-xs">{t.fullName ?? t.name}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          {!canSelectTcmScope ? (
+            <div className="h-8 min-w-[10rem] rounded-md border border-border bg-card px-3 py-2 text-xs font-semibold text-foreground flex items-center">
+              {authUser?.fullName ?? "My queue"}
+            </div>
+          ) : (
+            <Select value={tcmFilter} onValueChange={setTcmFilter}>
+              <SelectTrigger className="h-8 text-xs w-40"><SelectValue /></SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all" className="text-xs">All TCMs</SelectItem>
+                {tcmOptions.map((t: any) => (
+                  <SelectItem key={t.id} value={t.id} className="text-xs">{t.fullName ?? t.name}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          )}
           <div className="flex rounded-md border border-border overflow-hidden">
             <button
               className={`h-8 px-2 text-[10px] uppercase tracking-wider font-semibold flex items-center gap-1 ${view === "stack" ? "bg-accent text-accent-foreground" : "bg-card text-muted-foreground"}`}

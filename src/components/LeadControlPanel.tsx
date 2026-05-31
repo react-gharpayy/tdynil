@@ -47,6 +47,7 @@ import { ActivityTimeline } from "@/components/activities/ActivityTimeline";
 import { ActivityComposer } from "@/components/activities/ActivityComposer";
 import { TodoPanel } from "@/components/todos/TodoPanel";
 import { useActivities } from "@/hooks/useActivities";
+import { allCatalogProperties } from "@/lib/crm10x/property-catalog";
 
 const TAG_OPTIONS = ["price-issue", "location-mismatch", "parents-involved", "urgent", "budget-low"];
 const OBJECTIONS = ["Budget", "Location", "Amenities", "Timing", "Parents", "Comparing options", "Other"];
@@ -111,6 +112,7 @@ export function LeadControlPanel() {
   const { settings } = useSettings();
 
   const lead = useMemo(() => leads.find((l) => l.id === selectedLeadId) ?? null, [leads, selectedLeadId]);
+  const tourPropertyOptions = useMemo(() => allCatalogProperties(properties), [properties]);
 
   // Mark handoffs read when this lead opens
   useEffect(() => {
@@ -757,7 +759,7 @@ export function LeadControlPanel() {
               {!hasScheduledTour ? (
                 <InlineScheduleTour
                   lead={lead}
-                  properties={properties}
+                  properties={tourPropertyOptions}
                   tcms={scheduleAssignees}
                   propertyId={propertyId}
                   tcmId={tcmId}
