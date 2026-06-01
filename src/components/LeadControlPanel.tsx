@@ -30,6 +30,7 @@ import { CommitmentBanner } from "./crm10x/CommitmentBanner";
 import { ObjectionTag } from "./crm10x/ObjectionLogger";
 import { LeadDossierPanel } from "./crm10x/LeadDossierPanel";
 import { QuotationBuilder } from "./crm10x/QuotationBuilder";
+import { LeadJourneyStepper, type JourneyTab } from "./crm10x/LeadJourneyStepper";
 import {
   Phone, MessageSquare, Calendar as CalendarIcon, Tag, ClipboardCheck,
   AlertTriangle, CheckCircle2, X, Activity as ActivityIcon, MapPin,
@@ -348,6 +349,7 @@ export function LeadControlPanel() {
 
   if (!lead) return null;
 
+  const tcm = getTcm(lead.assignedTcmId);
   const selectedMember = orgMembers.find((m) => m.id === lead.assignedTcmId) ?? null;
 
   const handleSchedule = async () => {
@@ -439,6 +441,9 @@ export function LeadControlPanel() {
     }
   };
 
+  const tabTriggerClass =
+    "relative h-auto rounded-none border-0 bg-transparent px-0 pb-3 pt-0 text-[11px] font-bold uppercase tracking-widest text-muted-foreground whitespace-nowrap shadow-none data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none after:absolute after:left-0 after:right-0 after:-bottom-px after:h-0.5 after:rounded-full after:bg-transparent data-[state=active]:after:bg-foreground transition-colors";
+
   return (
     <Sheet open={!!selectedLeadId} onOpenChange={(o) => !o && selectLead(null)}>
       <SheetContent side="right" className="w-full p-0 flex flex-col" style={{ maxWidth: 560 }}>
@@ -463,7 +468,14 @@ export function LeadControlPanel() {
             <Meta icon={Wallet} label="Budget" value={`₹${(lead.budget / 1000).toFixed(0)}k`} />
             <Meta icon={MapPin} label="Area" value={lead.preferredArea} />
           </div>
+          <div className="text-[11px] text-muted-foreground">Assigned · {tcm?.name ?? "—"} ({tcm?.zone ?? "—"})</div>
         </SheetHeader>
+
+        <LeadJourneyStepper
+          lead={lead}
+          currentTab={tab}
+          onJump={(t: JourneyTab) => setTab(t)}
+        />
 
         {/* CRM 10x - commitment banner + 48h post-visit gate */}
         <CommitmentBanner lead={lead} />
@@ -485,27 +497,22 @@ export function LeadControlPanel() {
 
         {/* Body */}
         <div className="flex-1 overflow-y-auto scrollbar-thin">
-          <Tabs value={tab} onValueChange={setTab} className="px-5 py-4">
-            <TabsList className="flex h-auto w-full overflow-x-auto gap-1 scrollbar-micro justify-start">
-                <TabsTrigger value="dossier" className="text-xs shrink-0 whitespace-nowrap">Dossier</TabsTrigger>
-                <TabsTrigger
-                  value="tour"
-                  className={`text-xs shrink-0 whitespace-nowrap ${tab === "tour" ? "rounded-md px-2 py-1 bg-accent/10 text-accent ring-1 ring-accent/20" : ""}`}
-                >
-                  Tour
-                </TabsTrigger>
-                <TabsTrigger value="quote" className="text-xs shrink-0 whitespace-nowrap">Quote</TabsTrigger>
-                <TabsTrigger value="best-fit" className="text-xs shrink-0 whitespace-nowrap">Best Fit</TabsTrigger>
-                <TabsTrigger value="control" className="text-xs shrink-0 whitespace-nowrap">Control</TabsTrigger>
-                <TabsTrigger value="details" className="text-xs shrink-0 whitespace-nowrap">Details</TabsTrigger>
-                <TabsTrigger value="handoff" className="text-xs shrink-0 whitespace-nowrap">Handoff</TabsTrigger>
-                <TabsTrigger value="log" className="text-xs shrink-0 whitespace-nowrap">Log</TabsTrigger>
-                <TabsTrigger value="post" className="text-xs shrink-0 whitespace-nowrap">
-                  Post {pendingPostTour && <span className="ml-1 h-1.5 w-1.5 rounded-full bg-destructive" />}
-                </TabsTrigger>
-                <TabsTrigger value="tasks" className="text-xs shrink-0 whitespace-nowrap">Tasks</TabsTrigger>
-                <TabsTrigger value="activity" className="text-xs shrink-0 whitespace-nowrap">Activity</TabsTrigger>
-              </TabsList>
+          <Tabs value={tab} onValueChange={setTab} className="px-6 pt-5 pb-6">
+            {/* Quiet underline tab bar — single horizontal scroll, no chrome */}
+            <TabsList className="h-auto w-full justify-start gap-6 rounded-none border-b border-border/60 bg-transparent p-0 overflow-x-auto scrollbar-thin">
+              <TabsTrigger value="dossier" className={tabTriggerClass}>1·Dossier</TabsTrigger>
+              <TabsTrigger value="tour" className={tabTriggerClass}>2·Tour</TabsTrigger>
+              <TabsTrigger value="post" className={tabTriggerClass}>
+                3·Post {pendingPostTour && <span className="ml-1.5 inline-block h-1.5 w-1.5 rounded-full bg-destructive align-middle" />}
+              </TabsTrigger>
+              <TabsTrigger value="quote" className={tabTriggerClass}>4·Quote</TabsTrigger>
+              <TabsTrigger value="checkin" className={tabTriggerClass}>5·Check-in</TabsTrigger>
+              <TabsTrigger value="impact" className={tabTriggerClass}>Impact</TabsTrigger>
+              <TabsTrigger value="best-fit" className={tabTriggerClass}>Best Fit</TabsTrigger>
+              <TabsTrigger value="control" className={tabTriggerClass}>Control</TabsTrigger>
+              <TabsTrigger value="handoff" className={tabTriggerClass}>Handoff</TabsTrigger>
+              <TabsTrigger value="log" className={tabTriggerClass}>Log</TabsTrigger>
+            </TabsList>
 
             <TabsContent value="activity" className="space-y-3 pt-4">
               <LeadActivityTab leadId={lead.id} />
