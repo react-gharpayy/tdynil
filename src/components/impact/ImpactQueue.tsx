@@ -1508,6 +1508,26 @@ function LeadDrawer({
 }) {
   const { lead, openTour, lastQuote, nba, column } = enriched;
   const colMeta = COLUMNS.find((c) => c.key === column)!;
+  const setLeadStage = useApp((s) => s.setLeadStage);
+  const STAGES: Lead["stage"][] = [
+    "new", "contacted", "tour-scheduled", "tour-done", "negotiation", "booked",
+  ];
+  const currentStageIndex = STAGES.indexOf(lead.stage);
+  const stageLabel = (stage: string) => stage.replace(/-/g, " ");
+  const previousStage = currentStageIndex > 0 ? STAGES[currentStageIndex - 1] : undefined;
+  const nextStage = currentStageIndex >= 0 && currentStageIndex < STAGES.length - 1 ? STAGES[currentStageIndex + 1] : undefined;
+  const moveStage = async (dir: -1 | 1) => {
+    if (currentStageIndex < 0) return;
+    const next = STAGES[Math.min(STAGES.length - 1, Math.max(0, currentStageIndex + dir))];
+    if (next !== lead.stage) {
+      try {
+        await setLeadStage(lead.id, next);
+        toast.success(`${lead.name.split(" ")[0]} → ${stageLabel(next)}`);
+      } catch (error) {
+        toast.error(error instanceof Error ? error.message : "Stage change failed");
+      }
+    }
+  };
   const [now, mounted] = useMountedNow(30_000);
   const [scheduleOpen, setScheduleOpen] = useState(false);
   const [schedulePrefill, setSchedulePrefill] = useState<PG | null>(null);
@@ -1540,6 +1560,35 @@ function LeadDrawer({
             {tcm && <><span>·</span><span>TCM: {tcm.name}</span></>}
           </SheetDescription>
 
+          <div className="grid gap-2">
+            <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-wider text-muted-foreground">
+              <span>Stage progress</span>
+              <span className="rounded-full border px-2 py-0.5">{currentStageIndex >= 0 ? currentStageIndex + 1 : "—"}/{STAGES.length}</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <Button
+                size="sm"
+                variant="outline"
+                className="h-8 text-xs px-3"
+                onClick={() => void moveStage(-1)}
+                disabled={!previousStage}
+              >
+                {previousStage ? `Back: ${stageLabel(previousStage)}` : "Back"}
+              </Button>
+              <div className="rounded-full border border-accent/30 bg-accent/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-accent">
+                {stageLabel(lead.stage)}
+              </div>
+              <Button
+                size="sm"
+                variant="outline"
+                className="h-8 text-xs px-3"
+                onClick={() => void moveStage(1)}
+                disabled={!nextStage}
+              >
+                {nextStage ? `Next: ${stageLabel(nextStage)}` : "Complete"}
+              </Button>
+            </div>
+          </div>
           {/* NBA banner */}
           <div className={`rounded-md border px-3 py-2 ${pressureColor(nba.pressure)}`}>
             <div className="text-[10px] uppercase tracking-wider opacity-70">Next best action</div>
