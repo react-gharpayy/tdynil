@@ -116,6 +116,53 @@ export const useCalendar = create<CalendarState>()(
   ),
 );
 
+type VisitEventPayload = {
+  tourId: string;
+  leadId: string;
+  leadName: string;
+  leadPhone: string;
+  propertyName: string;
+  propertyArea: string;
+  scheduledAt: number;
+  description?: string;
+  durationMin?: number;
+};
+
+export const upsertVisitEvent = (args: VisitEventPayload) => {
+  const state = useCalendar.getState();
+  const existing = state.events.find((e) => e.tourId === args.tourId);
+  const durationMin = args.durationMin ?? 60;
+  const start = new Date(args.scheduledAt).toISOString();
+  const end = new Date(args.scheduledAt + durationMin * 60_000).toISOString();
+  const event = {
+    title: `Tour · ${args.leadName}`,
+    kind: "tour" as const,
+    start,
+    end,
+    allDay: false,
+    leadId: args.leadId,
+    tourId: args.tourId,
+    description: args.description,
+    location: `${args.propertyName} · ${args.propertyArea}`,
+    externalSource: "local" as const,
+  };
+
+  if (existing) {
+    state.updateEvent(existing.id, event);
+    return;
+  }
+
+  state.addEvent(event);
+};
+
+export const archiveVisitEvent = (tourId: string) => {
+  const state = useCalendar.getState();
+  const existing = state.events.find((e) => e.tourId === tourId);
+  if (existing) {
+    state.deleteEvent(existing.id);
+  }
+};
+
 export const KIND_META: Record<CalEventKind, { label: string; color: string; ring: string; bg: string; text: string }> = {
   meeting: { label: "Meeting", color: "#2563eb", ring: "ring-blue-500/40", bg: "bg-blue-500/15", text: "text-blue-700" },
   call: { label: "Call", color: "#0891b2", ring: "ring-cyan-500/40", bg: "bg-cyan-500/15", text: "text-cyan-700" },
