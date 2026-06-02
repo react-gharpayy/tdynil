@@ -44,7 +44,27 @@ interface OwnerCtxValue {
   toggleDedicated: (roomId: string) => void;
   bulkVerify: (roomIds: string[]) => void;
   bulkRentDelta: (roomIds: string[], delta: number) => void;
-  addProperty: (input: { name: string; area: string }) => void;
+  addProperty: (input: {
+    name: string;
+    area: string;
+    address?: string;
+    basePrice?: number;
+    propertyType?: string;
+    genderCategory?: string;
+    sharingTypes?: string[];
+    flatConfig?: string;
+    amenities?: string[];
+    photos?: string[];
+    description?: string;
+    gateRules?: string;
+    securityInfo?: string;
+    foodRating?: number;
+    hygieneRating?: number;
+    privateFloorPrice?: number;
+    depositPrice?: number;
+    furnishingLevel?: string;
+    kitchenFacility?: string;
+  }) => Promise<void>;
   addRoom: (input: { propertyId: string; type: 'single' | 'double' | 'triple' | 'studio'; bedsTotal: number; price: number; floorPrice?: number }) => void;
   logObjection: (input: { roomId: string; reason: ObjectionReason; notes?: string; loggedBy?: string }) => void;
   overrideBooking: (roomId: string, reason: string) => void;
@@ -261,17 +281,111 @@ export function OwnerProvider({ children }: { children: React.ReactNode }) {
     ));
   };
 
-  const addProperty: OwnerCtxValue['addProperty'] = ({ name, area }) => {
+  const addProperty: OwnerCtxValue['addProperty'] = async (input) => {
     if (!currentOwnerId) return;
-    const id = `p-custom-${Math.random().toString(36).slice(2, 7)}`;
-    const newProp: MytProperty = {
-      id, name, zoneId: 'z-custom', area,
-      address: `${area}`, basePrice: 10000,
-      foodRating: 4, hygieneRating: 4, amenities: ['WiFi'],
-      ownerName: owners.find((o) => o.id === currentOwnerId)?.name ?? 'Owner',
-      photoCount: 0, pageViews: 0, shares: 0,
+    const baseUrl = (import.meta.env.VITE_API_URL as string | undefined) ?? "http://localhost:4000";
+    const token = localStorage.getItem("gharpayy.access_token") || localStorage.getItem("gharpayy.token");
+    
+    const headers: Record<string, string> = {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
     };
+    if (token) {
+      headers["Authorization"] = `Bearer ${token}`;
+    }
+    
+    // 1. Post to backend
+    const res = await fetch(`${baseUrl}/api/v1/owner/properties`, {
+      method: "POST",
+      headers,
+      body: JSON.stringify(input)
+    });
+    
+    if (!res.ok) {
+      const errBody = await res.json().catch(() => ({}));
+      throw new Error(errBody.message ?? "Failed to publish property");
+    }
+    
+    const data = await res.json();
+    const customId = data.customId ?? data._id;
+    
+    // 2. Sync to owner's local React state properties list
+    const newProp: MytProperty = {
+      id: customId,
+      name: input.name,
+      zoneId: 'z-custom',
+      area: input.area,
+      address: input.address ?? input.area,
+      basePrice: input.basePrice ?? 10000,
+      foodRating: input.foodRating ?? 4,
+      hygieneRating: input.hygieneRating ?? 4,
+      amenities: input.amenities ?? ['WiFi'],
+      ownerName: owners.find((o) => o.id === currentOwnerId)?.name ?? 'Owner',
+      photoCount: input.photos?.length ?? 0,
+      pageViews: 0,
+      shares: 0,
+    };
+    
     setProperties((prev) => [newProp, ...prev]);
+    
+    // 3. Auto-populate a room status locally so the property works in "Update Rooms"
+    const roomId = `r-custom-${Math.random().toString(36).slice(2, 7)}`;
+    setRooms((prevRooms) => [
+      ...prevRooms,
+      {
+        id: roomId,
+        propertyId: customId,
+        type: (input.flatConfig ?? 'studio') as any,
+        bedsTotal: 1,
+        bedsOccupied: 0,
+        currentPrice: input.basePrice ?? 10000
+      }
+    ]);
+    
+    setRoomStatuses((prev) => [
+      ...prev,
+      {
+        roomId,
+        propertyId: customId,
+        ownerId: currentOwnerId,
+        kind: 'vacant',
+        rentConfirmed: input.basePrice ?? 10000,
+        floorPrice: input.privateFloorPrice ?? Math.round((input.basePrice ?? 10000) * 0.9),
+        updatedAt: new Date().toISOString(),
+        verifiedToday: true,
+        lockedUnsellable: false,
+        isDedicated: false,
+        views: 0,
+      }
+    ]);
+    
+    // Update local owners state propertyIds so My Inventory works instantly
+    const activeOwner = owners.find((o) => o.id === currentOwnerId);
+    if (activeOwner && !activeOwner.propertyIds.includes(customId)) {
+      activeOwner.propertyIds.push(customId);
+    }
+    
+    // 4. Sync with global Zustand store (useApp)
+    try {
+      const { useApp } = await import("@/lib/store");
+      const appProps = useApp.getState().properties;
+      const globalNewProp = {
+        id: customId,
+        daysSinceLastBooking: 0,
+        zoneId: 'z-custom',
+        address: input.address ?? input.area,
+        name: input.name,
+        area: input.area,
+        totalBeds: 1,
+        vacantBeds: 1,
+        pricePerBed: input.basePrice ?? 10000,
+      };
+      useApp.setState({
+        properties: [globalNewProp, ...appProps]
+      });
+    } catch (e) {
+      console.warn("Zustand store import skipped in this runtime.", e);
+    }
   };
 
   const addRoom: OwnerCtxValue['addRoom'] = ({ propertyId, type, bedsTotal, price, floorPrice }) => {

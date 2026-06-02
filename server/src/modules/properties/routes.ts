@@ -1,5 +1,6 @@
 import type { FastifyInstance } from "fastify";
 import { z } from "zod";
+import crypto from "node:crypto";
 import { col } from "../../db/mongo.js";
 import { requireAuth, requireScope } from "../../middleware/auth.js";
 import { ulid } from "../../../../src/contracts/ids.js";
@@ -82,6 +83,66 @@ export function registerPropertyRoutes(app: FastifyInstance) {
       };
       await properties().insertOne(doc);
       return reply.code(201).send(propertyOut(doc));
+    } catch (e) {
+      const err = e as Error;
+      return reply.code(400).send({ code: "BAD_REQUEST", message: err.message });
+    }
+  });
+
+  // Create property as Owner
+  app.post("/api/v1/owner/properties", { preHandler: [requireAuth] }, async (req, reply) => {
+    try {
+      const body = req.body as any;
+      const name = body.name?.trim();
+      if (!name) return reply.code(400).send({ code: "BAD_REQUEST", message: "Property name is required" });
+      
+      const exists = await properties().findOne({ tenantId: req.user!.tenantId, name });
+      if (exists) return reply.code(409).send({ code: "CONFLICT", message: "Property name already exists" });
+      
+      const now = new Date().toISOString();
+      const customId = `p-custom-${crypto.randomUUID()}`;
+      
+      const doc = {
+        _id: customId,
+        customId,
+        tenantId: req.user!.tenantId,
+        ownerId: req.user!.sub,
+        ownerName: req.user!.fullName,
+        name,
+        area: (body.area ?? "").trim(),
+        address: (body.address ?? "").trim(),
+        basePrice: Number(body.basePrice ?? body.rentPrice ?? 0),
+        foodRating: Number(body.foodRating ?? 0),
+        hygieneRating: Number(body.hygieneRating ?? 0),
+        amenities: body.amenities ?? [],
+        photos: body.photos ?? [],
+        description: body.description ?? "",
+        gateRules: body.gateRules ?? "",
+        securityInfo: body.securityInfo ?? "",
+        propertyType: body.propertyType ?? "",
+        genderCategory: body.genderCategory ?? "",
+        sharingTypes: body.sharingTypes ?? [],
+        flatConfig: body.flatConfig ?? "",
+        pageViews: 0,
+        shares: 0,
+        photoCount: body.photos?.length ?? 0,
+        createdAt: now,
+        updatedAt: now,
+        zoneId: "z-custom",
+        totalBeds: 1,
+        vacantBeds: 1,
+        pricePerBed: Number(body.basePrice ?? body.rentPrice ?? 0),
+      };
+      
+      await properties().insertOne(doc);
+      
+      // Update owner's database document inside "users" collection
+      await col("users").updateOne(
+        { _id: req.user!.sub },
+        { $push: { propertyIds: customId } as any }
+      );
+      
+      return reply.code(201).send(doc);
     } catch (e) {
       const err = e as Error;
       return reply.code(400).send({ code: "BAD_REQUEST", message: err.message });

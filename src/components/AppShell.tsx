@@ -179,14 +179,12 @@ export function AppShell({ children }: { children: ReactNode }) {
     ]),
     owner: [
       { to: "/owner", label: "Owner Home", icon: ShieldCheck },
-      { to: "/owner/blocks", label: "Approvals", icon: Inbox },
-      { to: "/owner/rooms", label: "Rooms", icon: Building2 },
-      { to: "/owner/inventory", label: "Inventory", icon: Layers },
-      { to: "/owner/visits", label: "Tours", icon: Camera },
-      { to: "/impact", label: "Impact Queue", icon: HeartPulse },
-      { to: "/property-hub", label: "Property Hub", icon: Building2 },
+      { to: "/owner/inventory", label: "My Inventory", icon: Layers },
+      { to: "/owner/upload", label: "Add Property", icon: Target },
+      { to: "/owner/rooms", label: "Update Rooms", icon: Building2 },
+      { to: "/owner/blocks", label: "Block Requests", icon: Inbox },
+      { to: "/owner/visits", label: "Visits", icon: Camera },
       { to: "/owner/insights", label: "Insights", icon: IndianRupee },
-      { to: "/my-tasks", label: "My Tasks", icon: ListTodo },
     ],
     "super-admin": [
       { to: "/admin", label: "Cockpit", icon: Gauge },
@@ -286,42 +284,44 @@ export function AppShell({ children }: { children: ReactNode }) {
           })}
         </nav>
 
-        <div className="p-3 border-t border-sidebar-border space-y-2">
-          <div className="text-[10px] uppercase tracking-wider text-sidebar-foreground px-1">View as</div>
-          {(() => {
-            const labels: Record<string, string> = {
-              "flow-ops": "Flow Ops",
-              tcm: "TCM",
-              hr: "HR / Leadership",
-              owner: "Property Owner",
-              "super-admin": "Super Admin",
-            };
-            const userName = authUser?.fullName || authUser?.username || authUser?.email || "";
-            if (allowed.length <= 1) {
-              return (
-                <div className="bg-sidebar-accent border border-sidebar-border text-sidebar-accent-foreground rounded-md px-3 py-1.5 flex flex-col leading-tight">
-                  <span className="text-xs">{labels[role] ?? role}</span>
-                  {userName && <span className="text-[10px] text-sidebar-accent-foreground truncate">{userName}</span>}
-                </div>
-              );
-            }
-            return (
-              <Select value={role} onValueChange={(v) => setRole(v as typeof role)}>
-                <SelectTrigger className="bg-sidebar-accent border-sidebar-border text-sidebar-accent-foreground h-auto py-1.5 text-xs">
-                  <div className="flex flex-col items-start leading-tight">
-                    <span>{labels[role] ?? role}</span>
+        {role !== "owner" && (
+          <div className="p-3 border-t border-sidebar-border space-y-2">
+            <div className="text-[10px] uppercase tracking-wider text-sidebar-foreground px-1">View as</div>
+            {(() => {
+              const labels: Record<string, string> = {
+                "flow-ops": "Flow Ops",
+                tcm: "TCM",
+                hr: "HR / Leadership",
+                owner: "Property Owner",
+                "super-admin": "Super Admin",
+              };
+              const userName = authUser?.fullName || authUser?.username || authUser?.email || "";
+              if (allowed.length <= 1) {
+                return (
+                  <div className="bg-sidebar-accent border border-sidebar-border text-sidebar-accent-foreground rounded-md px-3 py-1.5 flex flex-col leading-tight">
+                    <span className="text-xs">{labels[role] ?? role}</span>
                     {userName && <span className="text-[10px] text-sidebar-accent-foreground truncate">{userName}</span>}
                   </div>
-                </SelectTrigger>
-                <SelectContent>
-                  {allowed.map((p) => (
-                    <SelectItem key={p} value={p}>{labels[p] ?? p}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            );
-          })()}
-        </div>
+                );
+              }
+              return (
+                <Select value={role} onValueChange={(v) => setRole(v as typeof role)}>
+                  <SelectTrigger className="bg-sidebar-accent border-sidebar-border text-sidebar-accent-foreground h-auto py-1.5 text-xs">
+                    <div className="flex flex-col items-start leading-tight">
+                      <span>{labels[role] ?? role}</span>
+                      {userName && <span className="text-[10px] text-sidebar-accent-foreground truncate">{userName}</span>}
+                    </div>
+                  </SelectTrigger>
+                  <SelectContent>
+                    {allowed.map((p) => (
+                      <SelectItem key={p} value={p}>{labels[p] ?? p}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              );
+            })()}
+          </div>
+        )}
       </aside>
 
       {/* Main */}

@@ -49,6 +49,7 @@ import { Route as SupplyHubMatchRouteImport } from './routes/supply-hub/match'
 import { Route as SupplyHubAreasRouteImport } from './routes/supply-hub/areas'
 import { Route as SupplyHubIdRouteImport } from './routes/supply-hub/$id'
 import { Route as OwnerVisitsRouteImport } from './routes/owner/visits'
+import { Route as OwnerUploadRouteImport } from './routes/owner/upload'
 import { Route as OwnerRoomsRouteImport } from './routes/owner/rooms'
 import { Route as OwnerInventoryRouteImport } from './routes/owner/inventory'
 import { Route as OwnerInsightsRouteImport } from './routes/owner/insights'
@@ -293,6 +294,11 @@ const SupplyHubIdRoute = SupplyHubIdRouteImport.update({
 const OwnerVisitsRoute = OwnerVisitsRouteImport.update({
   id: '/owner/visits',
   path: '/owner/visits',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OwnerUploadRoute = OwnerUploadRouteImport.update({
+  id: '/owner/upload',
+  path: '/owner/upload',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OwnerRoomsRoute = OwnerRoomsRouteImport.update({
@@ -593,6 +599,7 @@ export interface FileRoutesByFullPath {
   '/owner/insights': typeof OwnerInsightsRoute
   '/owner/inventory': typeof OwnerInventoryRoute
   '/owner/rooms': typeof OwnerRoomsRoute
+  '/owner/upload': typeof OwnerUploadRoute
   '/owner/visits': typeof OwnerVisitsRoute
   '/supply-hub/$id': typeof SupplyHubIdRoute
   '/supply-hub/areas': typeof SupplyHubAreasRoute
@@ -679,6 +686,7 @@ export interface FileRoutesByTo {
   '/owner/insights': typeof OwnerInsightsRoute
   '/owner/inventory': typeof OwnerInventoryRoute
   '/owner/rooms': typeof OwnerRoomsRoute
+  '/owner/upload': typeof OwnerUploadRoute
   '/owner/visits': typeof OwnerVisitsRoute
   '/supply-hub/$id': typeof SupplyHubIdRoute
   '/supply-hub/areas': typeof SupplyHubAreasRoute
@@ -767,6 +775,7 @@ export interface FileRoutesById {
   '/owner/insights': typeof OwnerInsightsRoute
   '/owner/inventory': typeof OwnerInventoryRoute
   '/owner/rooms': typeof OwnerRoomsRoute
+  '/owner/upload': typeof OwnerUploadRoute
   '/owner/visits': typeof OwnerVisitsRoute
   '/supply-hub/$id': typeof SupplyHubIdRoute
   '/supply-hub/areas': typeof SupplyHubAreasRoute
@@ -856,6 +865,7 @@ export interface FileRouteTypes {
     | '/owner/insights'
     | '/owner/inventory'
     | '/owner/rooms'
+    | '/owner/upload'
     | '/owner/visits'
     | '/supply-hub/$id'
     | '/supply-hub/areas'
@@ -942,6 +952,7 @@ export interface FileRouteTypes {
     | '/owner/insights'
     | '/owner/inventory'
     | '/owner/rooms'
+    | '/owner/upload'
     | '/owner/visits'
     | '/supply-hub/$id'
     | '/supply-hub/areas'
@@ -1029,6 +1040,7 @@ export interface FileRouteTypes {
     | '/owner/insights'
     | '/owner/inventory'
     | '/owner/rooms'
+    | '/owner/upload'
     | '/owner/visits'
     | '/supply-hub/$id'
     | '/supply-hub/areas'
@@ -1102,6 +1114,7 @@ export interface RootRouteChildren {
   OwnerInsightsRoute: typeof OwnerInsightsRoute
   OwnerInventoryRoute: typeof OwnerInventoryRoute
   OwnerRoomsRoute: typeof OwnerRoomsRoute
+  OwnerUploadRoute: typeof OwnerUploadRoute
   OwnerVisitsRoute: typeof OwnerVisitsRoute
   SupplyHubIdRoute: typeof SupplyHubIdRoute
   SupplyHubAreasRoute: typeof SupplyHubAreasRoute
@@ -1394,6 +1407,13 @@ declare module '@tanstack/react-router' {
       path: '/owner/visits'
       fullPath: '/owner/visits'
       preLoaderRoute: typeof OwnerVisitsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/owner/upload': {
+      id: '/owner/upload'
+      path: '/owner/upload'
+      fullPath: '/owner/upload'
+      preLoaderRoute: typeof OwnerUploadRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/owner/rooms': {
@@ -1844,6 +1864,7 @@ const rootRouteChildren: RootRouteChildren = {
   OwnerInsightsRoute: OwnerInsightsRoute,
   OwnerInventoryRoute: OwnerInventoryRoute,
   OwnerRoomsRoute: OwnerRoomsRoute,
+  OwnerUploadRoute: OwnerUploadRoute,
   OwnerVisitsRoute: OwnerVisitsRoute,
   SupplyHubIdRoute: SupplyHubIdRoute,
   SupplyHubAreasRoute: SupplyHubAreasRoute,
