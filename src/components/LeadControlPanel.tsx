@@ -54,6 +54,7 @@ import { useActivities } from "@/hooks/useActivities";
 import { allCatalogProperties } from "@/lib/crm10x/property-catalog";
 import { pressureColor } from "@/lib/crm10x/impact-scoring";
 import type { LeadFocusAction } from "@/lib/crm10x/impact-hard-actions";
+import { CheckInPanel } from "@/components/checkins/CheckInPanel";
 
 const TAG_OPTIONS = ["price-issue", "location-mismatch", "parents-involved", "urgent", "budget-low"];
 const OBJECTIONS = ["Budget", "Location", "Amenities", "Timing", "Parents", "Comparing options", "Other"];
@@ -577,6 +578,10 @@ export function LeadControlPanel() {
 
             <TabsContent value="quote" className="space-y-4 pt-4">
               <QuotationBuilder lead={lead} />
+            </TabsContent>
+
+            <TabsContent value="checkin" className="space-y-4 pt-4">
+              <CheckInPanel lead={lead} />
             </TabsContent>
 
             <TabsContent value="impact" className="space-y-4 pt-4">
