@@ -61,6 +61,9 @@ const TOUR_TYPES = [
   { value: "virtual", label: "Virtual", icon: Video },
   { value: "pre-book-pitch", label: "Pre-book", icon: Briefcase },
 ];
+const LEAD_DRAWER_TABS = new Set([
+  "dossier", "tour", "post", "quote", "checkin", "best-fit", "control", "handoff", "log",
+]);
 const TEMPLATES = [
   { id: "tour-confirm", label: "Tour confirmation", body: "Hi! Confirming your tour today. Looking forward to meeting you." },
   { id: "post-tour", label: "Post-tour check-in", body: "Hi! How did you find the property? Happy to answer any questions." },
@@ -102,7 +105,7 @@ type DrawerScheduleAnswers = {
 
 export function LeadControlPanel() {
   const {
-    selectedLeadId, selectLead, leads, properties, tours, activities, tcms,
+    selectedLeadId, selectedLeadTab, selectLead, leads, properties, tours, activities, tcms,
     setLeadStage, setLeadIntent, setLeadFollowUp, addLeadTag, removeLeadTag,
     scheduleTour, cancelTour, rescheduleTour, completeTour, setDecision, updatePostTour,
     addNote, logCall, sendMessage, autoAssignLead, startSequence, closeDeal,
@@ -230,9 +233,9 @@ export function LeadControlPanel() {
       workLocation: lead.preferredArea || "",
       keyConcern: lead.tags.join(", "),
     }));
-    // Default to the Dossier tab when opening a lead. If there's a pending post-tour,
-    // prefer the post form; otherwise show the dossier view by default.
-    setTab(pendingPostTour ? "post" : "dossier");
+    setTab(selectedLeadTab && LEAD_DRAWER_TABS.has(selectedLeadTab)
+      ? selectedLeadTab
+      : pendingPostTour ? "post" : "dossier");
   }, [
     authUser?.role,
     currentMemberId,
@@ -241,7 +244,8 @@ export function LeadControlPanel() {
     lead,
     pendingPostTour,
     scheduleAssignees,
-    // settings.matching.drawerDefaultTab intentionally removed — default is now 'tour'
+    selectedLeadTab,
+    // settings.matching.drawerDefaultTab intentionally removed — default is now dossier
     tourToShow,
   ]);
 
@@ -507,7 +511,6 @@ export function LeadControlPanel() {
               </TabsTrigger>
               <TabsTrigger value="quote" className={tabTriggerClass}>4·Quote</TabsTrigger>
               <TabsTrigger value="checkin" className={tabTriggerClass}>5·Check-in</TabsTrigger>
-              <TabsTrigger value="impact" className={tabTriggerClass}>Impact</TabsTrigger>
               <TabsTrigger value="best-fit" className={tabTriggerClass}>Best Fit</TabsTrigger>
               <TabsTrigger value="control" className={tabTriggerClass}>Control</TabsTrigger>
               <TabsTrigger value="handoff" className={tabTriggerClass}>Handoff</TabsTrigger>

@@ -55,15 +55,15 @@ export function LeadJourneyStepper({
         hint: dossierDone ? "Complete" : `${dossier.filledCount}/${dossier.totalCount} fields` },
       { key: "tour" as const, done: tourDone, unlock: dossierDone, label: "Tour", icon: Calendar,
         cta: openTour ? "Manage tour" : "Schedule tour",
-        hint: openTour ? "Scheduled" : completedTour ? "Completed" : "Pending" },
+        hint: openTour ? "Scheduled" : completedTour ? "Completed" : "Not scheduled" },
       { key: "post" as const, done: postDone, unlock: tourDone, label: "Post-tour", icon: MessageSquare,
         cta: pendingPost ? "Fill post-tour" : "Review",
-        hint: pendingPost ? "Pending" : postDone ? "Complete" : "Awaiting" },
-      { key: "quote" as const, done: bookingDone, unlock: postDone || tourDone, label: "Quote", icon: IndianRupee,
+        hint: pendingPost ? "Pending form" : postDone ? "Complete" : "Awaiting tour" },
+      { key: "quote" as const, done: bookingDone, unlock: postDone || tourDone, label: "Quote · Book", icon: IndianRupee,
         cta: bookingDone ? "View booking" : "Send quote",
-        hint: bookingDone ? "Booked" : sentQuote ? "Sent" : "Pending" },
+        hint: bookingDone ? "Booked" : sentQuote ? "Quote sent" : "Pending" },
       { key: "checkin" as const, done: checkinDone, unlock: bookingDone, label: "Check-in", icon: KeyRound,
-        cta: checkinDone ? "View" : "Start check-in",
+        cta: checkinDone ? "View check-in" : "Start check-in",
         hint: checkin ? checkin.stage.replace(/_/g, " ") : bookingDone ? "Pending" : "Locked" },
     ];
 
@@ -120,13 +120,12 @@ export function LeadJourneyStepper({
 
       {activeStep && (
         <Button
+          size="sm"
+          className="w-full h-8 text-xs gap-1.5 font-semibold"
           onClick={() => onJump(activeStep.key)}
-          className="w-full h-14 rounded-2xl font-semibold text-[15px] gap-2 bg-foreground text-background hover:bg-foreground/90 shadow-[0_12px_28px_-12px_rgba(0,0,0,0.35)] transition-all active:scale-[0.99] group"
         >
-          <span className="opacity-60 font-normal">Next step</span>
-          <span className="opacity-40">·</span>
-          <span>{nextLabel}</span>
-          <ArrowRight className="h-4 w-4 ml-0.5 transition-transform group-hover:translate-x-0.5" />
+          <ArrowRight className="h-3.5 w-3.5" />
+          Next step · {nextLabel}
         </Button>
       )}
     </div>
