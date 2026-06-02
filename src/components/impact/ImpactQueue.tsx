@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type ClipboardEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type ClipboardEvent, type MouseEvent } from "react";
 import { cn } from "@/lib/utils";
 import { PGS } from "@/property-genius/data/pgs";
 import type { PG } from "@/types/entities";
@@ -83,7 +83,7 @@ import {
 } from "@/components/ui/select";
 import { dispatch } from "@/lib/api/command-bus";
 import {
-  Calendar, CheckCircle2, ChevronRight, ClipboardCopy,
+  Calendar, CheckCircle2, ChevronLeft, ChevronRight, ClipboardCopy,
   ExternalLink, FileText, Flame, LayoutGrid, ListOrdered, Phone, Plus,
   Search, Send, Sparkles, Target, Timer, UserCheck, Wallet, Zap,
   Beaker, Home, Pin, X, Heart, Star, Activity, TrendingUp, Bell, Sunrise,
@@ -174,29 +174,17 @@ function fmtActivityTime(iso: string) {
   return fmtWhen(iso);
 }
 
-function sanitizeLead(lead: any) {
-  const l = { ...lead };
-  const n = (l.name || "").toLowerCase();
-  const isGibberish = /test|dummy|dgdg|dfgb|fhff|bfd|ffhg|asdf|qwer/.test(n) || n === "gorav" || n.length < 3;
-  
-  const hash = String(l.id || l.name || "").split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  const pg = PGS[hash % PGS.length];
-  
-  if (isGibberish) {
-    const genuineNames = ["Aarav Sharma", "Priya Patel", "Aditya Singh", "Neha Gupta", "Arjun Reddy", "Rohan Mehta", "Sneha Desai"];
-    l.name = genuineNames[hash % genuineNames.length];
-  }
-  
-  if (isGibberish || !l.preferredArea || !leadHasValidProperty(l)) {
-    l.preferredArea = pg.area;
-    l.moveInDate = new Date(Date.now() + 86400000 * ((hash % 14) + 1)).toISOString();
-  }
-  
-  if (!isGibberish && (!l.moveInDate || isNaN(new Date(l.moveInDate).getTime()))) {
-    l.moveInDate = new Date(Date.now() + 86400000 * ((hash % 14) + 1)).toISOString();
-  }
-  
-  return l;
+function normalizeQueueLead(lead: Lead): Lead {
+  return {
+    ...lead,
+    name: lead.name?.trim() || "Unnamed lead",
+    phone: lead.phone?.trim() || "No phone",
+    preferredArea: lead.preferredArea?.trim() || "Area TBD",
+    moveInDate:
+      lead.moveInDate && !Number.isNaN(new Date(lead.moveInDate).getTime())
+        ? lead.moveInDate
+        : new Date().toISOString(),
+  };
 }
 
 async function copyText(text: string, label = "Copied — paste in WhatsApp") {
@@ -284,6 +272,7 @@ export function ImpactQueue() {
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [orgMembers, tcmOptions, authUser?.role, authUser?.zones, authUser?.id]);
   const setLeadStage = useApp((s) => s.setLeadStage);
+  const cancelTour = useApp((s) => s.cancelTour);
   const markTourStarted = useApp((s) => s.markTourStarted);
   const leadsSyncStatus = useLeadsSync((s) => s.status);
   const { data: quotes = [] } = useQuotationsQuery();
@@ -373,6 +362,12 @@ export function ImpactQueue() {
       return;
     }
     try {
+      if (stageMove.to === "inbox") {
+        const openTours = tours.filter((tour) =>
+          tour.leadId === stageMove.leadId && (tour.status === "scheduled" || tour.status === "confirmed")
+        );
+        await Promise.all(openTours.map((tour) => cancelTour(tour.id)));
+      }
       await setLeadStage(stageMove.leadId, targetStage);
       toast.success(`Moved to ${COLUMNS.find((c) => c.key === stageMove.to)?.label}`);
     } catch (err) {
@@ -416,18 +411,22 @@ export function ImpactQueue() {
 
   const enriched: Enriched[] = useMemo(() => {
     const at = typeof window !== "undefined" ? Date.now() : 0;
+    const inScope = (lead: Lead) =>
+      tcmFilter === "all" ||
+      lead.assignedTcmId === tcmFilter ||
+      !lead.assignedTcmId?.trim();
     const tFilter = (lead: Lead) =>
-      (tcmFilter === "all" || lead.assignedTcmId === tcmFilter) &&
+      inScope(lead) &&
       (!query.trim() ||
         lead.name.toLowerCase().includes(query.toLowerCase()) ||
         lead.phone.includes(query));
 
     return leads.filter(tFilter).map((rawLead) => {
-      const lead = sanitizeLead(rawLead);
+      const lead = normalizeQueueLead(rawLead);
       const ts = tours
         .filter((t) => t.leadId === lead.id)
         .sort((a, b) => +new Date(b.scheduledAt) - +new Date(a.scheduledAt));
-      const openTour = ts.find((t) => t.status === "scheduled");
+      const openTour = ts.find((t) => t.status === "scheduled" || t.status === "confirmed");
       const lastQuote = quotes
         .filter((q) => q.leadId === lead.id)
         .sort((a, b) => +new Date(b.sentAt) - +new Date(a.sentAt))[0];
@@ -435,10 +434,11 @@ export function ImpactQueue() {
       let column: ColumnKey = "inbox";
       if (lead.stage === "booked") column = "booked";
       else if (lead.stage === "quote-sent") column = "quoted";
-      else if (lastQuote && (lastQuote.status === "sent" || lastQuote.status === "paid")) column = "quoted";
       else if (lead.stage === "on-tour") column = "onTour";
+      else if (lead.stage === "tour-scheduled") column = "scheduled";
+      else if (lastQuote && (lastQuote.status === "sent" || lastQuote.status === "paid")) column = "quoted";
       else if (openTour && isToday(openTour.scheduledAt)) column = "onTour";
-      else if (lead.stage === "tour-scheduled" || openTour) column = "scheduled";
+      else if (openTour) column = "scheduled";
 
       const nba = computeNBA(lead, openTour, lastQuote);
       const { score } = scoreLead(lead, openTour, lastQuote);
@@ -459,11 +459,11 @@ export function ImpactQueue() {
   useEffect(() => {
     const due = leads.filter((lead) => {
       if (lead.stage === "on-tour" || autoPromotedRef.current.has(lead.id)) return false;
-      const openTour = tours.find((t) => t.leadId === lead.id && t.status === "scheduled");
+      const openTour = tours.find((t) => t.leadId === lead.id && (t.status === "scheduled" || t.status === "confirmed"));
       return openTour && isTodayIST(openTour.scheduledAt);
     });
     for (const lead of due) {
-      const tour = tours.find((t) => t.leadId === lead.id && t.status === "scheduled");
+      const tour = tours.find((t) => t.leadId === lead.id && (t.status === "scheduled" || t.status === "confirmed"));
       if (!tour) continue;
       autoPromotedRef.current.add(lead.id);
       void markTourStarted(tour.id).catch(() => {
@@ -875,6 +875,11 @@ export function ImpactQueue() {
                   {boardBuckets[c.key].length}
                 </span>
               </div>
+              {c.key === "inbox" && boardBuckets.inbox.length === 0 && chipFilter === "all" && query.trim() === "" && (
+                <div className="mb-2 rounded-md border border-dashed border-border bg-background/70 px-2 py-2 text-[11px] text-muted-foreground">
+                  No unworked leads in this scope. New/contacted leads without an active tour or quote appear here.
+                </div>
+              )}
               <BoardColumnBody
                 columnKey={c.key}
                 items={boardBuckets[c.key]}
@@ -1220,8 +1225,9 @@ function LeadRow({
   keyboardHighlight?: boolean;
 }) {
   const { lead, openTour, lastQuote, nba, column, tourTimeHint, tourBand } = enriched;
-  const [open, setOpen] = useState(false);
-  const [drawerAction, setDrawerAction] = useState<LeadFocusAction | null>(null);
+  const selectLead = useApp((s) => s.selectLead);
+  const setLeadStage = useApp((s) => s.setLeadStage);
+  const cancelTour = useApp((s) => s.cancelTour);
   const priority = classifyImpactPriority(enriched);
   const priorityMeta = IMPACT_PRIORITY_META[priority];
   const tcm = tcms.find((t) => t.id === lead.assignedTcmId);
@@ -1232,18 +1238,36 @@ function LeadRow({
 
   useEffect(() => {
     if (autoOpen) {
-      setOpen(true);
-      if (focusAction) setDrawerAction(focusAction);
+      selectLead(lead.id, "dossier");
       onAutoOpenConsumed?.();
     }
-  }, [autoOpen, focusAction, onAutoOpenConsumed]);
+  }, [autoOpen, focusAction, lead.id, onAutoOpenConsumed, selectLead]);
 
   const staleQuote = isQuoteStale(lastQuote);
+  const COLUMN_FLOW: ColumnKey[] = ["inbox", "scheduled", "onTour", "quoted", "booked"];
+  const idx = Math.max(0, COLUMN_FLOW.indexOf(column));
+  const shift = async (dir: -1 | 1, event: MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    const nextColumn = COLUMN_FLOW[Math.min(COLUMN_FLOW.length - 1, Math.max(0, idx + dir))];
+    if (!nextColumn || nextColumn === column) return;
+    const nextStage = COLUMN_STAGE_TARGET[nextColumn];
+    if (!nextStage) return;
+    try {
+      if (nextColumn === "inbox" && openTour && (openTour.status === "scheduled" || openTour.status === "confirmed")) {
+        await cancelTour(openTour.id);
+      }
+      await setLeadStage(lead.id, nextStage);
+      toast.success(`${lead.name.split(" ")[0]} -> ${COLUMNS.find((c) => c.key === nextColumn)?.label ?? nextStage}`);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Stage move failed");
+    }
+  };
 
   return (
     <>
-      <button
-        type="button"
+      <div
+        role="button"
+        tabIndex={0}
         draggable={draggable}
         onDragStart={(ev) => {
           if (!draggable || !dragColumn) return;
@@ -1251,9 +1275,15 @@ function LeadRow({
           ev.dataTransfer.setData("text/from-column", dragColumn);
           ev.dataTransfer.effectAllowed = "move";
         }}
-        onClick={() => setOpen(true)}
+        onClick={() => selectLead(lead.id, "dossier")}
+        onKeyDown={(ev) => {
+          if (ev.key === "Enter" || ev.key === " ") {
+            ev.preventDefault();
+            selectLead(lead.id, "dossier");
+          }
+        }}
         className={cn(
-          "w-full text-left rounded-md border bg-card hover:border-accent/60 hover:bg-muted/30 transition-colors px-3 py-2 flex items-center gap-3 group",
+          "w-full cursor-pointer text-left rounded-md border bg-card hover:border-accent/60 hover:bg-muted/30 transition-colors px-3 py-2 flex items-center gap-3 group",
           keyboardHighlight && "ring-2 ring-accent border-accent",
           staleQuote && "border-danger/40",
         )}
@@ -1310,19 +1340,30 @@ function LeadRow({
             </Badge>
           )}
         </div>
-        <ChevronRight className="h-4 w-4 text-muted-foreground shrink-0 group-hover:text-accent" />
-      </button>
-      <LeadDrawer
-        open={open}
-        onOpenChange={setOpen}
-        enriched={enriched}
-        tcm={tcm}
-        tcmOptions={tcmOptions}
-        catalogProperty={catalogProperty}
-        opsProperties={properties}
-        pendingAction={drawerAction}
-        onPendingActionConsumed={() => setDrawerAction(null)}
-      />
+        <div className="flex items-center gap-0.5 shrink-0" onClick={(event) => event.stopPropagation()}>
+          <button
+            type="button"
+            onClick={(event) => void shift(-1, event)}
+            disabled={idx === 0}
+            title={`Move back · current: ${COLUMNS.find((c) => c.key === column)?.label ?? lead.stage}`}
+            className="h-7 w-7 rounded-md border border-border bg-card hover:border-accent/60 hover:bg-accent/10 disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center"
+          >
+            <ChevronLeft className="h-3.5 w-3.5" />
+          </button>
+          <span className="text-[9px] font-mono text-muted-foreground w-8 text-center hidden sm:block">
+            {idx + 1}/{COLUMN_FLOW.length}
+          </span>
+          <button
+            type="button"
+            onClick={(event) => void shift(1, event)}
+            disabled={idx === COLUMN_FLOW.length - 1}
+            title={`Move forward · current: ${COLUMNS.find((c) => c.key === column)?.label ?? lead.stage}`}
+            className="h-7 w-7 rounded-md border border-border bg-card hover:border-accent/60 hover:bg-accent/10 disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center"
+          >
+            <ChevronRight className="h-3.5 w-3.5" />
+          </button>
+        </div>
+      </div>
     </>
   );
 }
