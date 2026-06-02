@@ -8,6 +8,7 @@ import { ACTIVITIES, FOLLOWUPS, PROPERTIES, TCMS, HANDOFFS, SEQUENCES_INIT } fro
 import { autoAssign as autoAssignFn } from "./routing";
 import { api } from "@/lib/api/client";
 import { isTodayIST } from "@/lib/crm10x/dates";
+import type { LeadFocusAction } from "@/lib/crm10x/impact-hard-actions";
 import { pushObjectionToOwner, pushTourViewToOwner } from "@/owner/team-bridge";
 import { emit as emitConnector } from "./connectors";
 import { personName } from "./people";
@@ -57,7 +58,9 @@ interface AppState {
 
   selectedLeadId: string | null;
   selectedLeadTab: string | null;
-  selectLead: (id: string | null, tab?: string | null) => void;
+  selectedLeadAction: LeadFocusAction | null;
+  selectLead: (id: string | null, tab?: string | null, action?: LeadFocusAction | null) => void;
+  consumeSelectedLeadAction: () => void;
 
   tcms: TCM[];
   properties: Property[];
@@ -117,7 +120,13 @@ export const useApp = create<AppState>((set, get) => ({
 
   selectedLeadId: null,
   selectedLeadTab: null,
-  selectLead: (id, tab = null) => set({ selectedLeadId: id, selectedLeadTab: tab }),
+  selectedLeadAction: null,
+  selectLead: (id, tab = null, action = null) => set({
+    selectedLeadId: id,
+    selectedLeadTab: id ? tab : null,
+    selectedLeadAction: id ? action : null,
+  }),
+  consumeSelectedLeadAction: () => set({ selectedLeadAction: null }),
 
   tcms: TCMS,
   properties: PROPERTIES,

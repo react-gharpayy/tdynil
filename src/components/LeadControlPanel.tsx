@@ -31,6 +31,9 @@ import { ObjectionTag } from "./crm10x/ObjectionLogger";
 import { LeadDossierPanel } from "./crm10x/LeadDossierPanel";
 import { QuotationBuilder } from "./crm10x/QuotationBuilder";
 import { LeadJourneyStepper, type JourneyTab } from "./crm10x/LeadJourneyStepper";
+import { SmartDossier } from "./crm10x/SmartDossier";
+import { LeadPropertyDossier } from "./impact/LeadPropertyDossier";
+import { CommandActions, useImpactStateForLead } from "./impact/ImpactQueue";
 import {
   Phone, MessageSquare, Calendar as CalendarIcon, Tag, ClipboardCheck,
   AlertTriangle, CheckCircle2, X, Activity as ActivityIcon, MapPin,
@@ -49,6 +52,8 @@ import { ActivityComposer } from "@/components/activities/ActivityComposer";
 import { TodoPanel } from "@/components/todos/TodoPanel";
 import { useActivities } from "@/hooks/useActivities";
 import { allCatalogProperties } from "@/lib/crm10x/property-catalog";
+import { pressureColor } from "@/lib/crm10x/impact-scoring";
+import type { LeadFocusAction } from "@/lib/crm10x/impact-hard-actions";
 
 const TAG_OPTIONS = ["price-issue", "location-mismatch", "parents-involved", "urgent", "budget-low"];
 const OBJECTIONS = ["Budget", "Location", "Amenities", "Timing", "Parents", "Comparing options", "Other"];
@@ -62,7 +67,7 @@ const TOUR_TYPES = [
   { value: "pre-book-pitch", label: "Pre-book", icon: Briefcase },
 ];
 const LEAD_DRAWER_TABS = new Set([
-  "dossier", "tour", "post", "quote", "checkin", "best-fit", "control", "handoff", "log",
+  "dossier", "tour", "post", "quote", "checkin", "impact", "best-fit", "control", "handoff", "log",
 ]);
 const TEMPLATES = [
   { id: "tour-confirm", label: "Tour confirmation", body: "Hi! Confirming your tour today. Looking forward to meeting you." },
@@ -105,7 +110,8 @@ type DrawerScheduleAnswers = {
 
 export function LeadControlPanel() {
   const {
-    selectedLeadId, selectedLeadTab, selectLead, leads, properties, tours, activities, tcms,
+    selectedLeadId, selectedLeadTab, selectedLeadAction, selectLead, consumeSelectedLeadAction,
+    leads, properties, tours, activities, tcms,
     setLeadStage, setLeadIntent, setLeadFollowUp, addLeadTag, removeLeadTag,
     scheduleTour, cancelTour, rescheduleTour, completeTour, setDecision, updatePostTour,
     addNote, logCall, sendMessage, autoAssignLead, startSequence, closeDeal,
@@ -511,6 +517,7 @@ export function LeadControlPanel() {
               </TabsTrigger>
               <TabsTrigger value="quote" className={tabTriggerClass}>4·Quote</TabsTrigger>
               <TabsTrigger value="checkin" className={tabTriggerClass}>5·Check-in</TabsTrigger>
+              <TabsTrigger value="impact" className={tabTriggerClass}>Impact</TabsTrigger>
               <TabsTrigger value="best-fit" className={tabTriggerClass}>Best Fit</TabsTrigger>
               <TabsTrigger value="control" className={tabTriggerClass}>Control</TabsTrigger>
               <TabsTrigger value="handoff" className={tabTriggerClass}>Handoff</TabsTrigger>
@@ -570,6 +577,14 @@ export function LeadControlPanel() {
 
             <TabsContent value="quote" className="space-y-4 pt-4">
               <QuotationBuilder lead={lead} />
+            </TabsContent>
+
+            <TabsContent value="impact" className="space-y-4 pt-4">
+              <ImpactTabContent
+                lead={lead}
+                pendingAction={selectedLeadAction}
+                onPendingActionConsumed={consumeSelectedLeadAction}
+              />
             </TabsContent>
 
             <TabsContent value="best-fit" className="space-y-4 pt-4">
@@ -1021,6 +1036,53 @@ export function LeadControlPanel() {
         </div>
       </SheetContent>
     </Sheet>
+  );
+}
+
+function ImpactTabContent({
+  lead,
+  pendingAction,
+  onPendingActionConsumed,
+}: {
+  lead: Lead;
+  pendingAction?: LeadFocusAction | null;
+  onPendingActionConsumed?: () => void;
+}) {
+  const state = useImpactStateForLead(lead);
+
+  if (!state) {
+    return (
+      <div className="rounded-md border border-dashed border-border bg-muted/30 px-3 py-6 text-center text-xs text-muted-foreground">
+        Impact intelligence will appear when this lead is loaded.
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-4">
+      <div className={`rounded-md border px-3 py-2 ${pressureColor(state.nba.pressure)}`}>
+        <div className="text-[10px] uppercase tracking-wider opacity-70">Next best action</div>
+        <div className="text-sm font-semibold">{state.nba.label}</div>
+        <div className="text-[10px] opacity-80">{state.nba.reason}</div>
+      </div>
+
+      <SmartDossier lead={state.lead} />
+      <LeadPropertyDossier lead={state.lead} />
+
+      <CommandActions
+        lead={state.lead}
+        tcm={state.tcm}
+        tcmOptions={state.tcmOptions}
+        openTour={state.openTour}
+        lastQuote={state.lastQuote}
+        nba={state.nba}
+        catalogProperty={state.catalogProperty}
+        opsProperties={state.opsProperties}
+        column={state.column}
+        pendingAction={pendingAction}
+        onPendingActionConsumed={onPendingActionConsumed}
+      />
+    </div>
   );
 }
 

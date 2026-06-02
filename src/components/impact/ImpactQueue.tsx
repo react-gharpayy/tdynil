@@ -187,6 +187,61 @@ function normalizeQueueLead(lead: Lead): Lead {
   };
 }
 
+export function drawerTabForLeadFocusAction(action?: LeadFocusAction | null) {
+  if (action === "quote") return "quote";
+  if (action === "schedule") return "tour";
+  if (action === "checkin") return "checkin";
+  return "impact";
+}
+
+export function useImpactStateForLead(leadInput?: Lead | null) {
+  const tours = useApp((s) => s.tours);
+  const opsProperties = useApp((s) => s.properties);
+  const fallbackTcms = useApp((s) => s.tcms);
+  const { tcms: activeTcms } = useActiveTcMs();
+  const tcmOptions = activeTcms.length > 0 ? activeTcms : fallbackTcms;
+  const { data: leadQuotes = [] } = useQuotationsQuery(leadInput?.id);
+
+  return useMemo(() => {
+    if (!leadInput) return null;
+    const lead = normalizeQueueLead(leadInput);
+    const leadTours = tours
+      .filter((t) => t.leadId === lead.id)
+      .sort((a, b) => +new Date(b.scheduledAt) - +new Date(a.scheduledAt));
+    const openTour = leadTours.find((t) => t.status === "scheduled" || t.status === "confirmed");
+    const lastQuote = [...leadQuotes]
+      .filter((q) => q.leadId === lead.id)
+      .sort((a, b) => +new Date(b.sentAt) - +new Date(a.sentAt))[0];
+
+    let column: ColumnKey = "inbox";
+    if (lead.stage === "booked") column = "booked";
+    else if (lead.stage === "quote-sent") column = "quoted";
+    else if (lead.stage === "on-tour") column = "onTour";
+    else if (lead.stage === "tour-scheduled") column = "scheduled";
+    else if (lastQuote && (lastQuote.status === "sent" || lastQuote.status === "paid")) column = "quoted";
+    else if (openTour && isToday(openTour.scheduledAt)) column = "onTour";
+    else if (openTour) column = "scheduled";
+
+    const nba = computeNBA(lead, openTour, lastQuote);
+    const { score } = scoreLead(lead, openTour, lastQuote);
+    const catalogProperty = openTour ? resolvePropertyById(openTour.propertyId, opsProperties) : undefined;
+    const tcm = tcmOptions.find((candidate) => candidate.id === lead.assignedTcmId);
+
+    return {
+      lead,
+      openTour,
+      lastQuote,
+      nba,
+      score,
+      column,
+      catalogProperty,
+      opsProperties,
+      tcm,
+      tcmOptions,
+    };
+  }, [leadInput, leadQuotes, opsProperties, tcmOptions, tours]);
+}
+
 async function copyText(text: string, label = "Copied — paste in WhatsApp") {
   try {
     await navigator.clipboard?.writeText(text);
@@ -234,6 +289,7 @@ function parsePastedText(text: string): { name?: string; phone?: string; locatio
 
 export function ImpactQueue() {
   const { role, currentTcmId, tcms, leads, tours, properties, bookings } = useApp();
+  const selectLead = useApp((s) => s.selectLead);
   const authUser = useAuthUser((s) => s.user);
   const canSelectTcmScope =
     authUser?.role === "super_admin" || authUser?.role === "manager" || authUser?.role === "admin";
@@ -587,8 +643,9 @@ export function ImpactQueue() {
         enriched={stackSorted}
         tcms={tcms}
         onPickLead={(leadId, _name, action) => {
-          setFocusLeadId(leadId);
-          setFocusAction(action);
+          selectLead(leadId, drawerTabForLeadFocusAction(action), action);
+          setFocusLeadId(null);
+          setFocusAction(null);
         }}
         onAddLead={() => setQuickAddOpen(true)}
       />
@@ -1238,7 +1295,7 @@ function LeadRow({
 
   useEffect(() => {
     if (autoOpen) {
-      selectLead(lead.id, "dossier");
+      selectLead(lead.id, drawerTabForLeadFocusAction(focusAction), focusAction);
       onAutoOpenConsumed?.();
     }
   }, [autoOpen, focusAction, lead.id, onAutoOpenConsumed, selectLead]);
@@ -1689,7 +1746,7 @@ function LeadDrawer({
 /*  Command Actions — the full toolbelt for a single lead              */
 /* ================================================================== */
 
-function CommandActions({
+export function CommandActions({
   lead, tcm, tcmOptions, openTour, lastQuote, nba, catalogProperty, opsProperties, column,
   scheduleOpen, schedulePrefill, onScheduleOpenChange, onSchedulePrefillClear,
   pendingAction, onPendingActionConsumed,
